@@ -1,0 +1,14 @@
+.borda-esquerda {
+    border-left: 1px solid #eee;
+    height: 100%;
+}
+
+.borda-direita {
+    border-right: 1px solid #eee;
+    height: 100%;
+}
+
+.borda-baixo {
+    border-bottom: 1px solid #bbbbbb;
+    box-shadow: 0px -3px 10px black;
+}
