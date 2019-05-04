@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SAPDR</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/Contacte-nos.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/popper.js"></script>
+	<script src="js/bootstrap.js"></script>
+</head>
+<body>
+    <header>
+        <div class="row">
+            <div class="col-sm-6 ml-5">
+                <img src="imgs/icone-sapdr.png" class="ml-5">
+            </div>
+            <div>
+                <div class="col-sm-12 float-right">
+                    <ul class="navbar-nav list-group-horizontal float-right mt-2">
+                        <li class="nav-item mt-2">
+                            <a href="" class="link">Contacte-nos</a>
+                        </li>
+                        <li class="nav-item dropdown ml-3">
+                        
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Minha conta</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Entrar</a>
+                                <a class="dropdown-item" href="#">Registar</a>
+                            </div>
+                        
+                        </li> 
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+        <nav class="row navbar navbar-expand-lg navbar-light mt-2 cor-verde">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menubar">
+                <span class="nav-bar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menubar">
+                <ul class="navbar-nav container">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="Doencas Raras.html">Doencas Raras</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Foruns</a>
+                    </li>
+                 
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Publicacoes</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Campanhas</a>
+                            <a class="dropdown-item" href="#">Artigos</a>
+                            <a class="dropdown-item" href="#">Pedidos de apoio</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Instituicoes e Associacoes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">relatorios</a>
+                    </li>
+                      
+                </ul>
+            </div>
+           
+        </nav>
+    </header>
+    <div class="container  border col-sm-10 my-5 ">
+        <form action="" >
+             
+            <fieldset class="border mt-4">
+                <legend>Dados Pessoais</legend>
+                <div class="form-row">
+                    <div class="form-group col-sm-5 mt-2 ml-3">
+                        <label for="Nome" >Nome:</label>
+                        <input type="text"   class="form-control"  placeholder="Nome">
+                    </div>
+                    <div class="form-group col-sm-5 mt-2 ml-3">
+                        <label for="Apelido" >Apelido:</label>
+                        <input type="text" class="form-control" placeholder="Apelido">
+                    </div>
+                </div> 
+
+                <div class="form-row">
+                    <div class="form-group col-sm-5 mt-2 ml-3">
+                        <label for="Nome" >Data de Nascimento:</label>
+                        <input type="text"   class="form-control" placeholder="Nome">
+                    </div>
+                    <div class="form-group col-sm-5 mt-2 ml-3">
+                        <label for="Genero" >Genero:</label>
+                        <select class="form-control" id="Genero ">
+                            <option selected>...</option>
+                            <option >Maculino</option>
+                            <option >Femenino</option>
+                        </select>
+                    </div>
+                </div> 
+            </fieldset>
+
+            <fieldset class="border mt-4">
+                <legend>Filiacao</legend>
+                <div class="form-row">
+                    <div class="form-group col-sm-5 mt-2 ml-3">
+                        <label for="Nome" >Nome do Pai:</label>
+                        <input type="text"   class="form-control"  placeholder="Nome do Pai">
+                    </div>
+                    <div class="form-group col-sm-5 mt-2 ml-3">
+                        <label for="Apelido" >Nome da Mae:</label>
+                        <input type="text" class="form-control" placeholder="Nome da Mae">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="border mt-4">
+                <legend>Endereco e Contacto</legend>
+                <div class="form-row">
+                    <div class="form-group col-sm-5 mt-2 ml-3">
+                        <label for="Provincia" >Provincia:</label>
+                        <select class="form-control" id="Provincia">
+                            <option selected>...</option>
+                            <option >Maputo</option>
+                            <option >Gaza</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-sm-5 mt-2 ml-3">
+                        <label for="Distrito" >Distrito:</label>
+                        <select class="form-control" id="Distrito">
+                            <option selected>...</option>
+                            <option >...</option>
+                            <option >...</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+
+                    <div class="form-group col-sm-5 mt-2 ml-3">
+                        <label for="Bairro" >Bairro:</label>
+                        <select class="form-control" id="Bairro">
+                            <option selected>...</option>
+                            <option >Bairro</option>
+                            <option >Bairro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group col-sm-5 mt-2 ml-3">
+                        <label for="Rua" >Rua:</label>
+                        <input type="text" class="form-control" placeholder="Rua">
+                    </div>
+                    
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group col-sm-5 mt-2 ml-3">
+                        <label for="Email" >Email:</label>
+                        <input type="email" class="form-control"  placeholder="Email">
+                    </div>
+                    <div class="form-group col-sm-5 mt-2 ml-3">
+                        <label for="Tellefone" >Tellefone:</label>
+                        <input type="number" class="form-control" placeholder="Tellefone">
+                    </div>
+                </div> 
+    
+            </fieldset>
+
+            <fieldset class="border mt-4">
+                <legend>Dados Medicos</legend>
+                <div class="form-row">
+                    <div class="form-group col-sm-5 mt-2 ml-3">
+                        <label for="Nome da Doenca" >Nome da Doenca:</label>
+                        <select class="form-control" id="Nome da Doenca">
+                            <option selected>...</option>
+                            <option >...</option>
+                            <option >...</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    
+                    <div class="form-group col-sm-5 mt-2 ml-3">
+                        <label for="E donte" >Encotra-se a Receber Tratamento:</label><br>
+                        <input type="radio" placeholder="Rua" name="E donte" >Sim<br>
+                        <input type="radio" placeholder="Rua" name="E donte" >Nao<br>
+                    </div>
+                    <div class="form-group col-sm-5 mt-2 ml-3">
+                        <label for="Hospital" >Se Sim. Em Que Unidade Hospitalar:</label>
+                        <select class="form-control" id="Hospital">
+                            <option selected>...</option>
+                            <option >...</option>
+                            <option >...</option>
+                        </select>
+                    </div>
+                    
+                </div>
+    
+            </fieldset>
+
+            <fieldset class="border mt-4">
+                <legend>Dados de Acesso</legend>
+                <div class="form-row">
+                    <div class="form-group col-sm-5 mt-2 ml-3">
+                        <label for="Nome do Usuario" >Nome de Usuario:</label>
+                        <input type="text"   class="form-control"  placeholder="Nome do Usuario">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-sm-5 mt-2 ml-3">
+                        <label for="Senha" >Senha:</label>
+                        <input type="password"   class="form-control"  placeholder="Senha">
+                    </div>
+                    <div class="form-group col-sm-5 mt-2 ml-3">
+                        <label for="Confirme a Senha" >Confirme a Senha:</label>
+                        <input type="password" class="form-control" placeholder="Confirme a Senha">
+                    </div>
+                </div>
+
+            </fieldset>
+
+            <p class="row justify-content-center ml-3">
+                <button class="btn btn-outline-ligth botoes  ml-5 mx-3" type="reset">Apagar</button>
+                <button class="btn btn-outline-ligth botoes" type="submit">Submeter</button>
+            </p>
+            
+        </form>
+    </div>
+</body>
+</html>
