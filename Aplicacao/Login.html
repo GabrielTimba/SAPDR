@@ -8,11 +8,10 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/Contacte-nos.css">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
     <script src="js/jquery.js"></script>
     <script src="js/popper.js"></script>
-	<script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap.js"></script>
 </head>
 <body>
     <header>
@@ -29,6 +28,8 @@
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Minha conta</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#">Entrar</a>
+                            <div class="dropdown-menu">
+                            </div>
                             <a class="dropdown-item" href="#">Registar</a>
                         </div>
                     
@@ -74,22 +75,44 @@
            
         </nav>
     </header>
-    <div id="geral" class="mt-5 mb-5">
-        <form action="" method="post">
-                
-            <h2>CONTACTE-NOS</h2>
-            Assunto: <br>
-            <input type="text" size="30" placeholder="Assunto"><br><br>
-            Email: <br>
-            <input type="email" size="30" placeholder="Email"> <br><br>
-            Messagem: <br>
-            <textarea name="" id="" cols="70" rows="6" placeholder="Escreva a Sua Messagem Aqui"></textarea>
-            <p class="row justify-content-center">
-                <button class="btn btn-outline-ligth botoes mr-3" type="reset">Apagar</button>
-                <button class="btn btn-outline-ligth botoes" type="submit">Enviar</button>
-            </p>
-            
-        </form>
-    </div>
+
+    <form  method="post">
+
+        <div class="container  border justify-content-center  my-5" id="geral">
+            <i class="fa fa-user-circle" aria-hidden="true"></i>
+            <div class="form-row justify-content-center">
+                    <div class="col-sm-6 mt-2">
+                        <i class="fa fa-user-circle fa-3x" aria-hidden="true"></i>
+                    </div>
+                </div> 
+            <div class="form-row justify-content-center">
+                <div class="form-group col-sm-6 mt-2">
+                    <label for="User" >Nome de Usuario Ou Email</label>
+                    <input type="text"   class="form-control" id="User" placeholder="Nome de Usuario ou Email">
+                </div>
+            </div>    
+
+              <div class="form-row justify-content-center">
+                <div class="form-group col-sm-6">
+                    <label for="User">Senha do usuario</label>
+                    <input type="Password"   class="form-control" id="User" placeholder="Senha do Usuario">
+                </div>
+            </div> 
+
+              <div class="form-row justify-content-center">
+                <div class="col-sm-6">
+                    <button class="btn  btn-primary" type="Submit">Entrar</button>
+                </div>
+            </div>       
+
+              <div class="form-row justify-content-center">
+                <div class="col-sm-6">
+                    <label >  <a href="senha">Recuperar Senha</a> </label>
+                </div>
+            </div>    
+        </div>
+    
+    </form>
+    
 </body>
 </html>
