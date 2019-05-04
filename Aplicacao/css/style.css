@@ -1,3 +1,16 @@
 .cor-verde{
     background-color:#52cd4e;
 }
+
+.bgfooter{
+    background-color: rgba(0,0, 0, .1);
+}
+
+#footerContacto{
+    background-color: rgba(0,0, 0, .6);
+}
+
+.footer-border{
+    border-bottom: 1px solid rgba(0,0, 0, .3);
+    border-top: 1px solid rgba(0,0, 0, .3);
+}
