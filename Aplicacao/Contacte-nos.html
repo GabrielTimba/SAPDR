@@ -17,27 +17,24 @@
 <body>
     <header>
         <div class="row">
-            <div class="col-sm-6 ml-5">
-                <img src="imgs/icone-sapdr.png" class="ml-5">
-            </div>
-            <div>
-                <div class="col-sm-12 float-right">
-                    <ul class="navbar-nav list-group-horizontal float-right mt-2">
-                        <li class="nav-item mt-2">
-                            <a href="" class="link">Contacte-nos</a>
-                        </li>
-                        <li class="nav-item dropdown ml-3">
-                        
-                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Minha conta</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Entrar</a>
-                                <a class="dropdown-item" href="#">Registar</a>
-                            </div>
-                        
-                        </li> 
-                    </ul>
+            <img src="imgs/icone-sapdr.png" class="ml-5">
+            <div class="container">
+
+                <ul class="navbar-nav list-group-horizontal float-right mt-2">
+                    <li class="nav-item mt-2">
+                        <a href="" class="link">Contacte-nos</a>
+                    </li>
+                    <li class="nav-item dropdown ml-3">
                     
-                </div>
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Minha conta</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Entrar</a>
+                            <a class="dropdown-item" href="#">Registar</a>
+                        </div>
+                    
+                    </li> 
+                </ul>
+                
             </div>
         </div>
         <nav class="row navbar navbar-expand-lg navbar-light mt-2 cor-verde">
@@ -77,32 +74,18 @@
            
         </nav>
     </header>
-    <div class="container  border col-sm-10 my-5 ">
-        <form action="" >
-            <div class="form-row mt-2 ml-3">
-                <h2>CONTACTE-NOS</h2>
-            </div>   
-            
-            <div class="form-row">
-                <div class="form-group col-sm-6 mt-2 ml-3">
-                    <label for="Assunto" >Assunto:</label>
-                    <input type="text"   class="form-control" id="Assunto" placeholder="Assunto">
-                </div>
-            </div> 
-            <div class="form-row ">
-                <div class="form-group col-sm-6 mt-2 ml-3">
-                    <label for="Email" >Email:</label>
-                    <input type="email"   class="form-control" id="Email" placeholder="Email">
-                </div>
-            </div> 
-            <div class="form-row ">
-                <div class="form-group col-sm-6 mt-2 ml-3">
-                    <label for="Messagem" >Messagem:</label>
-                    <textarea name="" class="form-control" id="" cols="70" rows="8" placeholder="Escreva a Sua Messagem Aqui"></textarea>
-                </div>
-            </div> 
-            <p class="row  ml-3">
-                <button class="btn btn-outline-ligth botoes  ml-5 mx-3" type="reset">Apagar</button>
+    <div id="geral" class="mt-5 mb-5">
+        <form action="" method="post">
+                
+            <h2>CONTACTE-NOS</h2>
+            Assunto: <br>
+            <input type="text" size="30" placeholder="Assunto"><br><br>
+            Email: <br>
+            <input type="email" size="30" placeholder="Email"> <br><br>
+            Messagem: <br>
+            <textarea name="" id="" cols="70" rows="6" placeholder="Escreva a Sua Messagem Aqui"></textarea>
+            <p class="row justify-content-center">
+                <button class="btn btn-outline-ligth botoes mr-3" type="reset">Apagar</button>
                 <button class="btn btn-outline-ligth botoes" type="submit">Enviar</button>
             </p>
             
