@@ -31,6 +31,7 @@ body {
     display: flex;
     width: 100%;
     align-items: stretch;
+    background:#f6f6f6;
 }
 
 a, a:hover, a:focus {
@@ -49,7 +50,7 @@ a, a:hover, a:focus {
     background: #52cd4e;
     color: #fff;
     transition: all 0.3s;
-    height: 124vh;
+    height: 110vh;
 }
 
 #menu.menu-cabecalho {
@@ -106,6 +107,21 @@ a[data-toggle="collapse"] {
     margin-left: 30px;
 }
 
+/************* scrollbar ************************/
+#menu::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #52cd4e ; 
+}
+
+#menu::-webkit-scrollbar {
+    width: 8px;
+    background-color: #52cd4e;
+}
+
+#menu::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #76fc72; 
+}
 
 /********** Menu Mediaqueries - Quando tamanho da tela for menor que 786 *************************/
 @media (max-width: 768px) {
@@ -121,7 +137,7 @@ a[data-toggle="collapse"] {
 /*********** Conteudo ****************************************/
 #conteudo  {
     width: 100%;
-    min-height: 124vh;
+    min-height: 100vh;
     transition: all 0.3s;
     background:#f6f6f6;
 }
