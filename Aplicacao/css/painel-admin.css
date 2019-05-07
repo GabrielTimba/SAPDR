@@ -145,12 +145,18 @@ a[data-toggle="collapse"] {
 .texto-verde {
     color: #52cd4e;
 }
+
+.texto-azul {
+    color: rgb(33, 94, 207);
+}
+
 .cor-creme {
     background: #f6f6f6;
 }
 
 .cor-borda {
     border: 1px solid #c2c2c2;
+    background: #fff;
 }
 .conteudo-dir {
     border-bottom: 1px solid #c2c2c2;
