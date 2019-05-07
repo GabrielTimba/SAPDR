@@ -6,8 +6,8 @@
     background-color: rgba(0,0, 0, .7);
 }
 
-.footercor{
-    color: aliceblue;
+.footer-cor{
+    color: #888888;
 }
 
 .footer-border{
@@ -17,4 +17,8 @@
 
 .borda-form{
     box-shadow:0px 0px 6px rgba(0,0,0,1);
+}
+
+footer a{
+    color: #28a745b5;
 }
