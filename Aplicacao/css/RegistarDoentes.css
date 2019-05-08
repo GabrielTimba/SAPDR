@@ -2,3 +2,14 @@ legend{
     color: #52cd4e;
 }
 
+#cadastro-doente{
+    background-color: #888888;
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0px !important;
+}
+
+#div-cadastro-doente{
+    padding: 0px;
+}
+
