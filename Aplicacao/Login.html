@@ -76,30 +76,33 @@
         </nav>
     </header>
 
-    <div class="container">
+    <div class="container col-sm-6">
         
         <form  method="post">
+            <div>
+                
+            </div>
 
-            <div class="border justify-content-center  my-5" id="geral">
+            <div class="border justify-content-center my-5" id="geral">
                 
                 <div class="form-row justify-content-center">
-                    <div class="col-sm-6 mt-2 row justify-content-center">
+                    <div class="col-sm-10 mt-2 row justify-content-center">
                         <i class="fa fa-user-circle fa-4x" aria-hidden="true"></i>
                     </div>
                 </div>
 
                 <div class="form-row justify-content-center">
-                    <div class="form-group col-sm-6 mt-2">
+                    <div class="form-group col-sm-10 mt-2">
                         <label for="User" >Nome de Usuario Ou Email</label>
-                        <input type="text"   class="form-control" id="User" placeholder="Nome de Usuario ou Email">
+                        <input type="text"   class="form-control" id="User" placeholder="Nome de Usuario ou Email" required>
                     </div>
                 </div>  
 
     
                 <div class="form-row justify-content-center">
-                    <div class="form-group col-sm-6">
+                    <div class="form-group col-sm-10">
                         <label for="User">Senha</label>
-                        <input type="Password"   class="form-control" id="User" placeholder="Senha">
+                        <input type="Password"   class="form-control" id="User" placeholder="Senha" required>
                     </div>
                 </div>
 
@@ -119,47 +122,38 @@
         
         </form>
     </div>
-
-    <footer class="page-footer">
-        <div class="footer-border bgfooter">
-            <div class="container mt-2">
-                <div class="row dark-grey-text">
-                    <div class="col-4 list-group  text-center mb-2">
-                        <a class="list-group-item list-group-item-action mb-2 list-group-item-dark" href="">
-                            Doencas Raras
-                        </a>
-                        <a class="list-group-item list-group-item-action list-group-item-dark" href="">
-                            Foruns
-                        </a>
+    <footer class="page-footer footer-cor">
+            <div class="footer-border bgfooter">
+                <div class="container mt-2">
+                    <div class="row  dark-grey-text">
+                        <div class="col-lg-4   text-center mb-2">
+                            <a class=" mb-2" href="">Doencas Raras </a>
+                        </div>
+                        <div class="col-lg-4   text-center mb-2">
+                            <a class=" mb-2" href="">Publicacoes </a>
+                        </div>
+                        <div class="col-lg-4   text-center mb-2">
+                            <a class=" mb-2" href="">Relatorios </a>
+                        </div>
                     </div>
-            
-                    <div class="col-4  list-group text-center">
-                        <a class="list-group-item list-group-item-action mb-2 list-group-item-dark" href="">
-                            Publicacoes
-                        </a>
-                        <a class="list-group-item list-group-item-action list-group-item-dark" href="">
-                            Instituicoes e Associacoes
-                        </a>
-                    </div>
-        
-                    <div class="col-4  list-group text-center">
-                        <a class="list-group-item list-group-item-action list-group-item-dark" href="">
-                            relatorios
-                        </a>
+                    <div class="row  dark-grey-text">
+                        <div class="col-lg-4   text-center mb-2">
+                            <a class=" mb-2" href="">Foruns </a>
+                        </div>
+                        <div class="col-lg-4   text-center mb-2">
+                            <a class=" mb-2" href="">Instituicoes e Associacoes </a>
+                        </div>
+                        <div class="col-lg-4   text-center mb-2">
+                            <a href="Contacte-nos.html" class="link">Contacte-nos</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    
-        <div class="row justify-content-center footer-copyright py-1 border-top-1 bgfooter" >
-            &copy; 2019 copyright:Timba
-        </div>
         
-        <div class="row justify-content-center py-1" id="footerContacto">
-            <a href="Contacte-nos.html" class="link">Contacte-nos</a>
-        </div>
-
-    </footer>
+            <div class="row justify-content-center footer-copyright py-1 border-top-1 bg-dark" >
+                &copy; 2019 copyright:Timba
+            </div>
+        </footer>
     
 </body>
 </html>

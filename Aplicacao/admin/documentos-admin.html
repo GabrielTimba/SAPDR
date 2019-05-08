@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="../css/fontawesome/css/all.css">
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../css/painel-admin.css">
+		<link rel="stylesheet" href= "../css/documentos-admin.css">
         
         <script src="../js/jquery.js"></script>
         <script src="../js/popper.js"></script>
@@ -28,7 +29,7 @@
                 </button>
         
                 <div class="collapse navbar-collapse float-left">
-                    <a href="../index.html"><img class="img-fluid" src="../imgs/icone-sapdr.png" alt="Icone SAPDR"></a>
+                    <img class="img-fluid" src="../imgs/icone-sapdr.png" alt="Icone SAPDR">
                 </div>
         
                 <div class="float-right borda-esquerda">
@@ -36,9 +37,9 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link" href="#" data-toggle="dropdown">Nome de Usuario <i class="fas fa-angle-down ml-2"></i></a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="perrfil.html">Perfil</a>
-                                <a class="dropdown-item" href="../index.html">Pagina Inicial</a>
-                                <a class="dropdown-item" href="index.html">Sair</a>
+                                <a class="dropdown-item" href="#">Perfil</a>
+                                <a class="dropdown-item" href="#">Pagina Inicial</a>
+                                <a class="dropdown-item" href="#">Sair</a>
                             </div>
                         </li>
                     </ul>
@@ -51,34 +52,34 @@
         <div id="corpo">
 
             <!--Menu Lateral Esquerdo-->
-            <nav  class="overflow-auto" id="menu">
+            <nav  id="menu">
                 <div  id="menu-cabecalho">
                     <h3 class="ml-5">Menu</h3>
                 </div>
 
                 <ul class="list-unstyled menu-componetes menu-switch">
-                    <p>Navegação</p>
+                    <p>Navegacao</p>
                     <hr class="linha">
                     <li>
                         <a href="painel-admin.html"><i class="fa fa-chart-bar mr-2"></i>Painel Administrativo</a>
                     </li>
                     <hr class="linha">
                     <li>
-                        <a class="dropdown-toggle" data-toggle="collapse" aria-expanded="false" href="#menu-usuarios"><i class="fas fa-users mr-2"></i>Usuários</a>
+                        <a class="dropdown-toggle" data-toggle="collapse" aria-expanded="false" href="#menu-usuarios"><i class="fas fa-users mr-2"></i>Usuarios</a>
                         <ul class="collapse list-unstyled menu-dropdown" id="menu-usuarios">
-                            <li><a href="Registar Profissional.html"><i class="fas fa-angle-double-right mr-2"></i>Profissional da Saúde</a></li>
+                            <li><a href="#"><i class="fas fa-angle-double-right mr-2"></i>Profissional da Saude</a></li>
                             <li><a href="#"><i class="fas fa-angle-double-right mr-2"></i>Doente/Represetante</a></li>
                         </ul>
                     </li>
                     <hr class="linha">
-                    <li><a href="#"><i class="fas fa-list-ul mr-2"></i>Doenças Raras</a></li>
+                    <li><a href="#"><i class="fas fa-list-ul mr-2"></i>Doencas Raras</a></li>
                     <hr class="linha">
                     <li><a href="#"><i class="fas fa-cogs mr-2"></i>Administrar Forum</a></li>
                     <hr class="linha">
                     <li>
-                        <a class="dropdown-toggle" data-toggle="collapse" aria-expanded="false" href="#menu-publicacoes"><i class="fas fa-newspaper mr-2"></i>Publicações</a>
+                        <a class="dropdown-toggle" data-toggle="collapse" aria-expanded="false" href="#menu-publicacoes"><i class="fas fa-newspaper mr-2"></i>Publicacoes</a>
                         <ul class="collapse list-unstyled menu-dropdown" id="menu-publicacoes">
-                            <li><a href="documentos-admin.html"><i class="fas fa-angle-double-right mr-2"></i>Documentos</a></li>
+                            <li><a href="#"><i class="fas fa-angle-double-right mr-2"></i>Documentos</a></li>
                             <li><a href="#"><i class="fas fa-angle-double-right mr-2"></i>Artigos</a></li>
                             <li><a href="#"><i class="fas fa-angle-double-right mr-2"></i>Campanhas</a></li>
                         </ul>
@@ -90,7 +91,7 @@
                         <a class="dropdown-toggle" data-toggle="collapse" aria-expanded="false" href="#menu-mensagens"><i class="fa fa-envelope mr-2"></i> Mensagens</a>
                         <ul class="collapse list-unstyled menu-dropdown" id="menu-mensagens">
                             <li><a href="#"><i class="fas fa-angle-double-right mr-2"></i>Pedidos de Apoio</a></li>
-                            <li><a href="#"><i class="fas fa-angle-double-right mr-2"></i>Mensagens de Doentes</a></li>
+                            <li><a href="#"><i class="fas fa-angle-double-right mr-2"></i>Mensafens de Doentes</a></li>
                         </ul>
                     </li>
                     <hr class="linha">
@@ -101,85 +102,44 @@
             <div class="container-fluid" id="conteudo">
                 <div class="row conteudo-dir pt-4">
                     <h5 class="ml-3">Painel Administrativo</h5>
-                    <p class="ml-5"> <span>Painel Administrativo</span>  >> </p>
+                    <p class="ml-5"> <span>Painel Administrativo</span>   </p>
+					
+					
+					
+					
+					<div id="listaDoc" >
+
+								<table border="1">
+									<tr>
+										<th>    </th>
+										<th>Titulo</th>
+										<th>Data de publicacao</th>
+										<th>Accao</th>
+									</tr>
+									<tr>
+										<td></td><td>relatorio 1</td><td>Vento</td><td>Areia</td>
+									</tr>
+									<tr>
+										<td></td><td>relatorio 2</td><td>Raio</td><td>Nuvem</td>
+									</tr>
+									<tr>
+										<td></td><td>relatorio 3</td><td>Terra</td><td>Pedra</td>
+									</tr>
+									<tr>
+										<td></td><td>relatorio 4</td><td>Fogo</td><td>Folha</td>
+									</tr>
+									<tr>
+										<td></td><td>relatorio 5</td><td>Água</td><td>Névoa</td>
+									</tr>
+								</table>	
+							<a href="pubdocumentos-admin.html" class="ligacoes">Adicionar relatorio</a>
+					</div>
+	
+	
                 </div>
-                <div class="row justify-content-center">
-
-                    <table class="table col-lg-10 col-md-10 col-sm-10 tabela mt-5">
-                        <thead >
-                            <tr class="cor-creme">
-                                <td class="titulo-tabela" colspan="2"><i class="fa fa-chart-bar mr-2"></i>Estatísticas Globais</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th class="texto-verde">Categoria</th>
-                                <th class="texto-verde">Total</th>
-                            </tr>
-                            <tr>
-                                <td>Doentes/Represententes</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <td>Doenças Raras</td>
-                                <td>11</td>
-                            </tr>
-                            <tr>
-                                <td>Profissionais da Saúde</td>
-                                <td>12</td>
-                            </tr>
-                            <tr>
-                                <td>Pedidos Pendetes</td>
-                                <td>13</td>
-                            </tr>
-                            <tr>
-                                <td>Mensagens Recebidas</td>
-                                <td>13</td>
-                            </tr>
-                            <tr>
-                                <td>Documentos Publicados</td>
-                                <td>13</td>
-                            </tr>
-                            <tr>
-                                <td>Artigos Publicados</td>
-                                <td>13</td>
-                            </tr>
-                            <tr>
-                                <td>Campanhas Publicados</td>
-                                <td>13</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                </div>
-
-                <footer class="row justify-content-center mt-5">
-                    <div class="col-lg-4">
-                        <p><span class="texto-verde">SAPDR</span>  &copy; 2019 - Todos Direitos Reservados<br> </p>
-                    </div>
-                </footer>
             </div>
 
         </div>
         
     </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--Programer: Mupandza, jossias Carlitos-->
