@@ -1,0 +1,22 @@
+#listaDoc{
+	margin-top: 100px;
+	margin-left: 300px; 
+	margin-right: 300px;
+	position: absolute;
+	
+	a:visited {
+  color: blue;
+}
+
+/* mouse over link */
+a:hover {
+  color: green;
+}
+
+/* selected link */
+a:active {
+  color: green;
+}
+}
+	
+	/* visited link */
