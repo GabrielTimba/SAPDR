@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        
+        <title>Painel Administrativo</title>
+        
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+        <link rel="stylesheet" href="../css/fonts.css">
+        <link rel="stylesheet" href="../css/fontawesome/css/all.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/painel-admin.css">
+		<link rel="stylesheet" href= "../css/publicar-admin.css">
+        
+        <script src="../js/jquery.js"></script>
+        <script src="../js/popper.js"></script>
+        <script src="../js/bootstrap.js"></script>
+        <script src="../js/painel-admin.js"></script>
+    </head>
+    <body>
+        <!--Cabecalho-->
+        <header class="navbar navbar-expand-lg borda-baixo">
+            <div class="col-sm-12">
+        
+                <button class="navbar-toggler cor-verde" id="menu-btn" type="button" data-toggle="collapse" >
+                    <span class="fa fa-bars"></span>
+                </button>
+        
+                <div class="collapse navbar-collapse float-left">
+                    <img class="img-fluid" src="../imgs/icone-sapdr.png" alt="Icone SAPDR">
+                </div>
+        
+                <div class="float-right borda-esquerda">
+                    <ul class="navbar-nav mr-4 ml-3 mt-2">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" data-toggle="dropdown">Nome de Usuario <i class="fas fa-angle-down ml-2"></i></a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Perfil</a>
+                                <a class="dropdown-item" href="#">Pagina Inicial</a>
+                                <a class="dropdown-item" href="#">Sair</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+        
+            </div>
+        </header>
+        
+        <!--corpo da pagina-->
+        <div id="corpo">
+
+            <!--Menu Lateral Esquerdo-->
+            <nav  id="menu">
+                <div  id="menu-cabecalho">
+                    <h3 class="ml-5">Menu</h3>
+                </div>
+
+                <ul class="list-unstyled menu-componetes menu-switch">
+                    <p>Navegacao</p>
+                    <hr class="linha">
+                    <li>
+                        <a href="painel-admin.html"><i class="fa fa-chart-bar mr-2"></i>Painel Administrativo</a>
+                    </li>
+                    <hr class="linha">
+                    <li>
+                        <a class="dropdown-toggle" data-toggle="collapse" aria-expanded="false" href="#menu-usuarios"><i class="fas fa-users mr-2"></i>Usuarios</a>
+                        <ul class="collapse list-unstyled menu-dropdown" id="menu-usuarios">
+                            <li><a href="#"><i class="fas fa-angle-double-right mr-2"></i>Profissional da Saude</a></li>
+                            <li><a href="#"><i class="fas fa-angle-double-right mr-2"></i>Doente/Represetante</a></li>
+                        </ul>
+                    </li>
+                    <hr class="linha">
+                    <li><a href="#"><i class="fas fa-list-ul mr-2"></i>Doencas Raras</a></li>
+                    <hr class="linha">
+                    <li><a href="#"><i class="fas fa-cogs mr-2"></i>Administrar Forum</a></li>
+                    <hr class="linha">
+                    <li>
+                        <a class="dropdown-toggle" data-toggle="collapse" aria-expanded="false" href="#menu-publicacoes"><i class="fas fa-newspaper mr-2"></i>Publicacoes</a>
+                        <ul class="collapse list-unstyled menu-dropdown" id="menu-publicacoes">
+                            <li><a href="#"><i class="fas fa-angle-double-right mr-2"></i>Documentos</a></li>
+                            <li><a href="#"><i class="fas fa-angle-double-right mr-2"></i>Artigos</a></li>
+                            <li><a href="#"><i class="fas fa-angle-double-right mr-2"></i>Campanhas</a></li>
+                        </ul>
+                    </li>
+                    <hr class="linha">
+                    <li><a href="#"><i class="fas fa-h-square mr-2"></i> Instituicoes da Saude</a></li>
+                    <hr class="linha">
+                    <li>
+                        <a class="dropdown-toggle" data-toggle="collapse" aria-expanded="false" href="#menu-mensagens"><i class="fa fa-envelope mr-2"></i> Mensagens</a>
+                        <ul class="collapse list-unstyled menu-dropdown" id="menu-mensagens">
+                            <li><a href="#"><i class="fas fa-angle-double-right mr-2"></i>Pedidos de Apoio</a></li>
+                            <li><a href="#"><i class="fas fa-angle-double-right mr-2"></i>Mensafens de Doentes</a></li>
+                        </ul>
+                    </li>
+                    <hr class="linha">
+                </ul>
+            </nav>
+
+            <!--Conteudo-->
+            <div class="container-fluid" id="conteudo">
+                <div class="row conteudo-dir pt-4">
+                    <h5 class="ml-3">Painel Administrativo</h5>
+                    <p class="ml-5"> <span>Painel Administrativo</span>   </p>
+					
+					
+					
+					
+					<div id="form-pub" >
+						<fieldset id="campo">
+							<form action="" method="post">    
+								<legend><big>Adicionar um documento</big></legend>
+
+								Titulo: <br>&nbsp;&nbsp;
+								<input type="text" size="30" name="texto"><br><br>
+								Descricao: <br> &nbsp;&nbsp;
+								<textarea name="" id="" cols="70" rows="6"></textarea>
+								<input type="file" name="file-651" size="40"  accept=".jpg,
+								.jpeg,.png,.gif,.pdf,.doc,.docx,.ppt,.pptx,.odt,.avi,.ogg,.m4a,.mov,.mp3,.mp4,.mpg,.wav,.wmv" aria-invalid="false" />
+								<br />
+								<p class="row justify-content-center">
+									<button class="btn btn-dark botoes mr-3" type="reset">Cancelar</button>
+									<button class="btn btn-dark botoes" type="submit">Publicar</button>
+								</p>
+							</form>
+						</fieldset>
+					</div>
+	
+	
+                </div>
+            </div>
+
+        </div>
+        
+    </body>
+</html>
