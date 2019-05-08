@@ -8,16 +8,17 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/Contacte-nos.css">
+    <link rel="stylesheet" href="css/RegistarDoentes.css">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
     <script src="js/jquery.js"></script>
     <script src="js/popper.js"></script>
-	<script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap.js"></script>
+    
 </head>
 <body>
     <header>
         <div class="row">
-            <div class="col-sm-6 ml-5">
+            <div class="col-sm-9 ml-5">
                 <img src="imgs/icone-sapdr.png" class="ml-5">
             </div>
             <div>
@@ -77,205 +78,203 @@
            
         </nav>
     </header>
-    <div class="container  border col-sm-10 my-5 ">
-        <form action="" >
-             
-            <fieldset class="border mt-4">
-                <legend>Dados Pessoais</legend>
-                <div class="form-row">
-                    <div class="form-group col-sm-5 mt-2 ml-3">
-                        <label for="Nome" >Nome:</label>
-                        <input type="text"   class="form-control"  placeholder="Nome">
-                    </div>
-                    <div class="form-group col-sm-5 mt-2 ml-3">
-                        <label for="Apelido" >Apelido:</label>
-                        <input type="text" class="form-control" placeholder="Apelido">
-                    </div>
-                </div> 
 
-                <div class="form-row">
-                    <div class="form-group col-sm-5 mt-2 ml-3">
-                        <label for="Nome" >Data de Nascimento:</label>
-                        <input type="text"   class="form-control" placeholder="Nome">
-                    </div>
-                    <div class="form-group col-sm-5 mt-2 ml-3">
-                        <label for="Genero" >Genero:</label>
-                        <select class="form-control" id="Genero ">
-                            <option selected>...</option>
-                            <option >Maculino</option>
-                            <option >Femenino</option>
-                        </select>
-                    </div>
-                </div> 
-            </fieldset>
 
-            <fieldset class="border mt-4">
-                <legend>Filiacao</legend>
-                <div class="form-row">
-                    <div class="form-group col-sm-5 mt-2 ml-3">
-                        <label for="Nome" >Nome do Pai:</label>
-                        <input type="text"   class="form-control"  placeholder="Nome do Pai">
-                    </div>
-                    <div class="form-group col-sm-5 mt-2 ml-3">
-                        <label for="Apelido" >Nome da Mae:</label>
-                        <input type="text" class="form-control" placeholder="Nome da Mae">
-                    </div>
-                </div>
-            </fieldset>
-
-            <fieldset class="border mt-4">
-                <legend>Endereco e Contacto</legend>
-                <div class="form-row">
-                    <div class="form-group col-sm-5 mt-2 ml-3">
-                        <label for="Provincia" >Provincia:</label>
-                        <select class="form-control" id="Provincia">
-                            <option selected>...</option>
-                            <option >Maputo</option>
-                            <option >Gaza</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-sm-5 mt-2 ml-3">
-                        <label for="Distrito" >Distrito:</label>
-                        <select class="form-control" id="Distrito">
-                            <option selected>...</option>
-                            <option >...</option>
-                            <option >...</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="form-row">
-
-                    <div class="form-group col-sm-5 mt-2 ml-3">
-                        <label for="Bairro" >Bairro:</label>
-                        <select class="form-control" id="Bairro">
-                            <option selected>...</option>
-                            <option >Bairro</option>
-                            <option >Bairro</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group col-sm-5 mt-2 ml-3">
-                        <label for="Rua" >Rua:</label>
-                        <input type="text" class="form-control" placeholder="Rua">
-                    </div>
-                    
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group col-sm-5 mt-2 ml-3">
-                        <label for="Email" >Email:</label>
-                        <input type="email" class="form-control"  placeholder="Email">
-                    </div>
-                    <div class="form-group col-sm-5 mt-2 ml-3">
-                        <label for="Tellefone" >Tellefone:</label>
-                        <input type="number" class="form-control" placeholder="Tellefone">
-                    </div>
-                </div> 
+    <!--Conteudo da pagina-->
     
-            </fieldset>
-
-            <fieldset class="border mt-4">
-                <legend>Dados Medicos</legend>
-                <div class="form-row">
-                    <div class="form-group col-sm-5 mt-2 ml-3">
-                        <label for="Nome da Doenca" >Nome da Doenca:</label>
-                        <select class="form-control" id="Nome da Doenca">
-                            <option selected>...</option>
-                            <option >...</option>
-                            <option >...</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="form-row">
-                    
-                    <div class="form-group col-sm-5 mt-2 ml-3">
-                        <label for="E donte" >Encotra-se a Receber Tratamento:</label><br>
-                        <input type="radio" placeholder="Rua" name="E donte" >Sim<br>
-                        <input type="radio" placeholder="Rua" name="E donte" >Nao<br>
-                    </div>
-                    <div class="form-group col-sm-5 mt-2 ml-3">
-                        <label for="Hospital" >Se Sim. Em Que Unidade Hospitalar:</label>
-                        <select class="form-control" id="Hospital">
-                            <option selected>...</option>
-                            <option >...</option>
-                            <option >...</option>
-                        </select>
-                    </div>
-                    
-                </div>
+    <div class="container border col-sm-10 my-5 bg-light borda-form " id="div-cadastro-doente">
+        <label id="cadastro-doente"><h4>Cadastro de doentes</h4></label>
+        <div class="container">
+            <form action="" >
+                <fieldset class="border mt-4">
+                    <legend>Dados Pessoais</legend>
+                    <div class="form-row">
+                        <div class="form-group col-sm-5 mt-2 ml-3">
+                            <label for="Nome" >Nome:</label>
+                            <input type="text"   class="form-control"  placeholder="Nome">
+                        </div>
+                        <div class="form-group col-sm-5 mt-2 ml-3">
+                            <label for="Apelido" >Apelido:</label>
+                            <input type="text" class="form-control" placeholder="Apelido">
+                        </div>
+                    </div> 
     
-            </fieldset>
-
-            <fieldset class="border mt-4">
-                <legend>Dados de Acesso</legend>
-                <div class="form-row">
-                    <div class="form-group col-sm-5 mt-2 ml-3">
-                        <label for="Nome do Usuario" >Nome de Usuario:</label>
-                        <input type="text"   class="form-control"  placeholder="Nome do Usuario">
+                    <div class="form-row">
+                        <div class="form-group col-sm-5 mt-2 ml-3">
+                            <label for="Nome" >Data de Nascimento:</label>
+                            <input type="text"   class="form-control" placeholder="Nome">
+                        </div>
+                        <div class="form-group col-sm-5 mt-2 ml-3">
+                            <label for="Genero" >Genero:</label>
+                            <select class="form-control" id="Genero ">
+                                <option selected>...</option>
+                                <option >Maculino</option>
+                                <option >Femenino</option>
+                            </select>
+                        </div>
+                    </div> 
+                </fieldset>
+    
+                <fieldset class="border mt-4">
+                    <legend>Filiacao</legend>
+                    <div class="form-row">
+                        <div class="form-group col-sm-5 mt-2 ml-3">
+                            <label for="Nome" >Nome do Pai:</label>
+                            <input type="text"   class="form-control"  placeholder="Nome do Pai">
+                        </div>
+                        <div class="form-group col-sm-5 mt-2 ml-3">
+                            <label for="Apelido" >Nome da Mae:</label>
+                            <input type="text" class="form-control" placeholder="Nome da Mae">
+                        </div>
                     </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group col-sm-5 mt-2 ml-3">
-                        <label for="Senha" >Senha:</label>
-                        <input type="password"   class="form-control"  placeholder="Senha">
+                </fieldset>
+    
+                <fieldset class="border mt-4">
+                    <legend>Endereco e Contacto</legend>
+                    <div class="form-row">
+                        <div class="form-group col-sm-5 mt-2 ml-3">
+                            <label for="Provincia" >Provincia:</label>
+                            <select class="form-control" id="Provincia">
+                                <option selected>...</option>
+                                <option >Maputo</option>
+                                <option >Gaza</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-sm-5 mt-2 ml-3">
+                            <label for="Distrito" >Distrito:</label>
+                            <select class="form-control" id="Distrito">
+                                <option selected>...</option>
+                                <option >...</option>
+                                <option >...</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="form-group col-sm-5 mt-2 ml-3">
-                        <label for="Confirme a Senha" >Confirme a Senha:</label>
-                        <input type="password" class="form-control" placeholder="Confirme a Senha">
+                    
+                    <div class="form-row">
+    
+                        <div class="form-group col-sm-5 mt-2 ml-3">
+                            <label for="Bairro" >Bairro:</label>
+                            <select class="form-control" id="Bairro">
+                                <option selected>...</option>
+                                <option >Bairro</option>
+                                <option >Bairro</option>
+                            </select>
+                        </div>
+    
+                        <div class="form-group col-sm-5 mt-2 ml-3">
+                            <label for="Rua" >Rua:</label>
+                            <input type="text" class="form-control" placeholder="Rua">
+                        </div>
+                        
                     </div>
-                </div>
-
-            </fieldset>
-
-            <p class="row justify-content-center ml-3">
-                <button class="btn btn-outline-ligth botoes  ml-5 mx-3" type="reset">Apagar</button>
-                <button class="btn btn-outline-ligth botoes" type="submit">Submeter</button>
-            </p>
-            
-        </form>
-    </div>
-    <footer class="page-footer">
-        <div class="footer-border bgfooter">
-            <div class="container mt-2">
-                <div class="row dark-grey-text">
-                    <div class="col-4 list-group  text-center mb-2">
-                        <a class="list-group-item list-group-item-action mb-2 list-group-item-dark" href="">
-                            Doencas Raras
-                        </a>
-                        <a class="list-group-item list-group-item-action list-group-item-dark" href="">
-                            Foruns
-                        </a>
+                    
+                    <div class="form-row">
+                        <div class="form-group col-sm-5 mt-2 ml-3">
+                            <label for="Email" >Email:</label>
+                            <input type="email" class="form-control"  placeholder="Email">
+                        </div>
+                        <div class="form-group col-sm-5 mt-2 ml-3">
+                            <label for="Tellefone" >Tellefone:</label>
+                            <input type="number" class="form-control" placeholder="Tellefone">
+                        </div>
+                    </div> 
+        
+                </fieldset>
+    
+                <fieldset class="border mt-4">
+                    <legend>Dados Medicos</legend>
+                    <div class="form-row">
+                        <div class="form-group col-sm-5 mt-2 ml-3">
+                            <label for="Nome da Doenca" >Nome da Doenca:</label>
+                            <select class="form-control" id="Nome da Doenca">
+                                <option selected>...</option>
+                                <option >...</option>
+                                <option >...</option>
+                            </select>
+                        </div>
                     </div>
-            
-                    <div class="col-4  list-group text-center">
-                        <a class="list-group-item list-group-item-action mb-2 list-group-item-dark" href="">
-                            Publicacoes
-                        </a>
-                        <a class="list-group-item list-group-item-action list-group-item-dark" href="">
-                            Instituicoes e Associacoes
-                        </a>
+                    
+                    <div class="form-row">
+                        
+                        <div class="form-group col-sm-5 mt-2 ml-3">
+                            <label for="E donte" >Encotra-se a Receber Tratamento:</label><br>
+                            <input type="radio" placeholder="Rua" name="E donte" >Sim<br>
+                            <input type="radio" placeholder="Rua" name="E donte" >Nao<br>
+                        </div>
+                        <div class="form-group col-sm-5 mt-2 ml-3">
+                            <label for="Hospital" >Se Sim. Em Que Unidade Hospitalar:</label>
+                            <select class="form-control" id="Hospital">
+                                <option selected>...</option>
+                                <option >...</option>
+                                <option >...</option>
+                            </select>
+                        </div>
+                        
                     </div>
         
-                    <div class="col-4  list-group text-center">
-                        <a class="list-group-item list-group-item-action list-group-item-dark" href="">
-                            relatorios
-                        </a>
+                </fieldset>
+    
+                <fieldset class="border mt-4">
+                    <legend>Dados de Acesso</legend>
+                    <div class="form-row">
+                        <div class="form-group col-sm-5 mt-2 ml-3">
+                            <label for="Nome do Usuario" >Nome de Usuario:</label>
+                            <input type="text"   class="form-control"  placeholder="Nome do Usuario">
+                        </div>
+                    </div>
+    
+                    <div class="form-row">
+                        <div class="form-group col-sm-5 mt-2 ml-3">
+                            <label for="Senha" >Senha:</label>
+                            <input type="password"   class="form-control"  placeholder="Senha">
+                        </div>
+                        <div class="form-group col-sm-5 mt-2 ml-3">
+                            <label for="Confirme a Senha" >Confirme a Senha:</label>
+                            <input type="password" class="form-control" placeholder="Confirme a Senha">
+                        </div>
+                    </div>
+    
+                </fieldset>
+    
+                <p class="row justify-content-center ml-3 my-4">
+                    <button class="btn btn-outline-danger botoes  ml-5 mx-3" type="reset">Apagar</button>
+                    <button class="btn btn-outline-primary botoes" type="submit">Submeter</button>
+                </p>
+                
+            </form>
+        </div>
+    </div>
+    <footer class="page-footer footer-cor mt-5">
+        <div class="footer-border bgfooter">
+            <div class="container mt-2">
+                <div class="row  dark-grey-text">
+                    <div class="col-lg-4   text-center mb-2">
+                        <a class=" mb-2" href="">Doencas Raras </a>
+                    </div>
+                    <div class="col-lg-4   text-center mb-2">
+                        <a class=" mb-2" href="">Publicacoes </a>
+                    </div>
+                    <div class="col-lg-4   text-center mb-2">
+                        <a class=" mb-2" href="">Relatorios </a>
+                    </div>
+                </div>
+                <div class="row  dark-grey-text">
+                    <div class="col-lg-4   text-center mb-2">
+                        <a class=" mb-2" href="">Foruns </a>
+                    </div>
+                    <div class="col-lg-4   text-center mb-2">
+                        <a class=" mb-2" href="">Instituicoes e Associacoes </a>
+                    </div>
+                    <div class="col-lg-4   text-center mb-2">
+                        <a href="Contacte-nos.html" class="link">Contacte-nos</a>
                     </div>
                 </div>
             </div>
         </div>
     
-        <div class="row justify-content-center footer-copyright py-1 border-top-1 bgfooter" >
+        <div class="row justify-content-center footer-copyright py-1 border-top-1 bg-dark" >
             &copy; 2019 copyright:Timba
         </div>
-        
-        <div class="row justify-content-center py-1" id="footerContacto">
-            <a href="Contacte-nos.html" class="link">Contacte-nos</a>
-        </div>
-
     </footer>
 </body>
 </html>

@@ -1,0 +1,14 @@
+
+
+legend{
+    color: #52cd4e;
+}
+
+/******** Conteudo******/
+
+#cadastro{
+    position: relative;
+    height: 92vh;
+    overflow-y: auto;
+
+}
