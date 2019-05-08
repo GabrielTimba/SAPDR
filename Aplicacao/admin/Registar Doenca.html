@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         
-        <title>Painel Administrativo</title>
+        <title>Registar Doenca</title>
         
         <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
         <link rel="stylesheet" href="../css/fonts.css">
@@ -102,7 +102,7 @@
             <div class="container-fluid" id="conteudo">
                 <div class="row conteudo-dir pt-4">
                     <h5 class="ml-3">Painel Administrativo</h5>
-                    <p class="ml-5"> <span>Registar Profissional</span>  >> </p>
+                    <p class="ml-5"> <span>Registar Doenca</span>  >> </p>
                 </div>
                 <div class="row justify-content-center">
 
@@ -110,131 +110,44 @@
                     <form action="" >
                             
                         <fieldset class="border mt-4">
-                            <legend>Dados Pessoais</legend>
+                            <legend>Dados da Doenca</legend>
                             <div class="form-row">
                                 <div class="form-group col-sm-5 mt-2 ml-3">
-                                    <label for="Nome" >Nome:</label>
-                                    <input type="text"   class="form-control"  placeholder="Nome" required>
+                                    <label for="NomeDoenca" >Nome da Doenca:</label>
+                                    <input type="text"   class="form-control"  placeholder="Nome da Doenca" required>
                                 </div>
-                                <div class="form-group col-sm-5 mt-2 ml-3">
-                                    <label for="Apelido" >Apelido:</label>
-                                    <input type="text" class="form-control" placeholder="Apelido" required>
-                                </div>
+    
                             </div> 
             
                             <div class="form-row">
+                            
                                 <div class="form-group col-sm-5 mt-2 ml-3">
-                                    <label for="Nome" >Data de Nascimento:</label>
-                                    <input type="text"   class="form-control" placeholder="Nome" required>
-                                </div>
-                                <div class="form-group col-sm-5 mt-2 ml-3">
-                                    <label for="Genero" >Genero:</label>
+                                    <label for="Tipo" >Tipo de Doenca:</label>
                                     <select class="form-control" id="Genero " required>
-                                        <option disabled selected>...</option>
-                                        <option >Maculino</option>
-                                        <option >Femenino</option>
-                                    </select>
-                                </div>
-                            </div> 
-                        </fieldset>
-            
-                        <fieldset class="border mt-4">
-                            <legend>Endereco e Contacto</legend>
-                            <div class="form-row">
-                                <div class="form-group col-sm-5 mt-2 ml-3">
-                                    <label for="Provincia" >Provincia:</label>
-                                    <select class="form-control" id="Provincia" required>
                                         <option selected>...</option>
-                                        <option >Maputo</option>
-                                        <option >Gaza</option>
+                                        <option >Proliferativas</option>
+                                        <option >Degenerativas</option>
                                     </select>
-                                </div>
-                                <div class="form-group col-sm-5 mt-2 ml-3">
-                                    <label for="Distrito" >Distrito:</label>
-                                    <select class="form-control" id="Distrito" required>
-                                        <option disabled selected>...</option>
-                                        <option >...</option>
-                                        <option >...</option>
-                                    </select>
-                                </div>
-                            </div>
-                            
-                            <div class="form-row">
-            
-                                <div class="form-group col-sm-5 mt-2 ml-3">
-                                    <label for="Bairro" >Bairro:</label>
-                                    <select class="form-control" id="Bairro" required>
-                                        <option disabled selected>...</option>
-                                        <option >Bairro</option>
-                                        <option >Bairro</option>
-                                    </select>
-                                </div>
-            
-                                <div class="form-group col-sm-5 mt-2 ml-3">
-                                    <label for="Rua" >Rua:</label>
-                                    <input type="text" class="form-control" placeholder="Rua">
-                                </div>
-                                
-                            </div>
-                            
-                            <div class="form-row">
-                                <div class="form-group col-sm-5 mt-2 ml-3">
-                                    <label for="Email" >Email:</label>
-                                    <input type="email" class="form-control"  placeholder="Email" required>
-                                </div>
-                                <div class="form-group col-sm-5 mt-2 ml-3">
-                                    <label for="Tellefone" >Tellefone:</label>
-                                    <input type="number" class="form-control" placeholder="Tellefone" required>
                                 </div>
                             </div> 
-                
-                        </fieldset>
-            
-                        <fieldset class="border mt-4">
-            
-                            <legend>Informaco Profissional</legend>
+
                             <div class="form-row">
-            
                                 <div class="form-group col-sm-5 mt-2 ml-3">
-                                    <label for="Unidade Hospitalar" >Unidade Hospitalar:</label>
-                                    <select class="form-control" id="Unidade Hospitalar" required>
-                                        <option disabled selected>...</option>
-                                        <option >...</option>
-                                        <option >...</option>
-                                    </select>
-                                </div>
-            
-                                <div class="form-group col-sm-5 mt-2 ml-3">
-                                    <label for="Nr de Cartao da Ordem dos Medicos" >Nr de Cartao da Ordem dos Medicos:</label>
-                                    <input type="text"   class="form-control"  placeholder="Nr de Cartao da Ordem dos Medicos" required>
+                                    <label for="Provincia" >Espectativa de Vida:</label>
+                                    <input type="number" class="form-control" placeholder="Espetactiva de Vida" required>
                                 </div>
                                 
                             </div>
-                
-                
-                        </fieldset>
-            
-                        <fieldset class="border mt-4">
-                            <legend>Dados de Acesso</legend>
+
                             <div class="form-row">
                                 <div class="form-group col-sm-5 mt-2 ml-3">
-                                    <label for="Nome do Usuario" >Nome de Usuario:</label>
-                                    <input type="text"   class="form-control"  placeholder="Nome do Usuario" required>
+                                    <label for="Sintomas">Sintomas:</label>
                                 </div>
+
                             </div>
-            
-                            <div class="form-row">
-                                <div class="form-group col-sm-5 mt-2 ml-3">
-                                    <label for="Senha" >Senha:</label>
-                                    <input type="password"   class="form-control"  placeholder="Senha" required>
-                                </div>
-                                <div class="form-group col-sm-5 mt-2 ml-3">
-                                    <label for="Confirme a Senha" >Confirme a Senha:</label>
-                                    <input type="password" class="form-control" placeholder="Confirme a Senha" required>
-                                </div>
-                            </div>
-            
+                            
                         </fieldset>
+                       
             
                         <p class="row justify-content-center ml-3 mt-2">
                             <button class="btn btn-outline-danger botoes  ml-5 mx-3" type="reset">Apagar</button>
@@ -275,4 +188,4 @@
 
 
 
-<!--Programer: Ricardo, Folege Lourenco-->
+<!--Programer: Ricardo,Folege Lourenco-->
