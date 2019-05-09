@@ -15,24 +15,27 @@
 <body>
     <header>
         <div class="row">
-            <img src="imgs/icone-sapdr.png" class="ml-5">
-            <div class="container">
-
-                <ul class="navbar-nav list-group-horizontal float-right mt-2">
-                    <li class="nav-item mt-2">
-                        <a href="" class="link">Contacte-nos</a>
-                    </li>
-                    <li class="nav-item dropdown ml-3">
+            <div class="col-sm-9 ml-5">
+                <img src="imgs/icone-sapdr.png" class="ml-5">
+            </div>
+            <div>
+                <div class="col-sm-12 float-right ml-5">
+                    <ul class="navbar-nav list-group-horizontal float-right mt-2">
+                        <li class="nav-item mt-2">
+                            <a href="" class="link">Contacte-nos</a>
+                        </li>
+                        <li class="nav-item dropdown ml-3">
+                        
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Minha conta</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Entrar</a>
+                                <a class="dropdown-item" href="#">Registar</a>
+                            </div>
+                        
+                        </li> 
+                    </ul>
                     
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Minha conta</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Entrar</a>
-                            <a class="dropdown-item" href="#">Registar</a>
-                        </div>
-                    
-                    </li> 
-                </ul>
-                
+                </div>
             </div>
         </div>
         <nav class="row navbar navbar-expand-lg navbar-light mt-2 cor-verde">
@@ -72,48 +75,82 @@
            
         </nav>
     </header>
-    <div class="mt-2 ml-2">
-        <a href="#">
-            <button type="button" class="btn btn-primary">
-                Lista de Todas Doencas
-            </button>
-        </a>
-        <a href="#">
-            <button type="button" class="btn btn-primary">
-                    Pesquisar Doencas
-            </button>
-        </a>
-    </div>
-    <div class="ml-2 mr-5" id="Doencas+">
-        
-        <legend>Doencas Mais Pesquisadas</legend>
-        <div class="card">
-            <div class="card-header">
-                Doenca 1
-                <nav class="navbar bg-light navbar-primary">
-                    <ul class="nav nav-pills nav-justified">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Caracteristicas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Sintomas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Tratamento</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="card-body">
-                <P>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Perspiciatis sed vel ullam esse. Eligendi harum, ullam adipisci, 
-                    voluptates mollitia corrupti alias obcaecati odio saepe amet, at cum minima eum ea.
-                </P>
+
+    <!--conteudo-->
+    <div class="my-5 ">
+        <div class="row float-right mr-5 ">
+            <div class="">
+                <form class="form-inline ">
+                    <input class="form-control" type="search" name="pesquisa" id="pesquisar-doenca" placeholder="Pesquisar doenca...">
+                    <button class="btn btn-primary mr-5 ml-3" type="submit">Pesquisar</button>
+                </form>
             </div>
         </div>
         
-
+        <div class="row mt-5 float-left ml-4" >
+            <div class="col-12" id="Doencas+">
+                <legend class="text-success">Doencas Raras</legend>
+                <div class="card">
+                    <div class="card-header">
+                        <label><span class="text-success">Doenca 1: </span>Paralesia celebral</label> 
+                        <nav class="navbar bg-light navbar-primary">
+                            <ul class="nav nav-pills nav-justified">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#">Caracteristicas</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Sintomas</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Tratamento</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="card-body">
+                        <P>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Perspiciatis sed vel ullam esse. Eligendi harum, ullam adipisci, 
+                            voluptates mollitia corrupti alias obcaecati odio saepe amet, at cum minima eum ea.
+                        </P>
+                    </div>
+                </div>   
+            </div>
+        </div>
     </div>
+
+    <!--Rodape-->
+    <footer class="page-footer fixed-bottom footer-cor">
+        <div class="footer-border bgfooter">
+            <div class="container mt-2">
+                <div class="row  dark-grey-text">
+                    <div class="col-lg-4   text-center mb-2">
+                        <a class=" mb-2" href="">Doencas Raras </a>
+                    </div>
+                    <div class="col-lg-4   text-center mb-2">
+                        <a class=" mb-2" href="">Publicacoes </a>
+                    </div>
+                    <div class="col-lg-4   text-center mb-2">
+                        <a class=" mb-2" href="">Relatorios </a>
+                    </div>
+                </div>
+                <div class="row  dark-grey-text">
+                    <div class="col-lg-4   text-center mb-2">
+                        <a class=" mb-2" href="">Foruns </a>
+                    </div>
+                    <div class="col-lg-4   text-center mb-2">
+                        <a class=" mb-2" href="">Instituicoes e Associacoes </a>
+                    </div>
+                    <div class="col-lg-4   text-center mb-2">
+                        <a href="Contacte-nos.html" class="link">Contacte-nos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="row justify-content-center footer-copyright py-1 border-top-1 bg-dark" >
+            &copy; 2019 copyright:Timba
+        </div>
+    </footer>
 </body>
 </html>
