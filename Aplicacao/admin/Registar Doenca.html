@@ -18,6 +18,7 @@
         <script src="../js/popper.js"></script>
         <script src="../js/bootstrap.js"></script>
         <script src="../js/painel-admin.js"></script>
+        <script src="../js/Registar Doenca.js"></script>
     </head>
     <body>
         <!--Cabecalho-->
@@ -141,7 +142,16 @@
 
                             <div class="form-row">
                                 <div class="form-group col-sm-5 mt-2 ml-3">
-                                    <label for="Sintomas">Sintomas:</label>
+                                    <label for="Sintomas">Sintomas:</label><br>
+                                    <input type="text" class="form-control" placeholder="Espetactiva de Vida" required>
+                                    <script type="text/javascript">
+                                        //Escrevendo o código-fonte HTML e ocultando os campos criados:
+                                        for (iLoop = 1; iLoop <= totalCampos; iLoop++) {
+                                                document.write("<span id='linha"+iLoop+"' >Sintoma "+iLoop+": <input type='text' size='10' id='arq"+iLoop+"' name='arq"+iLoop+"'> <input type='button' value='Remover Sintoma' onclick='RemoverCampos(\""+iLoop+"\")'></span>");
+                                        }
+                                    </script>
+                                   
+                                    <input  type="button" class="form-control btn-outline-primary" value="Adicionar Sintoma" onclick="AddCampos()">
                                 </div>
 
                             </div>
