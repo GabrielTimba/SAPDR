@@ -1,5 +1,4 @@
    //Total máximo de campos que você permitirá criar em seu site:
-   alert('Folege');
    var totalCampos = 10;
 
    //Não altere os valores abaixo, pois são variáveis controle;
@@ -31,7 +30,6 @@
                    }
            }
              //Total máximo de campos que você permitirá criar em seu site:
-   alert('Folege');
            //Quebrando a lista que foi armazenada em hidden2 em array:
 
            linhasOcultas = hidden2.value.split(",");
