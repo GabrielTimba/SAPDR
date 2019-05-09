@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         
-        <title>Painel Administrativo</title>
+        <title>Documentos Admin</title>
         
         <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
         <link rel="stylesheet" href="../css/fonts.css">
@@ -103,40 +103,74 @@
                 <div class="row conteudo-dir pt-4">
                     <h5 class="ml-3">Painel Administrativo</h5>
                     <p class="ml-5"> <span>Painel Administrativo</span>   </p>
+                </div>	
 					
 					
 					
-					
-					<div id="listaDoc" >
+					<div id="listaDoc" class="row justify-content-center">
+                        <table class="table col-10 tabela mt-5" id="tdoc">
+                        <thead>
+                            <tr class="cor-creme">
+                                <td class="titulo-tabela" colspan="2"><i class="fa fa-chart-bar mr-2"></i>Estatísticas Globais</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th class="texto-verde">   </th>
+                                <th class="texto-verde">Titulo</th>
+                                <th class="texto-verde">Data de publicacao</th>
+                                <th class="texto-verde">Sustituir ficheiro</th>
+                            </tr>
 
-								<table border="1">
-									<tr>
-										<th>    </th>
-										<th>Titulo</th>
-										<th>Data de publicacao</th>
-										<th>Accao</th>
-									</tr>
-									<tr>
-										<td></td><td>relatorio 1</td><td>Vento</td><td>Areia</td>
-									</tr>
-									<tr>
-										<td></td><td>relatorio 2</td><td>Raio</td><td>Nuvem</td>
-									</tr>
-									<tr>
-										<td></td><td>relatorio 3</td><td>Terra</td><td>Pedra</td>
-									</tr>
-									<tr>
-										<td></td><td>relatorio 4</td><td>Fogo</td><td>Folha</td>
-									</tr>
-									<tr>
-										<td></td><td>relatorio 5</td><td>Água</td><td>Névoa</td>
-									</tr>
-								</table>	
-							<a href="pubdocumentos-admin.html" class="ligacoes">Adicionar relatorio</a>
-					</div>
-	
-	
-                </div>
+                            <tr>
+                                <td></td>
+                                <td>10</td>
+                                <td>10</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td>Doenças Raras</td>
+                                <td>11</td>
+                            </tr>
+                            <tr>
+                                <td>Profissionais da Saúde</td>
+                                <td>12</td>
+                            </tr>
+                            <tr>
+                                <td>Pedidos Pendetes</td>
+                                <td>13</td>
+                            </tr>
+                            <tr>
+                                <td>Mensagens Recebidas</td>
+                                <td>13</td>
+                            </tr>
+                            <tr>
+                                <td>Documentos Publicados</td>
+                                <td>13</td>
+                            </tr>
+                            <tr>
+                                <td>Artigos Publicados</td>
+                                <td>13</td>
+                            </tr>
+                            <tr>
+                                <td>Campanhas Publicados</td>
+                                <td>13</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                            		
+							
+                    </div>
+                    <div class="row justify-content-center">
+                    <a class="btn btn-dark " href="pubdocumentos-admin.html" class="ligacoes">
+                    Adicionar relatorio</a>
+                    </div>
+
+                    <footer class="row justify-content-center mt-5">
+                            <div class="col-lg-4">
+                                <p><span class="texto-verde">SAPDR</span>  &copy; 2019 - Todos Direitos Reservados<br> </p>
+                            </div>
+                    </footer>
             </div>
 
         </div>
