@@ -17,6 +17,8 @@
 	<script src="js/bootstrap.js"></script>
 </head>
 <body>
+
+    <!--Cabecalho -->
     <header class="container-fluid navbar-expand-sm">
 
         <div class="row">
@@ -34,7 +36,7 @@
                 
                             <a class="nav-link dropdown-toggle texto-verde" href="#" data-toggle="dropdown"><i
                                     class="fas fa-user mr-1"></i>Minha conta</a>
-                            <div class="dropdown-menu">
+                            <div class="dropdown-menu cor-verde">
                                 <a class="dropdown-item" href="#">Entrar</a>
                                 <a class="dropdown-item" href="#">Registar</a>
                             </div>
@@ -85,6 +87,7 @@
         </nav>
     </header>
 
+    <!--Slides-->
     <div id="carouselSite" class="carousel slide" data-ride="carousel">
     
         <ol class="carousel-indicators">
@@ -127,7 +130,7 @@
         </a>
     </div>
 
-
+    <!--Conteudo-->
     <div class="container" id="conteudo">
         
         <div class="row my-5">
@@ -214,13 +217,14 @@
           
     </div>
 
-    <footer class="container-fluid page-footer footer-cor navbar-expand-lg">
+    <!--Rodape-->
+    <footer class="container-fluid page-footer footer-cor">
         
         <div class="row mt-2 p-3 footer-border bgfooter dark-grey-text">
             <div class="col-12 ">
                 <div class="row">
                     
-                    <div class="col-3">
+                    <div class="col-3 d-none d-sm-none d-md-block">
                         <h4>Categorias</h4>
                         <ul>
                             <li><a href="doencas-raras.html">Doenças Raras </a></li>
@@ -230,25 +234,26 @@
                         </ul>
                     </div>
                     
-                    <div class="col-3">
+                    <div class="col-3 d-none d-sm-none d-md-block">
                         <h4>Publicações</h4>
                         <ul>
                             <li><a href="">Campanhas</a></li>
                             <li><a href="">Artigos</a></li>
                             <li><a href="">Pedidos de Apoio</a></li>
                             <li><a href="">Instituicoes &<br> Associacoes</a></li>
-                        </u l>
+                        </ul>
+          
                     </div>
                     
-                    <div class="col-3 ">
+                    <div class="col-md-3 ">
                         <form class="form-inline">
-                            <label class="mb-2" for="pesquisar">Pesquise por uma doenca rara</label>
+                            <label class="mb-2 mr-2" for="pesquisar">Pesquise por uma doenca rara</label>
                             <input class="form-control mr-1" id="pesquisar" type="search" placeholder="Buscar..." required>
                             <button class="btn btn-dark" type="submit"><i class="fa fa-search"></i></button>
                         </form>
                     </div>
                    
-                    <div class="col-3">
+                    <div class="col-md-3">
                         <h5>Siga-nos/Contactacte-nos</h5>
                         <ul class="list-unstyled footer-icone" >
                             <li class="list-inline-item"><a href=""><i class="fab  fa-facebook-square"></i></a></li>
