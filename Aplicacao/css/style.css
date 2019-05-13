@@ -2,7 +2,26 @@
     background-color:#52cd4e;
 }
 
-.bgfooter{
+#menubar ul li a {
+    font: 20px;
+    color: #fff;
+}
+
+#menubar ul li a:hover {
+    color: #000;
+}
+
+a:hover {
+    color: #000;
+    text-decoration:none;
+}
+.texto-verde {
+    color:rgb(82, 205, 78);
+}
+
+
+/******* Rodape ************/
+.bgfooter{ 
     background-color: rgba(0,0, 0, .7);
 }
 
@@ -22,3 +41,8 @@
 footer a{
     color: #28a745b5;
 }
+
+.footer-icone {
+    font-size: 40px;
+}
+
