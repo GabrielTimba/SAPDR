@@ -4,3 +4,8 @@
 		  position: absolute;}
 		  
 #campo{border-color: black;}
+
+.breadcrumb{
+    background-color: rgb(82, 205, 78);
+    color: black;
+}
