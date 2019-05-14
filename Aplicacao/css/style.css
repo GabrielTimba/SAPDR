@@ -19,6 +19,21 @@ a:hover {
     color:rgb(82, 205, 78);
 }
 
+.cor-borda {
+    border: 1px solid #c2c2c2;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.cor-creme {
+    background: #f6f6f6;
+}
+
+/******* Directorio **********/
+#dir, #dir a {
+    color: rgb(212, 209, 209);
+    font-size: 13px;
+}
 
 /******* Rodape ************/
 .bgfooter{ 
