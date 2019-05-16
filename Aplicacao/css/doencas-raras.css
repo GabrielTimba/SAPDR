@@ -1,0 +1,7 @@
+.active {
+    background-color: rgba(14, 223, 84, 0.7) !important;
+}
+
+.tab-pane .row .col-12 {
+    background-color: white;
+}

@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Doenças Raras | SAPDR</title>
+    
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/fontawesome/css/all.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/doencas-raras.css">
+
     <script src="js/jquery.js"></script>
     <script src="js/popper.js"></script>
 	<script src="js/bootstrap.js"></script>
@@ -112,36 +115,188 @@
     <div class="container">
           
         <div class="row mb-5" >
-            <div class="col-12" id="Doencas+">
+            <div class="col-12">
                 
-                <div class="card">
-                    <div class="card-header">
-                        <label><span class="text-success">Doenca 1: </span>Paralesia celebral</label> 
-                        <nav class="navbar bg-light navbar-primary">
-                            <ul class="nav nav-pills nav-justified">
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="#">Caracteristicas</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Sintomas</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Tratamento</a>
-                                </li>
-                            </ul>
-                        </nav>
+                    <div class="row">
+                        <!--lista do tipo -->
+                        <ul class="nav nav-pills ml-3 mb-3" id="tipo" role="tablist">
+                            <li class="nav-item">
+                                <h6 class="mt-2">Tipo |</h6>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active active1 texto-verde" id="" data-toggle="pill" href="#tipo1">Proliferativas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link texto-verde" id="" data-toggle="pill" href="#tipo2">Degenerativas</a>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="card-body">
-                        <P>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Perspiciatis sed vel ullam esse. Eligendi harum, ullam adipisci, 
-                            voluptates mollitia corrupti alias obcaecati odio saepe amet, at cum minima eum ea.
-                        </P>
+                    
+                    <div class="row">
+                        <!--conteudo da lista tipo -->
+                        <div class="col-12 tab-content" id="nav-pills-tipo">
+                    
+                            <div class="tab-pane fade show active" id="tipo1" role="tabpanel">
+                                <div class="card">
+                                    <div class="card-header">
+                    
+                                        <h6><span class="text-success">1 - </span>Paralesia celebral</h6>
+                    
+                                        <nav class="navbar bg-light navbar-primary">
+                                            <ul class="nav nav-pills" id="nav-doenca" role="tablist">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active text-success" id="ca-1" data-toggle="pill"
+                                                        href="#c-1">Características</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link text-success" id="si-1" data-toggle="pill" href="#s-1">Sintomas</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link text-success" id="tr-1" data-toggle="pill" href="#t-1">Tratamento</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link text-success" id="pr-1" data-toggle="pill" href="#p-1">Prevenção</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                    
+                                    </div>
+                    
+                                    <div class="card-body tab-content " id="nav-pills-conteudo">
+                    
+                                        <div class="tab-pane fade show active" id="c-1" role="tabpanel">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <p>
+                                                        11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+                                                    </p>
+                                                </div>
+                    
+                                            </div>
+                                        </div>
+                    
+                                        <div class="tab-pane fade" id="s-1" role="tabpanel">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <p>
+                                                        222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222
+                                                    </p>
+                                                </div>
+                    
+                                            </div>
+                                        </div>
+                    
+                                        <div class="tab-pane fade" id="t-1" role="tabpanel">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <p>
+                                                        333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333
+                                                    </p>
+                                                </div>
+                    
+                                            </div>
+                                        </div>
+                    
+                                        <div class="tab-pane fade" id="p-1" role="tabpanel">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <p>
+                                                        444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444
+                                                    </p>
+                                                </div>
+                    
+                                            </div>
+                                        </div>
+                    
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <div class="tab-pane fade" id="tipo2" role="tabpanel">
+                                <div class="card">
+                                    <div class="card-header">
+                    
+                                        <h6><span class="text-success">1 - </span>Cancro de Cabelo</h6>
+                    
+                                        <nav class="navbar bg-light navbar-primary">
+                                            <ul class="nav nav-pills" id="nav-doenca" role="tablist">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active text-success" id="tp2-ca-1" data-toggle="pill"
+                                                        href="#tp2-c-1">Características</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link text-success" id="tp2-si-1" data-toggle="pill"
+                                                        href="#tp2-s-1">Sintomas</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link text-success" id="tp2-tr-1" data-toggle="pill"
+                                                        href="#tp2-t-1">Tratamento</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link text-success" id="tp2-pr-1" data-toggle="pill"
+                                                        href="#tp2-p-1">Prevenção</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                    
+                                    </div>
+                    
+                                    <div class="card-body tab-content" id="nav-pills-conteudo">
+                    
+                                        <div class="tab-pane fade show active" id="tp2-c-1" role="tabpanel">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <p>
+                                                        11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+                                                    </p>
+                                                </div>
+                    
+                                            </div>
+                                        </div>
+                    
+                                        <div class="tab-pane fade" id="tp2-s-1" role="tabpanel">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <p>
+                                                        222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222
+                                                    </p>
+                                                </div>
+                    
+                                            </div>
+                                        </div>
+                    
+                                        <div class="tab-pane fade" id="tp2-t-1" role="tabpanel">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <p>
+                                                        333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333
+                                                    </p>
+                                                </div>
+                    
+                                            </div>
+                                        </div>
+                    
+                                        <div class="tab-pane fade" id="tp2-p-1" role="tabpanel">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <p>
+                                                        444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444
+                                                    </p>
+                                                </div>
+                    
+                                            </div>
+                                        </div>
+                    
+                                    </div>
+                                </div>
+                            </div>
+                    
+                        </div>
                     </div>
-                </div>
 
+                </div>
+                
             </div>
-        </div>
     </div>
 
     <!--Rodape-->
