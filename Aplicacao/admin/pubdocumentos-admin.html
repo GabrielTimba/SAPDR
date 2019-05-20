@@ -53,32 +53,35 @@
         <div id="corpo">
 
             <!--Menu Lateral Esquerdo-->
-            <nav  id="menu">
-                <div  id="menu-cabecalho">
+            <nav class="overflow-auto" id="menu">
+                <div id="menu-cabecalho">
                     <h3 class="ml-5">Menu</h3>
                 </div>
-
+            
                 <ul class="list-unstyled menu-componetes menu-switch">
-                    <p>Navegacao</p>
+                    <p>Navegação</p>
                     <hr class="linha">
                     <li>
                         <a href="painel-admin.html"><i class="fa fa-chart-bar mr-2"></i>Painel Administrativo</a>
                     </li>
                     <hr class="linha">
                     <li>
-                        <a class="dropdown-toggle" data-toggle="collapse" aria-expanded="false" href="#menu-usuarios"><i class="fas fa-users mr-2"></i>Usuarios</a>
+                        <a class="dropdown-toggle" data-toggle="collapse" aria-expanded="false" href="#menu-usuarios"><i
+                                class="fas fa-users mr-2"></i>Usuários</a>
                         <ul class="collapse list-unstyled menu-dropdown" id="menu-usuarios">
-                            <li><a href="#"><i class="fas fa-angle-double-right mr-2"></i>Profissional da Saude</a></li>
+                            <li><a href="lista de profissionais.html"><i class="fas fa-angle-double-right mr-2"></i>Profissional da
+                                    Saúde</a></li>
                             <li><a href="#"><i class="fas fa-angle-double-right mr-2"></i>Doente/Represetante</a></li>
                         </ul>
                     </li>
                     <hr class="linha">
-                    <li><a href="#"><i class="fas fa-list-ul mr-2"></i>Doencas Raras</a></li>
+                    <li><a href="Lista de Doencas.html"><i class="fas fa-list-ul mr-2"></i>Doenças Raras</a></li>
                     <hr class="linha">
                     <li><a href="#"><i class="fas fa-cogs mr-2"></i>Administrar Forum</a></li>
                     <hr class="linha">
                     <li>
-                        <a class="dropdown-toggle" data-toggle="collapse" aria-expanded="false" href="#menu-publicacoes"><i class="fas fa-newspaper mr-2"></i>Publicacoes</a>
+                        <a class="dropdown-toggle" data-toggle="collapse" aria-expanded="false" href="#menu-publicacoes"><i
+                                class="fas fa-newspaper mr-2"></i>Publicações</a>
                         <ul class="collapse list-unstyled menu-dropdown" id="menu-publicacoes">
                             <li><a href="documentos-admin.html"><i class="fas fa-angle-double-right mr-2"></i>Documentos</a></li>
                             <li><a href="#"><i class="fas fa-angle-double-right mr-2"></i>Artigos</a></li>
@@ -89,10 +92,11 @@
                     <li><a href="#"><i class="fas fa-h-square mr-2"></i> Instituicoes da Saude</a></li>
                     <hr class="linha">
                     <li>
-                        <a class="dropdown-toggle" data-toggle="collapse" aria-expanded="false" href="#menu-mensagens"><i class="fa fa-envelope mr-2"></i> Mensagens</a>
+                        <a class="dropdown-toggle" data-toggle="collapse" aria-expanded="false" href="#menu-mensagens"><i
+                                class="fa fa-envelope mr-2"></i> Mensagens</a>
                         <ul class="collapse list-unstyled menu-dropdown" id="menu-mensagens">
                             <li><a href="#"><i class="fas fa-angle-double-right mr-2"></i>Pedidos de Apoio</a></li>
-                            <li><a href="#"><i class="fas fa-angle-double-right mr-2"></i>Mensafens de Doentes</a></li>
+                            <li><a href="#"><i class="fas fa-angle-double-right mr-2"></i>Mensagens de Doentes</a></li>
                         </ul>
                     </li>
                     <hr class="linha">
@@ -101,50 +105,41 @@
 
             <!--Conteudo-->
             <div class="container-fluid" id="conteudo">
+                
                 <div class="row conteudo-dir pt-4">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="painel-admin.html">Painel Administrativo</a></li>
-                      </ol>
-                      <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="documentos-admin.html">Lista de documentos</a></li>
-                        <li class="breadcrumb-item active">Publicar documentos</li>
-                      </ol>
-                      <br>
-					
-					
-					
-                    
-					<div id="form-pub" >
-                            <h2>Adicionar um documento</h2><br>
-							<form action="" method="post" class="cor-borda p-3">    
-								Titulo: <br>
-								<input type="text" size="30" name="texto"><br><br>
-								Descricao: <br> 
-								<textarea name="" id="" cols="70" rows="6"></textarea>
-                               <!-- <div class="image-upload">
-                                    <label for="file-input">
-                                        <img src="https://goo.gl/pB9rpQ"/>
-                                    </label>
-                                    <input type="file"  name="file-651" size="40"  accept=".jpg,
-                                    .jpeg,.png,.gif,.pdf,.doc,.docx,.ppt,.pptx,.odt,.avi,.ogg,.m4a,.mov,.mp3,.mp4,.mpg,.wav,.wmv" aria-invalid="false" />
-                                </div><br />-->
-                                <div class="image-upload">
-                                    <input  type="file"/>
-                                   <!-- <label for="file-input">
-                                        <img src="../media/images.png"/>
-                                    </label>
-                                </div>--><br>
-								<p class="row justify-content-center">
-                                        <a class="btn btn-dark btn-large btn-primary mr-3"
-                                         href="documentos-admin.html">Cancelar</a>
-									<a class="btn btn-dark btn-large btn-primary" href="#">
-                                         Publicar</a>
-								</p>
-							</form>
-					</div>
+                    <h5 class="ml-3">Publicações</h5>
+                    <p class="ml-5 dir"><a href="painel-admin.html">Inicio</a> >> Publicações >><span class="text-sucess"> Documentos</span></p>
+                </div>					
 	
-	
+                <div id="form-pub" >
+                        <h2>Adicionar um documento</h2><br>
+                        <form action="" method="post" class="cor-borda p-3">    
+                            Titulo: <br>
+                            <input type="text" size="30" name="texto"><br><br>
+                            Descricao: <br> 
+                            <textarea name="" id="" cols="70" rows="6"></textarea>
+                            <!-- <div class="image-upload">
+                                <label for="file-input">
+                                    <img src="https://goo.gl/pB9rpQ"/>
+                                </label>
+                                <input type="file"  name="file-651" size="40"  accept=".jpg,
+                                .jpeg,.png,.gif,.pdf,.doc,.docx,.ppt,.pptx,.odt,.avi,.ogg,.m4a,.mov,.mp3,.mp4,.mpg,.wav,.wmv" aria-invalid="false" />
+                            </div><br />-->
+                            <div class="image-upload">
+                                <input  type="file"/>
+                                <!-- <label for="file-input">
+                                    <img src="../media/images.png"/>
+                                </label>
+                            </div>--><br>
+                            <p class="row justify-content-center">
+                                    <a class="btn btn-dark btn-large btn-primary mr-3"
+                                        href="documentos-admin.html">Cancelar</a>
+                                <a class="btn btn-dark btn-large btn-primary" href="#">
+                                        Publicar</a>
+                            </p>
+                        </form>
                 </div>
+
             </div>
 
         </div>

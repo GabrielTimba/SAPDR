@@ -50,7 +50,7 @@ a, a:hover, a:focus {
     background: #52cd4e;
     color: #fff;
     transition: all 0.3s;
-    height: 110vh;
+    height: inherit;
 }
 
 #menu.menu-cabecalho {
@@ -142,7 +142,7 @@ a[data-toggle="collapse"] {
     background:#f6f6f6;
 }
 
-.texto-verde {
+.texto-verde, .dir span {
     color: #52cd4e;
 }
 
@@ -162,6 +162,12 @@ a[data-toggle="collapse"] {
     border-bottom: 1px solid #c2c2c2;
 }
 
+.dir, .dir a {
+    color: #8d8b8b;
+    font-size: 13px;
+}
+
+
 .tabela {
     background: #fff;
     border: 1px solid #c2c2c2;
@@ -172,3 +178,23 @@ a[data-toggle="collapse"] {
     font-size: 3vh;
 }
 
+#scrolbar1 {
+    overflow: auto;
+    height: 300px;
+}
+
+/** outras paginas ***/
+.cor-borda2 {
+    border: 1px solid #c2c2c2;
+}
+
+.borda-titulo {
+	height: 8vh;
+	border-top: 1px solid #c2c2c2;
+	border-right: 1px solid #c2c2c2;
+	border-left: 1px solid #c2c2c2;
+	color: #afafaf;
+	background: #f6f6f6;
+    padding-top: 1vh;
+    font-size: 3vh;
+}

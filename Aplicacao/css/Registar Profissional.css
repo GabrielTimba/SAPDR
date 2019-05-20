@@ -1,16 +1,12 @@
-
-
-legend{
-    color: #52cd4e;
+legend {
+	color: #5bc0de;
 }
 
 /******** Conteudo******/
 
 #cadastro{
     position: relative;
-    height: 76vh;
-   /* overflow-y: auto;*/
-
+    height: 79vh;
 }
 
 /*custom font*/
