@@ -9,7 +9,7 @@ legend{
 #cadastro{
     position: relative;
     height: 76vh;
-    overflow-y: auto;
+   /* overflow-y: auto;*/
 
 }
 
