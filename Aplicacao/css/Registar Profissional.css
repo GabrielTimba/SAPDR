@@ -6,8 +6,9 @@ legend {
 
 #cadastro{
     position: relative;
-    height: 79vh;
+    min-height: 79vh;
 }
+
 
 /*custom font*/
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
