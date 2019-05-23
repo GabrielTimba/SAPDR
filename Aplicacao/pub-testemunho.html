@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <title>Pedir Apoio | SAPDR</title>
-
+    
+    <title>Publicar Testemunho | SAPDR</title>
+    
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/fontawesome/css/all.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="lib/summernote/css/summernote-bs4.js"><!--API para criar editor de texto-->
-
-    <!--script no fim da pagina-->
+    <link rel="stylesheet" href="css/fontawesome/css/all.css">
+    <link rel="stylesheet" href="summernote/summernote-bs4.css">
+    <!--API para criar editor de texto-->
 </head>
+
 <body>
     <!--Cabecalho -->
     <header class="container-fluid navbar-expand-sm mb-5">
-    
+
         <div class="row">
             <div class="col-12">
                 <div class="collapse navbar-collapse float-left ml-3">
                     <img src="imgs/icone-sapdr.png">
                 </div>
-    
+
                 <div class="float-right mr-3">
                     <ul class="navbar-nav list-group-horizontal float-right mt-2">
                         <li class="nav-item mt-2">
@@ -32,26 +33,26 @@
                                     class="fas fa-envelope mr-1"></i>Contacte-nos</a>
                         </li>
                         <li class="nav-item dropdown ml-3">
-    
+
                             <a class="nav-link dropdown-toggle texto-verde" href="#" data-toggle="dropdown"><i
                                     class="fas fa-user mr-1"></i>Minha conta</a>
                             <div class="dropdown-menu cor-verde">
                                 <a class="dropdown-item" href="#">Entrar</a>
                                 <a class="dropdown-item" href="#">Registar</a>
                             </div>
-    
+
                         </li>
                     </ul>
                 </div>
             </div>
-    
+
         </div>
-    
+
         <nav class="row navbar navbar-expand-lg navbar-light mt-2 cor-verde">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menubar">
                 <span class="fa fa-bars"></span>
             </button>
-    
+
             <div class="collapse navbar-collapse" id="menubar">
                 <ul class="navbar-nav container">
                     <li class="nav-item">
@@ -63,7 +64,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Foruns</a>
                     </li>
-    
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Publicações</a>
                         <div class="dropdown-menu cor-verde">
@@ -84,52 +85,59 @@
         </nav>
 
         <div class="container">
-            
+
             <div class="row mt-3">
                 <div class="col-12">
-                    <p id="dir"><a href="index.html"><i class="fas fa-home mr-1"></i>Inicio</a> > Minha Conta > <span class="texto-verde">Pedir Apoio</span></p>
+                    <p id="dir"><a href="index.html"><i class="fas fa-home mr-1"></i>Inicio</a> > Minha Conta > <span
+                            class="texto-verde">Publicar Testemunho</span></p>
                     <hr class="cor-verde">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-12">
-                   <h1>Pedir Apoio</h1>
+                    <h1>Publicar Testemunho</h1>
                 </div>
             </div>
 
         </div>
     </header>
 
+    <!--Conteudo-->
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-sm-10">
-                <h5>Formulário Para Pedir Apoio</h5>
-                <form class="cor-borda cor-creme p-5 my-4" role="form">
-                    <div class="form-row">
-                        <div class="form-group col-3">
-                            <label for="pedido" class="my-5">Pedido</label><br>
-                            <label for="ben" class="mt-3 mb-5">Beneficiário</label><br>
-                            <label for="contacto" class="mt-3">Contacto</label><br>
-                        </div>
-                        <div class="form-group col-9">
-                            <input class="form-control my-5" id="pedido" type="text">
-                            <input class="form-control mb-5" id="ben" type="text">
-                            <input class="form-control" id="contacto" type="number">
-                        </div>
-                        <div class="form-group col-12 mt-4">
-                            <label for="descricao ">Descrição/Mensagem</label>
-                            <textarea class="form-control" id="descricao"></textarea>
-                        </div>
-                        <div class="form-group mt-3">
-                            <button class="btn btn-outline-danger botoes mx-3" type="reset">Apagar</button>
-                            <button class="btn btn-outline-primary botoes" type="submit">Submeter</button>
-                        </div>
-                    </div>
-                </form>
+
+        <div class="row justify-content-center mb-3">
+            <div class="col-sm-10 mr-3">
+                <h5>Formulário para Publicar um Testemunho</h5>
             </div>
         </div>
 
+        <div class="row justify-content-center mb-5">
+            <form class="form col-sm-10 cor-creme cor-borda2">
+                
+                <div class="form-row justify-content-center my-3">
+                    <div class="form-group col-sm-8">
+                        <label for="assunto">Assunto</label>
+                        <input type="text" class="form-control" id="assunto" maxlength="50" required>
+                    </div>
+                </div>
+
+                <div class="form-row justify-content-center mb-3">
+                    <div class="form-group col-sm-8">
+                        <label for="testemunho">Testemunho</label>
+                        <textarea class="form-control" id="testemunho" required minlength="10"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-row justify-content-center">
+                    <div class="form-group col-sm-8">
+                        <input class="btn btn-outline-primary" type="submit" value="Publicar">
+                        <input class="btn btn-outline-danger" type="reset" value="Apagar">
+                    </div>
+                </div>
+
+            </form>
+        </div>
     </div>
 
     <!--Rodape-->
@@ -191,20 +199,19 @@
     
     </footer>
 
-
-    <!--script (apenas seguindo as boas praticas)-->
     <script src="js/jquery.js"></script>
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.js"></script>
-    <script src="lib/summernote/js/summernote-bs4.css"></script> <!--API para criar editor de texto-->
-    <script src="lib/summernote/lang/summernote-pt-PT.js"></script>
-
+    <script src="summernote/summernote-bs4.js"></script>
+    <!--API para criar editor de texto-->
+    <script src="summernote/lang/summernote-pt-PT.js"></script>
+    
     <!--Chamando o Eidtor summernote-->
     <script>
-        $(document).ready(function(){
-            $('textarea#descricao').summernote({ 
-                lang:'pt-PT',
-                height: 300,                 // set editor height
+        $(document).ready(function () {
+            $('textarea#testemunho').summernote({
+                lang: 'pt-PT',
+                height: 200,                 // set editor height
                 minHeight: null,             // set minimum height of editor
                 maxHeight: null,             // set maximum height of editor
                 focus: false             // set focus to editable area after initializing summernote
@@ -212,4 +219,3 @@
         });
     </script>
 </body>
-</html>

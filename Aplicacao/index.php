@@ -1,6 +1,33 @@
-    <?php
-        include('header.php');
-    ?>
+<?php
+    include('cabecalho-rodape.php');
+?>
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   
+    <title>Inicio</title>
+    
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/fontawesome/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script src="js/jquery.js"></script>
+    <script src="js/popper.js"></script>
+	<script src="js/bootstrap.js"></script>
+</head>
+<body>
+
+    <!--Cabecalho -->
+    <header class="container-fluid navbar-expand-sm">
+        <?php
+            cabecalho();
+        ?>  
+    </header>
+
     <!--Slides-->
     <div id="carouselSite" class="carousel slide" data-ride="carousel">
     
@@ -131,8 +158,9 @@
           
     </div>
 
+    <!--Rodape-->
     <?php
-        include('footer.php');
+        rodape();
     ?>
-
-    
+</body>
+</html>

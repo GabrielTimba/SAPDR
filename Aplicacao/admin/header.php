@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         
-        <title>Lista de Profissionais | Admin</title>
+        <title>Lista de Doenças | Admin</title>
         
         <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
         <link rel="stylesheet" href="../css/fonts.css">
@@ -71,7 +71,7 @@
                         </ul>
                     </li>
                     <hr class="linha">
-                    <li><a href="#"><i class="fas fa-list-ul mr-2"></i>Doenças Raras</a></li>
+                    <li><a href="Lista de Doencas.html"><i class="fas fa-list-ul mr-2"></i>Doenças Raras</a></li>
                     <hr class="linha">
                     <li><a href="#"><i class="fas fa-cogs mr-2"></i>Administrar Forum</a></li>
                     <hr class="linha">
@@ -79,7 +79,7 @@
                         <a class="dropdown-toggle" data-toggle="collapse" aria-expanded="false" href="#menu-publicacoes"><i class="fas fa-newspaper mr-2"></i>Publicações</a>
                         <ul class="collapse list-unstyled menu-dropdown" id="menu-publicacoes">
                             <li><a href="documentos-admin.html"><i class="fas fa-angle-double-right mr-2"></i>Documentos</a></li>
-                            <li><a href="#"><i class="fas fa-angle-double-right mr-2"></i>Artigos</a></li>
+                            <li><a href="lista de artigos.php"><i class="fas fa-angle-double-right mr-2"></i>Artigos</a></li>
                             <li><a href="#"><i class="fas fa-angle-double-right mr-2"></i>Campanhas</a></li>
                         </ul>
                     </li>
@@ -90,109 +90,9 @@
                         <a class="dropdown-toggle" data-toggle="collapse" aria-expanded="false" href="#menu-mensagens"><i class="fa fa-envelope mr-2"></i> Mensagens</a>
                         <ul class="collapse list-unstyled menu-dropdown" id="menu-mensagens">
                             <li><a href="#"><i class="fas fa-angle-double-right mr-2"></i>Pedidos de Apoio</a></li>
-                            <li><a href="#"><i class="fas fa-angle-double-right mr-2"></i>Mensagens de Doentes</a></li>
+                            <li><a href="mensagens.php"><i class="fas fa-angle-double-right mr-2"></i>Mensagens de Doentes</a></li>
                         </ul>
                     </li>
                     <hr class="linha">
                 </ul>
             </nav>
-
-            <!--Conteudo-->
-            <div class="container-fluid" id="conteudo">
-                <div class="row conteudo-dir pt-4">
-                    <h5 class="ml-3">Profissional da Saúde</h5>
-                    <p class="ml-5 dir"><a href="painel-admin.html">Inicio</a> >> Usuários >> <span class="text-sucess"> Profissional da Saúde</span></p>
-                </div>
-                <div class="row mt-2">
-                    <div class="col-sm-11 ">
-                        <div class="float-right">
-                            
-                            <a class="btn btn-primary ml-5 " href="Registar Profissional.html">
-                                    <i class="fa fa-plus"></i>
-                            </a>
-                            <a class="btn btn-danger ml-2" href="">
-                                    <i class="fa fa-trash"></i>    
-                            </a>   
-                        </div>
-                        
-                    </div>
-                     
-                </div>
-                <div class="row justify-content-center">
-    
-                    <table class="table col-lg-10 col-md-10 col-sm-10 tabela mt-2">
-                        <thead >
-                            <tr class="cor-creme">
-                                <td class="titulo-tabela" colspan="4"><i class="fa fa-list mr-2"></i>Lista de Profissionais</td>
-                                
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th class="texto-verde">Nome</th>
-                                <th class="texto-verde">Email</th>
-                                <th class="texto-verde">Unidade Hospitalar</th>
-                                <th class="texto-verde">Accao</th>
-                            </tr>
-                            <tr>
-                                <td>Nome 1</td>
-                                <td>follegelricardo@gmail.com</td>
-                                <td>Hospital 1</td>
-                                <td> 
-                                    <a href="Registar Profissional.html" class="btn cor-verde">Editar</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Nome 2</td>
-                                <td>follegelricardo@gmail.com</td>
-                                <td>Hospital 2</td>
-                                <td> 
-                                    <a href="Registar Profissional.html" class="btn cor-verde">Editar</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Nome 3</td>
-                                <td>follegelricardo@gmail.com</td>
-                                <td>Hospital 3</td>
-                                <td> 
-                                    <a href="Registar Profissional.html" class="btn cor-verde">Editar</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Nome 4</td>
-                                <td>follegelricardo@gmail.com</td>
-                                <td>Hospital 4</td>
-                                <td> 
-                                    <a href="Registar Profissional.html" class="btn cor-verde">Editar</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Nome 5</td>
-                                <td>follegelricardo@gmail.com</td>
-                                <td>Hospital 4</td>
-                                <td> 
-                                    <a href="Registar Profissional.html" class="btn cor-verde">Editar</a>
-                                </td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-
-                </div>
-
-                <footer class="row justify-content-center mt-5">
-                    <div class="col-lg-4">
-                        <p><span class="texto-verde">SAPDR</span>  &copy; 2019 - Todos Direitos Reservados<br> </p>
-                    </div>
-                </footer>
-            </div>
-
-        </div>
-        
-    </body>
-</html>
-
-
-
-
-<!--Programer: Ricardo, Folege Lourenco-->

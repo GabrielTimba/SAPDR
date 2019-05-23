@@ -90,14 +90,14 @@
             <div class="row mt-3">
                 <div class="col-12">
                     <p id="dir"><a href="index.html"><i class="fas fa-home mr-1"></i>Inicio</a> > Minha Conta > <span
-                            class="texto-verde">Cadastro</span></p>
+                            class="texto-verde">Perfil</span></p>
                     <hr class="cor-verde">
                 </div>
             </div>
     
             <div class="row">
                 <div class="col-12">
-                    <h1>Cadastro</h1>
+                    <h1>Perfil</h1>
                 </div>
             </div>
     
@@ -107,9 +107,9 @@
 
     <!--Conteudo da pagina-->
     <div class="container">
-        <div class="row mb-3 justify-content-center">
+        <div class="row justify-content-center">
             <div class="col-11 mr-4">
-                <h5>Formulário de Cadastro (Doente/Representante)</h5>
+                <h5>Meus Dados</h5>
             </div>
         </div>
         <div class="row mb-5 justify-content-center" id="row-altura">
@@ -347,7 +347,7 @@
        $(document).ready(function(){
 
            // Toolbar extra buttons
-           var btnFinish = $('<button></button>').text('Finalisar')
+           var btnFinish = $('<button></button>').text('Guardar Alterações')
                                             .addClass('btn btn-info')
                                             .on('click', function(){
                                                    if( !$(this).hasClass('disabled')){

@@ -25,6 +25,11 @@ a:hover {
     border-radius: 10px;
 }
 
+.cor-borda2 {
+    border: 1px solid #c2c2c2;
+    border-radius: 10px;
+}
+
 .cor-creme {
     background: #f6f6f6;
 }
@@ -33,6 +38,19 @@ a:hover {
 #dir, #dir a {
     color: rgb(212, 209, 209);
     font-size: 13px;
+}
+
+/** canecalho de formulaarios, tabelas, etc ***/
+
+.borda-titulo {
+	height: 8vh;
+	border-top: 1px solid #c2c2c2;
+	border-right: 1px solid #c2c2c2;
+	border-left: 1px solid #c2c2c2;
+	color: #afafaf;
+	background: #f6f6f6;
+    padding-top: 1vh;
+    font-size: 3vh;
 }
 
 /******* Rodape ************/
