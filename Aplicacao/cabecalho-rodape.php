@@ -1,26 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   
-    <title>Inicio</title>
+<?php
     
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/fontawesome/css/all.css">
-    <link rel="stylesheet" href="css/style.css">
-    
-    <script src="js/jquery.js"></script>
-    <script src="js/popper.js"></script>
-	<script src="js/bootstrap.js"></script>
-</head>
-<body>
-
-    <!--Cabecalho -->
-    <header class="container-fluid navbar-expand-sm">
-
+    //metodo que faz o cabecalho
+    function cabecalho() {
+?>
         <div class="row">
             <div class="col-12">
                 <div class="collapse navbar-collapse float-left ml-3">
@@ -56,7 +38,7 @@
             <div class="collapse navbar-collapse" id="menubar">
                 <ul class="navbar-nav container">
                     <li class="nav-item">
-                      <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Inicio</a>
+                      <a class="nav-link" href="index.php"><i class="fas fa-home"></i> Inicio</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="Doencas Raras.html">Doenças Raras</a>
@@ -85,4 +67,67 @@
             </div>
            
         </nav>
-    </header>
+<?php
+    }
+?> 
+
+<?php
+    //metodo que faz o rodape
+    function rodape() {
+?>
+    <footer class="container-fluid page-footer footer-cor">
+        
+        <div class="row mt-2 p-3 footer-border bgfooter dark-grey-text">
+            <div class="col-12 ">
+                <div class="row">
+                    
+                    <div class="col-3 d-none d-sm-none d-md-block">
+                        <h4>Categorias</h4>
+                        <ul>
+                            <li><a href="doencas-raras.html">Doenças Raras </a></li>
+                            <li><a href="">Foruns </a></li>
+                            <li><a href="">Relatórios </a></li>
+                            <li><a href="">Instituições e Associações </a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col-3 d-none d-sm-none d-md-block">
+                        <h4>Publicações</h4>
+                        <ul>
+                            <li><a href="">Campanhas</a></li>
+                            <li><a href="">Artigos</a></li>
+                            <li><a href="">Pedidos de Apoio</a></li>
+                            <li><a href="">Instituicoes &<br> Associacoes</a></li>
+                        </ul>
+          
+                    </div>
+                    
+                    <div class="col-md-3 ">
+                        <form class="form-inline">
+                            <label class="mb-2 mr-2" for="pesquisar">Pesquise por uma doenca rara</label>
+                            <input class="form-control mr-1" id="pesquisar" type="search" placeholder="Buscar..." required>
+                            <button class="btn btn-dark" type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+                   
+                    <div class="col-md-3">
+                        <h5>Siga-nos/Contactacte-nos</h5>
+                        <ul class="list-unstyled footer-icone" >
+                            <li class="list-inline-item"><a href=""><i class="fab  fa-facebook-square"></i></a></li>
+                            <li class="list-inline-item"><a href=""><i class="fab fa-instagram"></i></a></li>
+                            <li class="list-inline-item"><a href="contacte-nos.html"><i class="fas fa-envelope"></i></a></li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="row justify-content-center footer-copyright py-1 border-top-1 bg-dark" >
+             SAPDR &copy; 2019 - Todos Direitos Reservados
+        </div>
+
+    </footer>
+<?php        
+    }
+?>
