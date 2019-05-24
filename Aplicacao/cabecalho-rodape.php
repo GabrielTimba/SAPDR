@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="collapse navbar-collapse float-left ml-3">
-                    <img src="imgs/icone-sapdr.png">
+                    <a href="index.php"><img src="imgs/icone-sapdr.png">
                 </div>
                 
                 <div class="float-right mr-3">
@@ -16,11 +16,11 @@
                         </li>
                         <li class="nav-item dropdown ml-3">
                 
-                            <a class="nav-link dropdown-toggle texto-verde" href="#" data-toggle="dropdown"><i
+                            <a class="nav-link dropdown-toggle texto-verde" href="contacte-nos.php" data-toggle="dropdown"><i
                                     class="fas fa-user mr-1"></i>Minha conta</a>
                             <div class="dropdown-menu cor-verde">
-                                <a class="dropdown-item" href="login.html">Entrar</a>
-                                <a class="dropdown-item" href="#">Registar</a>
+                                <a class="dropdown-item" href="login.php">Entrar</a>
+                                <a class="dropdown-item" href="RegistarDoentes.php">Registar</a>
                             </div>
                 
                         </li>
@@ -41,7 +41,7 @@
                       <a class="nav-link" href="index.php"><i class="fas fa-home"></i> Inicio</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="Doencas Raras.html">Doenças Raras</a>
+                      <a class="nav-link" href="Doencas Raras.php">Doenças Raras</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="#">Foruns</a>
@@ -50,10 +50,10 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Publicações</a>
                         <div class="dropdown-menu cor-verde">
-                            <a class="dropdown-item" href="#">Campanhas</a>
-                            <a class="dropdown-item" href="#">Artigos</a>
-                            <a class="dropdown-item" href="#">Pedidos de apoio</a>
-                            <a class="dropdown-item" href="#">Testemunhos</a>
+                            <a class="dropdown-item" href="campanhas.php">Campanhas</a>
+                            <a class="dropdown-item" href="">Artigos</a>
+                            <a class="dropdown-item" href="">Pedidos de apoio</a>
+                            <a class="dropdown-item" href="">Testemunhos</a>
                         </div>
                     </li>
                     <li class="nav-item">

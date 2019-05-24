@@ -1,3 +1,6 @@
+<?php
+    include('cabecalho-rodape.php');
+?>
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -9,7 +12,7 @@
     
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/fontawesome/css/all.css">
+    <link rel="stylesheet" href="lib/fontawesome/css/all.css">
     <link rel="stylesheet" href="css/smart_wizard.css">
     <link rel="stylesheet" href="css/smart_wizard_theme_circles.css">
 
@@ -21,69 +24,9 @@
     <!--Cabecalho -->
     <header class="container-fluid navbar-expand-sm mb-5">
     
-        <div class="row">
-            <div class="col-12">
-                <div class="collapse navbar-collapse float-left ml-3">
-                    <img src="imgs/icone-sapdr.png">
-                </div>
-    
-                <div class="float-right mr-3">
-                    <ul class="navbar-nav list-group-horizontal float-right mt-2">
-                        <li class="nav-item mt-2">
-                            <a href="contacte-nos.html" class="link texto-verde"><i
-                                    class="fas fa-envelope mr-1"></i>Contacte-nos</a>
-                        </li>
-                        <li class="nav-item dropdown ml-3">
-    
-                            <a class="nav-link dropdown-toggle texto-verde" href="#" data-toggle="dropdown"><i
-                                    class="fas fa-user mr-1"></i>Minha conta</a>
-                            <div class="dropdown-menu cor-verde">
-                                <a class="dropdown-item" href="#">Entrar</a>
-                                <a class="dropdown-item" href="#">Registar</a>
-                            </div>
-    
-                        </li>
-                    </ul>
-                </div>
-            </div>
-    
-        </div>
-    
-        <nav class="row navbar navbar-expand-lg navbar-light mt-2 cor-verde">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menubar">
-                <span class="fa fa-bars"></span>
-            </button>
-    
-            <div class="collapse navbar-collapse" id="menubar">
-                <ul class="navbar-nav container">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Doencas Raras.html">Doenças Raras</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Foruns</a>
-                    </li>
-    
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Publicações</a>
-                        <div class="dropdown-menu cor-verde">
-                            <a class="dropdown-item" href="#">Campanhas</a>
-                            <a class="dropdown-item" href="#">Artigos</a>
-                            <a class="dropdown-item" href="#">Pedidos de apoio</a>
-                            <a class="dropdown-item" href="#">Testemunhos</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Instituições e Associações</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Relatórios</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        <?php
+            cabecalho();
+        ?>
     
         <div class="container">
     
@@ -143,7 +86,7 @@
                                     <div class="form-row">
                                         <div class="form-group col-sm-5 mt-2 ml-3">
                                             <label for="Nome">Data de Nascimento:</label>
-                                            <input type="text" class="form-control" placeholder="Nome" required>
+                                            <input type="date" class="form-control" placeholder="Nome" required>
                                         </div>
                                         <div class="form-group col-sm-5 mt-2 ml-3">
                                             <label for="Genero">Genero:</label>
@@ -190,12 +133,13 @@
                                     <div class="form-row">
         
                                         <div class="form-group col-sm-5 mt-2 ml-3">
-                                            <label for="Bairro">Bairro:</label>
-                                            <select class="form-control" id="Bairro" required>
+                                            <label for="bairro">Bairro:</label>
+                                            <input type="text" class="form-control" id="bairro" placeholder="Bairro">
+                                            <!--<select class="form-control" id="Bairro" required>
                                                 <option disabled selected>...</option>
                                                 <option>Bairro</option>
                                                 <option>Bairro</option>
-                                            </select>
+                                            </select>-->
                                         </div>
         
                                         <div class="form-group col-sm-5 mt-2 ml-3">
@@ -219,26 +163,35 @@
                             </div>
                             <div id="step-3">
                                 <div id="form-step-2" role="form" data-toggle="validator">
-                                    <legend>Informaco Profissional</legend>
+                                    <legend>Dados Médicos</legend>
+                                    
                                     <div class="form-row">
-        
                                         <div class="form-group col-sm-5 mt-2 ml-3">
-                                            <label for="Unidade Hospitalar">Unidade Hospitalar:</label>
-                                            <select class="form-control" id="Unidade Hospitalar" required>
-                                                <option disabled selected>...</option>
-                                                <option>...</option>
-                                                <option>...</option>
-                                            </select>
+                                            <label for="doenca" >Nome da Doença</label>
+                                            <input class="form-control" id="doenca" list="doencas">
+                                            <datalist id="doencas">
+                                                <option value="11111"></option>
+                                                <option value="22222"></option>
+                                                <option value="33333"></option>
+                                            </datalist>
                                         </div>
-        
-                                        <div class="form-group col-sm-5 mt-2 ml-3">
-                                            <label for="Nr de Cartao da Ordem dos Medicos">Nr de Cartao da Ordem dos
-                                                Medicos:</label>
-                                            <input type="text" class="form-control"
-                                                placeholder="Nr de Cartao da Ordem dos Medicos" required>
-                                        </div>
-        
                                     </div>
+
+                                    <div class="form-row justify-content-leaft">
+                                        <div class="form-group col-sm-5 ml-3">
+                                            <label for="trat">Encotra-se a recebr tratmaento?</label>
+                                        </div>
+                                        <div class="form-group col-sm-5">
+                                            <label for="hosp">Em que unidade Hospitalar</label>
+                                            <input class="form-control" id="hosp" list="hospital">
+                                            <datalist id="hospital">
+                                                <option value="11111"></option>
+                                                <option value="22222"></option>
+                                                <option value="33333"></option>
+                                            </datalist>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                             <div id="step-4" class="">
@@ -274,63 +227,9 @@
     
     
     <!--Rodape-->
-    <footer class="container-fluid page-footer footer-cor">
-    
-        <div class="row mt-2 p-3 footer-border bgfooter dark-grey-text">
-            <div class="col-12 ">
-                <div class="row">
-    
-                    <div class="col-3 d-none d-sm-none d-md-block">
-                        <h4>Categorias</h4>
-                        <ul>
-                            <li><a href="doencas-raras.html">Doenças Raras </a></li>
-                            <li><a href="">Foruns </a></li>
-                            <li><a href="">Relatórios </a></li>
-                            <li><a href="">Instituições e Associações </a></li>
-                        </ul>
-                    </div>
-    
-                    <div class="col-3 d-none d-sm-none d-md-block">
-                        <h4>Publicações</h4>
-                        <ul>
-                            <li><a href="">Campanhas</a></li>
-                            <li><a href="">Artigos</a></li>
-                            <li><a href="">Pedidos de Apoio</a></li>
-                            <li><a href="">Instituicoes &<br> Associacoes</a></li>
-                        </ul>
-    
-                    </div>
-    
-                    <div class="col-md-3 ">
-                        <form class="form-inline">
-                            <label class="mb-2 mr-2" for="pesquisar">Pesquise por uma doenca rara</label>
-                            <input class="form-control mr-1" id="pesquisar" type="search" placeholder="Buscar..." required>
-                            <button class="btn btn-dark" type="submit"><i class="fa fa-search"></i></button>
-                        </form>
-                    </div>
-    
-                    <div class="col-md-3">
-                        <h5>Siga-nos/Contactacte-nos</h5>
-                        <ul class="list-unstyled footer-icone">
-                            <li class="list-inline-item"><a href=""><i class="fab  fa-facebook-square"></i></a></li>
-                            <li class="list-inline-item"><a href=""><i class="fab fa-instagram"></i></a></li>
-                            <li class="list-inline-item"><a href="contacte-nos.html"><i class="fas fa-envelope"></i></a>
-                            </li>
-                        </ul>
-    
-                    </div>
-                </div>
-    
-    
-    
-            </div>
-        </div>
-    
-        <div class="row justify-content-center footer-copyright py-1 border-top-1 bg-dark">
-            SAPDR &copy; 2019 - Todos Direitos Reservados
-        </div>
-    
-    </footer>
+    <?php
+        rodape();
+    ?>
 
     <!-- Scripts -->
     <script src="js/jquery.js"></script>
@@ -381,7 +280,7 @@
                    theme: 'circles',
                    transitionEffect:'fade',
                    toolbarSettings: {toolbarPosition: 'bottom',
-                                     toolbarExtraButtons: [btnFinish, btnCancel] //mudar background
+                                     toolbarExtraButtons: [btnFinish, btnCancel]
                                    },
                    anchorSettings: {
                                markDoneStep: true, // add done css
