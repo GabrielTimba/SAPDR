@@ -13,8 +13,8 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="lib/fontawesome/css/all.css">
-    <link rel="stylesheet" href="css/smart_wizard.css">
-    <link rel="stylesheet" href="css/smart_wizard_theme_circles.css">
+    <link rel="stylesheet" href="lib/smartwizard/css/smart_wizard.css">
+    <link rel="stylesheet" href="lib/smartwizard/css/smart_wizard_theme_circles.css">
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/RegistarDoentes.css">
@@ -63,8 +63,8 @@
                     <div  id="smartwizard">
                         <ul class="mt-2 cor-creme">
                             <li><a href="#step-1">Passo 1<br /><small>Dados Pessoais</small></a></li>
-                            <li><a href="#step-2">Passo 2<br /><small>Contacto e Endereco</small></a></li>
-                            <li><a href="#step-3">Passo 3<br /><small>Informacao Profissional</small></a></li>
+                            <li><a href="#step-2">Passo 2<br /><small>Contacto e Enderreço</small></a></li>
+                            <li><a href="#step-3">Passo 3<br /><small>Dados da Doença</small></a></li>
                             <li><a href="#step-4">Passo 4<br /><small>Dados de Acesso</small></a></li>
                         </ul>
         
@@ -102,7 +102,7 @@
                             </div>
                             <div id="step-2">
                                 <div id="form-step-1" role="form" data-toggle="validator">
-                                    <legend>Endereco e Contacto</legend>
+                                    <legend>Enderreço e Contacto</legend>
                                     <div class="form-row">
                                         <div class="form-group col-sm-5 mt-2 ml-3">
                                             <label for="Provincia">Provincia:</label>
@@ -122,11 +122,32 @@
                                         </div>
                                         <div class="form-group col-sm-5 mt-2 ml-3">
                                             <label for="Distrito">Distrito:</label>
-                                            <select class="form-control" id="Distrito" required>
-                                                <option disabled selected>...</option>
-                                                <option>...</option>
-                                                <option>...</option>
-                                            </select>
+                                            <input list="distritos" class="form-control" id="Distrito" required>
+                                            <datalist id="distritos">
+                                                <option value="Matola">Matola</option>
+                                                <option value="Maputo">Maputo</option>
+                                                <option value="Xai-xai">Xai-xai</option>
+                                                <option value="Chibuto">Chibuto</option>
+                                                <option value="Chokwé">Chokwé</option>
+                                                <option value="Inhambane">Inhambane</option>
+                                                <option value="Maxixe">Maxixe</option>
+                                                <option value="Manica">Manica</option>
+                                                <option value="Chimoio">Chimoio</option>
+                                                <option value="Beira">Beira</option>
+                                                <option value="Dondo">Dondo</option>
+                                                <option value="Zambezia">Zambezia</option>
+                                                <option value="Quelimane">Quelimane</option>
+                                                <option value="Mocuba">Mocuba</option>
+                                                <option value="Gurué">Gurué</option>
+                                                <option value="Tete">Tete</option>
+                                                <option value="Nampula">Nampula</option>
+                                                <option value="Nacala">Nacala</option>
+                                                <option value="Ilha de Moçambique">Ilha de Moçambique</option>
+                                                <option value="Pemba">Pemba</option>
+                                                <option value="Montepuez">Montepuez</option>
+                                                <option value="Lichinga">Lichinga</option>
+                                                <option value="Cuamba">Cuamba</option>
+                                            </datalist>
                                         </div>
                                     </div>
         
@@ -163,7 +184,7 @@
                             </div>
                             <div id="step-3">
                                 <div id="form-step-2" role="form" data-toggle="validator">
-                                    <legend>Dados Médicos</legend>
+                                    <legend>Dados da Doença</legend>
                                     
                                     <div class="form-row">
                                         <div class="form-group col-sm-5 mt-2 ml-3">
@@ -180,7 +201,20 @@
                                     <div class="form-row justify-content-leaft">
                                         <div class="form-group col-sm-5 ml-3">
                                             <label for="trat">Encotra-se a recebr tratmaento?</label>
+                                        
+                                       
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Sim    
+                                                </label> 
+                                            </div>
+                                            <div class="radio">    
+                                                <label>       
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"> Não    
+                                                </label> 
+                                            </div>
                                         </div>
+
                                         <div class="form-group col-sm-5">
                                             <label for="hosp">Em que unidade Hospitalar</label>
                                             <input class="form-control" id="hosp" list="hospital">
@@ -239,7 +273,7 @@
     <!-- plugins do smartwizard -->
     <script src="lib/smartwizard/js/jquery.min.js"></script>
     <script src="lib/smartwizard/js/validator.min.js"></script>
-    <script src="js/jquery.smartWizard.js"></script>
+    <script src="lib/smartwizard/js/jquery.smartWizard.js"></script>
 
     <!--script do smartwizard-->
    <script type="text/javascript">

@@ -12,7 +12,7 @@
                 <div class="float-right mr-3">
                     <ul class="navbar-nav list-group-horizontal float-right mt-2">
                         <li class="nav-item mt-2">
-                            <a href="contacte-nos.html" class="link texto-verde"><i class="fas fa-envelope mr-1"></i>Contacte-nos</a>
+                            <a href="contacte-nos.php" class="link texto-verde"><i class="fas fa-envelope mr-1"></i>Contacte-nos</a>
                         </li>
                         <li class="nav-item dropdown ml-3">
                 
