@@ -56,14 +56,12 @@
                     <hr class="linha">
                     <li><a href="lista-de-doencas.php"><i class="fas fa-list-ul mr-2"></i>Doenças Raras</a></li>
                     <hr class="linha">
-                    <li><a href="lista-de-forum.php"><i class="fas fa-cogs mr-2"></i>Administrar Forum</a></li>
-                    <hr class="linha">
                     <li>
                         <a class="dropdown-toggle" data-toggle="collapse" aria-expanded="false" href="#menu-publicacoes"><i class="fas fa-newspaper mr-2"></i>Publicações</a>
                         <ul class="collapse list-unstyled menu-dropdown" id="menu-publicacoes">
                             <li><a href="lista-de-documentos.php"><i class="fas fa-angle-double-right mr-2"></i>Documentos</a></li>
                             <li><a href="lista-de-artigos.php"><i class="fas fa-angle-double-right mr-2"></i>Artigos</a></li>
-                            <li><a href="#"><i class="fas fa-angle-double-right mr-2"></i>Campanhas</a></li>
+                            <li><a href="lista-de-campanhas.php"><i class="fas fa-angle-double-right mr-2"></i>Campanhas</a></li>
                         </ul>
                     </li>
                     <hr class="linha">
