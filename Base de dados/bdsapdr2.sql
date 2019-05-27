@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 24-Maio-2019 às 16:27
+-- Generation Time: 27-Maio-2019 às 14:44
 -- Versão do servidor: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -121,6 +121,13 @@ CREATE TABLE `doente` (
   `senha` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `doente`
+--
+
+INSERT INTO `doente` (`idDoente`, `nome`, `apelido`, `dataNasc`, `genero`, `idInstituicao`, `idEndereco`, `UserName`, `senha`) VALUES
+(2, 'Maria', 'Cossa', '2017-12-06', '', 1, 1, 'cossa', 'cossa03');
+
 -- --------------------------------------------------------
 
 --
@@ -170,6 +177,13 @@ CREATE TABLE `endereco` (
   `bairro` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `endereco`
+--
+
+INSERT INTO `endereco` (`idEndereco`, `provincia`, `distrito`, `bairro`) VALUES
+(1, 'Maputo', 'Kamubukwane', '25 de junho');
+
 -- --------------------------------------------------------
 
 --
@@ -182,6 +196,13 @@ CREATE TABLE `instituicao` (
   `idEndereco` smallint(10) NOT NULL,
   `idTipoI` smallint(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `instituicao`
+--
+
+INSERT INTO `instituicao` (`idInstituicao`, `nome`, `idEndereco`, `idTipoI`) VALUES
+(1, 'Hospital central', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -288,6 +309,13 @@ CREATE TABLE `tipoi` (
   `idTipoI` smallint(10) NOT NULL,
   `nome` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `tipoi`
+--
+
+INSERT INTO `tipoi` (`idTipoI`, `nome`) VALUES
+(1, 'Hospital');
 
 -- --------------------------------------------------------
 
@@ -488,19 +516,19 @@ ALTER TABLE `doenca`
 -- AUTO_INCREMENT for table `doente`
 --
 ALTER TABLE `doente`
-  MODIFY `idDoente` smallint(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `idDoente` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `endereco`
 --
 ALTER TABLE `endereco`
-  MODIFY `idEndereco` smallint(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `idEndereco` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `instituicao`
 --
 ALTER TABLE `instituicao`
-  MODIFY `idInstituicao` smallint(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `idInstituicao` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `mensagem`
@@ -536,7 +564,7 @@ ALTER TABLE `tipod`
 -- AUTO_INCREMENT for table `tipoi`
 --
 ALTER TABLE `tipoi`
-  MODIFY `idTipoI` smallint(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `idTipoI` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tipop`
