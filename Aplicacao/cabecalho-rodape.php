@@ -120,19 +120,18 @@
                     <a class="nav-link" href="index.php"><i class="fas fa-home"></i> Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Doencas Raras.php">Doenças Raras</a>
+                    <a class="nav-link" href="doencas-raras.php">Doenças Raras</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Foruns</a>
                 </li>
-                
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Publicações</a>
                     <div class="dropdown-menu cor-verde">
                         <a class="dropdown-item" href="campanhas.php">Campanhas</a>
-                        <a class="dropdown-item" href="">Artigos</a>
-                        <a class="dropdown-item" href="">Pedidos de apoio</a>
-                        <a class="dropdown-item" href="">Testemunhos</a>
+                        <a class="dropdown-item" href="artigos.php">Artigos</a>
+                        <a class="dropdown-item" href="pedidos.php">Pedidos de apoio</a>
+                        <a class="dropdown-item" href="testemunhos.php">Testemunhos</a>
                     </div>
                 </li>
                 <li class="nav-item">
@@ -163,19 +162,19 @@
                     <div class="col-3 d-none d-sm-none d-md-block">
                         <h4>Categorias</h4>
                         <ul>
-                            <li><a href="doencas-raras.html">Doenças Raras </a></li>
-                            <li><a href="">Relatórios </a></li>
-                            <li><a href="">Instituições e Associações </a></li>
+                            <li><a href="doencas-raras.php">Doenças Raras </a></li>
+                            <li><a href="relatorio.php">Relatórios </a></li>
+                            <li><a href="#">Instituições e Associações </a></li>
                         </ul>
                     </div>
                     
                     <div class="col-3 d-none d-sm-none d-md-block">
                         <h4>Publicações</h4>
                         <ul>
-                            <li><a href="">Campanhas</a></li>
-                            <li><a href="">Artigos</a></li>
-                            <li><a href="">Pedidos de Apoio</a></li>
-                            <li><a href="">Instituicoes &<br> Associacoes</a></li>
+                            <li><a href="campanhas.php">Campanhas</a></li>
+                            <li><a href="artigos.php">Artigos</a></li>
+                            <li><a href="pedidos.php">Pedidos de Apoio</a></li>
+                            <li><a href="testemunhos.php">Testemunhos</a></li>
                         </ul>
           
                     </div>
@@ -191,9 +190,9 @@
                     <div class="col-md-3">
                         <h5>Siga-nos/Contactacte-nos</h5>
                         <ul class="list-unstyled footer-icone" >
-                            <li class="list-inline-item"><a href=""><i class="fab  fa-facebook-square"></i></a></li>
-                            <li class="list-inline-item"><a href=""><i class="fab fa-instagram"></i></a></li>
-                            <li class="list-inline-item"><a href="contacte-nos.html"><i class="fas fa-envelope"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fab  fa-facebook-square"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            <li class="list-inline-item"><a href="contacte-nos.php"><i class="fas fa-envelope"></i></a></li>
                         </ul>
                         
                     </div>
@@ -209,62 +208,4 @@
 <?php        
     }
 
-    //metodo que faz o rodape
-    function rodapeAutenticado() {
-?>
-    <footer class="container-fluid page-footer footer-cor">
-        
-        <div class="row mt-2 p-3 footer-border bgfooter dark-grey-text">
-            <div class="col-12 ">
-                <div class="row">
-                    
-                    <div class="col-3 d-none d-sm-none d-md-block">
-                        <h4>Categorias</h4>
-                        <ul>
-                            <li><a href="doencas-raras.html">Doenças Raras </a></li>
-                            <li><a href="">Foruns </a></li>
-                            <li><a href="">Relatórios </a></li>
-                            <li><a href="">Instituições e Associações </a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="col-3 d-none d-sm-none d-md-block">
-                        <h4>Publicações</h4>
-                        <ul>
-                            <li><a href="">Campanhas</a></li>
-                            <li><a href="">Artigos</a></li>
-                            <li><a href="">Pedidos de Apoio</a></li>
-                            <li><a href="">Instituicoes &<br> Associacoes</a></li>
-                        </ul>
-          
-                    </div>
-                    
-                    <div class="col-md-3 ">
-                        <form class="form-inline">
-                            <label class="mb-2 mr-2" for="pesquisar">Pesquise por uma doenca rara</label>
-                            <input class="form-control mr-1" id="pesquisar" type="search" placeholder="Buscar..." required>
-                            <button class="btn btn-dark" type="submit"><i class="fa fa-search"></i></button>
-                        </form>
-                    </div>
-                   
-                    <div class="col-md-3">
-                        <h5>Siga-nos/Contactacte-nos</h5>
-                        <ul class="list-unstyled footer-icone" >
-                            <li class="list-inline-item"><a href=""><i class="fab  fa-facebook-square"></i></a></li>
-                            <li class="list-inline-item"><a href=""><i class="fab fa-instagram"></i></a></li>
-                            <li class="list-inline-item"><a href="contacte-nos.html"><i class="fas fa-envelope"></i></a></li>
-                        </ul>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-        <div class="row justify-content-center footer-copyright py-1 border-top-1 bg-dark" >
-             SAPDR &copy; 2019 - Todos Direitos Reservados
-        </div>
-
-    </footer>
-<?php        
-    }
 ?>
