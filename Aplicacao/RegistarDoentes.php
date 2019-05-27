@@ -63,8 +63,8 @@
                     <div  id="smartwizard">
                         <ul class="mt-2 cor-creme">
                             <li><a href="#step-1">Passo 1<br /><small>Dados Pessoais</small></a></li>
-                            <li><a href="#step-2">Passo 2<br /><small>Contacto e Endereco</small></a></li>
-                            <li><a href="#step-3">Passo 3<br /><small>Informacao Profissional</small></a></li>
+                            <li><a href="#step-2">Passo 2<br /><small>Contacto e Enderreço</small></a></li>
+                            <li><a href="#step-3">Passo 3<br /><small>Dados da Doença</small></a></li>
                             <li><a href="#step-4">Passo 4<br /><small>Dados de Acesso</small></a></li>
                         </ul>
         
@@ -86,7 +86,7 @@
                                     <div class="form-row">
                                         <div class="form-group col-sm-5 mt-2 ml-3">
                                             <label for="Nome">Data de Nascimento:</label>
-                                            <input type="text" class="form-control" placeholder="Nome" required>
+                                            <input type="date" class="form-control" placeholder="Nome" required>
                                         </div>
                                         <div class="form-group col-sm-5 mt-2 ml-3">
                                             <label for="Genero">Genero:</label>
@@ -102,7 +102,7 @@
                             </div>
                             <div id="step-2">
                                 <div id="form-step-1" role="form" data-toggle="validator">
-                                    <legend>Endereco e Contacto</legend>
+                                    <legend>Enderreço e Contacto</legend>
                                     <div class="form-row">
                                         <div class="form-group col-sm-5 mt-2 ml-3">
                                             <label for="Provincia">Provincia:</label>
@@ -122,23 +122,45 @@
                                         </div>
                                         <div class="form-group col-sm-5 mt-2 ml-3">
                                             <label for="Distrito">Distrito:</label>
-                                            <select class="form-control" id="Distrito" required>
-                                                <option disabled selected>...</option>
-                                                <option>...</option>
-                                                <option>...</option>
-                                            </select>
+                                            <input list="distritos" class="form-control" id="Distrito" required>
+                                            <datalist id="distritos">
+                                                <option value="Matola">Matola</option>
+                                                <option value="Maputo">Maputo</option>
+                                                <option value="Xai-xai">Xai-xai</option>
+                                                <option value="Chibuto">Chibuto</option>
+                                                <option value="Chokwé">Chokwé</option>
+                                                <option value="Inhambane">Inhambane</option>
+                                                <option value="Maxixe">Maxixe</option>
+                                                <option value="Manica">Manica</option>
+                                                <option value="Chimoio">Chimoio</option>
+                                                <option value="Beira">Beira</option>
+                                                <option value="Dondo">Dondo</option>
+                                                <option value="Zambezia">Zambezia</option>
+                                                <option value="Quelimane">Quelimane</option>
+                                                <option value="Mocuba">Mocuba</option>
+                                                <option value="Gurué">Gurué</option>
+                                                <option value="Tete">Tete</option>
+                                                <option value="Nampula">Nampula</option>
+                                                <option value="Nacala">Nacala</option>
+                                                <option value="Ilha de Moçambique">Ilha de Moçambique</option>
+                                                <option value="Pemba">Pemba</option>
+                                                <option value="Montepuez">Montepuez</option>
+                                                <option value="Lichinga">Lichinga</option>
+                                                <option value="Cuamba">Cuamba</option>
+                                            </datalist>
                                         </div>
                                     </div>
         
                                     <div class="form-row">
         
                                         <div class="form-group col-sm-5 mt-2 ml-3">
-                                            <label for="Bairro">Bairro:</label>
-                                            <select class="form-control" id="Bairro" required>
+                                            <label for="bairro">Bairro:</label>
+                                            <input type="text" class="form-control" id="bairro" placeholder="Bairro">
+                                            <!--<select class="form-control" id="Bairro" required>
                                                 <option disabled selected>...</option>
                                                 <option>Bairro</option>
                                                 <option>Bairro</option>
-                                            </select>
+                                            </select>-->
                                         </div>
         
                                         <div class="form-group col-sm-5 mt-2 ml-3">
@@ -162,26 +184,48 @@
                             </div>
                             <div id="step-3">
                                 <div id="form-step-2" role="form" data-toggle="validator">
-                                    <legend>Informaco Profissional</legend>
+                                    <legend>Dados da Doença</legend>
+                                    
                                     <div class="form-row">
-        
                                         <div class="form-group col-sm-5 mt-2 ml-3">
-                                            <label for="Unidade Hospitalar">Unidade Hospitalar:</label>
-                                            <select class="form-control" id="Unidade Hospitalar" required>
-                                                <option disabled selected>...</option>
-                                                <option>...</option>
-                                                <option>...</option>
-                                            </select>
+                                            <label for="doenca" >Nome da Doença</label>
+                                            <input class="form-control" id="doenca" list="doencas">
+                                            <datalist id="doencas">
+                                                <option value="11111"></option>
+                                                <option value="22222"></option>
+                                                <option value="33333"></option>
+                                            </datalist>
                                         </div>
-        
-                                        <div class="form-group col-sm-5 mt-2 ml-3">
-                                            <label for="Nr de Cartao da Ordem dos Medicos">Nr de Cartao da Ordem dos
-                                                Medicos:</label>
-                                            <input type="text" class="form-control"
-                                                placeholder="Nr de Cartao da Ordem dos Medicos" required>
-                                        </div>
-        
                                     </div>
+
+                                    <div class="form-row justify-content-leaft">
+                                        <div class="form-group col-sm-5 ml-3">
+                                            <label for="trat">Encotra-se a recebr tratmaento?</label>
+                                        
+                                       
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Sim    
+                                                </label> 
+                                            </div>
+                                            <div class="radio">    
+                                                <label>       
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"> Não    
+                                                </label> 
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group col-sm-5">
+                                            <label for="hosp">Em que unidade Hospitalar</label>
+                                            <input class="form-control" id="hosp" list="hospital">
+                                            <datalist id="hospital">
+                                                <option value="11111"></option>
+                                                <option value="22222"></option>
+                                                <option value="33333"></option>
+                                            </datalist>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                             <div id="step-4" class="">

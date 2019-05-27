@@ -43,38 +43,45 @@
     
         </div>
     </header>
-    <div id="geral" class="container  border col-8 my-5 bg-light borda-form ">
-        <form action="" method="post"  class="ml-5">
-                
-            <h2 class="control-form mt-2">CONTACTE-NOS</h2>
-            <div class="form-row ">
-                <div class="form-group col-sm-6 ">
-                    <label for="Assunto" >Assunto:</label>
-                    <input type="text"   class="form-control"  placeholder="Assunto" required>
-                </div>
-                
-            </div> 
-            <div class="form-row">
-                <div class="form-group col-sm-6">
-                    <label for="Email" >Email:</label>
-                    <input type="email" class="form-control" placeholder="Email" required>
-                </div>
+    <div class="container my-5">
+        <div class="row mb-3 justify-content-center">
+            <div class="col-sm-10 mr-4">
+                <h5>Formulário de Contacto</h5>
             </div>
-            <div class="form-row">
+        </div>
+        <div class="row mb-5 justify-content-center" id="row-altura">
+            <div class="col-sm-10  cor-borda2 cor-creme" id="cadastro">
+                <form action="" method="post"  class="ml-5">
+                    <div class="form-row ">
+                        <div class="form-group col-sm-6 ">
+                            <label for="Assunto" >Assunto:</label>
+                            <input type="text"   class="form-control"  placeholder="Assunto" required>
+                        </div>
+                        
+                    </div> 
+                    <div class="form-row">
+                        <div class="form-group col-sm-6">
+                            <label for="Email" >Email:</label>
+                            <input type="email" class="form-control" placeholder="Email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
 
-                <div class="form-group col-8">
-                    <label for="Messagem">Messagem:</label>
-                    <textarea class="form-control" id="Messagem" cols="70" rows="7" required></textarea>
-                </div>
+                        <div class="form-group col-8">
+                            <label for="Messagem">Messagem:</label>
+                            <textarea class="form-control" id="Messagem" cols="70" rows="7" required></textarea>
+                        </div>
 
+                    </div>
+        
+                    <p class="row justify-content-center">
+                        <button class="btn btn-outline-danger botoes mr-3" type="reset">Apagar</button>
+                        <button class="btn btn-outline-primary botoes" type="submit">Enviar</button>
+                    </p>
+                    
+                </form>
             </div>
- 
-            <p class="row justify-content-center">
-                <button class="btn btn-outline-danger botoes mr-3" type="reset">Apagar</button>
-                <button class="btn btn-outline-primary botoes" type="submit">Enviar</button>
-            </p>
-            
-        </form>
+        </div>
     </div>
     
     <!--Rodape-->

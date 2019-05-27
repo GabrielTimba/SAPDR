@@ -1,0 +1,33 @@
+#scrolArtigos {
+    height: 120vh;
+    overflow: hidden;
+}
+
+.artigo {
+    height: 120vh;
+    overflow-y: auto;
+}
+
+.nav-artigos {
+    max-height: 120vh;
+    overflow: auto;
+}
+
+.nav-artigos::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #d9dfd9 ; 
+}
+
+.nav-artigos::-webkit-scrollbar {
+    width: 8px;
+    background-color: #838282;
+}
+
+.nav-artigos::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #a09e9e; 
+}
+
+.cor-cizenta {
+    color: rgb(212, 209, 209);
+}

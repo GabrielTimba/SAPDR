@@ -30,25 +30,25 @@
         <div class="container">
     
             <div class="row mt-3">
-                <div class="col-12">
+                <div class="col-sm-12">
                     <p id="dir"><a href="index.html"><i class="fas fa-home mr-1"></i>Inicio</a> > <span
                             class="texto-verde">Doenças Raras</span></p>
                     <hr class="cor-verde">
                 </div>
             </div>
     
-            <div class="row">
-                
-                <div class="col-12">
-                    <h1 class="float-left">Doenças Raras</h1>
-                    <form class="form-inline float-right">
+            <div class="row">   
+                <div class="col-lg-9">
+                    <h1>Doenças Raras</h1>
+                </div>
+                <div class="col-lg-3">
+                    <form class="form-inline">
                         <div class="form-group">
                             <input class="form-control" type="search" name="pesquisa" id="pesquisar-doenca" placeholder="Pesquisar doenca...">
                             <button class="btn btn-primary ml-1" type="submit"><i class="fas fa-search"></i></button>
                         </div> 
                     </form>
                 </div>
-
             </div>
     
         </div>
