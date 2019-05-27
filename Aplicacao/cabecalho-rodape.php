@@ -1,7 +1,23 @@
 <?php
+    function cabecalho(){
+        session_start();
+	    if(!isset($_SESSION['nome'])){
+		    cabecalhoVisitante();  
+        }
+        else{
+            cabecalhoAutenticado();
+        }
+    }
+	
+
     
+<<<<<<< HEAD
     //metodo que faz o cabecalho do user antes de login
     function cabecalho() {
+=======
+    //metodo que faz o cabecalho
+    function cabecalhoVisitante() {
+>>>>>>> 057e7a2388e4daf25e5c006572e2d177f6c458c2
 ?>
         <div class="row">
             <div class="col-12">
@@ -12,7 +28,11 @@
                 <div class="float-right mr-3">
                     <ul class="navbar-nav list-group-horizontal float-right mt-2">
                         <li class="nav-item mt-2">
+<<<<<<< HEAD
                             <a href="contacte-nos.php" class="link texto-verde"><i class="fas fa-envelope mr-1"></i>Contacte-nos</a>
+=======
+                            <a href="contacte-nos.htmlphp" class="link texto-verde"><i class="fas fa-envelope mr-1"></i>Contacte-nos</a>
+>>>>>>> 057e7a2388e4daf25e5c006572e2d177f6c458c2
                         </li>
                         <li class="nav-item dropdown ml-3">
                 
@@ -43,6 +63,7 @@
                     <li class="nav-item">
                       <a class="nav-link" href="Doencas Raras.php">Doenças Raras</a>
                     </li>
+<<<<<<< HEAD
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Publicações</a>
                         <div class="dropdown-menu cor-verde">
@@ -118,6 +139,8 @@
                       <a class="nav-link" href="#">Foruns</a>
                     </li>
                  
+=======
+>>>>>>> 057e7a2388e4daf25e5c006572e2d177f6c458c2
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Publicações</a>
                         <div class="dropdown-menu cor-verde">
@@ -131,13 +154,87 @@
                         <a class="nav-link" href="#">Instituições e Associações</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Relatórios</a>
+                        <a class="nav-link" href="relatorio.php">Relatórios</a>
                     </li>
                       
                 </ul>
             </div>
            
         </nav>
+<?php
+    }
+?>
+
+<?php
+    //metodo que faz o cabecalho do user depois do login
+    function cabecalhoAutenticado() {
+?>
+    <div class="row">
+        <div class="col-12">
+            <div class="collapse navbar-collapse float-left ml-3">
+                <a href="index.php"><img src="imgs/icone-sapdr.png">
+            </div>
+            
+            <div class="float-right mr-3">
+                <ul class="navbar-nav list-group-horizontal float-right mt-2">
+                    <li class="nav-item mt-2">
+                        <a href="contacte-nos.php" class="link texto-verde"><i class="fas fa-envelope mr-1"></i>Contacte-nos</a>
+                    </li>
+                    <li class="nav-item dropdown ml-3">
+            
+                        <a class="nav-link dropdown-toggle texto-verde" href="#" data-toggle="dropdown"><i
+                                class="fas fa-user mr-1"></i>Minha conta</a>
+                        <div class="dropdown-menu cor-verde">
+                            <a class="dropdown-item" href="perfil-user.php">Perfil</a>
+                            <a class="dropdown-item" href="pedir-apoio.php">Pedir Apoio</a>
+                            <a class="dropdown-item" href="pub-testemunho.php">Publicar Testemunho</a>
+                            <a class="dropdown-item" href="">Sair</a>
+                        </div>
+            
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+    <nav class="row navbar navbar-expand-lg navbar-light mt-2 cor-verde">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menubar">
+            <span class="fa fa-bars"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menubar">
+            <ul class="navbar-nav container">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php"><i class="fas fa-home"></i> Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Doencas Raras.php">Doenças Raras</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Foruns</a>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Publicações</a>
+                    <div class="dropdown-menu cor-verde">
+                        <a class="dropdown-item" href="campanhas.php">Campanhas</a>
+                        <a class="dropdown-item" href="">Artigos</a>
+                        <a class="dropdown-item" href="">Pedidos de apoio</a>
+                        <a class="dropdown-item" href="">Testemunhos</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Instituições e Associações</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="relatorio.php">Relatórios</a>
+                </li>
+                    
+            </ul>
+        </div>
+        
+    </nav>
 <?php
     }
 ?>

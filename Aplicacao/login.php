@@ -46,7 +46,7 @@
     <div class="container">
         
         <div class="row justify-content-center">
-            <form class="col-sm-6" method="post">
+            <form class="col-sm-6" method="post" action="autenticacao.php">
             
                 <div class="border cor-creme cor-borda justify-content-center mb-5" id="geral">
             
@@ -59,7 +59,7 @@
                     <div class="form-row justify-content-center">
                         <div class="form-group col-sm-10 mt-2">
                             <label for="User">Nome de Usuario Ou Email</label>
-                            <input type="email" class="form-control" id="User" placeholder="Nome de Usuario ou Email" required>
+                            <input type="text" class="form-control" name="nome" id="User" placeholder="Nome de Usuario ou Email" required>
                         </div>
                     </div>
             
@@ -67,14 +67,14 @@
                     <div class="form-row justify-content-center">
                         <div class="form-group col-sm-10">
                             <label for="User">Senha</label>
-                            <input type="Password" class="form-control" id="User" placeholder="Senha" required>
+                            <input type="Password" class="form-control" name="senha" id="User" placeholder="Senha" required>
                         </div>
                     </div>
             
             
                     <div class="form-row justify-content-center">
                         <div class="col-sm-3 mb-3">
-                            <button class="btn  btn-primary mr-3" type="Submit">Entrar</button>
+                            <button class="btn  btn-primary mr-3" name="entrar" type="Submit">Entrar</button>
                         </div>
                         <div class="col-sm-3 mb-3 float-right">
                             <div class="pull-right">
