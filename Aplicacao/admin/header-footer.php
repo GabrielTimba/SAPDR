@@ -18,7 +18,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link" href="#" data-toggle="dropdown">Nome de Usuario <i class="fas fa-angle-down ml-2"></i></a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="perrfil.html">Perfil</a>
+                                <a class="dropdown-item" href="perfil.html">Perfil</a>
                                 <a class="dropdown-item" href="../index.html">Pagina Inicial</a>
                                 <a class="dropdown-item" href="index.html">Sair</a>
                             </div>
@@ -50,13 +50,13 @@
                         <a class="dropdown-toggle" data-toggle="collapse" aria-expanded="false" href="#menu-usuarios"><i class="fas fa-users mr-2"></i>Usuários</a>
                         <ul class="collapse list-unstyled menu-dropdown" id="menu-usuarios">
                             <li><a href="lista-de-profissionais.php"><i class="fas fa-angle-double-right mr-2"></i>Profissional da Saúde</a></li>
-                            <li><a href="#"><i class="fas fa-angle-double-right mr-2"></i>Doente/Represetante</a></li>
+                            <li><a href="lista-de-doentes.php"><i class="fas fa-angle-double-right mr-2"></i>Doente/Represetante</a></li>
                         </ul>
                     </li>
                     <hr class="linha">
                     <li><a href="lista-de-doencas.php"><i class="fas fa-list-ul mr-2"></i>Doenças Raras</a></li>
                     <hr class="linha">
-                    <li><a href="#"><i class="fas fa-cogs mr-2"></i>Administrar Forum</a></li>
+                    <li><a href="lista-de-forum.php"><i class="fas fa-cogs mr-2"></i>Administrar Forum</a></li>
                     <hr class="linha">
                     <li>
                         <a class="dropdown-toggle" data-toggle="collapse" aria-expanded="false" href="#menu-publicacoes"><i class="fas fa-newspaper mr-2"></i>Publicações</a>
