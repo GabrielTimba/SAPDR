@@ -90,7 +90,7 @@
 
                     <article class="col-sm-12 artigo mt-3" id="test-2">
                         <h2 >Aumento de Recompesa </h2>
-                        <img class="img img-thumbnail my-3" src="imgs/pedido.png" alt="pedido">
+                        <img class="img img-thumbnail my-3" src="imgs/pedido-2.png" alt="pedido">
                         <p> Nullam hendrerit justo non leo aliquet imperdiet. Etiam in sagittis lectus. Suspendisse ultrices placerat accumsan.
                             Mauris quis dapibus orci. In dapibus velit blandit pharetra tincidunt. Quisque non sapien nec lacus condimentum
                             facilisis ut iaculis enim. Sed viverra interdum bibendum. Donec ac sollicitudin dolor. Sed fringilla vitae lacus at

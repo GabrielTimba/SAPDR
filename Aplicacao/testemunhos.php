@@ -65,7 +65,7 @@
             <div class="col-md-9 col-sm-12">
                 <div data-spy="scroll" data-target="#navbarVertical" data-offset="0" id="scrolArtigos">
                     
-                    <article class="col-sm-12 artigo" id="test-1">
+                    <article class="col-sm-12 artigo mt-3" id="test-1">
                         <h2>Testemunho 1</h2>
                         <img class="img-thumbnail my-3" id="img-st" src="imgs/pedido-1.png" alt="pedido">
                         <p> Nullam hendrerit justo non leo aliquet imperdiet. Etiam in sagittis lectus. Suspendisse ultrices placerat accumsan.
