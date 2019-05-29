@@ -1,5 +1,5 @@
 <?php
-    
+
     inserir();
     
     function inserir() {
