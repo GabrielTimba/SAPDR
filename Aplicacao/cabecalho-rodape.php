@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="collapse navbar-collapse float-left ml-3">
-                    <a href="index.php"><img src="imgs/icone-sapdr.png">
+                    <a href="index.php"><img src="imgs/icon.png">
                 </div>
                 
                 <div class="float-right mr-3">
@@ -82,7 +82,7 @@
     <div class="row">
         <div class="col-12">
             <div class="collapse navbar-collapse float-left ml-3">
-                <a href="index.php"><img src="imgs/icone-sapdr.png">
+                <a href="index.php"><img src="imgs/icon.png">
             </div>
             
             <div class="float-right mr-3">
@@ -204,6 +204,12 @@
         </div>
 
     </footer>
+<?php        
+    }
+
+    function favicon() {
+?>
+         <link rel="shortcut icon" href="imgs/favicon-2.png" type="image/x-png">
 <?php        
     }
 

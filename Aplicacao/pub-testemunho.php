@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="lib/fontawesome/css/all.css">
     <link rel="stylesheet" href="lib/summernote/summernote-bs4.css">
+    <?php
+        favicon();
+    ?>
     <!--API para criar editor de texto-->
 </head>
 

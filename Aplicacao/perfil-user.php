@@ -18,7 +18,9 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/RegistarDoentes.css">
-    
+    <?php
+        favicon();
+    ?>
 </head>
 <body>
     <!--Cabecalho -->

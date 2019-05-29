@@ -20,6 +20,9 @@
         <script src="../js/popper.js"></script>
         <script src="../js/bootstrap.js"></script>
         <script src="../js/painel-admin.js"></script>
+        <?php
+            favicon();
+        ?>
     </head>
     <body>
         <!--Cabecalho-->

@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="lib/fontawesome/css/all.css">
     <link rel="stylesheet" href="css/campanhas.css">
+    <?php
+        favicon();
+    ?>
     
     <script src="js/jquery.js"></script>
     <script src="js/popper.js"></script>

@@ -14,7 +14,10 @@
     <link rel="stylesheet" href="lib/fontawesome/css/all.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/doencas-raras.css">
-
+    <?php
+        favicon();
+    ?>
+    
     <script src="js/jquery.js"></script>
     <script src="js/popper.js"></script>
 	<script src="js/bootstrap.js"></script>
@@ -89,7 +92,7 @@
                                             <ul class="nav nav-pills" id="nav-doenca" role="tablist">
                                                 <li class="nav-item">
                                                     <a class="nav-link active text-success" id="ca-1" data-toggle="pill"
-                                                        href="#c-1">Características</a>
+                                                        href="#c-1">Causas</a>
                                                 </li>
                                                 <li class="nav-item">
                                                     <a class="nav-link text-success" id="si-1" data-toggle="pill" href="#s-1">Sintomas</a>
@@ -165,7 +168,7 @@
                                             <ul class="nav nav-pills" id="nav-doenca" role="tablist">
                                                 <li class="nav-item">
                                                     <a class="nav-link active text-success" id="tp2-ca-1" data-toggle="pill"
-                                                        href="#tp2-c-1">Características</a>
+                                                        href="#tp2-c-1">Causas</a>
                                                 </li>
                                                 <li class="nav-item">
                                                     <a class="nav-link text-success" id="tp2-si-1" data-toggle="pill"

@@ -18,6 +18,9 @@
         <link rel="stylesheet" href="../css/Registar Profissional.css">
         <link rel="stylesheet" href="../lib/smartwizard/css/smart_wizard.css">
         <link rel="stylesheet" href="../lib/smartwizard/css/smart_wizard_theme_circles.css">
+        <?php
+            favicon();
+        ?>
         
         <script src="../js/jquery.js"></script>
         <script src="../js/popper.js"></script>
@@ -77,19 +80,21 @@
                                             <legend>Dados Pessoais</legend>
                                             <div class="form-row">
                                                 <div class="form-group col-sm-5 mt-2 ml-3">
-                                                    <label for="Nome" >Nome:</label>
-                                                    <input type="text"   class="form-control"  placeholder="Nome" required>
+                                                    <label for="nome" >Nome:</label>
+                                                    <input type="text" name="nome" id="nome"  class="form-control"  placeholder="Nome" required>
                                                     <div class="help-block with-errors"></div>
                                                 </div>
                                                 <div class="form-group col-sm-5 mt-2 ml-3">
                                                     <label for="Apelido" >Apelido:</label>
                                                     <input type="text" class="form-control" placeholder="Apelido" required>
+                                                    <div class="help-block with-errors"></div>
                                                 </div>
                                             </div>
                                             <div class="form-row">
                                                 <div class="form-group col-sm-5 mt-2 ml-3">
                                                     <label for="Nome" >Data de Nascimento:</label>
                                                     <input type="text"   class="form-control" placeholder="Nome" required>
+                                                    <div class="help-block with-errors"></div>
                                                 </div>
                                                 <div class="form-group col-sm-5 mt-2 ml-3">
                                                     <label for="Genero" >Genero:</label>
@@ -98,6 +103,7 @@
                                                         <option >Maculino</option>
                                                         <option >Femenino</option>
                                                     </select>
+                                                    <div class="help-block with-errors"></div>
                                                 </div>
                                             </div> 
                                         </div>

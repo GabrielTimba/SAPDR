@@ -13,17 +13,23 @@
         <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
         <link rel="stylesheet" href="../css/fonts.css">
         <link rel="stylesheet" href="../lib/fontawesome/css/all.css">
-        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../lib/fontawesome/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="../css/painel-admin.css">
         <link rel="stylesheet" href="../css/Registar Doenca.css">
         <link rel="stylesheet" href="../lib/smartwizard/css/smart_wizard.css">
         <link rel="stylesheet" href="../lib/smartwizard/css/smart_wizard_theme_circles.css">
+       <!-- <link rel="stylesheet" href="../lib/summernote/summernote-bs4.css">-->
+
+        <?php
+            favicon();
+        ?>
         
         <script src="../js/jquery.js"></script>
         <script src="../js/popper.js"></script>
         <script src="../js/bootstrap.js"></script>
         <script src="../js/painel-admin.js"></script>
         <script src="../js/Registar Doenca.js"></script>
+
     </head>
     <body>
         <!--Cabecalho-->
@@ -55,21 +61,22 @@
 
                 <div class="row justify-content-center">
                     <div class="col-sm-11 borda-titulo">
-                        <label><i class=""></i>Cadastro de Doenca</label>
+                        <label><i class="fa fa-pencil-square-o mr-1"></i>Cadastro de Doença</label>
                     </div>
                 </div>
 
                 <div class="row justify-content-center">
 
                     <div class=" border col-sm-11 bg-white " id="cadastro">
-                        <form  action="#" id="myForm" role="form"  method="post" accept-charset="utf-8">
+                        <form  action="../model/doencaDAO.php" id="myForm" role="form"  method="POST" accept-charset="utf-8">
 
                             <!-- SmartWizard html -->
                             <div id="smartwizard">
                                 <ul class="mt-2">
                                     <li><a href="#step-1">Passo 1<br /><small>Nome e Tipo</small></a></li>
-                                    <li><a href="#step-2">Passo 2<br /><small>Sintomas e Caracteristicas</small></a></li>
-                                    <li><a href="#step-3">Passo 3<br /><small>Descricao</small></a></li>
+                                    <li><a href="#step-2">Passo 2<br /><small>Causas e Sintomas</small></a></li>
+                                    <li><a href="#step-3">Passo 3<br /><small>Tratamentos e Prevenção</small></a></li>
+                                    
                                 </ul>
                     
                                 <div>
@@ -78,8 +85,8 @@
                                             <legend>Dados </legend>
                                             <div class="form-row">
                                                     <div class="form-group col-sm-5 mt-2 ml-3">
-                                                        <label for="NomeDoenca" >Nome da Doenca:</label>
-                                                        <input type="text"   class="form-control"  placeholder="Nome da Doenca" required>
+                                                        <label for="NomeDoenca" >Nome da Doença:</label>
+                                                        <input type="text"   class="form-control" id="NomeDoenca" name="nome"  placeholder="Nome da Doenca" required>
                                                     </div>
                         
                                                 </div> 
@@ -87,12 +94,18 @@
                                                 <div class="form-row">
                                                 
                                                     <div class="form-group col-sm-5 mt-2 ml-3">
-                                                        <label for="Tipo" >Tipo de Doenca:</label>
-                                                        <select class="form-control" id="Genero " required>
+                                                        <label for="Tipo" >Tipo de Doença:</label>
+                                                        <select class="form-control" id="Tipo" name="tipo">
+                                                            <option >Proliferativa</option>
+                                                            <option >Degenerativa</option>
+                                                        </select>
+                                                        
+                                                        <!--<input class="form-control" id="Tipo" name="tipo" list="tipos" required>
+                                                        <datalist  id="tipos">
                                                             <option selected>...</option>
                                                             <option >Proliferativas</option>
                                                             <option >Degenerativas</option>
-                                                        </select>
+                                                        </datalist>-->
                                                     </div>
                                                 </div> 
                     
@@ -101,34 +114,39 @@
                                     </div>
                                     <div id="step-2">
                                         <div id="form-step-1" role="form" data-toggle="validator">
-                                            <legend>Sintomas e Descricao</legend>
-                                            <div class="form-row">
-                                                    <div class="form-group col-sm-5 mt-2 ml-3">
-                                                        <label for="Sintomas">Sintomas:</label><br>
-                                                        <input type="text" class="form-control" placeholder="Espetactiva de Vida" required>
-                                                        <input  type="button" class="form-control btn-outline-primary mt-2" value="Adicionar Sintoma">
-                                                    </div>
-                    
+                                            <legend>Causas e Sintomas</legend>
+                                            
+                                            <div class="form-row justify-content-center">
+                                                <div class="form-group col-sm-11">
+                                                    <label for="causas">Causas:</label>
+                                                    <textarea id="causas" name="causas" class="form-control editor" required></textarea>                         
                                                 </div>
+                                            </div>
                     
-                                                <div class="form-row">
-                                                    <div class="form-group col-sm-8 mt-2 ml-3">
-                                                        <label for="Descricao">Descricao:</label><br>
-                                                        <textarea name="Descricao" id="Descricao" cols="70" rows="6" class="form-control"></textarea>
-                                                    </div>
-                    
+                                            <div class="form-row justify-content-center">
+                                                <div class="form-group col-sm-11">
+                                                    <label for="Sintomas">Sintomas:</label>
+                                                    <textarea id="Sintomas" name="sintomas" class="form-control" required></textarea>                         
                                                 </div>
+                                            </div>
+
                                         </div>
                                     </div>
                                     <div id="step-3">
                                         <div id="form-step-2" role="form" data-toggle="validator">
-                                            <legend>Caracteristicas</legend>
-                                            <div class="form-row">
-                                                <div class="form-group col-sm-8 mt-2 ml-3">
-                                                    <label for="Caracteristicas" >Caracteristicas:</label>
-                                                    <textarea class="form-control" id="Caracteristicas" cols="70" rows="7" required></textarea>
+                                            <legend>Tratamentos e Prevenção</legend>
+                                            <div class="form-row justify-content-center">
+                                                <div class="form-group col-sm-11">
+                                                    <label for="trat">Tratamentos:</label>
+                                                    <textarea id="trat" name="tratamentos" class="form-control" required></textarea>                         
                                                 </div>
-                                                
+                                            </div>
+                    
+                                            <div class="form-row justify-content-center">
+                                                <div class="form-group col-sm-11">
+                                                    <label for="prev">Prevenção:</label>
+                                                    <textarea id="prev" name="prevencao" class="form-control" required></textarea>                         
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -149,11 +167,14 @@
         </div>
 
 
+     
+        
     <!-- plugins do smartwizard -->
-    <script src="../lib/smartwizard/js/jquery.min.js"></script>
-    <script src="../lib/smartwizard/js/validator.min.js"></script>
-    <script src="../lib/smartwizard/js/jquery.smartWizard.js"></script>
-
+    <script src="../lib/smartwizard/js/jquery.min.js"></script> 
+    <script src="../lib/smartwizard/js/validator.min.js"></script> 
+    <script src="../lib/smartwizard/js/jquery.smartWizard.js"></script>  
+    
+    
     <script type="text/javascript">
         $(document).ready(function(){
 
@@ -228,8 +249,26 @@
             });
 
         });
-    </script>   
+    </script>
+    
+    <!--
+    <script src="../lib/summernote/summernote-bs4.js"></script> 
+    <script src="../lib/summernote/lang/summernote-pt-PT.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('textarea.editor').summernote({ 
+                lang:'pt-PT',
+                height: 200,                 // set editor height
+                minHeight: null,             // set minimum height of editor
+                maxHeight: null,             // set maximum height of editor
+                focus: false             // set focus to editable area after initializing summernote
+            });
+        });
+    </script>-->
         
+    
+    
     </body>
 </html>
 

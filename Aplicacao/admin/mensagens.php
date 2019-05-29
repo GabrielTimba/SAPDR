@@ -14,6 +14,9 @@
         <link rel="stylesheet" href="../css/fonts.css">
         <link rel="stylesheet" href="../lib/fontawesome/css/all.css">
         <link rel="stylesheet" href="../css/painel-admin.css">
+        <?php
+            favicon();
+        ?>
         
         <script src="../js/jquery.js"></script>
         <script src="../js/popper.js"></script>
