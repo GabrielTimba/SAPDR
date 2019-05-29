@@ -1,7 +1,7 @@
 <?php
     function cabecalho(){
         session_start();
-	    if(!isset($_COOKIE[$cookie_name])){
+	    if(!isset($_SESSION['nome'])){
 		    cabecalhoVisitante();  
         }
         else{
