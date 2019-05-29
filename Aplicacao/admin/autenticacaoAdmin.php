@@ -1,6 +1,6 @@
 <?php
 
-    if(isset($_GET['entrar'])){
+    if(isset($_POST['entrar'])){
         inicarSessao();
     }
         
@@ -11,8 +11,8 @@
     function inicarSessao(){
         include('../bd.php');
 
-        $nome = $_GET["nome"];
-        $pass = $_GET["senha"];
+        $nome = $_POST["nome"];
+        $pass = $_POST["senha"];
 
         $query = "SELECT * FROM profissional WHERE userName='$nome' AND senha='$pass'";
         $dados = mysqli_query($conexao, $query);
