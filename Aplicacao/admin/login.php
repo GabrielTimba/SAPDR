@@ -33,7 +33,7 @@
         <div class="row justify-content-center">
             <div class="col-6 ">
                 
-                <form class="cor-borda" action="autenticacaoAdmin.php">
+                <form class="cor-borda" action="autenticacaoAdmin.php" method="post">
                     <div class="form-row justify-content-center mt-4" >
                         <div class="form-group col-5 mt-2">
                             <i class="fas fa-user-circle display-2 ml-5"></i>
