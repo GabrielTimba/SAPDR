@@ -1,7 +1,7 @@
 <?php
     function cabecalho(){
         session_start();
-	    if(!isset($_SESSION['nome'])){
+	    if(!isset($_COOKIE[$cookie_name])){
 		    cabecalhoVisitante();  
         }
         else{
@@ -12,7 +12,6 @@
     
     //metodo que faz o cabecalho
     function cabecalhoVisitante() {
-    //>>>>>>> 057e7a2388e4daf25e5c006572e2d177f6c458c2
 ?>
         <div class="row">
             <div class="col-12">
@@ -99,7 +98,7 @@
                             <a class="dropdown-item" href="perfil-user.php">Perfil</a>
                             <a class="dropdown-item" href="pedir-apoio.php">Pedir Apoio</a>
                             <a class="dropdown-item" href="pub-testemunho.php">Publicar Testemunho</a>
-                            <a class="dropdown-item" href="">Sair</a>
+                            <a class="dropdown-item" href="autenticacao.php?sair=true">Sair</a>
                         </div>
             
                     </li>
