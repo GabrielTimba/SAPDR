@@ -14,7 +14,7 @@
         $nome = $_POST["nome"];
         $pass = $_POST["senha"];
 
-        $query = "SELECT * FROM doente WHERE userName='$nome' AND senha='$pass'";
+        $query = "SELECT * FROM doente WHERE userName='$nome' AND senha=md5('$pass')";
         $dados = mysqli_query($conexao, $query);
 
         if($dados == true){
