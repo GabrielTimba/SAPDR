@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 27-Maio-2019 às 14:44
+-- Generation Time: 29-Maio-2019 às 18:15
 -- Versão do servidor: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -59,8 +59,15 @@ CREATE TABLE `associacao` (
 CREATE TABLE `contacto` (
   `idContacto` smallint(10) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `telefone` smallint(6) NOT NULL
+  `telefone` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `contacto`
+--
+
+INSERT INTO `contacto` (`idContacto`, `email`, `telefone`) VALUES
+(1, 'ricardo@gmail.com', 846963114);
 
 -- --------------------------------------------------------
 
@@ -91,6 +98,13 @@ CREATE TABLE `doenca` (
   `sintoma` text NOT NULL,
   `idTipo` smallint(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `doenca`
+--
+
+INSERT INTO `doenca` (`idDoenca`, `nome`, `prevencao`, `causa`, `tratamento`, `sintoma`, `idTipo`) VALUES
+(1, 'aaaa', 'SCc', 'sss', 'add', 'ddd', 1);
 
 -- --------------------------------------------------------
 
@@ -126,7 +140,7 @@ CREATE TABLE `doente` (
 --
 
 INSERT INTO `doente` (`idDoente`, `nome`, `apelido`, `dataNasc`, `genero`, `idInstituicao`, `idEndereco`, `UserName`, `senha`) VALUES
-(2, 'Maria', 'Cossa', '2017-12-06', '', 1, 1, 'cossa', 'cossa03');
+(2, 'Maria', 'Cossa', '2017-12-06', '', 1, 1, 'cossa', '9d1136878d04238b7b47b236101ca4d4');
 
 -- --------------------------------------------------------
 
@@ -251,6 +265,13 @@ CREATE TABLE `profissional` (
   `senha` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `profissional`
+--
+
+INSERT INTO `profissional` (`idProf`, `genero`, `dataNasc`, `apelido`, `nome`, `idEndereco`, `idInstituicao`, `idContacto`, `UserName`, `senha`) VALUES
+(1, 'M', '2019-05-08', 'Ricardo', 'Folege', 1, 1, 1, 'ricardo', 'd93591bdf7860e1e4ee2fca799911215');
+
 -- --------------------------------------------------------
 
 --
@@ -298,6 +319,13 @@ CREATE TABLE `tipod` (
   `idTipo` smallint(10) NOT NULL,
   `nome` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `tipod`
+--
+
+INSERT INTO `tipod` (`idTipo`, `nome`) VALUES
+(1, 'Proliferativa');
 
 -- --------------------------------------------------------
 
@@ -498,7 +526,7 @@ ALTER TABLE `associacao`
 -- AUTO_INCREMENT for table `contacto`
 --
 ALTER TABLE `contacto`
-  MODIFY `idContacto` smallint(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `idContacto` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `documento`
@@ -510,7 +538,7 @@ ALTER TABLE `documento`
 -- AUTO_INCREMENT for table `doenca`
 --
 ALTER TABLE `doenca`
-  MODIFY `idDoenca` smallint(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `idDoenca` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `doente`
@@ -546,7 +574,7 @@ ALTER TABLE `post`
 -- AUTO_INCREMENT for table `profissional`
 --
 ALTER TABLE `profissional`
-  MODIFY `idProf` smallint(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `idProf` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `testemunho`
@@ -558,7 +586,7 @@ ALTER TABLE `testemunho`
 -- AUTO_INCREMENT for table `tipod`
 --
 ALTER TABLE `tipod`
-  MODIFY `idTipo` smallint(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `idTipo` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tipoi`
