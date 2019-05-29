@@ -15,6 +15,9 @@
         <link rel="stylesheet" href="../lib/fontawesome/css/all.css">
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../css/painel-admin.css">
+        <?php
+            favicon();
+        ?>
         
         <script src="../js/jquery.js"></script>
         <script src="../js/popper.js"></script>
@@ -77,7 +80,7 @@
                                 <td>follegelricardo@gmail.com</td>
                                 <td>Hospital 1</td>
                                 <td> 
-                                    <a href="Registar Profissional.html" class="btn cor-verde">Editar</a>
+                                    <a href="registar-profissional.php" class="btn cor-verde">Editar</a>
                                 </td>
                             </tr>
                             <tr>
@@ -85,7 +88,8 @@
                                 <td>follegelricardo@gmail.com</td>
                                 <td>Hospital 2</td>
                                 <td> 
-                                    <a href="Registar Profissional.html" class="btn cor-verde">Editar</a>
+                                    <a href="registar-profissional.php" class="btn cor-verde">Editar</a>
+                                    <a href="#" class="btn cor-verde">Ler m9ais</a>
                                 </td>
                             </tr>
                             <tr>
@@ -93,7 +97,7 @@
                                 <td>follegelricardo@gmail.com</td>
                                 <td>Hospital 3</td>
                                 <td> 
-                                    <a href="Registar Profissional.html" class="btn cor-verde">Editar</a>
+                                    <a href="registar-profissional.php" class="btn cor-verde">Editar</a>
                                 </td>
                             </tr>
                             <tr>
@@ -101,7 +105,7 @@
                                 <td>follegelricardo@gmail.com</td>
                                 <td>Hospital 4</td>
                                 <td> 
-                                    <a href="Registar Profissional.html" class="btn cor-verde">Editar</a>
+                                    <a href="registar-profissional.php" class="btn cor-verde">Editar</a>
                                 </td>
                             </tr>
                             <tr>
@@ -109,7 +113,7 @@
                                 <td>follegelricardo@gmail.com</td>
                                 <td>Hospital 4</td>
                                 <td> 
-                                    <a href="Registar Profissional.html" class="btn cor-verde">Editar</a>
+                                    <a href="registar-profissional.php" class="btn cor-verde">Editar</a>
                                 </td>
                             </tr>
 

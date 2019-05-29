@@ -16,7 +16,9 @@
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../css/painel-admin.css">
         <link rel="stylesheet" href= "../css/publicar-admin.css">
-        <link rel="icon" type="imagem/png" href="animated_favicon1.gif" type="imagem/gif"/>
+        <?php
+            favicon();
+        ?>
         
         <script src="../js/jquery.js"></script>
         <script src="../js/popper.js"></script>

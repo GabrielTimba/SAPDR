@@ -18,6 +18,9 @@
         <link rel="stylesheet" href="../css/Registar Profissional.css">
         <link rel="stylesheet" href="../lib/smartwizard/css/smart_wizard.css">
         <link rel="stylesheet" href="../lib/smartwizard/css/smart_wizard_theme_circles.css">
+        <?php
+            favicon();
+        ?>
         
         <script src="../js/jquery.js"></script>
         <script src="../js/popper.js"></script>
