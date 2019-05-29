@@ -1,4 +1,10 @@
 <?php
+	session_start();
+	if(!isset($_SESSION['nome'])){
+		header('Location:login.php');
+	}
+?>
+<?php
     //metodo que cria cabecalho do admin
     function cabecalhoAdmin() {
 ?>
@@ -20,7 +26,7 @@
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="perrfil.html">Perfil</a>
                                 <a class="dropdown-item" href="../index.html">Pagina Inicial</a>
-                                <a class="dropdown-item" href="index.html">Sair</a>
+                                <a class="dropdown-item" href="autenticacaoAdmin.php?sair=true">Sair</a>
                             </div>
                         </li>
                     </ul>
