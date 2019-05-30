@@ -1,5 +1,6 @@
 <?php
-
+    include('../bd.php');
+    
     if(isset($_POST['nome']))
         inserir();
     
@@ -18,7 +19,7 @@
 
     
     function inserir() {
-        include('../bd.php');
+        
 
         $nome= $_POST['nome'];
         $tipo= $_POST['tipo'];
