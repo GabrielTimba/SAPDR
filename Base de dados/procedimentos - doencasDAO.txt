@@ -1,9 +1,18 @@
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `lerDoencaID`(IN `_id` INT(4))
+CREATE DEFINER=`root`@`localhost` PROCEDURE `actualizaDoencaID`(IN `_id` INT(4), IN `_nome` VARCHAR(40), IN `_tipo` VARCHAR(40), IN `_causas` TEXT, IN `_sintomas` TEXT, IN `_tratamentos` TEXT, IN `_prevencao` TEXT)
+    NO SQL
 BEGIN
-	SELECT d.idDoenca as id,d.nome, t.nome as tipo, d.causa, d.sintoma, 			d.tratamento, d.prevencao
-    FROM doenca d, tipod t
-    WHERE d.idTipo = t.idTipo AND d.idDoenca = _id;
+	DECLARE codTipo SMALLINT(10);
+    
+    SELECT d.idTipo INTO codTipo FROM doenca d WHERE d.idDoenca = _id;
+    
+    UPDATE tipod SET nome = _tipo WHERE idTipo = codTipo;
+    
+    UPDATE doenca 
+    SET nome = _nome, prevencao = _prevencao, causa = _causas, tratamento = _tratamentos, sintoma = _sintomas
+    WHERE idDoenca = _id;
+    
+    
 END$$
 DELIMITER ;
 
@@ -29,11 +38,22 @@ BEGIN
 	IF (_n = 1) THEN
 		SELECT d.idDoenca as id,d.nome, t.nome as tipo, d.causa, d.sintoma, d.tratamento, 				   d.prevencao
     FROM doenca d, tipod t
-    WHERE d.idTipo = t.idTipo;
+    WHERE d.idTipo = t.idTipo
+    ORDER BY d.nome;
     ELSEIF (_n=2) THEN
     	SELECT d.idDoenca as id,d.nome, t.nome as tipo
    		 FROM doenca d, tipod t
-   		 WHERE d.idTipo = t.idTipo;
+   		 WHERE d.idTipo = t.idTipo
+         ORDER BY d.nome;
     END IF;
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lerDoencaID`(IN `_id` INT(4))
+BEGIN
+	SELECT d.idDoenca as id,d.nome, t.nome as tipo, d.causa, d.sintoma, 			d.tratamento, d.prevencao
+    FROM doenca d, tipod t
+    WHERE d.idTipo = t.idTipo AND d.idDoenca = _id;
 END$$
 DELIMITER ;

@@ -5,12 +5,12 @@
         inserir();
     
     if(isset($_GET['id'])) {
-        $id = $_GET['id'];
-        //echo "$id";
-      //  session_start();
-       // $_SESSION['idDoenca'] = $id;
-        
+        $id = $_GET['id'];       
        header('Location:../admin/registar-doencas.php?idDoenca='.$id);
+    }
+
+    if((isset($_GET['acao'])) && ($_GET['acao'] == 'update')){
+        actualizar($_GET['idUpdate']);
     }
 
     if(isset($_GET['cancelar'])) {
@@ -149,7 +149,7 @@
                 <div class="row justify-content-center">
 
                     <div class=" border col-sm-11 bg-white pb-3" id="cadastro">
-                        <form  action="../model/doencaDAO.php?acao=inserir" id="myForm" role="form"  method="POST" accept-charset="utf-8">
+                        <form  action="../model/doencaDAO.php?acao=update&&idUpdate="<?php echo $id; ?> id="myForm" role="form"  method="POST" accept-charset="utf-8">
 
                             <!-- SmartWizard html -->
                             <div id="smartwizard">
@@ -250,5 +250,34 @@
         }   
         $stmt->close();
         fechaConexao($conexao);
+    }
+
+    function actualizar($idDoenca) {
+        $conexao = getConexao(); 
+        define('SQL','CALL actalizaDoencaID(?,?,?,?,?,?,?);');
+        
+        if(!($stmt = $conexao->prepare(SQL))) {
+            echo"Preparo do update Falhou: (".$conexao->errno.") ".$conexao->error;
+        }
+        
+        if(!($stmt->bind_param('issssss',$id,$nome,$tipo,$causas,$sintomas,$tratamentos,$prevencao))) {
+            echo " Parâmetros de ligação falhados: (".$stmt->errno.")".$stmt->error;
+        }
+        $id = $idDoenca;
+        $nome= $_POST['nome'];
+        $tipo= $_POST['tipo'];
+        $causas= $_POST['causas'];
+        $sintomas= $_POST['sintomas'];
+        $tratamentos= $_POST['tratamentos'];
+        $prevencao= $_POST['prevencao'];
+
+        if(!($stmt->execute())){
+            echo " Execucao falhou: (".$stmt->errno.")".$stmt->error;
+        }
+
+        $stmt->close();
+        fechaConexao($conexao);
+
+        header('Location:../admin/lista-de-doencas.php');
     }
 ?>

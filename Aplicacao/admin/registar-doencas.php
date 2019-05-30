@@ -201,7 +201,7 @@
                                                                 alert('Oops existem campos que nao foram preenchidos');
                                                                 return false;
                                                             }else{
-                                                                alert('Bom! Cadastro Feito com Sucesso');
+                                                                alert('Bom! Dados salvos com Sucesso');
                                                                 elmForm.submit();
                                                                 return false;
                                                             }
