@@ -12,7 +12,8 @@
         
         <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
         <link rel="stylesheet" href="../css/fonts.css">
-        <link rel="stylesheet" href="../lib/fontawesome/css/all.css">
+        
+        <link rel="stylesheet" href="../lib/fontawesome/css/all.css"> 
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../css/painel-admin.css">
         <?php
@@ -59,71 +60,32 @@
                      
                 </div>
                 <div class="row justify-content-center">
-    
-                    <table class="table col-lg-10 col-md-10 col-sm-10 tabela mt-2">
-                        <thead >
-                            <tr class="cor-creme">
-                                <td class="titulo-tabela" colspan="3"><i class="fa fa-list mr-2"></i>Lista de Doencas</td>
-                                
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th class="texto-verde">Nome da Doenca</th>
-                                <th class="texto-verde">Tipo</th>
-                                <th class="texto-verde" >
-                                    <a href="">Accao</a>
-                                </th>
-                            </tr>
-                            <tr>
-                                <td>Doenca 1</td>
-                                <td>Degenerativa</td>
-                                <td> 
-                                    <button class="btn cor-verde" >
-                                        <a href="" data-toggle="modal" data-target="#siteModal">Ler mais</a>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Doenca 2</td>
-                                <td>Proliferativa</td>
-                                <td> 
-                                    <button class="btn cor-verde" >
-                                        <a href="" data-toggle="modal" data-target="#siteModal">Ler mais</a>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Doenca 3</td>
-                                <td>Proliferativa</td>
-                                <td> 
-                                    <button class="btn cor-verde" >
-                                        <a href="" data-toggle="modal" data-target="#siteModal">Ler mais</a>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Doenca 4</td>
-                                <td>Degenerativa</td>
-                                <td> 
-                                    <button class="btn cor-verde" >
-                                        <a href="" data-toggle="modal" data-target="#siteModal">Ler mais</a>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Doenca 5</td>
-                                <td>Degenerativa</td>
-                                <td> 
-                                    <button class="btn cor-verde" >
-                                        <a href="" data-toggle="modal" data-target="#siteModal">Ler mais</a>
-                                    </button>
-                                </td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-
+                    <div class="table-responsive col-sm-10">
+                        <table class="table table-bordered table-hover  tabela mt-2">
+                            <thead >
+                                <tr class="cor-creme">
+                                    <td class="titulo-tabela" colspan="4"><i class="fa fa-list mr-2"></i>Lista de Doenças</td>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th class="texto-verde">
+                                        <input type="checkbox">
+                                    </th>
+                                    <th class="texto-verde">Nome da Doença</th>
+                                    <th class="texto-verde">Tipo</th>
+                                    <th class="texto-verde" >
+                                        <a href="">Acção</a>
+                                    </th>
+                                </tr>
+                                <?php
+                                    include_once("../model/doencaDAO.php");
+                                    lerNomeTipo();
+                                ?> 
+                            </tbody>
+                        </table>
+                    <div>
                 </div>
 
                 <!--Rodape-->

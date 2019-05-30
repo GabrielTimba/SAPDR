@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../lib/fontawesome/css/all.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/painel-admin.css">
+    <link rel="shortcut icon" href="../imgs/favicon-2.png" type="image/x-png">
    
     <script src="../js/jquery.js"></script>
     <script src="../js/popper.js"></script>
@@ -24,7 +25,7 @@
     <header class="navbar navbar-expand-lg borda-baixo">
         <div class="col-sm-12">
             <div class="collapse navbar-collapse float-left">
-                <a href="../index.html"><img class="img-fluid" src="../imgs/icone-sapdr.png" alt="Icone SAPDR"></a>
+                <a href="../index.php"><img class="img-fluid" src="../imgs/icon.png" alt="Icone SAPDR"></a>
             </div>     
         </div>
     </header>

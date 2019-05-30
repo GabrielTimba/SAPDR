@@ -43,126 +43,135 @@
             <!--Menu Lateral Esquerdo-->
             <?php
                 menuVertical();
+
+                if(!isset($_SESSION['id'])) {
+                    include('../model/doencaDAO.php');
+                    lerDoencaID($_SESSION['id']);
+                } else {
             ?>
+                 <!--Conteudo-->
+                <div class="container-fluid" id="conteudo">
 
-            <!--Conteudo-->
-            <div class="container-fluid" id="conteudo">
-
-                <div class="row conteudo-dir pt-4">
-                    <h5 class="ml-3">Profissional da Saúde</h5>
-                    <p class="ml-5 dir"><a href="#">Inicio</a> >> Doenças Raras >> <span class="text-sucess"> Adicionar Doença</span></p>
-                </div>
-
-                <div class="row my-2 justify-content-center">
-                    <div class="col-sm-11">
-                        <a class="btn btn-light bg-white cor-borda2 float-right" href="lista-de-doencas.php"><i class="fa fa-reply"></i></a>
+                    <div class="row conteudo-dir pt-4">
+                        <h5 class="ml-3">Doenças Raras</h5>
+                        <p class="ml-5 dir"><a href="#">Inicio</a> >> Doenças Raras >> <span class="text-sucess"> Adicionar Doença</span></p>
                     </div>
-                </div>
 
-                <div class="row justify-content-center">
-                    <div class="col-sm-11 borda-titulo">
-                        <label><i class="fa fa-pencil-square-o mr-1"></i>Cadastro de Doença</label>
+                    <div class="row my-2 justify-content-center">
+                        <div class="col-sm-11">
+                            <a class="btn btn-light bg-white cor-borda2 float-right" href="lista-de-doencas.php"><i class="fa fa-reply"></i></a>
+                        </div>
                     </div>
-                </div>
 
-                <div class="row justify-content-center">
+                    <div class="row justify-content-center">
+                        <div class="col-sm-11 borda-titulo">
+                            <label><i class="fa fa-pencil-square-o mr-1"></i>Adicionar Doença</label>
+                        </div>
+                    </div>
 
-                    <div class=" border col-sm-11 bg-white " id="cadastro">
-                        <form  action="../model/doencaDAO.php" id="myForm" role="form"  method="POST" accept-charset="utf-8">
+                    <div class="row justify-content-center">
 
-                            <!-- SmartWizard html -->
-                            <div id="smartwizard">
-                                <ul class="mt-2">
-                                    <li><a href="#step-1">Passo 1<br /><small>Nome e Tipo</small></a></li>
-                                    <li><a href="#step-2">Passo 2<br /><small>Causas e Sintomas</small></a></li>
-                                    <li><a href="#step-3">Passo 3<br /><small>Tratamentos e Prevenção</small></a></li>
-                                    
-                                </ul>
-                    
-                                <div>
-                                    <div id="step-1">
-                                        <div id="form-step-0" role="form" data-toggle="validator">
-                                            <legend>Dados </legend>
-                                            <div class="form-row">
-                                                    <div class="form-group col-sm-5 mt-2 ml-3">
-                                                        <label for="NomeDoenca" >Nome da Doença:</label>
-                                                        <input type="text"   class="form-control" id="NomeDoenca" name="nome"  placeholder="Nome da Doenca" required>
-                                                    </div>
+                        <div class=" border col-sm-11 bg-white " id="cadastro">
+                            <form  action="../model/doencaDAO.php?acao=inserir" id="myForm" role="form"  method="POST" accept-charset="utf-8">
+
+                                <!-- SmartWizard html -->
+                                <div id="smartwizard">
+                                    <ul class="mt-2">
+                                        <li><a href="#step-1">Passo 1<br /><small>Nome e Tipo</small></a></li>
+                                        <li><a href="#step-2">Passo 2<br /><small>Causas e Sintomas</small></a></li>
+                                        <li><a href="#step-3">Passo 3<br /><small>Tratamentos e Prevenção</small></a></li>
+                                        
+                                    </ul>
                         
-                                                </div> 
-                                
+                                    <div>
+                                        <div id="step-1">
+                                            <div id="form-step-0" role="form" data-toggle="validator">
+                                                <legend>Dados </legend>
                                                 <div class="form-row">
+                                                        <div class="form-group col-sm-5 mt-2 ml-3">
+                                                            <label for="NomeDoenca" >Nome da Doença:</label>
+                                                            <input type="text"   class="form-control" id="NomeDoenca" name="nome"  placeholder="Nome da Doenca" required>
+                                                        </div>
+                            
+                                                    </div> 
+                                    
+                                                    <div class="form-row">
+                                                    
+                                                        <div class="form-group col-sm-5 mt-2 ml-3">
+                                                            <label for="Tipo" >Tipo de Doença:</label>
+                                                            <select class="form-control" id="Tipo" name="tipo" selected="Degenerativa">
+                                                                <option >Proliferativa</option>
+                                                                <option >Degenerativa</option>
+                                                            </select>
+                                                            
+                                                            <!--<input class="form-control" id="Tipo" name="tipo" list="tipos" required>
+                                                            <datalist  id="tipos">
+                                                                <option selected>...</option>
+                                                                <option >Proliferativas</option>
+                                                                <option >Degenerativas</option>
+                                                            </datalist>-->
+                                                        </div>
+                                                    </div> 
+                        
+                                            </div>
+                        
+                                        </div>
+                                        <div id="step-2">
+                                            <div id="form-step-1" role="form" data-toggle="validator">
+                                                <legend>Causas e Sintomas</legend>
                                                 
-                                                    <div class="form-group col-sm-5 mt-2 ml-3">
-                                                        <label for="Tipo" >Tipo de Doença:</label>
-                                                        <select class="form-control" id="Tipo" name="tipo">
-                                                            <option >Proliferativa</option>
-                                                            <option >Degenerativa</option>
-                                                        </select>
-                                                        
-                                                        <!--<input class="form-control" id="Tipo" name="tipo" list="tipos" required>
-                                                        <datalist  id="tipos">
-                                                            <option selected>...</option>
-                                                            <option >Proliferativas</option>
-                                                            <option >Degenerativas</option>
-                                                        </datalist>-->
+                                                <div class="form-row justify-content-center">
+                                                    <div class="form-group col-sm-11">
+                                                        <label for="causas">Causas:</label>
+                                                        <textarea id="causas" name="causas" class="form-control editor" required></textarea>                         
                                                     </div>
-                                                </div> 
-                    
-                                        </div>
-                    
-                                    </div>
-                                    <div id="step-2">
-                                        <div id="form-step-1" role="form" data-toggle="validator">
-                                            <legend>Causas e Sintomas</legend>
-                                            
-                                            <div class="form-row justify-content-center">
-                                                <div class="form-group col-sm-11">
-                                                    <label for="causas">Causas:</label>
-                                                    <textarea id="causas" name="causas" class="form-control editor" required></textarea>                         
                                                 </div>
-                                            </div>
-                    
-                                            <div class="form-row justify-content-center">
-                                                <div class="form-group col-sm-11">
-                                                    <label for="Sintomas">Sintomas:</label>
-                                                    <textarea id="Sintomas" name="sintomas" class="form-control" required></textarea>                         
+                        
+                                                <div class="form-row justify-content-center">
+                                                    <div class="form-group col-sm-11">
+                                                        <label for="Sintomas">Sintomas:</label>
+                                                        <textarea id="Sintomas" name="sintomas" class="form-control" required></textarea>                         
+                                                    </div>
                                                 </div>
-                                            </div>
 
-                                        </div>
-                                    </div>
-                                    <div id="step-3">
-                                        <div id="form-step-2" role="form" data-toggle="validator">
-                                            <legend>Tratamentos e Prevenção</legend>
-                                            <div class="form-row justify-content-center">
-                                                <div class="form-group col-sm-11">
-                                                    <label for="trat">Tratamentos:</label>
-                                                    <textarea id="trat" name="tratamentos" class="form-control" required></textarea>                         
-                                                </div>
                                             </div>
-                    
-                                            <div class="form-row justify-content-center">
-                                                <div class="form-group col-sm-11">
-                                                    <label for="prev">Prevenção:</label>
-                                                    <textarea id="prev" name="prevencao" class="form-control" required></textarea>                         
+                                        </div>
+                                        <div id="step-3">
+                                            <div id="form-step-2" role="form" data-toggle="validator">
+                                                <legend>Tratamentos e Prevenção</legend>
+                                                <div class="form-row justify-content-center">
+                                                    <div class="form-group col-sm-11">
+                                                        <label for="trat">Tratamentos:</label>
+                                                        <textarea id="trat" name="tratamentos" class="form-control" required></textarea>                         
+                                                    </div>
+                                                </div>
+                        
+                                                <div class="form-row justify-content-center">
+                                                    <div class="form-group col-sm-11">
+                                                        <label for="prev">Prevenção:</label>
+                                                        <textarea id="prev" name="prevencao" class="form-control" required></textarea>                         
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                    
-                        </form>
+                        
+                            </form>
+                        </div>
+
                     </div>
 
+                    <!--Rodape-->
+                    <?php
+                        rodapeAdmin();
+                    ?>
                 </div>
+            <?php
+                }
+            ?>
 
-                <!--Rodape-->
-                <?php
-                    rodapeAdmin();
-                ?>
-            </div>
+           
 
         </div>
 
