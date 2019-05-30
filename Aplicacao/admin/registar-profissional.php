@@ -85,20 +85,20 @@
                                                     <div class="help-block with-errors"></div>
                                                 </div>
                                                 <div class="form-group col-sm-5 mt-2 ml-3">
-                                                    <label for="Apelido" >Apelido:</label>
-                                                    <input type="text" class="form-control" placeholder="Apelido" required>
+                                                    <label for="apelido" >Apelido:</label>
+                                                    <input type="text" name="apelido" id="apelido" class="form-control" placeholder="Apelido" required>
                                                     <div class="help-block with-errors"></div>
                                                 </div>
                                             </div>
                                             <div class="form-row">
                                                 <div class="form-group col-sm-5 mt-2 ml-3">
-                                                    <label for="Nome" >Data de Nascimento:</label>
-                                                    <input type="text"   class="form-control" placeholder="Nome" required>
+                                                    <label for="dataN" >Data de Nascimento:</label>
+                                                    <input type="text"  name="dataN" id="dataN" class="form-control" placeholder="Nome" required>
                                                     <div class="help-block with-errors"></div>
                                                 </div>
                                                 <div class="form-group col-sm-5 mt-2 ml-3">
-                                                    <label for="Genero" >Genero:</label>
-                                                    <select class="form-control" id="Genero " required>
+                                                    <label for="genero" >Genero:</label>
+                                                    <select class="form-control" name="genero" id="genero " required>
                                                         <option disabled selected>...</option>
                                                         <option >Maculino</option>
                                                         <option >Femenino</option>
@@ -106,16 +106,25 @@
                                                     <div class="help-block with-errors"></div>
                                                 </div>
                                             </div> 
+                                            <div class="form-row">
+                                                <label class="mr-sm-2">Botoes Externos:</label>
+                                                <div class="btn-group" role="group">
+                                                    <button class="btn btn-secondary" id="prev" type="submit">Go Previous</button>
+                                                    <button class="btn btn-secondary" id="next" type="submit">Go Next</button>
+                                                    <button class="btn btn-danger" id="reset-btn" type="button">Reset Wizard</button>
+                                                </div>
+                                            </div>
+                                            
                                         </div>
-                    
+                                        
                                     </div>
                                     <div id="step-2">
                                         <div id="form-step-1" role="form" data-toggle="validator">
                                             <legend>Endereco e Contacto</legend>
                                             <div class="form-row">
                                                 <div class="form-group col-sm-5 mt-2 ml-3">
-                                                    <label for="Provincia" >Provincia:</label>
-                                                    <select class="form-control" id="Provincia" required>
+                                                    <label for="provincia" >Provincia:</label>
+                                                    <select class="form-control" name="provincia" id="provincia" required>
                                                         <option disabled selected>...</option>
                                                         <option >Maputo</option>
                                                         <option >Gaza</option>
@@ -130,8 +139,8 @@
                                                     </select>
                                                 </div>
                                                 <div class="form-group col-sm-5 mt-2 ml-3">
-                                                    <label for="Distrito" >Distrito:</label>
-                                                    <select class="form-control" id="Distrito" required>
+                                                    <label for="distrito" >Distrito:</label>
+                                                    <select class="form-control" name="distrito" id="distrito" required>
                                                         <option disabled selected>...</option>
                                                         <option >...</option>
                                                         <option >...</option>
@@ -142,8 +151,8 @@
                                             <div class="form-row">
                             
                                                 <div class="form-group col-sm-5 mt-2 ml-3">
-                                                    <label for="Bairro" >Bairro:</label>
-                                                    <select class="form-control" id="Bairro" required>
+                                                    <label for="bairro" >Bairro:</label>
+                                                    <select class="form-control" name="bairro" id="bairro" required>
                                                         <option disabled selected>...</option>
                                                         <option >Bairro</option>
                                                         <option >Bairro</option>
@@ -151,20 +160,20 @@
                                                 </div>
                             
                                                 <div class="form-group col-sm-5 mt-2 ml-3">
-                                                    <label for="Rua" >Rua:</label>
-                                                    <input type="text" class="form-control" placeholder="Rua">
+                                                    <label for="rua" >Rua:</label>
+                                                    <input type="text" name="rua" id="rua" class="form-control" placeholder="Rua">
                                                 </div>
                                                 
                                             </div>
                                             
                                             <div class="form-row">
                                                 <div class="form-group col-sm-5 mt-2 ml-3">
-                                                    <label for="Email" >Email:</label>
-                                                    <input type="email" class="form-control"  placeholder="Email" required>
+                                                    <label for="email" >Email:</label>
+                                                    <input type="email" name="email" id="email" class="form-control"  placeholder="Email" required>
                                                 </div>
                                                 <div class="form-group col-sm-5 mt-2 ml-3">
-                                                    <label for="Tellefone" >Tellefone:</label>
-                                                    <input type="number" class="form-control" placeholder="Tellefone" required>
+                                                    <label for="tellefone" >Tellefone:</label>
+                                                    <input type="number" name="tellefone" id="tellefone" class="form-control" placeholder="Tellefone" required>
                                                 </div>
                                             </div> 
                                         </div>
@@ -175,17 +184,12 @@
                                             <div class="form-row">
                             
                                                 <div class="form-group col-sm-5 mt-2 ml-3">
-                                                    <label for="Unidade Hospitalar" >Unidade Hospitalar:</label>
-                                                    <select class="form-control" id="Unidade Hospitalar" required>
-                                                        <option disabled selected>...</option>
+                                                    <label for="unidade_h" >Unidade Hospitalar:</label>
+                                                    <select class="form-control" name="unidade_h" id="unidade_h" required>
+                                                        <option disabled >...</option>
                                                         <option >...</option>
                                                         <option >...</option>
                                                     </select>
-                                                </div>
-                            
-                                                <div class="form-group col-sm-5 mt-2 ml-3">
-                                                    <label for="Nr de Cartao da Ordem dos Medicos" >Nr de Cartao da Ordem dos Medicos:</label>
-                                                    <input type="text"   class="form-control"  placeholder="Nr de Cartao da Ordem dos Medicos" required>
                                                 </div>
                                                 
                                             </div>
@@ -197,19 +201,19 @@
                                             <legend>Dados de Acesso</legend>
                                             <div class="form-row">
                                                 <div class="form-group col-sm-5 mt-2 ml-3">
-                                                    <label for="Nome do Usuario" >Nome de Usuario:</label>
-                                                    <input type="text"   class="form-control"  placeholder="Nome do Usuario" required>
+                                                    <label for="nome_u" >Nome de Usuario:</label>
+                                                    <input type="text"  name="nome_u" id="nome_u" class="form-control"  placeholder="Nome do Usuario" required>
                                                 </div>
                                             </div>
                             
                                             <div class="form-row">
                                                 <div class="form-group col-sm-5 mt-2 ml-3">
-                                                    <label for="Senha" >Senha:</label>
-                                                    <input type="password"   class="form-control"  placeholder="Senha" required>
+                                                    <label for="senha" >Senha:</label>
+                                                    <input type="password" name="senha" id="senha" class="form-control"  placeholder="Senha" required>
                                                 </div>
                                                 <div class="form-group col-sm-5 mt-2 ml-3">
                                                     <label for="Confirme a Senha" >Confirme a Senha:</label>
-                                                    <input type="password" class="form-control" placeholder="Confirme a Senha" required>
+                                                    <input type="password" name="c_senha" id="c_senha" class="form-control" placeholder="Confirme a Senha" required>
                                                 </div>
                                             </div>
                                         </div>   
@@ -228,6 +232,7 @@
             </div>
 
         </div>
+    
 
 
     <!-- plugins do smartwizard -->
@@ -240,7 +245,7 @@
         $(document).ready(function(){
 
             // Toolbar extra buttons
-            var btnFinish = $('<button></button>').text('Finalisar')
+            var btnFinish = $('<button></button>').text('Submeter')
                                              .addClass('btn btn-info')
                                              .on('click', function(){
                                                     if( !$(this).hasClass('disabled')){
@@ -308,6 +313,35 @@
                     $('.btn-finish').addClass('disabled');
                 }
             });
+
+            //Experiencia
+
+            
+
+            // This event should initialize before initializing smartWizard
+            // Otherwise this event wont load on first page load
+            $("#smartwizard").on("showStep", function(e, anchorObject, stepNumber, stepDirection, stepPosition) {
+                $("#message-box").append(" > <strong>showStep</strong> called on " + stepNumber + ". Direction: " + stepDirection+ ". Position: " + stepPosition);
+            });
+
+            $("#smartwizard").on("beginReset", function(e) {
+                $("#message-box").append("<br /> > <strong>beginReset</strong> called");
+            });
+
+
+            $("#prev").on("click", function() {
+                // Navigate previous
+                   // $('#smartwizard').smartWizard("prev");  
+               // return true;
+            });
+
+            $("#next").on("click", function() {
+                // Navigate next
+                //$('#smartwizard').smartWizard("next");
+                return true;
+            });
+
+
 
         });
     </script>   
