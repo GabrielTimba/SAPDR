@@ -1,8 +1,8 @@
 <?php
-	session_start();
-	if(!isset($_SESSION['nome'])){
-		header('Location:login.php');
-	}
+	//session_start();
+	//if(!isset($_SESSION['nome'])){
+	//	header('Location:login.php');
+	//}
 ?>
 <?php
     //metodo que cria cabecalho do admin
