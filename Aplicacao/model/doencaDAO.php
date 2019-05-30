@@ -148,7 +148,7 @@
 
                 <div class="row justify-content-center">
 
-                    <div class=" border col-sm-11 bg-white " id="cadastro">
+                    <div class=" border col-sm-11 bg-white pb-3" id="cadastro">
                         <form  action="../model/doencaDAO.php?acao=inserir" id="myForm" role="form"  method="POST" accept-charset="utf-8">
 
                             <!-- SmartWizard html -->
