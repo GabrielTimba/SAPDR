@@ -58,13 +58,13 @@
                             <label for="contacto" class="mt-3">Contacto</label><br>
                         </div>
                         <div class="form-group col-9">
-                            <input class="form-control my-5" id="pedido" type="text">
-                            <input class="form-control mb-5" id="ben" type="text">
-                            <input class="form-control" id="contacto" type="number">
+                            <input class="form-control my-5" id="pedido" type="text" required>
+                            <input class="form-control mb-5" id="ben" type="text" required>
+                            <input class="form-control" id="contacto" type="number" required>
                         </div>
                         <div class="form-group col-12 mt-4">
                             <label for="descricao ">Descrição/Mensagem</label>
-                            <textarea class="form-control" id="descricao"></textarea>
+                            <textarea class="form-control" id="descricao"></textarea required>
                         </div>
                         <div class="form-group mt-3">
                             <button class="btn btn-outline-danger botoes mx-3" type="reset">Apagar</button>
