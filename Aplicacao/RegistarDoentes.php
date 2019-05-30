@@ -157,7 +157,7 @@
         
                                         <div class="form-group col-sm-5 mt-2 ml-3">
                                             <label for="bairro">Bairro:</label>
-                                            <input type="text" class="form-control" name="bairro" id="bairro" placeholder="Bairro">
+                                            <input type="text" class="form-control" name="bairro" id="bairro" placeholder="Bairro"required>
                                             <!--<select class="form-control" id="Bairro" required>
                                                 <option disabled selected>...</option>
                                                 <option>Bairro</option>
@@ -167,7 +167,7 @@
         
                                         <div class="form-group col-sm-5 mt-2 ml-3">
                                             <label for="Rua">Rua:</label>
-                                            <input type="text" class="form-control"name="rua" placeholder="Rua">
+                                            <input type="text" class="form-control"name="rua" placeholder="Rua" required>
                                         </div>
         
                                     </div>
@@ -191,7 +191,7 @@
                                     <div class="form-row">
                                         <div class="form-group col-sm-5 mt-2 ml-3">
                                             <label for="doenca" >Nome da Doença</label>
-                                            <input class="form-control" name="doenca" id="doenca" list="doencas">
+                                            <input class="form-control" name="doenca" id="doenca" list="doencas" required>
                                             <datalist id="doencas">
                                                 <option value="11111"></option>
                                                 <option value="22222"></option>
@@ -219,7 +219,7 @@
 
                                         <div class="form-group col-sm-5">
                                             <label for="hosp">Em que unidade Hospitalar</label>
-                                            <input class="form-control" name="hospital" id="hosp" list="hospital">
+                                            <input class="form-control" name="hospital" id="hosp" list="hospital" required>
                                             <datalist id="hospital">
                                                 <option value="11111"></option>
                                                 <option value="22222"></option>
@@ -274,7 +274,7 @@
 
     <!-- plugins do smartwizard -->
     <script src="lib/smartwizard/js/jquery.min.js"></script>
-    <script src="lib/smartwizard/js/validator.min.js"></script>
+    <script src="lib/smartwizard/js/validator.js"></script>
     <script src="lib/smartwizard/js/jquery.smartWizard.js"></script>
 
     <!--script do smartwizard-->
@@ -332,7 +332,7 @@
                // only on forward navigation, that makes easy navigation on backwards still do the validation when going next
                if(stepDirection === 'forward' && elmForm){
                    elmForm.validator('validate');
-                   var elmErr = elmForm.children('.has-error');
+                   var elmErr = elmForm.find('.has-error');
                    if(elmErr && elmErr.length > 0){
                        // Form validation failed
                        return false;

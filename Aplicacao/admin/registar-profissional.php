@@ -27,6 +27,7 @@
         <script src="../js/bootstrap.js"></script>
         <script src="../js/painel-admin.js"></script>
         <script src="../js/Registar Profissional.js"></script>
+        
     </head>
     <body>
         <!--Cabecalho-->
@@ -93,27 +94,19 @@
                                             <div class="form-row">
                                                 <div class="form-group col-sm-5 mt-2 ml-3">
                                                     <label for="dataN" >Data de Nascimento:</label>
-                                                    <input type="text"  name="dataN" id="dataN" class="form-control" placeholder="Nome" required>
+                                                    <input type="date"  name="dataN" id="dataN" class="form-control" placeholder="Nome" required>
                                                     <div class="help-block with-errors"></div>
                                                 </div>
                                                 <div class="form-group col-sm-5 mt-2 ml-3">
                                                     <label for="genero" >Genero:</label>
-                                                    <select class="form-control" name="genero" id="genero " required>
-                                                        <option disabled selected>...</option>
+                                                    <select class="form-control" name="genero" id="genero "  required>
+                                                        <option disable >...</option>
                                                         <option >Maculino</option>
                                                         <option >Femenino</option>
                                                     </select>
                                                     <div class="help-block with-errors"></div>
                                                 </div>
                                             </div> 
-                                            <div class="form-row">
-                                                <label class="mr-sm-2">Botoes Externos:</label>
-                                                <div class="btn-group" role="group">
-                                                    <button class="btn btn-secondary" id="prev" type="submit">Go Previous</button>
-                                                    <button class="btn btn-secondary" id="next" type="submit">Go Next</button>
-                                                    <button class="btn btn-danger" id="reset-btn" type="button">Reset Wizard</button>
-                                                </div>
-                                            </div>
                                             
                                         </div>
                                         
@@ -237,8 +230,9 @@
 
     <!-- plugins do smartwizard -->
     <script src="../lib/smartwizard/js/jquery.min.js"></script>
-    <script src="../lib/smartwizard/js/validator.min.js"></script>
+   <!-- <script src="../lib/smartwizard/js/validator.min.js"></script>-->
     <script src="../lib/smartwizard/js/jquery.smartWizard.js"></script>
+    <script src="../lib/smartwizard/js/validator.js"></script>
 
     <!--script do smartwizard-->
     <script type="text/javascript">
@@ -291,17 +285,21 @@
 
             $("#smartwizard").on("leaveStep", function(e, anchorObject, stepNumber, stepDirection) {
                 var elmForm = $("#form-step-" + stepNumber);
+                
                 // stepDirection === 'forward' :- this condition allows to do the form validation
                 // only on forward navigation, that makes easy navigation on backwards still do the validation when going next
                 if(stepDirection === 'forward' && elmForm){
                     elmForm.validator('validate');
-                    var elmErr = elmForm.children('.has-error');
+                    //alert('A caminho');
+                    var elmErr = elmForm.find('.has-error');
+                   // alert(elmErr.length );
                     if(elmErr && elmErr.length > 0){
+                        
                         // Form validation failed
                         return false;
                     }
                 }
-                return true;
+               // return true;
             });
 
             $("#smartwizard").on("showStep", function(e, anchorObject, stepNumber, stepDirection) {
@@ -314,37 +312,11 @@
                 }
             });
 
-            //Experiencia
-
-            
-
-            // This event should initialize before initializing smartWizard
-            // Otherwise this event wont load on first page load
-            $("#smartwizard").on("showStep", function(e, anchorObject, stepNumber, stepDirection, stepPosition) {
-                $("#message-box").append(" > <strong>showStep</strong> called on " + stepNumber + ". Direction: " + stepDirection+ ". Position: " + stepPosition);
-            });
-
-            $("#smartwizard").on("beginReset", function(e) {
-                $("#message-box").append("<br /> > <strong>beginReset</strong> called");
-            });
-
-
-            $("#prev").on("click", function() {
-                // Navigate previous
-                   // $('#smartwizard').smartWizard("prev");  
-               // return true;
-            });
-
-            $("#next").on("click", function() {
-                // Navigate next
-                //$('#smartwizard').smartWizard("next");
-                return true;
-            });
-
-
+         
 
         });
     </script>   
+     
 </body>
 </html>
 
