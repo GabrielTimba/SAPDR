@@ -1,0 +1,39 @@
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lerDoencaID`(IN `_id` INT(4))
+BEGIN
+	SELECT d.idDoenca as id,d.nome, t.nome as tipo, d.causa, d.sintoma, 			d.tratamento, d.prevencao
+    FROM doenca d, tipod t
+    WHERE d.idTipo = t.idTipo AND d.idDoenca = _id;
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `inserirDoenca`(IN `_nome` VARCHAR(50), IN `_tipo` VARCHAR(30), IN `_causas` TEXT, IN `_sintomas` TEXT, IN `_tratamentos` TEXT, IN `_prevencao` TEXT)
+BEGIN
+	DECLARE tipo VARCHAR(40);
+    
+    SELECT idTipo into tipo FROM tipod t WHERE t.nome = _tipo;
+    IF tipo IS NOT NULL THEN 
+    	INSERT INTO doenca (idDoenca, nome, prevencao, causa, tratamento, 		   sintoma, idTipo) VALUES ('NULL',_nome, _prevencao, _causas, 				 _tratamentos, _sintomas, tipo);
+    ELSE
+    	INSERT INTO tipod (idTipo,nome) VALUES('NULL',_tipo);
+        SELECT idTipo into tipo FROM tipod t WHERE t.nome = _tipo;
+        INSERT INTO doenca (idDoenca, nome, prevencao, causa, tratamento, 		   sintoma, idTipo) VALUES ('NULL',_nome, _prevencao, _causas, 			     _tratamentos, _sintomas, tipo);
+    END IF;
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lerDoencas`(IN `_n` TINYINT(1))
+BEGIN
+	IF (_n = 1) THEN
+		SELECT d.idDoenca as id,d.nome, t.nome as tipo, d.causa, d.sintoma, d.tratamento, 				   d.prevencao
+    FROM doenca d, tipod t
+    WHERE d.idTipo = t.idTipo;
+    ELSEIF (_n=2) THEN
+    	SELECT d.idDoenca as id,d.nome, t.nome as tipo
+   		 FROM doenca d, tipod t
+   		 WHERE d.idTipo = t.idTipo;
+    END IF;
+END$$
+DELIMITER ;

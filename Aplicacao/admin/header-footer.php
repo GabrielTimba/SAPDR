@@ -104,5 +104,3 @@
     }
 
 ?>
-
-<!-- Foleege Lourenco Ricardo
