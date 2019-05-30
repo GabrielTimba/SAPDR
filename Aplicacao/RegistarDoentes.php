@@ -274,7 +274,7 @@
 
     <!-- plugins do smartwizard -->
     <script src="lib/smartwizard/js/jquery.min.js"></script>
-    <script src="lib/smartwizard/js/validator.min.js"></script>
+    <script src="lib/smartwizard/js/validator.js"></script>
     <script src="lib/smartwizard/js/jquery.smartWizard.js"></script>
 
     <!--script do smartwizard-->
@@ -332,7 +332,7 @@
                // only on forward navigation, that makes easy navigation on backwards still do the validation when going next
                if(stepDirection === 'forward' && elmForm){
                    elmForm.validator('validate');
-                   var elmErr = elmForm.children('.has-error');
+                   var elmErr = elmForm.find('.has-error');
                    if(elmErr && elmErr.length > 0){
                        // Form validation failed
                        return false;
