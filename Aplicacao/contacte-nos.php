@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/Contacte-nos.css">
     <link rel="stylesheet" href="lib/fontawesome/css/all.css">
+    <link rel="stylesheet" href="lib/summernote/summernote-bs4.css"><!--API para criar editor de texto-->
     <?php
         favicon();
     ?>
@@ -58,7 +59,7 @@
         <div class="row mb-5 justify-content-center" id="row-altura">
             <div class="col-sm-10  cor-borda2 cor-creme" id="cadastro">
                 <form action="" method="post"  class="ml-5">
-                    <div class="form-row ">
+                    <div class="form-row mt-3">
                         <div class="form-group col-sm-6 ">
                             <label for="Assunto" >Assunto:</label>
                             <input type="text"   class="form-control"  placeholder="Assunto" required>
@@ -73,7 +74,7 @@
                     </div>
                     <div class="form-row">
 
-                        <div class="form-group col-8">
+                        <div class="form-group col-10">
                             <label for="Messagem">Messagem:</label>
                             <textarea class="form-control" id="Messagem" cols="70" rows="7" required></textarea>
                         </div>
@@ -94,5 +95,21 @@
     <?php
         rodape();
     ?>
+
+    <script src="lib/summernote/summernote-bs4.js"></script> <!--API para criar editor de texto-->
+    <script src="lib/summernote/lang/summernote-pt-PT.js"></script>
+
+    <!--Chamando o Eidtor summernote-->
+    <script>
+        $(document).ready(function(){
+            $('textarea#Messagem').summernote({ 
+                lang:'pt-PT',
+                height: 300,                 // set editor height
+                minHeight: null,             // set minimum height of editor
+                maxHeight: null,             // set maximum height of editor
+                focus: false             // set focus to editable area after initializing summernote
+            });
+        });
+    </script>
 </body>
 </html>
