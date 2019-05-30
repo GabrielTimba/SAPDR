@@ -220,8 +220,7 @@
                                             <div class="form-row justify-content-center">
                                                 <div class="form-group col-sm-11">
                                                     <label for="trat">Tratamentos:</label>
-                                                    <textarea id="trat" name="tratamentos" class="form-control" required>
-                                                        <?php echo $linha['tratamento'];?>
+                                                    <textarea id="trat" name="tratamentos" class="form-control" required><?php echo $linha['tratamento'];?>
                                                     </textarea>                         
                                                 </div>
                                             </div>
@@ -229,8 +228,7 @@
                                             <div class="form-row justify-content-center">
                                                 <div class="form-group col-sm-11">
                                                     <label for="prev">Prevenção:</label>
-                                                    <textarea id="prev" name="prevencao" class="form-control" required>
-                                                    <?php echo $linha['prevencao']; ?></textarea>                         
+                                                    <textarea id="prev" name="prevencao" class="form-control" required><?php echo $linha['prevencao']; ?></textarea>                         
                                                 </div>
                                             </div>
                                         </div>
