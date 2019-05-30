@@ -9,7 +9,7 @@
     }
  
     function inicarSessao(){
-        include('../bd.php');
+        include('model/bd.php');
 
         $nome = $_POST["nome"];
         $pass = $_POST["senha"];
