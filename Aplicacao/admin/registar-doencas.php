@@ -44,9 +44,9 @@
             <?php
                 menuVertical();
 
-                if(!isset($_SESSION['id'])) {
+                if(isset($_GET['idDoenca'])) {
                     include('../model/doencaDAO.php');
-                    lerDoencaID($_SESSION['id']);
+                    lerDoencaID($_GET['idDoenca']);
                 } else {
             ?>
                  <!--Conteudo-->
@@ -100,6 +100,7 @@
                                                         <div class="form-group col-sm-5 mt-2 ml-3">
                                                             <label for="Tipo" >Tipo de Doença:</label>
                                                             <select class="form-control" id="Tipo" name="tipo" selected="Degenerativa">
+                                                                <option>...</option>
                                                                 <option >Proliferativa</option>
                                                                 <option >Degenerativa</option>
                                                             </select>

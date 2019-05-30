@@ -1,25 +1,26 @@
 <?php
-    include('../bd.php');
-    
+    include('bd.php');
+
     if(isset($_POST['nome']))
         inserir();
     
-    if(isset($_GET['editar'])) {
+    if(isset($_GET['id'])) {
         $id = $_GET['id'];
-        session_start();
-        $_SESSION['id'] = $id;
+        //echo "$id";
+      //  session_start();
+       // $_SESSION['idDoenca'] = $id;
         
-        header('Location:../admin/registar-doencas.php');
+       header('Location:../admin/registar-doencas.php?idDoenca='.$id);
     }
 
     if(isset($_GET['cancelar'])) {
-        session_destroy();
+        unset($_SESSION['idDoenca']);
         header('Location: ../admin/lista-de-doencas.php');
     }
 
-    
+    //insere dados na bd 
     function inserir() {
-        
+        $conexao = getConexao();     
 
         $nome= $_POST['nome'];
         $tipo= $_POST['tipo'];
@@ -29,9 +30,9 @@
         $prevencao= $_POST['prevencao'];
 
         // prepared statment
-        $sql = "CALL inserirDoenca(?,?,?,?,?,?);"; 
+        define('SQL',"CALL inserirDoenca(?,?,?,?,?,?);"); 
 
-        if(!($stmt = $conexao->prepare($sql))) {
+        if(!($stmt = $conexao->prepare(SQL))) {
             echo"Preparo da Insercao Falhou: (".$conexao->errno.") ".$conexao->error;
         } 
 
@@ -54,18 +55,17 @@
         }
 
         $stmt->close();
-        $conexao->close();
+        fechaConexao($conexao);
 
         header('Location:../admin/registar-doencas.php');
     }
 
-    //
+    //le nome e tipo da bd
     function lerNomeTipo() {
-        include('../bd.php');
+        $conexao = getConexao();
+        define('SQL',"CALL lerDoencas(?);");
         
-        $sql = "CALL lerDoencas(?);";
-        
-        if(!($stmt = $conexao->prepare($sql))) {
+        if(!($stmt = $conexao->prepare(SQL))) {
             echo"Preparo da Insercao Falhou: (".$conexao->errno.") ".$conexao->error;
         } 
 
@@ -91,7 +91,7 @@
                         <td>'.$linha['nome'].'</td>
                         <td>'.$linha['tipo'].'</td>
                         <td> 
-                            <a class="btn cor-verde"  href="../model/doencaDAO.php?editar=true&&id='.$linha['id'].'">
+                            <a class="btn cor-verde"  href="../model/doencaDAO.php?id='.$linha['id'].'">
                                 <i class="fa fa-pencil-alt"></i> Editar
                             </a>
                         </td>
@@ -101,15 +101,14 @@
         }
         
         $stmt->close();
-        $conexao->close();
+        fechaConexao($conexao);
     }
 
     function lerDoencaID($id) {
-        include('../bd.php');
+        $conexao = getConexao();
+        define('SQL', "CALL lerDoencaID(?);");
         
-        $sql = "CALL lerDoencaID(?);";
-        
-        if(!($stmt = $conexao->prepare($sql))) {
+        if(!($stmt = $conexao->prepare(SQL))) {
             echo"Preparo da Insercao Falhou: (".$conexao->errno.") ".$conexao->error;
         } 
 
@@ -122,8 +121,9 @@
             echo " Execucao falhou: (".$stmt->errno.")".$stmt->error;
         }
         $resposta = $stmt->get_result();
-        $linha = $resposta->fetch_assoc();
         
+        if(mysqli_num_rows($resposta) === 1) {
+            $linha = $resposta->fetch_assoc();
         //contruindo interface com dados
 ?>
             <!--Conteudo-->
@@ -167,7 +167,7 @@
                                             <div class="form-row">
                                                     <div class="form-group col-sm-5 mt-2 ml-3">
                                                         <label for="NomeDoenca" >Nome da Doença:</label>
-                                                        <input type="text"   class="form-control" id="NomeDoenca" name="nome"  placeholder="Nome da Doenca" value="<?php $linha['nome'] ?>" required>
+                                                        <input type="text"   class="form-control" id="NomeDoenca" name="nome"  placeholder="Nome da Doenca" value="<?php echo "".$linha['nome'].""; ?>" required>
                                                     </div>
                         
                                                 </div> 
@@ -177,6 +177,7 @@
                                                     <div class="form-group col-sm-5 mt-2 ml-3">
                                                         <label for="Tipo" >Tipo de Doença:</label>
                                                         <select class="form-control" id="Tipo" name="tipo">
+                                                            <option>...</option>
                                                             <option <?php if( $linha['tipo']=='Proliferativa') echo"selected"; ?> >Proliferativa</option>
                                                             <option <?php if( $linha['tipo']=='Degenerativa') echo"selected"; ?> >Degenerativa</option>
                                                         </select>
@@ -200,14 +201,14 @@
                                             <div class="form-row justify-content-center">
                                                 <div class="form-group col-sm-11">
                                                     <label for="causas">Causas:</label>
-                                                    <textarea id="causas" name="causas" class="form-control editor" required><?php $linha['causa']?></textarea>                         
+                                                    <textarea id="causas" name="causas" class="form-control editor" required><?php echo $linha['causa'];?></textarea>                         
                                                 </div>
                                             </div>
                     
                                             <div class="form-row justify-content-center">
                                                 <div class="form-group col-sm-11">
                                                     <label for="Sintomas">Sintomas:</label>
-                                                    <textarea id="Sintomas" name="sintomas" class="form-control" required><?php $linha['sintoma']?></textarea>                         
+                                                    <textarea id="Sintomas" name="sintomas" class="form-control" required><?php echo $linha['sintoma'];?></textarea>                         
                                                 </div>
                                             </div>
 
@@ -219,14 +220,17 @@
                                             <div class="form-row justify-content-center">
                                                 <div class="form-group col-sm-11">
                                                     <label for="trat">Tratamentos:</label>
-                                                    <textarea id="trat" name="tratamentos" class="form-control" required><?php $linha['tratamento']?></textarea>                         
+                                                    <textarea id="trat" name="tratamentos" class="form-control" required>
+                                                        <?php echo $linha['tratamento'];?>
+                                                    </textarea>                         
                                                 </div>
                                             </div>
                     
                                             <div class="form-row justify-content-center">
                                                 <div class="form-group col-sm-11">
                                                     <label for="prev">Prevenção:</label>
-                                                    <textarea id="prev" name="prevencao" class="form-control" required><?php $linha['prevencao'] ?></textarea>                         
+                                                    <textarea id="prev" name="prevencao" class="form-control" required>
+                                                    <?php echo $linha['prevencao']; ?></textarea>                         
                                                 </div>
                                             </div>
                                         </div>
@@ -245,8 +249,8 @@
                 ?>
             </div>
 <?php
-        
+        }   
         $stmt->close();
-        $conexao->close();
+        fechaConexao($conexao);
     }
 ?>
