@@ -77,22 +77,22 @@
                                     <div class="form-row">
                                         <div class="form-group col-sm-5 mt-2 ml-3">
                                             <label for="Nome">Nome:</label>
-                                            <input type="text" class="form-control" placeholder="Nome" required>
+                                            <input type="text" class="form-control" name="nome" placeholder="Nome" required>
                                             <div class="help-block with-errors"></div>
                                         </div>
                                         <div class="form-group col-sm-5 mt-2 ml-3">
                                             <label for="Apelido">Apelido:</label>
-                                            <input type="text" class="form-control" placeholder="Apelido" required>
+                                            <input type="text" class="form-control" name="apelido" placeholder="Apelido" required>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-sm-5 mt-2 ml-3">
                                             <label for="Nome">Data de Nascimento:</label>
-                                            <input type="date" class="form-control" placeholder="Nome" required>
+                                            <input type="date" class="form-control" name="data" placeholder="Nome" required>
                                         </div>
                                         <div class="form-group col-sm-5 mt-2 ml-3">
                                             <label for="Genero">Genero:</label>
-                                            <select class="form-control" id="Genero " required>
+                                            <select class="form-control" name="genero" id="Genero " required>
                                                 <option disabled selected>...</option>
                                                 <option>Maculino</option>
                                                 <option>Femenino</option>
@@ -108,7 +108,7 @@
                                     <div class="form-row">
                                         <div class="form-group col-sm-5 mt-2 ml-3">
                                             <label for="Provincia">Provincia:</label>
-                                            <select class="form-control" id="Provincia" required>
+                                            <select class="form-control" namr="provincia" id="Provincia" required>
                                                 <option disabled selected>...</option>
                                                 <option>Maputo</option>
                                                 <option>Gaza</option>
@@ -124,7 +124,7 @@
                                         </div>
                                         <div class="form-group col-sm-5 mt-2 ml-3">
                                             <label for="Distrito">Distrito:</label>
-                                            <input list="distritos" class="form-control" id="Distrito" required>
+                                            <input list="distritos" name="distrito" class="form-control" id="Distrito" required>
                                             <datalist id="distritos">
                                                 <option value="Matola">Matola</option>
                                                 <option value="Maputo">Maputo</option>
@@ -157,7 +157,7 @@
         
                                         <div class="form-group col-sm-5 mt-2 ml-3">
                                             <label for="bairro">Bairro:</label>
-                                            <input type="text" class="form-control" id="bairro" placeholder="Bairro">
+                                            <input type="text" class="form-control" name="bairro" id="bairro" placeholder="Bairro">
                                             <!--<select class="form-control" id="Bairro" required>
                                                 <option disabled selected>...</option>
                                                 <option>Bairro</option>
@@ -167,7 +167,7 @@
         
                                         <div class="form-group col-sm-5 mt-2 ml-3">
                                             <label for="Rua">Rua:</label>
-                                            <input type="text" class="form-control" placeholder="Rua">
+                                            <input type="text" class="form-control"name="rua" placeholder="Rua">
                                         </div>
         
                                     </div>
@@ -175,11 +175,11 @@
                                     <div class="form-row">
                                         <div class="form-group col-sm-5 mt-2 ml-3">
                                             <label for="Email">Email:</label>
-                                            <input type="email" class="form-control" placeholder="Email" required>
+                                            <input type="email" class="form-control" name="email" placeholder="Email" required>
                                         </div>
                                         <div class="form-group col-sm-5 mt-2 ml-3">
                                             <label for="Tellefone">Tellefone:</label>
-                                            <input type="number" class="form-control" placeholder="Tellefone" required>
+                                            <input type="number" class="form-control" name="tellefone" placeholder="Tellefone" required>
                                         </div>
                                     </div>
                                 </div>
@@ -191,7 +191,7 @@
                                     <div class="form-row">
                                         <div class="form-group col-sm-5 mt-2 ml-3">
                                             <label for="doenca" >Nome da Doença</label>
-                                            <input class="form-control" id="doenca" list="doencas">
+                                            <input class="form-control" name="doenca" id="doenca" list="doencas">
                                             <datalist id="doencas">
                                                 <option value="11111"></option>
                                                 <option value="22222"></option>
@@ -219,7 +219,7 @@
 
                                         <div class="form-group col-sm-5">
                                             <label for="hosp">Em que unidade Hospitalar</label>
-                                            <input class="form-control" id="hosp" list="hospital">
+                                            <input class="form-control" name="hospital" id="hosp" list="hospital">
                                             <datalist id="hospital">
                                                 <option value="11111"></option>
                                                 <option value="22222"></option>
@@ -237,14 +237,14 @@
                                     <div class="form-row">
                                         <div class="form-group col-sm-5 mt-2 ml-3">
                                             <label for="Nome do Usuario">Nome de Usuario:</label>
-                                            <input type="text" class="form-control" placeholder="Nome do Usuario" required>
+                                            <input type="text" name="userName" class="form-control" placeholder="Nome do Usuario" required>
                                         </div>
                                     </div>
         
                                     <div class="form-row">
                                         <div class="form-group col-sm-5 mt-2 ml-3">
                                             <label for="Senha">Senha:</label>
-                                            <input type="password" class="form-control" placeholder="Senha" required>
+                                            <input type="password" name="senha" class="form-control" placeholder="Senha" required>
                                         </div>
                                         <div class="form-group col-sm-5 mt-2 ml-3">
                                             <label for="Confirme a Senha">Confirme a Senha:</label>

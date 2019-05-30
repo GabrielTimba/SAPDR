@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="../css/Registar Doenca.css">
         <link rel="stylesheet" href="../lib/smartwizard/css/smart_wizard.css">
         <link rel="stylesheet" href="../lib/smartwizard/css/smart_wizard_theme_circles.css">
-       <!-- <link rel="stylesheet" href="../lib/summernote/summernote-bs4.css">-->
+        <link rel="stylesheet" href="../lib/summernote/summernote-bs4.css">
 
         <?php
             favicon();
@@ -174,9 +174,9 @@
            
 
         </div>
+    
+    
 
-
-     
         
     <!-- plugins do smartwizard -->
     <script src="../lib/smartwizard/js/jquery.min.js"></script> 
@@ -275,7 +275,7 @@
             });
         });
     </script>-->
-        
+    
     
     
     </body>
