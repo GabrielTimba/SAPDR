@@ -4,14 +4,12 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `actualizaDoencaID`(IN `_id` INT(4),
 BEGIN
 	DECLARE codTipo SMALLINT(10);
     
-    SELECT d.idTipo INTO codTipo FROM doenca d WHERE d.idDoenca = _id;
-    
-    UPDATE tipod SET nome = _tipo WHERE idTipo = codTipo;
-    
-    UPDATE doenca 
-    SET nome = _nome, prevencao = _prevencao, causa = _causas, tratamento = _tratamentos, sintoma = _sintomas
-    WHERE idDoenca = _id;
-    
+    SELECT t.idTipo INTO codTipo FROM tipod t WHERE t.nome = _tipo;
+    IF codTipo IS NOT NULL THEN 
+        UPDATE doenca 
+        SET nome = _nome, prevencao = _prevencao, causa = _causas, tratamento = 		_tratamentos, sintoma = _sintomas, idTipo = codTipo 
+        WHERE idDoenca = _id;
+    END IF;
     
 END$$
 DELIMITER ;

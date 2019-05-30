@@ -176,8 +176,8 @@
                                                 
                                                     <div class="form-group col-sm-5 mt-2 ml-3">
                                                         <label for="Tipo" >Tipo de Doença:</label>
-                                                        <select class="form-control" id="Tipo" name="tipo">
-                                                            <option>...</option>
+                                                        <select class="form-control" id="Tipo" name="tipo" required>
+                                                            <option value="">...</option>
                                                             <option <?php if( $linha['tipo']=='Proliferativa') echo"selected"; ?> >Proliferativa</option>
                                                             <option <?php if( $linha['tipo']=='Degenerativa') echo"selected"; ?> >Degenerativa</option>
                                                         </select>

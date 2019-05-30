@@ -99,10 +99,10 @@
                                                     
                                                         <div class="form-group col-sm-5 mt-2 ml-3">
                                                             <label for="Tipo" >Tipo de Doença:</label>
-                                                            <select class="form-control" id="Tipo" name="tipo" selected="Degenerativa">
-                                                                <option>...</option>
-                                                                <option >Proliferativa</option>
-                                                                <option >Degenerativa</option>
+                                                            <select class="form-control" id="Tipo" name="tipo" required>
+                                                                <option value="">...</option>
+                                                                <option value="Proliferativa">Proliferativa</option>
+                                                                <option value="Degenerativa">Degenerativa</option>
                                                             </select>
                                                             
                                                             <!--<input class="form-control" id="Tipo" name="tipo" list="tipos" required>
