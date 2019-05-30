@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 29-Maio-2019 às 18:15
+-- Generation Time: 30-Maio-2019 às 13:19
 -- Versão do servidor: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -21,6 +21,43 @@ SET time_zone = "+00:00";
 --
 -- Database: `bdsapdr2`
 --
+
+DELIMITER $$
+--
+-- Procedures
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `inserirDoenca` (IN `_nome` VARCHAR(50), IN `_tipo` VARCHAR(30), IN `_causas` TEXT, IN `_sintomas` TEXT, IN `_tratamentos` TEXT, IN `_prevencao` TEXT)  BEGIN
+	DECLARE tipo VARCHAR(40);
+    
+    SELECT idTipo into tipo FROM tipod t WHERE t.nome = _tipo;
+    IF tipo IS NOT NULL THEN 
+    	INSERT INTO doenca (idDoenca, nome, prevencao, causa, tratamento, 		   sintoma, idTipo) VALUES ('NULL',_nome, _prevencao, _causas, 				 _tratamentos, _sintomas, tipo);
+    ELSE
+    	INSERT INTO tipod (idTipo,nome) VALUES('NULL',_tipo);
+        SELECT idTipo into tipo FROM tipod t WHERE t.nome = _tipo;
+        INSERT INTO doenca (idDoenca, nome, prevencao, causa, tratamento, 		   sintoma, idTipo) VALUES ('NULL',_nome, _prevencao, _causas, 			     _tratamentos, _sintomas, tipo);
+    END IF;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lerDoencaID` (IN `_id` INT(4))  BEGIN
+	SELECT d.idDoenca as id,d.nome, t.nome as tipo, d.causa, d.sintoma, 			d.tratamento, d.prevencao
+    FROM doenca d, tipod t
+    WHERE d.idTipo = t.idTipo AND d.idDoenca = _id;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lerDoencas` (IN `_n` TINYINT(1))  BEGIN
+	IF (_n = 1) THEN
+		SELECT d.idDoenca as id,d.nome, t.nome as tipo, d.causa, d.sintoma, d.tratamento, 				   d.prevencao
+    FROM doenca d, tipod t
+    WHERE d.idTipo = t.idTipo;
+    ELSEIF (_n=2) THEN
+    	SELECT d.idDoenca as id,d.nome, t.nome as tipo
+   		 FROM doenca d, tipod t
+   		 WHERE d.idTipo = t.idTipo;
+    END IF;
+END$$
+
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -67,7 +104,8 @@ CREATE TABLE `contacto` (
 --
 
 INSERT INTO `contacto` (`idContacto`, `email`, `telefone`) VALUES
-(1, 'ricardo@gmail.com', 846963114);
+(1, 'ricardo@gmail.com', 846963114),
+(2, 'mupandzaj@gmail.com', 847109371);
 
 -- --------------------------------------------------------
 
@@ -104,7 +142,15 @@ CREATE TABLE `doenca` (
 --
 
 INSERT INTO `doenca` (`idDoenca`, `nome`, `prevencao`, `causa`, `tratamento`, `sintoma`, `idTipo`) VALUES
-(1, 'aaaa', 'SCc', 'sss', 'add', 'ddd', 1);
+(1, 'aaaa', 'SCc', 'sss', 'add', 'ddd', 1),
+(2, 'Diarea', 'ffff', 'falta de boa higiene', 'fff', 'ddd', 2),
+(3, '1', '1', '1', '1', '1', 3),
+(4, '2', '2', '2', '2', '2', 1),
+(5, 'sd', 'f', 'dd', 'f', 'f', 1),
+(6, 'Marcos', 'q\r\n', 'q', 'qq', 'q', 1),
+(7, 'idiotice', 'sss', 'ss', 'ssss', 'ss', 4),
+(8, 'rerrrrrrrrrrrrrrrrr', 'qwe', 'qew', 'qweqwee', 'qwe', 1),
+(9, 'eeeeeeeeeeeeeeeeeeeee', '2', '1', '1', '2', 1);
 
 -- --------------------------------------------------------
 
@@ -196,7 +242,9 @@ CREATE TABLE `endereco` (
 --
 
 INSERT INTO `endereco` (`idEndereco`, `provincia`, `distrito`, `bairro`) VALUES
-(1, 'Maputo', 'Kamubukwane', '25 de junho');
+(1, 'Maputo', 'Kamubukwane', '25 de junho'),
+(2, 'Maputo', 'Kamubukwane', '25 de junho'),
+(3, 'Maputo', 'Kamachaquene', 'Urbanizacao');
 
 -- --------------------------------------------------------
 
@@ -216,7 +264,9 @@ CREATE TABLE `instituicao` (
 --
 
 INSERT INTO `instituicao` (`idInstituicao`, `nome`, `idEndereco`, `idTipoI`) VALUES
-(1, 'Hospital central', 1, 1);
+(1, 'Hospital central', 1, 1),
+(2, 'Hospital central', 1, 1),
+(3, 'MISAU', 2, 2);
 
 -- --------------------------------------------------------
 
@@ -270,7 +320,8 @@ CREATE TABLE `profissional` (
 --
 
 INSERT INTO `profissional` (`idProf`, `genero`, `dataNasc`, `apelido`, `nome`, `idEndereco`, `idInstituicao`, `idContacto`, `UserName`, `senha`) VALUES
-(1, 'M', '2019-05-08', 'Ricardo', 'Folege', 1, 1, 1, 'ricardo', 'd93591bdf7860e1e4ee2fca799911215');
+(1, 'M', '2019-05-08', 'Ricardo', 'Folege', 1, 1, 1, 'ricardo', 'd93591bdf7860e1e4ee2fca799911215'),
+(2, 'M', '1998-11-03', 'Mupandza', 'Jossias', 2, 2, 1, 'joss', '123');
 
 -- --------------------------------------------------------
 
@@ -325,7 +376,10 @@ CREATE TABLE `tipod` (
 --
 
 INSERT INTO `tipod` (`idTipo`, `nome`) VALUES
-(1, 'Proliferativa');
+(1, 'Proliferativa'),
+(2, 'Normal'),
+(3, '1'),
+(4, 'Degenerativa');
 
 -- --------------------------------------------------------
 
@@ -343,7 +397,9 @@ CREATE TABLE `tipoi` (
 --
 
 INSERT INTO `tipoi` (`idTipoI`, `nome`) VALUES
-(1, 'Hospital');
+(1, 'Hospital'),
+(2, 'Hospital'),
+(3, 'Ministerio');
 
 -- --------------------------------------------------------
 
@@ -526,7 +582,7 @@ ALTER TABLE `associacao`
 -- AUTO_INCREMENT for table `contacto`
 --
 ALTER TABLE `contacto`
-  MODIFY `idContacto` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idContacto` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `documento`
@@ -538,7 +594,7 @@ ALTER TABLE `documento`
 -- AUTO_INCREMENT for table `doenca`
 --
 ALTER TABLE `doenca`
-  MODIFY `idDoenca` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idDoenca` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `doente`
@@ -550,13 +606,13 @@ ALTER TABLE `doente`
 -- AUTO_INCREMENT for table `endereco`
 --
 ALTER TABLE `endereco`
-  MODIFY `idEndereco` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idEndereco` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `instituicao`
 --
 ALTER TABLE `instituicao`
-  MODIFY `idInstituicao` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idInstituicao` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `mensagem`
@@ -574,7 +630,7 @@ ALTER TABLE `post`
 -- AUTO_INCREMENT for table `profissional`
 --
 ALTER TABLE `profissional`
-  MODIFY `idProf` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idProf` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `testemunho`
@@ -586,13 +642,13 @@ ALTER TABLE `testemunho`
 -- AUTO_INCREMENT for table `tipod`
 --
 ALTER TABLE `tipod`
-  MODIFY `idTipo` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idTipo` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tipoi`
 --
 ALTER TABLE `tipoi`
-  MODIFY `idTipoI` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idTipoI` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tipop`
