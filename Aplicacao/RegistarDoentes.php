@@ -94,10 +94,10 @@
                                         </div>
                                         <div class="form-group col-sm-5 mt-2 ml-3">
                                             <label for="Genero">Genero:</label>
-                                            <select class="form-control" name="genero" id="Genero " required>
-                                                <option disabled selected>...</option>
-                                                <option>Maculino</option>
-                                                <option>Femenino</option>
+                                            <select class="form-control valid" name="genero" id="Genero " required>
+                                                <option value="0" disabled selected>...</option>
+                                                <option value="1" >Maculino</option>
+                                                <option value="2">Femenino</option>
                                             </select>
                                         </div>
                                     </div>
@@ -110,18 +110,18 @@
                                     <div class="form-row">
                                         <div class="form-group col-sm-5 mt-2 ml-3">
                                             <label for="Provincia">Provincia:</label>
-                                            <select class="form-control" namr="provincia" id="Provincia" required>
-                                                <option disabled selected>...</option>
-                                                <option>Maputo</option>
-                                                <option>Gaza</option>
-                                                <option>Inhambane</option>
-                                                <option>Sofala</option>
-                                                <option>Manica</option>
-                                                <option>Zambezia</option>
-                                                <option>Tete</option>
-                                                <option>Nampula</option>
-                                                <option>Niassa</option>
-                                                <option>Cabo Delgado</option>
+                                            <select class="form-control valid" name="provincia" id="provincia" required>
+                                                <option value="0" disabled selected>...</option>
+                                                <option value="1">Maputo</option>
+                                                <option value="1">Gaza</option>
+                                                <option value="1">Inhambane</option>
+                                                <option value="1">Sofala</option>
+                                                <option value="1">Manica</option>
+                                                <option value="1">Zambezia</option>
+                                                <option value="1">Tete</option>
+                                                <option value="1">Nampula</option>
+                                                <option value="1">Niassa</option>
+                                                <option value="1">Cabo Delgado</option>
                                             </select>
                                         </div>
                                         <div class="form-group col-sm-5 mt-2 ml-3">
@@ -180,8 +180,8 @@
                                             <input type="email" class="form-control" name="email" placeholder="Email" required>
                                         </div>
                                         <div class="form-group col-sm-5 mt-2 ml-3">
-                                            <label for="Tellefone">Tellefone:</label>
-                                            <input type="number" class="form-control" name="tellefone" placeholder="Tellefone" required>
+                                            <label for="tellefone">Tellefone:</label>
+                                            <input type="number" class="form-control" id="tellefone" name="tellefone" placeholder="Tellefone" required>
                                         </div>
                                     </div>
                                 </div>
@@ -337,15 +337,43 @@
                // stepDirection === 'forward' :- this condition allows to do the form validation
                // only on forward navigation, that makes easy navigation on backwards still do the validation when going next
                if(stepDirection === 'forward' && elmForm){
-                   elmForm.validator('validate');
-                   var elmErr = elmForm.find('.has-error');
-                   if(elmErr && elmErr.length > 0){
-                       // Form validation failed
-                       return false;
-                   }
+                    elmForm.validator('validate');
+                    var elmErr = elmForm.find('.has-error');
+                    if(elmErr && elmErr.length > 0){
+                        // Form validation failed
+                        return false;
+                    }
+                    if($('.valid').val() == 0 || $('.valid').val() == null ){
+                       // $('.valid').css('border', '1px solid');
+                        $('.valid').focus();
+                        return false;
+                    }
+
+                    if (stepNumber == 1 ) {
+                        var po= $("#provincia");
+                        var te= document.getElementById("#tellefone");
+                       // te.value = parseInt(te.value) ;   
+                        if (po.val() == 0 || po.val() == null) {
+                            po.focus();
+                            return false;
+                        }
+                        
+                    }
+
+                    if (stepNumber == 2) {
+                        var un= $("#doenca");
+                        
+                        if (un.val() == 0 || un.val() == null) {
+                            un.focus();
+                            return false;
+                        }
+                    }
                }
                return true;
            });
+
+           
+                
 
            $("#smartwizard").on("showStep", function(e, anchorObject, stepNumber, stepDirection) {
                // Enable finish button only on last step
