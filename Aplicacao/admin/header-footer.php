@@ -1,8 +1,8 @@
 <?php
-	//session_start();
-	//if(!isset($_SESSION['nome'])){
-	//	header('Location:login.php');
-	//}
+	session_start();
+	if(!isset($_SESSION['nome'])){
+		header('Location:login.php');
+	}
 ?>
 <?php
     //metodo que cria cabecalho do admin
@@ -22,7 +22,12 @@
                 <div class="float-right borda-esquerda">
                     <ul class="navbar-nav mr-4 ml-3 mt-2">
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" data-toggle="dropdown">Nome de Usuario <i class="fas fa-angle-down ml-2"></i></a>
+                            <a class="nav-link" href="#" data-toggle="dropdown">
+                                <?php
+                                    echo $_SESSION['nome'];
+                                ?> 
+                                <i class="fas fa-angle-down ml-2"></i>
+                            </a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="perfil.html">Perfil</a>
                                 <a class="dropdown-item" href="../index.html">Pagina Inicial</a>

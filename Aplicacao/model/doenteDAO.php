@@ -68,8 +68,8 @@
         $resposta = $stmt->get_result();
 
      ?>   
-        <select id="doencas" class="form-control" name="doenca">
-            <option></option>
+        <select id="doenca" class="form-control" name="doenca">
+            <option value="0"></option>
             <?php 
                 while($linha = $resposta->fetch_assoc()) {
                     echo "<option value=".$linha['idDoenca'].">". $linha['nome']."</option>";
