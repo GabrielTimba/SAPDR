@@ -99,10 +99,10 @@
                                                 </div>
                                                 <div class="form-group col-sm-5 mt-2 ml-3">
                                                     <label for="genero" >Genero:</label>
-                                                    <select class="form-control" name="genero" id="genero "  required>
-                                                        <option disable >...</option>
-                                                        <option >Maculino</option>
-                                                        <option >Femenino</option>
+                                                    <select class="form-control valid" name="genero" id="genero "  required>
+                                                        <option disable value="0" >...</option>
+                                                        <option value="1" >Maculino</option>
+                                                        <option value="2">Femenino</option>
                                                     </select>
                                                     <div class="help-block with-errors"></div>
                                                 </div>
@@ -117,26 +117,26 @@
                                             <div class="form-row">
                                                 <div class="form-group col-sm-5 mt-2 ml-3">
                                                     <label for="provincia" >Provincia:</label>
-                                                    <select class="form-control" name="provincia" id="provincia" required>
-                                                        <option disabled selected>...</option>
-                                                        <option >Maputo</option>
-                                                        <option >Gaza</option>
-                                                        <option >Inhambane</option>
-                                                        <option >Sofala</option>
-                                                        <option >Manica</option>
-                                                        <option >Zambezia</option>
-                                                        <option >Tete</option>
-                                                        <option >Nampula</option>
-                                                        <option >Niassa</option>
-                                                        <option >Cabo Delgado</option>
+                                                    <select class="form-control valid" name="provincia" id="provincia" required>
+                                                        <option value="0">...</option>
+                                                        <option value="1">Maputo</option>
+                                                        <option value="1">Gaza</option>
+                                                        <option value="1">Inhambane</option>
+                                                        <option value="1">Sofala</option>
+                                                        <option value="1">Manica</option>
+                                                        <option value="1">Zambezia</option>
+                                                        <option value="1">Tete</option>
+                                                        <option value="1">Nampula</option>
+                                                        <option value="1">Niassa</option>
+                                                        <option value="1">Cabo Delgado</option>
                                                     </select>
                                                 </div>
                                                 <div class="form-group col-sm-5 mt-2 ml-3">
                                                     <label for="distrito" >Distrito:</label>
                                                     <select class="form-control" name="distrito" id="distrito" required>
-                                                        <option disabled selected>...</option>
-                                                        <option >...</option>
-                                                        <option >...</option>
+                                                        <option value="0">...</option>
+                                                        <option value="1" >...</option>
+                                                        <option value="1">...</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -145,16 +145,16 @@
                             
                                                 <div class="form-group col-sm-5 mt-2 ml-3">
                                                     <label for="bairro" >Bairro:</label>
-                                                    <select class="form-control" name="bairro" id="bairro" required>
-                                                        <option disabled selected>...</option>
-                                                        <option >Bairro</option>
-                                                        <option >Bairro</option>
+                                                    <select class="form-control " name="bairro" id="bairro" required>
+                                                        <option selected value="0">...</option>
+                                                        <option value="1">Bairro</option>
+                                                        <option value="2">Bairro</option>
                                                     </select>
                                                 </div>
                             
                                                 <div class="form-group col-sm-5 mt-2 ml-3">
                                                     <label for="rua" >Rua:</label>
-                                                    <input type="text" name="rua" id="rua" class="form-control" placeholder="Rua">
+                                                    <input type="text" name="rua" id="rua" class="form-control" placeholder="Rua" required>
                                                 </div>
                                                 
                                             </div>
@@ -178,10 +178,10 @@
                             
                                                 <div class="form-group col-sm-5 mt-2 ml-3">
                                                     <label for="unidade_h" >Unidade Hospitalar:</label>
-                                                    <select class="form-control" name="unidade_h" id="unidade_h" required>
-                                                        <option disabled >...</option>
-                                                        <option >...</option>
-                                                        <option >...</option>
+                                                    <select class="form-control " name="unidade_h" id="unidade_h" required>
+                                                        <option value="0" >...</option>
+                                                        <option value="1">Hospital Centra</option>
+                                                        <option value="1">Hospital Jose Macamo</option>
                                                     </select>
                                                 </div>
                                                 
@@ -195,7 +195,7 @@
                                             <div class="form-row">
                                                 <div class="form-group col-sm-5 mt-2 ml-3">
                                                     <label for="nome_u" >Nome de Usuario:</label>
-                                                    <input type="text"  name="nome_u" id="nome_u" class="form-control"  placeholder="Nome do Usuario" required>
+                                                    <input type="text"  name="nome_u" id="nome_u" class="form-control valid"  placeholder="Nome do Usuario" required>
                                                 </div>
                                             </div>
                             
@@ -292,14 +292,46 @@
                     elmForm.validator('validate');
                     //alert('A caminho');
                     var elmErr = elmForm.find('.has-error');
-                   // alert(elmErr.length );
+                   
                     if(elmErr && elmErr.length > 0){
                         
                         // Form validation failed
                         return false;
                     }
+                    if (stepNumber == 1) {
+                        var ba= $("#bairro");
+                        var po= $("#provincia");
+                        var di= $("#distrito");
+                            
+                        if (po.val() == 0) {
+                            po.focus();
+                            return false;
+                        }
+                        if (di.val() == 0) {
+                            di.focus();
+                            return false;
+                        }
+                        if (ba.val() == 0) {
+                            ba.focus();
+                            return false;
+                        }
+                    }
+                    if (stepNumber == 2) {
+                        var un= $("#unidade_h");
+                        
+                        if (un.val() == 0) {
+                            un.focus();
+                            return false;
+                        }
+                    }
+                     
+                    if($('.valid').val() == 0){
+                       // $('.valid').css('border', '1px solid');
+                        $('.valid').focus();
+                        return false;
+                    }
                 }
-               // return true;
+               return true;
             });
 
             $("#smartwizard").on("showStep", function(e, anchorObject, stepNumber, stepDirection) {
