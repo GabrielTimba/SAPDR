@@ -1,5 +1,7 @@
 <?php
     include('cabecalho-rodape.php');
+    include('model/doenteDAO.php');
+    
 ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -14,7 +16,7 @@
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="lib/fontawesome/css/all.css">
     <link rel="stylesheet" href="lib/smartwizard/css/smart_wizard.css">
-    <link rel="stylesheet" href="lib/smartwizard/css/smart_wizard_theme_circles.css">
+    <link rel="stylesheet" href="lib/smartwizard/css/smart_wizard_theme_arrows.css">
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/RegistarDoentes.css">
@@ -59,7 +61,7 @@
         </div>
         <div class="row mb-5 justify-content-center" id="row-altura">
             <div class="col-11  cor-borda2 cor-creme" id="cadastro">
-                <form action="#" id="myForm" role="form" method="post" accept-charset="utf-8">
+                <form action="#" id="myForm" name="formDoente" role="form" method="post" accept-charset="utf-8">
         
                     <!-- SmartWizard html -->
                     <div  id="smartwizard">
@@ -191,12 +193,7 @@
                                     <div class="form-row">
                                         <div class="form-group col-sm-5 mt-2 ml-3">
                                             <label for="doenca" >Nome da Doença</label>
-                                            <input class="form-control" name="doenca" id="doenca" list="doencas" required>
-                                            <datalist id="doencas">
-                                                <option value="11111"></option>
-                                                <option value="22222"></option>
-                                                <option value="33333"></option>
-                                            </datalist>
+                                            <?php doencas();?>
                                         </div>
                                     </div>
 
@@ -207,24 +204,23 @@
                                        
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Sim    
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"> Sim    
                                                 </label> 
                                             </div>
                                             <div class="radio">    
                                                 <label>       
-                                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"> Não    
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" checked> Não    
                                                 </label> 
                                             </div>
                                         </div>
 
-                                        <div class="form-group col-sm-5">
+                                        <div class="form-group col-sm-5" id="unidHosp">
                                             <label for="hosp">Em que unidade Hospitalar</label>
-                                            <input class="form-control" name="hospital" id="hosp" list="hospital" required>
-                                            <datalist id="hospital">
-                                                <option value="11111"></option>
-                                                <option value="22222"></option>
-                                                <option value="33333"></option>
-                                            </datalist>
+
+                                                <?php
+                                                    instituicao();
+                                                 ?>
+                                           
                                         </div>
                                     </div>
 
@@ -281,8 +277,18 @@
    <script type="text/javascript">
        $(document).ready(function(){
 
+           //unidades hospitalares
+           $("#unidHosp").hide();
+           $('#optionsRadios1').click(function(){
+                $("#unidHosp").fadeToggle()();
+           });
+
+           $('#optionsRadios2').click(function(){
+                $("#unidHosp").fadeToggle()();
+           });
+
            // Toolbar extra buttons
-           var btnFinish = $('<button></button>').text('Finalisar')
+           var btnFinish = $('<button></button>').text('Submeter')
                                             .addClass('btn btn-info')
                                             .on('click', function(){
                                                    if( !$(this).hasClass('disabled')){
@@ -313,7 +319,7 @@
            // Smart Wizard
            $('#smartwizard').smartWizard({
                    selected: 0,
-                   theme: 'circles',
+                   theme: 'arrows',
                    transitionEffect:'fade',
                    toolbarSettings: {toolbarPosition: 'bottom',
                                      toolbarExtraButtons: [btnFinish, btnCancel] //mudar background
