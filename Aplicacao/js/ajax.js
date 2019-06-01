@@ -21,7 +21,7 @@ function enviarAjax(formData,metodo, url) {
     }
     req.onreadystatechange = function () {
         if (req.readyState == 4 && req.status == 200) {
-           //alert(req.responseText);
+           alert(req.responseText);
         } 
             
     };
