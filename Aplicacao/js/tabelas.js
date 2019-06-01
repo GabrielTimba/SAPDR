@@ -7,22 +7,27 @@ var cont = 0;
 
 //apaga doenca na bd
 function apagarDoenca() {
-    var linhas = document.getElementById("tabela-doencas").getElementsByTagName("tr");
-    var numLinhas = linhas.length - 2;
-    var cont = 1;
-    formData = new FormData(); //objecto que envia dados pelo metodo POST
+    var resp = confirm("Tem certeza que deseja apagar!");
+    if(resp) {
+        var linhas = document.getElementById("tabela-doencas").getElementsByTagName("tr");
+        var numLinhas = linhas.length - 2;
+        var cont = 1;
+        formData = new FormData(); //objecto que envia dados pelo metodo POST
 
 
-    for(i=1; i<=numLinhas ; i++){
-        var cb = document.getElementById("cb-"+i);        
-        if(cb.checked) {
-            var id = cb.value;
-            cont++; 
-            formData.append("cb-"+cont,id);
-        }    
+        for (i = 1; i <= numLinhas; i++) {
+            var cb = document.getElementById("cb-" + i);
+            if (cb.checked) {
+                var id = cb.value;
+                cont++;
+                formData.append("cb-" + cont, id);
+            }
+        }
+        enviarAjax(formData, "POST", "../model/doencaDAO.php?acao=apagar&&cont="+cont); //metodo defenido no ficheiro ajax.js
+        requisitarAjax("GET", "../model/doencaDAO.php?acao=lerNomeTipo", "tabela-corpo"); //metodo defenido no ficheiro ajax.js
+        requisitarAjax("GET", "../model/doencaDAO.php?acao=lerNomeTipo", "tabela-corpo"); //metodo defenido no ficheiro ajax.js
     }
-    enviarAjax(formData, "POST", "../model/doencaDAO.php?acao=apagar&&cont="+cont); //metodo defenido no ficheiro ajax.js
-    requisitarAjax("GET", "../model/doencaDAO.php?acao=lerNomeTipo", "tabela-corpo"); //metodo defenido no ficheiro ajax.js
+    
 }
 
 //seleciona checkboxes

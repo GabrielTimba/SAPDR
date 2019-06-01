@@ -25,7 +25,7 @@
         <script src="../js/bootstrap.js"></script>
         <script src="../js/ajax.js"></script>
         <script src="../js/painel-admin.js"></script>
-        <script src="../js/lista-de-doencas.js"></script>
+        <script src="../js/tabelas.js"></script>
     </head>
     <body>
         <!--Cabecalho-->
@@ -53,7 +53,7 @@
                             <a class="btn btn-primary ml-5 " href="registar-doencas.php">
                                     <i class="fa fa-plus"></i>
                             </a>
-                            <a class="btn btn-danger ml-2" href="#" onclick="apagarDoenca()">
+                            <a class="btn btn-danger ml-2" onclick="apagarDoenca()">
                                     <i class="fa fa-trash"></i>    
                             </a>   
                         </div>
