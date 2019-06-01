@@ -29,8 +29,8 @@
                                 <i class="fas fa-angle-down ml-2"></i>
                             </a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="perfil.html">Perfil</a>
-                                <a class="dropdown-item" href="../index.html">Pagina Inicial</a>
+                                <a class="dropdown-item" href="perfil.php">Perfil</a>
+                                <a class="dropdown-item" href="../index.php">Pagina Inicial</a>
                                 <a class="dropdown-item" href="autenticacaoAdmin.php?sair=true">Sair</a>
                             </div>
                         </li>

@@ -15,6 +15,15 @@ END$$
 DELIMITER ;
 
 DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lerDoencaID`(IN `_id` INT(4))
+BEGIN
+	SELECT d.idDoenca as id,d.nome, t.nome as tipo, d.causa, d.sintoma, 			d.tratamento, d.prevencao
+    FROM doenca d, tipod t
+    WHERE d.idTipo = t.idTipo AND d.idDoenca = _id;
+END$$
+DELIMITER ;
+
+DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `inserirDoenca`(IN `_nome` VARCHAR(50), IN `_tipo` VARCHAR(30), IN `_causas` TEXT, IN `_sintomas` TEXT, IN `_tratamentos` TEXT, IN `_prevencao` TEXT)
 BEGIN
 	DECLARE tipo VARCHAR(40);
@@ -48,10 +57,12 @@ END$$
 DELIMITER ;
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `lerDoencaID`(IN `_id` INT(4))
+CREATE DEFINER=`root`@`localhost` PROCEDURE `apagarDoenca`(IN `_id` INT(6))
 BEGIN
-	SELECT d.idDoenca as id,d.nome, t.nome as tipo, d.causa, d.sintoma, 			d.tratamento, d.prevencao
-    FROM doenca d, tipod t
-    WHERE d.idTipo = t.idTipo AND d.idDoenca = _id;
+	DECLARE cod SMALLINT(6);
+	SELECT idDoenca INTO cod FROM doenca WHERE idDoenca = _id;
+    IF cod IS NOT null THEN
+    	DELETE FROM doenca WHERE idDoenca = _id;
+    END IF;
 END$$
 DELIMITER ;
