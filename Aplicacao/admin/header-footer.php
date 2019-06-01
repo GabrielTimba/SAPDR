@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	if(!isset($_SESSION['nome'])){
+	if(!isset($_SESSION['nomeAdmin'])){
 		header('Location:login.php');
 	}
 ?>
@@ -24,7 +24,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link" href="#" data-toggle="dropdown">
                                 <?php
-                                    echo $_SESSION['nome'];
+                                    echo $_SESSION['nomeAdmin'];
                                 ?> 
                                 <i class="fas fa-angle-down ml-2"></i>
                             </a>
