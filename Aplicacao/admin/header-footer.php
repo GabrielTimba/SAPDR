@@ -24,8 +24,8 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link" href="#" data-toggle="dropdown">Nome de Usuario <i class="fas fa-angle-down ml-2"></i></a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="perfil.html">Perfil</a>
-                                <a class="dropdown-item" href="../index.html">Pagina Inicial</a>
+                                <a class="dropdown-item" href="perfil.php">Perfil</a>
+                                <a class="dropdown-item" href="../index.php">Pagina Inicial</a>
                                 <a class="dropdown-item" href="autenticacaoAdmin.php?sair=true">Sair</a>
                             </div>
                         </li>
@@ -49,7 +49,7 @@
                     <p>Navegação</p>
                     <hr class="linha">
                     <li>
-                        <a href="painel-admin.php"><i class="fa fa-chart-bar mr-2"></i>Painel Administrativo</a>
+                        <a href="index.php"><i class="fa fa-chart-bar mr-2"></i>Painel Administrativo</a>
                     </li>
                     <hr class="linha">
                     <li>

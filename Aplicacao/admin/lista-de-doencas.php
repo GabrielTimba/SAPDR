@@ -23,7 +23,9 @@
         <script src="../js/jquery.js"></script>
         <script src="../js/popper.js"></script>
         <script src="../js/bootstrap.js"></script>
+        <script src="../js/ajax.js"></script>
         <script src="../js/painel-admin.js"></script>
+        <script src="../js/lista-de-doencas.js"></script>
     </head>
     <body>
         <!--Cabecalho-->
@@ -51,7 +53,7 @@
                             <a class="btn btn-primary ml-5 " href="registar-doencas.php">
                                     <i class="fa fa-plus"></i>
                             </a>
-                            <a class="btn btn-danger ml-2" href="">
+                            <a class="btn btn-danger ml-2" href="#" onclick="apagarDoenca()">
                                     <i class="fa fa-trash"></i>    
                             </a>   
                         </div>
@@ -61,17 +63,15 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="table-responsive col-sm-10">
-                        <table class="table table-bordered table-hover  tabela mt-2">
+                        <table class="table table-bordered table-hover  tabela mt-2" id="tabela-doencas">
                             <thead >
                                 <tr class="cor-creme">
                                     <td class="titulo-tabela" colspan="4"><i class="fa fa-list mr-2"></i>Lista de Doenças</td>
                                     
                                 </tr>
-                            </thead>
-                            <tbody>
                                 <tr>
-                                    <th class="texto-verde">
-                                        <input type="checkbox">
+                                    <th class="texto-verde text-center" style="width:2px;">
+                                        <input type="checkbox" onclick="selecionar()">
                                     </th>
                                     <th class="texto-verde">Nome da Doença</th>
                                     <th class="texto-verde">Tipo</th>
@@ -79,6 +79,8 @@
                                         <a href="">Acção</a>
                                     </th>
                                 </tr>
+                            </thead>
+                            <tbody id="tabela-corpo"> 
                                 <?php
                                     include_once("../model/doencaDAO.php");
                                     lerNomeTipo();

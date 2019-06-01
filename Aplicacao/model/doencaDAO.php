@@ -1,27 +1,42 @@
 <?php
     include('bd.php');
 
+    //registar ou inserir dados de uma doenca na bd (BASE de DADOS)
     if(isset($_POST['nome']))
         inserir();
     
+    //editar uma doenca (usa o mesmo formulario de registo, mas carrega os dados correspodentes ao id)
     if(isset($_GET['id'])) {
         $id = $_GET['id'];       
        header('Location:../admin/registar-doencas.php?idDoenca='.$id);
     }
 
-    if((isset($_GET['acao'])) && ($_GET['acao'] == 'update')){
-        actualizar($_GET['idUpdate']);
-    }
-
+    //cancelar a edicao de uma doenca
     if(isset($_GET['cancelar'])) {
         unset($_SESSION['idDoenca']);
         header('Location: ../admin/lista-de-doencas.php');
     }
 
+    //actualizar dados de uma doenca 
+    if((isset($_GET['acao'])) && ($_GET['acao'] == 'update')){
+        actualizar($_GET['idUpdate']);
+    }
+
+    //apagar doenca na bd
+    if((isset($_GET['acao'])) && ($_GET['acao'] == 'apagar')){
+        apagar();
+    }
+    
+    //consulta doencas depios de se eliminar uma doenca da bd class="text-center" 
+    if((isset($_GET['acao'])) && ($_GET['acao'] == 'lerNomeTipo')){
+        lerNomeTipo();
+    }
+    
     //insere dados na bd 
     function inserir() {
-        $conexao = getConexao();     
+        $conexao = getConexao();  //faz conexao com bd (metodo defenido no ficheiro bd.php)  
 
+        //recebendo dados do formulario de registo enviados pelo metodo POST
         $nome= $_POST['nome'];
         $tipo= $_POST['tipo'];
         $causas= $_POST['causas'];
@@ -29,19 +44,22 @@
         $tratamentos= $_POST['tratamentos'];
         $prevencao= $_POST['prevencao'];
 
-        // prepared statment
-        define('SQL',"CALL inserirDoenca(?,?,?,?,?,?);"); 
+        //defenindo uma constante que contem uma instrucao sql (opcional)
+        define('SQL',"CALL inserirDoenca(?,?,?,?,?,?);"); // '?' indicam o uso de prepared statment 
+                                                          //para controlar injencoes sql
 
-        if(!($stmt = $conexao->prepare(SQL))) {
+        //captura qualquer erro que pode ocorrer no prepared statment 
+        if(!($stmt = $conexao->prepare(SQL))) { //'prepare()' prepara a insercao
             echo"Preparo da Insercao Falhou: (".$conexao->errno.") ".$conexao->error;
         } 
 
-        if(!($stmt->bind_param('ssssss',$nome1,$tipo1,$causas1, $sintomas1, $tratamentos1, $prevencao1)
-        )) {
+        //'bind_param' define variaveis que vao receber os dados 
+        //Nota: nunca inserir dados diretamente ao inveis de definir vairiaveis, pode ocorrer um erro
+        if(!($stmt->bind_param('ssssss',$nome1,$tipo1,$causas1, $sintomas1, $tratamentos1, $prevencao1))) { //captura qualquer erro que pode ocorrer
             echo " Parâmetros de ligação falhados: (".$stmt->errno.")".$stmt->error;
         }
 
-        //colocando valores nos parametros;
+        //Atribuindo valores as variaveis;
         $nome1 = $nome;
         $tipo1 = $tipo;
         $causas1 = $causas;
@@ -53,14 +71,15 @@
         if(!($stmt->execute())){
             echo " Execucao falhou: (".$stmt->errno.")".$stmt->error;
         }
+        //Nota: apos a instrucao execute() pode-se atribuir novos valores as variaveis e executar novamente. 
 
-        $stmt->close();
-        fechaConexao($conexao);
+        $stmt->close(); //fecha o prepared statment
+        fechaConexao($conexao); //fecha a conexao com a bd (metodo defenido no ficheiro bd.php)
 
-        header('Location:../admin/registar-doencas.php');
+        header('Location:../admin/registar-doencas.php');//redirecionando  
     }
 
-    //le nome e tipo da bd
+    //le nome e tipo de uma doenca na bd e cria linhas de uma tabela HTML com dados
     function lerNomeTipo() {
         $conexao = getConexao();
         define('SQL',"CALL lerDoencas(?);");
@@ -81,13 +100,13 @@
 
         //criar tabela 
         if($resposta->num_rows>0) {
-            
+            $cb = 1;
             while($linha = $resposta->fetch_assoc()) {
                 echo'
                     <tr>
-                        <th class="texto-verde">
-                            <input type="checkbox" value="'.$linha['id'].'">
-                        </th>
+                        <td class="text-center">
+                            <input type="checkbox" id="cb-'.$cb.'" value="'.$linha['id'].'">
+                        </td>
                         <td>'.$linha['nome'].'</td>
                         <td>'.$linha['tipo'].'</td>
                         <td> 
@@ -97,6 +116,7 @@
                         </td>
                     </tr>
                 ';
+                $cb++;
             }
         }
         
@@ -104,6 +124,7 @@
         fechaConexao($conexao);
     }
 
+    //le todos dados de uma doenca em funcao do id e cria formulario para edicao dos mesmos
     function lerDoencaID($id) {
         $conexao = getConexao();
         define('SQL', "CALL lerDoencaID(?);");
@@ -252,6 +273,7 @@
         fechaConexao($conexao);
     }
 
+    //actualiza os dados de uma doenca em funcao do id
     function actualizar($idDoenca) {
         $conexao = getConexao(); 
         define('SQL','CALL actalizaDoencaID(?,?,?,?,?,?,?);');
@@ -279,5 +301,28 @@
         fechaConexao($conexao);
 
         header('Location:../admin/lista-de-doencas.php');
+    }
+
+    function apagar() {
+        $conexao = getConexao(); 
+        define('SQL','CALL apagarDoenca(?);');
+        
+        if(!($stmt = $conexao->prepare(SQL))) {
+            echo"Preparo do sql Falhou: (".$conexao->errno.") ".$conexao->error;
+        }
+        
+        if(!($stmt->bind_param('i',$id))) {
+            echo " Parâmetros de ligação falhados: (".$stmt->errno.")".$stmt->error;
+        }
+
+        for($i=1; $i<= $_GET['cont']; $i++){
+            $id = $_POST["cb-$i"];
+            if(!($stmt->execute()))
+                echo " Execucao falhou: (".$stmt->errno.")".$stmt->error;
+        }
+        
+        $stmt->close();
+        fechaConexao($conexao);
+       // header('Location:../admin/lista-de-doencas.php');
     }
 ?>
