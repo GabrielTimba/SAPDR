@@ -1,0 +1,328 @@
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        
+        <title>Instituicoes da Saude| Admin</title>
+        
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+        <link rel="stylesheet" href="../css/fonts.css">
+        <link rel="stylesheet" href="../lib/fontawesome/css/all.css">
+    
+        <link rel="stylesheet" href="../css/painel-admin.css">
+        <link rel="stylesheet" href="../css/cadastrar unidades.css">
+        <link rel="stylesheet" href="../css/smart_wizard_theme_circles.css">
+        <link rel="stylesheet" href="../css/smart_wizard.css">
+        <link rel="stylesheet" href="../css/smart_wizard_theme_dots.css" type="text/css">
+        
+        <script src="../js/jquery.js"></script>
+        <script src="../js/popper.js"></script>
+        <script src="../js/bootstrap.js"></script>
+        <script src="../js/painel-admin.js"></script>
+        <script src="../js/Registar Profissional.js"></script>
+    </head>
+    <body>
+        <!--Cabecalho-->
+        <header class="navbar navbar-expand-lg borda-baixo">
+            <div class="col-sm-12">
+        
+                <button class="navbar-toggler cor-verde" id="menu-btn" type="button" data-toggle="collapse" >
+                    <span class="fa fa-bars"></span>
+                </button>
+        
+                <div class="collapse navbar-collapse float-left">
+                    <a href="../index.html"><img class="img-fluid" src="../imgs/icone-sapdr.png" alt="Icone SAPDR"></a>
+                </div>
+        
+                <div class="float-right borda-esquerda">
+                    <ul class="navbar-nav mr-4 ml-3 mt-2">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" data-toggle="dropdown">Nome de Usuario <i class="fas fa-angle-down ml-2"></i></a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="perrfil.html">Perfil</a>
+                                <a class="dropdown-item" href="../index.html">Pagina Inicial</a>
+                                <a class="dropdown-item" href="index.html">Sair</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+        
+            </div>
+        </header>
+        
+        <!--corpo da pagina-->
+        <div id="corpo">
+
+            <!--Menu Lateral Esquerdo-->
+            <nav  class="overflow-auto" id="menu">
+                <div  id="menu-cabecalho">
+                    <h3 class="ml-5">Menu</h3>
+                </div>
+
+                <ul class="list-unstyled menu-componetes menu-switch">
+                    <p>Navegação</p>
+                    <hr class="linha">
+                    <li>
+                        <a href="painel-admin.html"><i class="fa fa-chart-bar mr-2"></i>Painel Administrativo</a>
+                    </li>
+                    <hr class="linha">
+                    <li>
+                        <a class="dropdown-toggle" data-toggle="collapse" aria-expanded="false" href="#menu-usuarios"><i class="fas fa-users mr-2"></i>Usuários</a>
+                        <ul class="collapse list-unstyled menu-dropdown" id="menu-usuarios">
+                            <li><a href="lista de profissionais.html"><i class="fas fa-angle-double-right mr-2"></i>Profissional da Saúde</a></li>
+                            <li><a href="#"><i class="fas fa-angle-double-right mr-2"></i>Doente/Represetante</a></li>
+                        </ul>
+                    </li>
+                    <hr class="linha">
+                    <li><a href="#"><i class="fas fa-list-ul mr-2"></i>Doenças Raras</a></li>
+                    <hr class="linha">
+                    <li><a href="#"><i class="fas fa-cogs mr-2"></i>Administrar Forum</a></li>
+                    <hr class="linha">
+                    <li>
+                        <a class="dropdown-toggle" data-toggle="collapse" aria-expanded="false" href="#menu-publicacoes"><i class="fas fa-newspaper mr-2"></i>Publicações</a>
+                        <ul class="collapse list-unstyled menu-dropdown" id="menu-publicacoes">
+                            <li><a href="#"><i class="fas fa-angle-double-right mr-2"></i>Documentos</a></li>
+                            <li><a href="#"><i class="fas fa-angle-double-right mr-2"></i>Artigos</a></li>
+                            <li><a href="#"><i class="fas fa-angle-double-right mr-2"></i>Campanhas</a></li>
+                        </ul>
+                    </li>
+                    <hr class="linha">
+                    <li><a href="#"><i class="fas fa-h-square mr-2"></i> Instituicoes da Saude</a></li>
+                    <hr class="linha">
+                    <li>
+                        <a class="dropdown-toggle" data-toggle="collapse" aria-expanded="false" href="#menu-mensagens"><i class="fa fa-envelope mr-2"></i> Mensagens</a>
+                        <ul class="collapse list-unstyled menu-dropdown" id="menu-mensagens">
+                            <li><a href="#"><i class="fas fa-angle-double-right mr-2"></i>Pedidos de Apoio</a></li>
+                            <li><a href="#"><i class="fas fa-angle-double-right mr-2"></i>Mensagens de Doentes</a></li>
+                        </ul>
+                    </li>
+                    <hr class="linha">
+                </ul>
+            </nav>
+
+            <!--Conteudo-->
+            <div class="container-fluid" id="conteudo">
+
+                <div class="row conteudo-dir pt-4">
+                    <h5 class="ml-3">Instituicoes da Saúde</h5>
+                    <p class="ml-5 dir"><a href="painel-admin.html">Inicio</a>  >> Instituicoes da Saúde >> <span class="text-sucess"> Instituicoes da Saúde<</span></p>
+                </div>
+
+                <div class="row my-2 justify-content-center">
+                    <div class="col-sm-11">
+                        <a class="btn btn-light bg-white cor-borda2 float-right" href="lista de profissionais.html"><i class="fa fa-reply"></i></a>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-sm-11 borda-titulo">
+                        <label><i class="fas  fa-user-plus mr-2"></i>Adicionar farmacia</label>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-11  cor-borda2 bg-white" id="cadastro">
+                        <form  action="#" id="myForm" role="form"  method="post" accept-charset="utf-8">
+
+                            <!-- SmartWizard html -->
+                            <div id="smartwizard">
+                                <ul class="mt-2">
+                                    <li><a href="#step-1">Passo 1<br /><small>Descricao</small></a></li>
+                                    <li><a href="#step-2">Passo 2<br /><small>Contacto e Endereco</small></a></li>
+                                </ul>
+                    
+                                <div>
+                                    <div id="step-1">
+                                        <div id="form-step-0" role="form" data-toggle="validator">
+                                            <legend>Descricao</legend>
+                                            <div class="form-row">
+                                                <div class="form-group col-sm-5 mt-2 ml-3">
+                                                    <label for="Nome" >Nome da unidade farmaceutica:</label>
+                                                    <input type="text"   class="form-control"  placeholder="Nome" required>
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                                <div class="form-group col-sm-5 mt-2 ml-3">
+                                                    <label for="Apelido" >Abreviatura:</label>
+                                                    <input type="text" class="form-control" placeholder="Apelido" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group col-sm-5 mt-2 ml-3">
+                                                    <label for="Acesso" >Acesso:</label>
+                                                    <select class="form-control" id="Acesso" required>
+                                                        <option >Publico</option>
+                                                        <option >Privado</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group col-sm-5 mt-2 ml-3">
+                                                    <label for="Tipo" >Tipo:</label>
+                                                    <select class="form-control" id="Tipo" required>
+                                                        <option >Especializada</option>
+                                                        <option >Generalizado</option>
+                                                    </select>
+                                                </div>
+                                            </div> 
+                                        </div>
+                    
+                                    </div>
+                                    <div id="step-2">
+                                        <div id="form-step-1" role="form" data-toggle="validator">
+                                            <legend>Endereco e Contacto</legend>
+                                            <div class="form-row">
+                                                <div class="form-group col-sm-5 mt-2 ml-3">
+                                                    <label for="Provincia" >Provincia:</label>
+                                                    <select class="form-control" id="Provincia" required>
+                                                        <option >Maputo</option>
+                                                        <option >Gaza</option>
+                                                        <option >Inhambane</option>
+                                                        <option >Sofala</option>
+                                                        <option >Manica</option>
+                                                        <option >Zambezia</option>
+                                                        <option >Tete</option>
+                                                        <option >Nampula</option>
+                                                        <option >Niassa</option>
+                                                        <option >Cabo Delgado</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group col-sm-5 mt-2 ml-3">
+                                                    <label for="Distrito" >Distrito:</label>
+                                                    <select class="form-control" id="Distrito" required>
+                                                        <option disabled selected>...</option>
+                                                        <option >...</option>
+                                                        <option >...</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-row">
+                            
+                                                <div class="form-group col-sm-5 mt-2 ml-3">
+                                                    <label for="Bairro" >Bairro:</label>
+                                                    <select class="form-control" id="Bairro" required>
+                                                        <option disabled selected>...</option>
+                                                        <option >Bairro</option>
+                                                        <option >Bairro</option>
+                                                    </select>
+                                                </div>
+                            
+                                                <div class="form-group col-sm-5 mt-2 ml-3">
+                                                    <label for="Rua" >Rua:</label>
+                                                    <input type="text" class="form-control" placeholder="Rua">
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="form-row">
+                                                <div class="form-group col-sm-5 mt-2 ml-3">
+                                                    <label for="Email" >Email:</label>
+                                                    <input type="email" class="form-control"  placeholder="Email" required>
+                                                </div>
+                                                <div class="form-group col-sm-5 mt-2 ml-3">
+                                                    <label for="Telefone" >Telefone:</label>
+                                                    <input type="number" class="form-control" placeholder="Telefone" required>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                    
+                        </form>
+                    </div>
+                </div>
+
+                <footer class="row justify-content-center mt-5">
+                    <div class="col-lg-4">
+                        <p><span class="texto-verde">SAPDR</span>  &copy; 2019 - Todos Direitos Reservados<br> </p>
+                    </div>
+                </footer>
+            </div>
+
+        </div>
+
+
+    <!-- plugins do smartwizard -->
+    <script src="../lib/smartwizard/js/jquery.min.js"></script>
+    <script src="../lib/smartwizard/js/validator.min.js"></script>
+    <script src="../js/jquery.smartWizard.js"></script>
+
+    <!--script do smartwizard-->
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            // Toolbar extra buttons
+            var btnFinish = $('<button></button>').text('Finalisar')
+                                             .addClass('btn btn-info')
+                                             .on('click', function(){
+                                                    if( !$(this).hasClass('disabled')){
+                                                        var elmForm = $("#myForm");
+                                                        if(elmForm){
+                                                            elmForm.validator('validate');
+                                                            var elmErr = elmForm.find('.has-error');
+                                                            if(elmErr && elmErr.length > 0){
+                                                                alert('Oops existem campos que nao foram preenchidos');
+                                                                return false;
+                                                            }else{
+                                                                alert('Bom! Cadastro Feito com Sucesso');
+                                                                elmForm.submit();
+                                                                return false;
+                                                            }
+                                                        }
+                                                    }
+                                                });
+            var btnCancel = $('<button></button>').text('Cancelar')
+                                             .addClass('btn btn-danger')
+                                             .on('click', function(){
+                                                    $('#smartwizard').smartWizard("reset");
+                                                    $('#myForm').find("input, textarea").val("");
+                                                });
+
+
+
+            // Smart Wizard
+            $('#smartwizard').smartWizard({
+                    selected: 0,
+                    theme: 'circles',
+                    transitionEffect:'fade',
+                    toolbarSettings: {toolbarPosition: 'bottom',
+                                      toolbarExtraButtons: [btnFinish, btnCancel]
+                                    },
+                    anchorSettings: {
+                                markDoneStep: true, // add done css
+                                markAllPreviousStepsAsDone: true, // When a step selected by url hash, all previous steps are marked done
+                                removeDoneStepOnNavigateBack: true, // While navigate back done step after active step will be cleared
+                                enableAnchorOnDoneStep: true // Enable/Disable the done steps navigation
+                            }
+                 });
+
+            $("#smartwizard").on("leaveStep", function(e, anchorObject, stepNumber, stepDirection) {
+                var elmForm = $("#form-step-" + stepNumber);
+                // stepDirection === 'forward' :- this condition allows to do the form validation
+                // only on forward navigation, that makes easy navigation on backwards still do the validation when going next
+                if(stepDirection === 'forward' && elmForm){
+                    elmForm.validator('validate');
+                    var elmErr = elmForm.children('.has-error');
+                    if(elmErr && elmErr.length > 0){
+                        // Form validation failed
+                        return false;
+                    }
+                }
+                return true;
+            });
+
+            $("#smartwizard").on("showStep", function(e, anchorObject, stepNumber, stepDirection) {
+                // Enable finish button only on last step
+                if(stepNumber == 1){
+                    $('.btn-finish').removeClass('disabled');
+                }else{
+
+                    $('.btn-finish').addClass('disabled');
+                }
+            });
+
+        });
+    </script>   
+</body>
+</html>

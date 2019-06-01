@@ -1,0 +1,349 @@
+
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Instituições e Associações | SAPDR</title>
+    
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/fontawesome/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/doencas-raras.css">
+
+    <script src="js/jquery.js"></script>
+    <script src="js/popper.js"></script>
+	<script src="js/bootstrap.js"></script>
+</head>
+<body>
+    <!--Cabecalho -->
+    <header class="container-fluid navbar-expand-sm mb-5">
+    
+        <div class="row">
+            <div class="col-12">
+                <div class="collapse navbar-collapse float-left ml-3">
+                    <img src="imgs/icone-sapdr.png">
+                </div>
+    
+                <div class="float-right mr-3">
+                    <ul class="navbar-nav list-group-horizontal float-right mt-2">
+                        <li class="nav-item mt-2">
+                            <a href="contacte-nos.html" class="link texto-verde"><i
+                                    class="fas fa-envelope mr-1"></i>Contacte-nos</a>
+                        </li>
+                        <li class="nav-item dropdown ml-3">
+    
+                            <a class="nav-link dropdown-toggle texto-verde" href="#" data-toggle="dropdown"><i
+                                    class="fas fa-user mr-1"></i>Minha conta</a>
+                            <div class="dropdown-menu cor-verde">
+                                <a class="dropdown-item" href="#">Entrar</a>
+                                <a class="dropdown-item" href="#">Registar</a>
+                            </div>
+    
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    
+        </div>
+    
+        <nav class="row navbar navbar-expand-lg navbar-light mt-2 cor-verde">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menubar">
+                <span class="fa fa-bars"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="menubar">
+                <ul class="navbar-nav container">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Doencas Raras.html">Doenças Raras</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Foruns</a>
+                    </li>
+    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Publicações</a>
+                        <div class="dropdown-menu cor-verde">
+                            <a class="dropdown-item" href="#">Campanhas</a>
+                            <a class="dropdown-item" href="#">Artigos</a>
+                            <a class="dropdown-item" href="#">Pedidos de apoio</a>
+                            <a class="dropdown-item" href="#">Testemunhos</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Instituições e Associações</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Relatórios</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    
+        <div class="container">
+    
+            <div class="row mt-3">
+                <div class="col-12">
+                    <p id="dir"><a href="index.html"><i class="fas fa-home mr-1"></i>Inicio</a> > <span
+                            class="texto-verde">Instituições e Associações</span></p>
+                    <hr class="cor-verde">
+                </div>
+            </div>
+    
+            <div class="row">
+                
+                <div class="col-12">
+                    <h1 class="float-left">Instituições e Associações</h1>
+                    <form class="form-inline float-right">
+                        <div class="form-group">
+                            <input class="form-control" type="search" name="pesquisa" id="pesquisar-doenca" placeholder="Pesquisar instituicao">
+                            <button class="btn btn-primary ml-1" type="submit"><i class="fas fa-search"></i></button>
+                        </div> 
+                    </form>
+                </div>
+
+            </div>
+    
+        </div>
+    </header>
+
+    <!--conteudo-->
+    <div class="container">
+          
+        <div class="row mb-5" >
+            <div class="col-12">
+                
+                    <div class="row">
+                        <!--lista do tipo -->
+                        <ul class="nav nav-pills ml-3 mb-3" id="tipo" role="tablist">
+                            <li class="nav-item">
+                                <h6 class="mt-2">Listar |</h6>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active active1 texto-verde" id="" data-toggle="pill" href="#i1">Farmacias</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link texto-verde" id="" data-toggle="pill" href="#i2">Unidades hospitalares</a>
+                                <li class="nav-item">
+                                <a class="nav-link texto-verde" id="" data-toggle="pill" href="#i3">Associacoes</a>
+                            </li>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row justify-content-center" id="i1">
+    
+                    <table class="table col-lg-10 col-md-10 col-sm-10 tabela mt-2" id="i1">
+                        <thead >
+                            <tr class="cor-creme">
+                                <td class="titulo-tabela" colspan="4"><i class="fa fa-list mr-2"></i>Unidade Farmaceutica</td>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th class="texto-verde">Nome</th>
+                                <th class="texto-verde">Localizacao</th>
+                                <th class="texto-verde">Tipo</th>
+                                <th class="texto-verde">Acesso</th>
+                            </tr>
+                            <tr>
+                                <td>HCM</td>
+                                <td>Maputo rua xxx, av.xxx</td>
+                                <td>Especializado</td>
+                                <td>Publico</td>
+                            </tr>
+
+                           <tr>
+                                <td>HCM</td>
+                                <td>Maputo rua xxx, av.xxx</td>
+                                <td>Especializado</td>
+                                <td>Publico</td>
+                            <tr>
+                                <td>HCM</td>
+                                <td>Maputo rua xxx, av.xxx</td>
+                                <td>Especializado</td>
+                                <td>Publico</td>
+                            </tr>
+                            <tr>
+                                <td>HCM</td>
+                                <td>Maputo rua xxx, av.xxx</td>
+                                <td>Generalizado</td>
+                                <td>Publico</td>
+                            </tr>
+                            <tr>
+                                <td>HCM</td>
+                                <td>Maputo rua xxx, av.xxx</td>
+                                <td>Generalizad</td>
+                                <td>Publico</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+                  <div class="row justify-content-center" id="i2">
+    
+                    <table class="table col-lg-10 col-md-10 col-sm-10 tabela mt-2" id="i2">
+                        <thead >
+                            <tr class="cor-creme">
+                                <td class="titulo-tabela" colspan="4"><i class="fa fa-list mr-2"></i>Unidade Hospitalar</td>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th class="texto-verde">Nome</th>
+                                <th class="texto-verde">Localizacao</th>
+                                <th class="texto-verde">Tipo</th>
+                                <th class="texto-verde">Acesso</th>
+                            </tr>
+                            <tr>
+                                <td>HCM</td>
+                                <td>Maputo rua xxx, av.xxx</td>
+                                <td>Especializado</td>
+                                <td>Publico</td>
+                            </tr>
+
+                           <tr>
+                                <td>HCM</td>
+                                <td>Maputo rua xxx, av.xxx</td>
+                                <td>Especializado</td>
+                                <td>Publico</td>
+                            <tr>
+                                <td>HCM</td>
+                                <td>Maputo rua xxx, av.xxx</td>
+                                <td>Especializado</td>
+                                <td>Publico</td>
+                            </tr>
+                            <tr>
+                                <td>HCM</td>
+                                <td>Maputo rua xxx, av.xxx</td>
+                                <td>Generalizado</td>
+                                <td>Publico</td>
+                            </tr>
+                            <tr>
+                                <td>HCM</td>
+                                <td>Maputo rua xxx, av.xxx</td>
+                                <td>Generalizad</td>
+                                <td>Publico</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+ <div class="row justify-content-center" id="i3">
+    
+                    <table class="table col-lg-10 col-md-10 col-sm-10 tabela mt-2">
+                        <thead >
+                            <tr class="cor-creme">
+                                <td class="titulo-tabela" colspan="4"><i class="fa fa-list mr-2"></i>Associacoes</td>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th class="texto-verde">Nome</th>
+                                <th class="texto-verde">Localizacao</th>
+                                <th class="texto-verde">Tipo</th>
+                                <th class="texto-verde">Acesso</th>
+                            </tr>
+                            <tr>
+                                <td>HCM</td>
+                                <td>Maputo rua xxx, av.xxx</td>
+                                <td>Especializado</td>
+                                <td>Publico</td>
+                            </tr>
+
+                           <tr>
+                                <td>HCM</td>
+                                <td>Maputo rua xxx, av.xxx</td>
+                                <td>Especializado</td>
+                                <td>Publico</td>
+                            <tr>
+                                <td>HCM</td>
+                                <td>Maputo rua xxx, av.xxx</td>
+                                <td>Especializado</td>
+                                <td>Publico</td>
+                            </tr>
+                            <tr>
+                                <td>HCM</td>
+                                <td>Maputo rua xxx, av.xxx</td>
+                                <td>Generalizado</td>
+                                <td>Publico</td>
+                            </tr>
+                            <tr>
+                                <td>HCM</td>
+                                <td>Maputo rua xxx, av.xxx</td>
+                                <td>Generalizad</td>
+                                <td>Publico</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+    <!--Rodape-->
+    <footer class="container-fluid  page-footer footer-cor">
+    
+        <div class="row mt-2 p-3 footer-border bgfooter dark-grey-text">
+            <div class="col-12 ">
+                <div class="row">
+    
+                    <div class="col-3 d-none d-sm-none d-md-block">
+                        <h4>Categorias</h4>
+                        <ul>
+                            <li><a href="doencas-raras.html">Doenças Raras </a></li>
+                            <li><a href="">Foruns </a></li>
+                            <li><a href="">Relatórios </a></li>
+                            <li><a href="">Instituições e Associações </a></li>
+                        </ul>
+                    </div>
+    
+                    <div class="col-3 d-none d-sm-none d-md-block">
+                        <h4>Publicações</h4>
+                        <ul>
+                            <li><a href="">Campanhas</a></li>
+                            <li><a href="">Artigos</a></li>
+                            <li><a href="">Pedidos de Apoio</a></li>
+                            <li><a href="">Instituicoes &<br> Associacoes</a></li>
+                        </ul>
+    
+                    </div>
+    
+                    <div class="col-md-3 ">
+                        <form class="form-inline">
+                            <label class="mb-2 mr-2" for="pesquisar">Pesquise por uma doenca rara</label>
+                            <input class="form-control mr-1" id="pesquisar" type="search" placeholder="Buscar..." required>
+                            <button class="btn btn-dark" type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+    
+                    <div class="col-md-3">
+                        <h5>Siga-nos/Contactacte-nos</h5>
+                        <ul class="list-unstyled footer-icone">
+                            <li class="list-inline-item"><a href=""><i class="fab  fa-facebook-square"></i></a></li>
+                            <li class="list-inline-item"><a href=""><i class="fab fa-instagram"></i></a></li>
+                            <li class="list-inline-item"><a href="contacte-nos.html"><i class="fas fa-envelope"></i></a>
+                            </li>
+                        </ul>
+    
+                    </div>
+                </div>
+    
+    
+    
+            </div>
+        </div>
+    
+        <div class="row justify-content-center footer-copyright py-1 border-top-1 bg-dark">
+            SAPDR &copy; 2019 - Todos Direitos Reservados
+        </div>
+    
+    </footer>
+</body>
+</html>
