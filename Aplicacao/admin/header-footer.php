@@ -54,7 +54,7 @@
                     <p>Navegação</p>
                     <hr class="linha">
                     <li>
-                        <a href="painel-admin.php"><i class="fa fa-chart-bar mr-2"></i>Painel Administrativo</a>
+                        <a href="index.php"><i class="fa fa-chart-bar mr-2"></i>Painel Administrativo</a>
                     </li>
                     <hr class="linha">
                     <li>
