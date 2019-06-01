@@ -1,4 +1,5 @@
 <?php
+    include('../model/bd.php');
 
     if(isset($_POST['entrar'])){
         inicarSessao();
@@ -9,12 +10,12 @@
     }
  
     function inicarSessao(){
-        include('model/bd.php');
-
+        
+        $conexao=getConexao();
         $nome = $_POST["nome"];
         $pass = $_POST["senha"];
 
-        $query = "SELECT * FROM profissional WHERE userName='$nome' AND senha='$pass'";
+        $query = "SELECT * FROM profissional WHERE userName='$nome' AND senha=md5('$pass')";
         $dados = mysqli_query($conexao, $query);
 
         if($dados == true){
@@ -30,6 +31,8 @@
         }else{
             echo "Problemas de conexao com Base de Dados".mysqli_error($conexao);
         }
+
+        fechaConexao($conexao);
     }
 
     function terminarSessao(){

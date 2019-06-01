@@ -298,6 +298,7 @@
                         // Form validation failed
                         return false;
                     }
+                    
                     if (stepNumber == 1) {
                         var ba= $("#bairro");
                         var po= $("#provincia");

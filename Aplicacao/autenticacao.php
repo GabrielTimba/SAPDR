@@ -1,4 +1,5 @@
 <?php
+    include('model/bd.php');
 
     if(isset($_POST['entrar'])){
         inicarSessao();
@@ -9,8 +10,8 @@
     }
 
     function inicarSessao(){
-        include('model/bd.php');
-
+        
+        $conexao=getConexao();
         $nome = $_POST["nome"];
         $pass = $_POST["senha"];
 
@@ -30,6 +31,8 @@
         }else{
             echo "Problemas de conexao com Base de Dados".mysqli_error($conexao);
         }
+
+        fechaConexao($conexao);
     }
 
 
