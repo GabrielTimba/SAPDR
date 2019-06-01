@@ -60,65 +60,35 @@
                      
                 </div>
                 <div class="row justify-content-center">
-    
-                    <table class="table col-lg-10 col-md-10 col-sm-10 tabela mt-2">
-                        <thead >
-                            <tr class="cor-creme">
-                                <td class="titulo-tabela" colspan="4"><i class="fa fa-list mr-2"></i>Lista de Profissionais</td>
-                                
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th class="texto-verde">Nome</th>
-                                <th class="texto-verde">Email</th>
-                                <th class="texto-verde">Unidade Hospitalar</th>
-                                <th class="texto-verde">Accao</th>
-                            </tr>
-                            <tr>
-                                <td>Nome 1</td>
-                                <td>follegelricardo@gmail.com</td>
-                                <td>Hospital 1</td>
-                                <td> 
-                                    <a href="registar-profissional.php" class="btn cor-verde">Editar</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Nome 2</td>
-                                <td>follegelricardo@gmail.com</td>
-                                <td>Hospital 2</td>
-                                <td> 
-                                    <a href="registar-profissional.php" class="btn cor-verde">Editar</a>
-                                    <a href="#" class="btn cor-verde">Ler m9ais</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Nome 3</td>
-                                <td>follegelricardo@gmail.com</td>
-                                <td>Hospital 3</td>
-                                <td> 
-                                    <a href="registar-profissional.php" class="btn cor-verde">Editar</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Nome 4</td>
-                                <td>follegelricardo@gmail.com</td>
-                                <td>Hospital 4</td>
-                                <td> 
-                                    <a href="registar-profissional.php" class="btn cor-verde">Editar</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Nome 5</td>
-                                <td>follegelricardo@gmail.com</td>
-                                <td>Hospital 4</td>
-                                <td> 
-                                    <a href="registar-profissional.php" class="btn cor-verde">Editar</a>
-                                </td>
-                            </tr>
-
-                        </tbody>
-                    </table>
+                    <div class="table-responsive col-sm-10">
+                        <table class="table table-bordered table-hover tabela mt-2">
+                            <thead >
+                                <tr class="cor-creme">
+                                    <td class="titulo-tabela" colspan="5"><i class="fa fa-list mr-2"></i>Lista de Profissionais</td>
+                                    
+                                </tr>
+                                <tr>
+                                    <th class="texto-verde text-center" style="width:2px;">
+                                        <input type="checkbox" onclick="selecionar()">
+                                    </th>
+                                    <th class="texto-verde">Nome</th>
+                                    <th class="texto-verde">Email</th>
+                                    <th class="texto-verde">Instituicao</th>
+                                    <th class="texto-verde" >
+                                        <a href="">Acção</a>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <tbody id="tabela-corpo"> 
+                                <?php
+                                    include_once("../model/profissionalDAO.php");
+                                    listaProf();
+                                ?> 
+                            
+                            </tbody>
+                        </table>
+                    </div>
 
                 </div>
 
