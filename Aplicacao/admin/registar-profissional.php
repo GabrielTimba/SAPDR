@@ -325,6 +325,10 @@
                             return false;
                         }
                     }
+
+                    if (stepNumber == 3) {
+                        valida();
+                    }
                      
                     if($('.valid').val() == 0){
                        // $('.valid').css('border', '1px solid');
@@ -344,9 +348,61 @@
                     $('.btn-finish').addClass('disabled');
                 }
             });
-
-         
-
+/*
+            $("#submeter").on('click',function(){
+                var validator = $("#myForm").bind("invalid-form.validate",function(){
+                    $("#msg").html("Este formulari tem "+ validator.numberOfInvalids()+" erro(s)");
+                
+                }).validate(
+                    {
+                    errorElement:"el",  
+                    errorPlacement: function(error,element){
+                        element.parent("td").next("td").html(error);
+                    },
+                    success: function (label){
+                        
+                        label.text("Ok!").removeClass("error").addClass("ok");
+                    },
+                    submitHandler: function(form){
+                        form.submit();
+                    },
+                    rules:{
+                        nome_u:{
+                        required:true,
+                        maxlength:15          
+                        },
+                        senha:{
+                        required:true,
+                        password:true       
+                        },
+                        c_senha:{
+                        required:true,
+                        equal: senha
+                        }
+                        
+                    },
+                    messages:{
+                        numero:{
+                        required:"Esse campo não pode ser vazio",
+                        maxlength:"apenas 15 caracteres"
+                        },
+                        senha:{
+                        required:"Esse campo não pode ser vazio",
+                        password: "digite devmedia"
+                        },
+                        c_senha:{
+                        required:"Esse campo não pode ser vazio",
+                        equal: "digite a mesma senha"
+                        }
+                        
+                    }
+                        
+                    
+                }
+                
+            });
+            
+*/
         });
     </script>   
      
