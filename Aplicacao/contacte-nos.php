@@ -58,7 +58,7 @@
         </div>
         <div class="row mb-5 justify-content-center" id="row-altura">
             <div class="col-sm-10  cor-borda2 cor-creme" id="cadastro">
-                <form action="model/contactoDAO.php" method="POST"   class="ml-5">
+                <form action="model/contactoDAO.php" method="POST" class="ml-5">
                     <div class="form-row mt-3">
                         <div class="form-group col-sm-6 ">
                             <label for="Assunto" >Assunto:</label>
