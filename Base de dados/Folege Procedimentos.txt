@@ -1,0 +1,42 @@
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lista_de_documentos`()
+    NO SQL
+SELECT p.idPost,titulo,data from post p,profissional_post pf WHERE p.idPost = pf.idPost$$
+DELIMITER ;
+
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lista_de_instituicoes`()
+    NO SQL
+SELECT idInstituicao,i.nome,t.nome as tipo,bairro FROM instituicao i,tipoi t,endereco e where i.idEndereco = e.idEndereco and i.idTipoi = t.idTipoi$$
+DELIMITER ;
+
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lista_de_pedidos`()
+    NO SQL
+SELECT * from apoio$$
+DELIMITER ;
+
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lista_de_profissionais`()
+    NO SQL
+select d.idProf,d.nome,c.email,i.nome as unidade from profissional d,contacto c,instituicao i
+where c.idContacto = d.idContacto and i.idInstituicao = d.idInstituicao$$
+DELIMITER ;
+
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lista_farmacias`()
+    NO SQL
+SELECT idInstituicao,i.nome,t.nome as tipo,bairro FROM instituicao i,tipoi t,endereco e where i.idEndereco = e.idEndereco and i.idTipoi = t.idTipoi and t.idTipoi =2$$
+DELIMITER ;
+
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lista_hospital`()
+    NO SQL
+SELECT idInstituicao,i.nome,t.nome as tipo,bairro FROM instituicao i,tipoi t,endereco e where i.idEndereco = e.idEndereco and i.idTipoi = t.idTipoi and t.idTipoi =1$$
+DELIMITER ;
+
