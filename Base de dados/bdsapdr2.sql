@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 30-Maio-2019 às 13:19
+-- Generation Time: 02-Jun-2019 às 14:07
 -- Versão do servidor: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -26,6 +26,59 @@ DELIMITER $$
 --
 -- Procedures
 --
+CREATE DEFINER=`root`@`localhost` PROCEDURE `actualizaDoencaID` (IN `_id` INT(4), IN `_nome` VARCHAR(40), IN `_tipo` VARCHAR(40), IN `_causas` TEXT, IN `_sintomas` TEXT, IN `_tratamentos` TEXT, IN `_prevencao` TEXT)  NO SQL
+BEGIN
+	DECLARE codTipo SMALLINT(10);
+    
+    SELECT t.idTipo INTO codTipo FROM tipod t WHERE t.nome = _tipo;
+    IF codTipo IS NOT NULL THEN 
+        UPDATE doenca 
+        SET nome = _nome, prevencao = _prevencao, causa = _causas, tratamento = 		_tratamentos, sintoma = _sintomas, idTipo = codTipo 
+        WHERE idDoenca = _id;
+    END IF;
+    
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `apagarDoenca` (IN `_id` INT(6))  BEGIN
+	DECLARE cod SMALLINT(6);
+	SELECT idDoenca INTO cod FROM doenca WHERE idDoenca = _id;
+    IF cod IS NOT null THEN
+    	DELETE FROM doenca WHERE idDoenca = _id;
+    END IF;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `inseriDoente` (IN `_nome` VARCHAR(50), IN `_apelido` VARCHAR(50), IN `_data` DATE, IN `_genero` ENUM('Masculino','Femenino','',''), IN `_provincia` VARCHAR(50), IN `_distrito` VARCHAR(50), IN `_bairro` VARCHAR(50), IN `_rua` VARCHAR(50), IN `_email` VARCHAR(50), IN `_tellefone` INT, IN `_doenca` VARCHAR(50), IN `_idInst` SMALLINT(10), IN `_user` VARCHAR(50), IN `_senha` VARCHAR(50))  NO SQL
+BEGIN
+	Declare codEndereco smallint(10);
+    Declare codDoenca smallint(10);
+   
+    Select idEndereco into codEndereco from endereco 
+    where bairro = _bairro AND rua=_rua AND provincia=_provincia and distrito=_distrito;
+    
+    If (codEndereco is null) then 
+    	INSERT INTO  endereco VALUES (null,_provincia,_distrito,_bairro,_rua);
+        Select idEndereco into codEndereco from endereco 
+        where bairro = _bairro AND rua=_rua AND provincia=_provincia and distrito=_distrito;
+    end if;
+	    
+    
+    INSERT INTO doente VALUES 	(null,_nome,_apelido,_data,genero,_idInst,codEndereco,_user,md5(_senha));
+    select idDoenca INTO codDoenca FROM doenca ORDER by idDoenca DESC LIMIT 1;
+    INSERT INTO doenca_doente VALUES (iddoenca,idDoente);
+    
+    
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `inseriMensagem` (IN `_assunto` VARCHAR(50), IN `_email` VARCHAR(50), IN `_mensagem` TEXT, IN `_user` VARCHAR(50), IN `_senha` VARCHAR(50))  NO SQL
+BEGIN
+	DECLARE codDoente SMALLINT(10);
+
+	SELECT idDoente INTO codDoente from Doente WHERE userName=_user and senha=md5(_senha);
+
+	INSERT INTO mensagem VALUES (null,_assunto,_email,_mensagem,coddoente,'Pendente');
+    
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `inserirDoenca` (IN `_nome` VARCHAR(50), IN `_tipo` VARCHAR(30), IN `_causas` TEXT, IN `_sintomas` TEXT, IN `_tratamentos` TEXT, IN `_prevencao` TEXT)  BEGIN
 	DECLARE tipo VARCHAR(40);
     
@@ -49,13 +102,22 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `lerDoencas` (IN `_n` TINYINT(1))  B
 	IF (_n = 1) THEN
 		SELECT d.idDoenca as id,d.nome, t.nome as tipo, d.causa, d.sintoma, d.tratamento, 				   d.prevencao
     FROM doenca d, tipod t
-    WHERE d.idTipo = t.idTipo;
+    WHERE d.idTipo = t.idTipo
+    ORDER BY d.nome;
     ELSEIF (_n=2) THEN
     	SELECT d.idDoenca as id,d.nome, t.nome as tipo
    		 FROM doenca d, tipod t
-   		 WHERE d.idTipo = t.idTipo;
+   		 WHERE d.idTipo = t.idTipo
+         ORDER BY d.nome;
     END IF;
 END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lista_de_Mensagens` ()  NO SQL
+SELECT idMensagem ,assunto,email,msg FROM mensagem  WHERE estado='Pendente'$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lista_de_profissionais` ()  NO SQL
+select d.idProf,d.nome,c.email,i.nome as unidade from profissional d,contacto c,instituicao i
+where c.idContacto = d.idContacto and i.idInstituicao = d.idInstituicao$$
 
 DELIMITER ;
 
@@ -104,8 +166,7 @@ CREATE TABLE `contacto` (
 --
 
 INSERT INTO `contacto` (`idContacto`, `email`, `telefone`) VALUES
-(1, 'ricardo@gmail.com', 846963114),
-(2, 'mupandzaj@gmail.com', 847109371);
+(1, 'ricardo@gmail.com', 846963114);
 
 -- --------------------------------------------------------
 
@@ -142,15 +203,7 @@ CREATE TABLE `doenca` (
 --
 
 INSERT INTO `doenca` (`idDoenca`, `nome`, `prevencao`, `causa`, `tratamento`, `sintoma`, `idTipo`) VALUES
-(1, 'aaaa', 'SCc', 'sss', 'add', 'ddd', 1),
-(2, 'Diarea', 'ffff', 'falta de boa higiene', 'fff', 'ddd', 2),
-(3, '1', '1', '1', '1', '1', 3),
-(4, '2', '2', '2', '2', '2', 1),
-(5, 'sd', 'f', 'dd', 'f', 'f', 1),
-(6, 'Marcos', 'q\r\n', 'q', 'qq', 'q', 1),
-(7, 'idiotice', 'sss', 'ss', 'ssss', 'ss', 4),
-(8, 'rerrrrrrrrrrrrrrrrr', 'qwe', 'qew', 'qweqwee', 'qwe', 1),
-(9, 'eeeeeeeeeeeeeeeeeeeee', '2', '1', '1', '2', 1);
+(1, 'aaaa', 'SCc', 'sss', 'add', 'ddd', 1);
 
 -- --------------------------------------------------------
 
@@ -174,7 +227,7 @@ CREATE TABLE `doente` (
   `nome` varchar(50) NOT NULL,
   `apelido` varchar(50) NOT NULL,
   `dataNasc` date NOT NULL,
-  `genero` enum('M','F','','') NOT NULL,
+  `genero` enum('Masculino','Femenino','','') NOT NULL,
   `idInstituicao` smallint(6) NOT NULL,
   `idEndereco` smallint(6) NOT NULL,
   `UserName` varchar(50) NOT NULL,
@@ -186,7 +239,9 @@ CREATE TABLE `doente` (
 --
 
 INSERT INTO `doente` (`idDoente`, `nome`, `apelido`, `dataNasc`, `genero`, `idInstituicao`, `idEndereco`, `UserName`, `senha`) VALUES
-(2, 'Maria', 'Cossa', '2017-12-06', '', 1, 1, 'cossa', '9d1136878d04238b7b47b236101ca4d4');
+(2, 'Maria', 'Cossa', '2017-12-06', '', 1, 1, 'cossa', '9d1136878d04238b7b47b236101ca4d4'),
+(3, 'Mazivila', 'Eurico', '0000-00-00', '', 1, 2, 'timba', '3f767f568ac379661ccd599bd40b9859'),
+(5, 'Visitante', '', '0000-00-00', '', 2, 1, 'Visitante', 'a61c72715246b2b92b90a51e06118b05');
 
 -- --------------------------------------------------------
 
@@ -234,17 +289,17 @@ CREATE TABLE `endereco` (
   `idEndereco` smallint(10) NOT NULL,
   `provincia` varchar(50) NOT NULL,
   `distrito` varchar(50) NOT NULL,
-  `bairro` varchar(50) NOT NULL
+  `bairro` varchar(50) NOT NULL,
+  `rua` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `endereco`
 --
 
-INSERT INTO `endereco` (`idEndereco`, `provincia`, `distrito`, `bairro`) VALUES
-(1, 'Maputo', 'Kamubukwane', '25 de junho'),
-(2, 'Maputo', 'Kamubukwane', '25 de junho'),
-(3, 'Maputo', 'Kamachaquene', 'Urbanizacao');
+INSERT INTO `endereco` (`idEndereco`, `provincia`, `distrito`, `bairro`, `rua`) VALUES
+(1, 'Maputo', 'Kamubukwane', '25 de junho', ''),
+(2, 'Gaza', 'a', 'c', '2e');
 
 -- --------------------------------------------------------
 
@@ -265,8 +320,7 @@ CREATE TABLE `instituicao` (
 
 INSERT INTO `instituicao` (`idInstituicao`, `nome`, `idEndereco`, `idTipoI`) VALUES
 (1, 'Hospital central', 1, 1),
-(2, 'Hospital central', 1, 1),
-(3, 'MISAU', 2, 2);
+(2, 'Outra', 2, 2);
 
 -- --------------------------------------------------------
 
@@ -279,8 +333,23 @@ CREATE TABLE `mensagem` (
   `assunto` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `msg` text NOT NULL,
-  `idDoente` smallint(10) NOT NULL
+  `idDoente` smallint(10) NOT NULL,
+  `Estado` enum('Respondido','Pendente','','') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `mensagem`
+--
+
+INSERT INTO `mensagem` (`idmensagem`, `assunto`, `email`, `msg`, `idDoente`, `Estado`) VALUES
+(1, 'ss', 'ss@d', 'fff', 5, 'Pendente'),
+(2, 's', 'dd@f', 'ddddddddddddddddddddddddd', 5, 'Pendente'),
+(3, 'GSGGSG', 'DD@S', 'GAGAGAGA', 5, 'Respondido'),
+(4, 'GSGGSG', 'DD@S', 'GAGAGAGA', 5, 'Pendente'),
+(5, 'ss', 'DD@S', 'jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj', 2, 'Pendente'),
+(6, 'ss', 'DD@S', 'jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj', 2, 'Respondido'),
+(7, 'ss', 'DD@S', 'jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj', 2, 'Pendente'),
+(8, 'fefe', 'ff@f', 'aaaaaaaaaaaa', 2, 'Pendente');
 
 -- --------------------------------------------------------
 
@@ -320,8 +389,7 @@ CREATE TABLE `profissional` (
 --
 
 INSERT INTO `profissional` (`idProf`, `genero`, `dataNasc`, `apelido`, `nome`, `idEndereco`, `idInstituicao`, `idContacto`, `UserName`, `senha`) VALUES
-(1, 'M', '2019-05-08', 'Ricardo', 'Folege', 1, 1, 1, 'ricardo', 'd93591bdf7860e1e4ee2fca799911215'),
-(2, 'M', '1998-11-03', 'Mupandza', 'Jossias', 2, 2, 1, 'joss', '123');
+(1, 'M', '2019-05-08', 'Ricardo', 'Folege', 1, 1, 1, 'ricardo', 'd93591bdf7860e1e4ee2fca799911215');
 
 -- --------------------------------------------------------
 
@@ -376,10 +444,7 @@ CREATE TABLE `tipod` (
 --
 
 INSERT INTO `tipod` (`idTipo`, `nome`) VALUES
-(1, 'Proliferativa'),
-(2, 'Normal'),
-(3, '1'),
-(4, 'Degenerativa');
+(1, 'Proliferativa');
 
 -- --------------------------------------------------------
 
@@ -398,8 +463,7 @@ CREATE TABLE `tipoi` (
 
 INSERT INTO `tipoi` (`idTipoI`, `nome`) VALUES
 (1, 'Hospital'),
-(2, 'Hospital'),
-(3, 'Ministerio');
+(2, 'Outro');
 
 -- --------------------------------------------------------
 
@@ -582,7 +646,7 @@ ALTER TABLE `associacao`
 -- AUTO_INCREMENT for table `contacto`
 --
 ALTER TABLE `contacto`
-  MODIFY `idContacto` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idContacto` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `documento`
@@ -594,31 +658,31 @@ ALTER TABLE `documento`
 -- AUTO_INCREMENT for table `doenca`
 --
 ALTER TABLE `doenca`
-  MODIFY `idDoenca` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `idDoenca` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `doente`
 --
 ALTER TABLE `doente`
-  MODIFY `idDoente` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idDoente` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `endereco`
 --
 ALTER TABLE `endereco`
-  MODIFY `idEndereco` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idEndereco` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `instituicao`
 --
 ALTER TABLE `instituicao`
-  MODIFY `idInstituicao` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idInstituicao` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `mensagem`
 --
 ALTER TABLE `mensagem`
-  MODIFY `idmensagem` smallint(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `idmensagem` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `post`
@@ -630,7 +694,7 @@ ALTER TABLE `post`
 -- AUTO_INCREMENT for table `profissional`
 --
 ALTER TABLE `profissional`
-  MODIFY `idProf` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idProf` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `testemunho`
@@ -642,13 +706,13 @@ ALTER TABLE `testemunho`
 -- AUTO_INCREMENT for table `tipod`
 --
 ALTER TABLE `tipod`
-  MODIFY `idTipo` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idTipo` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tipoi`
 --
 ALTER TABLE `tipoi`
-  MODIFY `idTipoI` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idTipoI` smallint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tipop`
