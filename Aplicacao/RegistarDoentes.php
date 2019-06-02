@@ -357,7 +357,11 @@
                             po.focus();
                             return false;
                         }
-                        
+                        alert(te);
+                        if (typeof(te).val()<7) {
+                            te.focus();
+                            return false;
+                        }
                     }
 
                     if (stepNumber == 2) {
