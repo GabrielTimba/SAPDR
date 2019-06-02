@@ -45,113 +45,57 @@
                     <h5 class="ml-3">Documentos</h5>
                     <p class="ml-5 dir"><a href="#">Inicio</a> >> Publicações >><span class="text-sucess"> Documentos</span></p>
                 </div>
-
-					<div id="icones">
-                        
-                    </div>   		
-							
-                    
-                    
-                    <div class="row justify-content-center">
+                <div class="row mt-2">
+                    <div class="col-sm-11 ">
+                        <div class="float-right">
                             
-                            <table class="table col-lg-10 col-md-10 col-sm-10 tabela mt-5">
-                                <thead >
-                                    <tr class="cor-creme">
-                                        <td class="titulo-tabela" colspan="4"><i class="fa fa-futbol-o"></i>Lista de documentos
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <a class="btn btn-dark " href="pubdocumentos-admin.php" class="ligacoes">
-                                                    <i class="fa fa-plus mt-2"></i>
-                                            </a>
-                                            <i class="fa fa-trash"></i>
-                                        </td>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th class="texto-verde">Marca</th>
-                                        <th class="texto-verde">Titulo</th>
-                                        <th class="texto-verde">Data de publicacao</th>
-                                        <th class="texto-verde">Substituir arquivo</th>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" name="marcar">
-                                        </td>
-                                        <td>relatorio 1</td>
-                                        <td>xx/xx/20xx</td>
-                                        <td><i><i class="fa fa-upload"></i></td>
-                                    </tr>
-                                    <tr>
-                                            <td>
-                                                    <input type="checkbox" name="marcar">
-                                                </td>
-                                                <td>relatorio 1</td>
-                                                <td>xx/xx/20xx</td>
-                                                <td><i><i class="fa fa-upload"></i></td>
-                                    </tr>
-                                    <tr>
-                                            <td>
-                                                    <input type="checkbox" name="marcar">
-                                                </td>
-                                                <td>relatorio 1</td>
-                                                <td>xx/xx/20xx</td>
-                                                <td><i><i class="fa fa-upload"></i></td>
-                                    </tr>
-                                    <tr>
-                                            <td>
-                                                    <input type="checkbox" name="marcar">
-                                                </td>
-                                                <td>relatorio 1</td>
-                                                <td>xx/xx/20xx</td>
-                                                <td><i><i class="fa fa-upload"></i></td>
-                                    </tr>
-                                    <tr>
-                                            <td>
-                                                    <input type="checkbox" name="marcar">
-                                                </td>
-                                                <td>relatorio 1</td>
-                                                <td>xx/xx/20xx</td>
-                                                <td><i><i class="fa fa-upload"></i></td>
-                                    </tr>
-                                    <tr>
-                                            <td>
-                                                    <input type="checkbox" name="marcar">
-                                                </td>
-                                                <td>relatorio 1</td>
-                                                <td>xx/xx/20xx</td>
-                                                <td><i><i class="fa fa-upload"></i></td>
-                                    </tr>
-                                    <tr>
-                                            <td>
-                                                    <input type="checkbox" name="marcar">
-                                                </td>
-                                                <td>relatorio 1</td>
-                                                <td>xx/xx/20xx</td>
-                                                <td><i><i class="fa fa-upload"></i></td>
-                                    </tr>
-                                    <tr>
-                                            <td>
-                                                    <input type="checkbox" name="marcar">
-                                                </td>
-                                                <td>relatorio 1</td>
-                                                <td>xx/xx/20xx</td>
-                                                <td><i><i class="fa fa-upload"></i></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-        
+                            <a class="btn btn-primary ml-5 " href="registar-profissional.php">
+                                    <i class="fa fa-plus"></i>
+                            </a>
+                            <a class="btn btn-danger ml-2" href="">
+                                    <i class="fa fa-trash"></i>    
+                            </a>   
                         </div>
+                        
+                    </div>
+                     
+                </div>
+                <div class="row justify-content-center">
+                    <div class="table-responsive col-sm-10">
+                        <table class="table table-bordered table-hover tabela mt-2">
+                            <thead >
+                                <tr class="cor-creme">
+                                    <td class="titulo-tabela" colspan="4"><i class="fa fa-list mr-2"></i>Lista de Documentos</td>
+                                    
+                                </tr>
+                                <tr>
+                                    <th class="texto-verde text-center" style="width:2px;">
+                                        <input type="checkbox" onclick="selecionar()">
+                                    </th>
+                                    <th class="texto-verde">Titulo</th>
+                                    <th class="texto-verde">Data</th>
+                                    <th class="texto-verde" >
+                                        <a href="">Acção</a>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <tbody id="tabela-corpo"> 
+                                <?php
+                                    include_once("../model/documentosDAO.php");
+                                    listaDoc();
+                                ?> 
+                            
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
         
-                    <!--Rodape-->
-                    <?php
-                        rodapeAdmin();
-                    ?>
+                <!--Rodape-->
+                <?php
+                    rodapeAdmin();
+                ?>
             </div>
 
         </div>
