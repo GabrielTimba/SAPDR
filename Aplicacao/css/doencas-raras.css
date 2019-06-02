@@ -1,7 +1,14 @@
-.active {
+.active .active {
     background-color: rgba(14, 223, 84, 0.7) !important;
 }
 
 .tab-pane .row .col-12 {
     background-color: white;
 }
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #c2c7ce;
+}
+
+//rgba(14, 223, 84, 0.7)

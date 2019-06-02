@@ -2,8 +2,9 @@
     include('bd.php');
 
     //registar ou inserir dados de uma doenca na bd (BASE de DADOS)
-    if(isset($_POST['nome']))
+    if((isset($_GET['acao'])) && ($_GET['acao'] == 'inserir')){
         inserir();
+    }
     
     //editar uma doenca (usa o mesmo formulario de registo, mas carrega os dados correspodentes ao id)
     if(isset($_GET['id'])) {
@@ -18,7 +19,7 @@
     }
 
     //actualizar dados de uma doenca 
-    if((isset($_GET['acao'])) && ($_GET['acao'] == 'update')){
+    if((isset($_GET['acao'])) && ($_GET['acao'] == 'actualizar')){
         actualizar($_GET['idUpdate']);
     }
 
@@ -32,6 +33,16 @@
         lerNomeTipo();
     }
     
+    //consulta lista de doencas para o usuario (doente, visitante)
+    if((isset($_GET['acao'])) && ($_GET['acao'] == 'lerDoencas')){
+        lerDoencas($_GET['tipo']);
+    }
+
+    //consulta doenca em funcoa do nome pesquisado
+    if((isset($_GET['acao'])) && ($_GET['acao'] == 'lerDoencaNome')){
+        lerDoencaNome($_POST['pesquisa']);
+    }
+
     //insere dados na bd 
     function inserir() {
         $conexao = getConexao();  //faz conexao com bd (metodo defenido no ficheiro bd.php)  
@@ -170,7 +181,7 @@
                 <div class="row justify-content-center">
 
                     <div class=" border col-sm-11 bg-white pb-3" id="cadastro">
-                        <form  action="../model/doencaDAO.php?acao=update&&idUpdate="<?php echo $id; ?> id="myForm" role="form"  method="POST" accept-charset="utf-8">
+                        <form  action="../model/doencaDAO.php?acao=actualizar&&idUpdate=<?php echo $id; ?>" id="myForm" role="form"  method="POST" accept-charset="utf-8">
 
                             <!-- SmartWizard html -->
                             <div id="smartwizard">
@@ -276,7 +287,7 @@
     //actualiza os dados de uma doenca em funcao do id
     function actualizar($idDoenca) {
         $conexao = getConexao(); 
-        define('SQL','CALL actalizaDoencaID(?,?,?,?,?,?,?);');
+        define('SQL','CALL actualizaDoencaID(?,?,?,?,?,?,?);');
         
         if(!($stmt = $conexao->prepare(SQL))) {
             echo"Preparo do update Falhou: (".$conexao->errno.") ".$conexao->error;
@@ -323,6 +334,246 @@
         
         $stmt->close();
         fechaConexao($conexao);
-       // header('Location:../admin/lista-de-doencas.php');
+    }
+
+    $cont = 1; //contador gblobal usado no metodo lerDoencas
+
+    //devolve lista de doencas consoante o tipo
+    function lerDoencas($tipo) {
+        $conexao = getConexao();
+        //define('SQL',"CALL lerDoencas(?);");
+        $sql = "CALL lerDoencas(?);";
+
+        if(!($stmt = $conexao->prepare($sql))) {
+            echo"Preparo da Insercao Falhou: (".$conexao->errno.") ".$conexao->error;
+        } 
+
+        if(!($stmt->bind_param('i',$n))) {
+            echo " Parâmetros de ligação falhados: (".$stmt->errno.")".$stmt->error;
+        }
+        
+        $n = 1;
+        if(!($stmt->execute())){
+            echo " Execucao falhou: (".$stmt->errno.")".$stmt->error;
+        }
+        $resposta = $stmt->get_result();
+
+        //criar tabela 
+        if($resposta->num_rows>0) {
+            global $cont;
+            $cont2 = 1;
+            while($linha = $resposta->fetch_assoc()) {
+                if($linha['tipo'] == $tipo) {
+?>
+                <div class="cor-borda2 mb-5">
+                    <div class="card-header">
+                        
+                        <h6><span class="text-success"><?php echo $cont2; ?> - </span><?php echo $linha['nome']; ?></h6>
+
+                        <nav class="navbar navbar-primary">
+                            <ul class="nav nav-pills" id="nav-doenca" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active text-success" id="ca-<?php echo $cont; ?>" data-toggle="pill"
+                                        href="#c-<?php echo $cont; ?>">Causas</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-success" id="si-<?php echo $cont; ?>" data-toggle="pill" href="#s-<?php echo $cont; ?>">Sintomas</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-success" id="tr-<?php echo $cont; ?>" data-toggle="pill" href="#t-<?php echo $cont; ?>">Tratamento</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-success" id="pr-<?php echo $cont; ?>" data-toggle="pill" href="#p-<?php echo $cont; ?>">Prevenção</a>
+                                </li>
+                            </ul>
+                        </nav>
+        
+                    </div>
+        
+                    <div class="card-body tab-content" id="nav-pills-conteudo">
+
+                        <div class="tab-pane fade show active" id="c-<?php echo $cont; ?>" role="tabpanel">
+                            <div class="row">
+                                <div class="col-12">
+                                    <p>
+                                        <?php echo $linha['causa']; ?>
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="s-<?php echo $cont; ?>" role="tabpanel">
+                            <div class="row">
+                                <div class="col-12">
+                                    <p>
+                                        <?php echo $linha['sintoma']; ?>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="t-<?php echo $cont; ?>" role="tabpanel">
+                            <div class="row">
+                                <div class="col-12">
+                                    <p>
+                                        <?php echo $linha['tratamento']; ?>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="p-<?php echo $cont; ?>" role="tabpanel">
+                            <div class="row">
+                                <div class="col-12">
+                                    <p>
+                                    <?php echo $linha['prevencao']; ?>
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+<?php
+                    $cont++;
+                    $cont2++;
+                }
+            }
+        }
+        
+        $stmt->close();
+        fechaConexao($conexao);
+    }
+
+    //consulta doenca pelo nome doenca pelo nome
+    function lerDoencaNome($nome) {
+        $conexao = getConexao();
+        //define('SQL',"CALL lerDoencaNome(?);"
+         $sql = "CALL lerDoencaNome(?);";
+
+        if(!($stmt = $conexao->prepare($sql))) {
+            echo"Preparo da Insercao Falhou: (".$conexao->errno.") ".$conexao->error;
+        } 
+
+        if(!($stmt->bind_param('s',$n))) {
+            echo " Parâmetros de ligação falhados: (".$stmt->errno.")".$stmt->error;
+        }
+        
+        $n = "%$nome%";
+        if(!($stmt->execute())){
+            echo " Execucao falhou: (".$stmt->errno.")".$stmt->error;
+        }
+        $resposta = $stmt->get_result();
+
+        //criar tabela 
+        if($resposta->num_rows>0) {
+            global $cont;
+            $cont2 = 1;
+            while($linha = $resposta->fetch_assoc()) {
+?>
+        
+                <div class="cor-borda2 mb-5">
+                    <div class="card-header">
+                        
+                        <h6><span class="text-success"><?php echo $cont2; ?> - </span><?php echo $linha['nome']; ?></h6>
+
+                        <nav class="navbar navbar-primary">
+                            <ul class="nav nav-pills" id="nav-doenca" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active text-success" id="ca-<?php echo $cont; ?>" data-toggle="pill"
+                                        href="#c-<?php echo $cont; ?>">Causas</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-success" id="si-<?php echo $cont; ?>" data-toggle="pill" href="#s-<?php echo $cont; ?>">Sintomas</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-success" id="tr-<?php echo $cont; ?>" data-toggle="pill" href="#t-<?php echo $cont; ?>">Tratamento</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-success" id="pr-<?php echo $cont; ?>" data-toggle="pill" href="#p-<?php echo $cont; ?>">Prevenção</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-success" id="pr-<?php echo $cont; ?>" data-toggle="pill" href="#p-<?php echo $cont; ?>">Tipo</a>
+                                </li>
+                            </ul>
+                        </nav>
+        
+                    </div>
+        
+                    <div class="card-body tab-content" id="nav-pills-conteudo">
+
+                        <div class="tab-pane fade show active" id="c-<?php echo $cont; ?>" role="tabpanel">
+                            <div class="row">
+                                <div class="col-12">
+                                    <p>
+                                        <?php echo $linha['causa']; ?>
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="s-<?php echo $cont; ?>" role="tabpanel">
+                            <div class="row">
+                                <div class="col-12">
+                                    <p>
+                                        <?php echo $linha['sintoma']; ?>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="t-<?php echo $cont; ?>" role="tabpanel">
+                            <div class="row">
+                                <div class="col-12">
+                                    <p>
+                                        <?php echo $linha['tratamento']; ?>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="p-<?php echo $cont; ?>" role="tabpanel">
+                            <div class="row">
+                                <div class="col-12">
+                                    <p>
+                                    <?php echo $linha['prevencao']; ?>
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="p-<?php echo $cont; ?>" role="tabpanel">
+                            <div class="row">
+                                <div class="col-12">
+                                    <p>
+                                    <?php echo $linha['tipo']; ?>
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                
+<?php
+                    $cont++;
+                    $cont2++;
+
+            }
+        } else {
+?>
+            <div class="row justify-content-center">
+                <h2 style="color:red">Ops, Doença Não Encontrada!</h2>
+                <img class="img-thumbnail" src="imgs/nao-encotrada.png"> 
+            </div>
+<?php
+        }
+        
+        $stmt->close();
+        fechaConexao($conexao);
     }
 ?>
