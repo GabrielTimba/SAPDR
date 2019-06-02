@@ -43,6 +43,12 @@
         lerDoencaNome($_POST['pesquisa']);
     }
 
+    //consulta doenca em funcoa do nome pesquisado no rodape
+    if((isset($_GET['acao'])) && ($_GET['acao'] == 'pesquisarRodape')){
+        $n = $_POST['pesqRodape'];
+        header("Location:../doencas-raras.php?pesquisar=$n");
+    }
+
     //insere dados na bd 
     function inserir() {
         $conexao = getConexao();  //faz conexao com bd (metodo defenido no ficheiro bd.php)  
@@ -473,7 +479,7 @@
             $cont2 = 1;
             while($linha = $resposta->fetch_assoc()) {
 ?>
-        
+                <?php if($cont2 == 1) echo'<a href="doencas-raras.php" class="btn btn-primary my-3">Listar Doencas Raras</a> <br>';?>
                 <div class="cor-borda2 mb-5">
                     <div class="card-header">
                         
@@ -568,7 +574,7 @@
 ?>
             <div class="row justify-content-center">
                 <h2 style="color:red">Ops, Doença Não Encontrada!</h2>
-                <img class="img-thumbnail" src="imgs/nao-encotrada.png"> 
+                <img class="img-thumbnail" src="imgs/nao-encotrada.png">
             </div>
 <?php
         }

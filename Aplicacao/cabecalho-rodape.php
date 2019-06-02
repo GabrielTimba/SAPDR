@@ -179,9 +179,9 @@
                     </div>
                     
                     <div class="col-md-3 ">
-                        <form class="form-inline">
+                        <form class="form-inline" action="model/doencaDAO.php?acao=pesquisarRodape" method="POST">
                             <label class="mb-2 mr-2" for="pesquisar">Pesquise por uma doenca rara</label>
-                            <input class="form-control mr-1" id="pesquisar" type="search" placeholder="Buscar..." required>
+                            <input class="form-control mr-1" id="pesquisar" name="pesqRodape" type="search" placeholder="Buscar..." required>
                             <button class="btn btn-dark" type="submit"><i class="fa fa-search"></i></button>
                         </form>
                     </div>

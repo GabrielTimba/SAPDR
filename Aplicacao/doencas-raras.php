@@ -50,7 +50,16 @@
                 <div class="col-lg-3">
                     <form class="form-inline">
                         <div class="form-group">
-                            <input class="form-control" type="search" name="pesquisa" id="pesquisar-doenca" onkeyup="pesquisarDoencas()" placeholder="Pesquisar doença...">
+                            <?php 
+                                if(isset($_GET['pesquisar'])) {
+                                    $n = $_GET['pesquisar'];
+                                    echo '<input class="form-control" type="search" name="pesquisa" id="pesquisar-doenca" onkeyup="pesquisarDoencas()"  value="'.$n.'" placeholder="Pesquisar doença...">' ;
+                                } else {
+                            ?>
+                                    <input class="form-control" type="search" name="pesquisa" id="pesquisar-doenca" onkeyup="pesquisarDoencas()" placeholder="Pesquisar doença...">
+                            <?php
+                                }
+                            ?>
                             <button class="btn btn-primary ml-1" type="button" onclick="pesquisarDoencas()"><i class="fas fa-search"></i></button>
                         </div> 
                     </form>
@@ -65,7 +74,11 @@
           
         <div class="row mb-5" >
             <div class="col-12" id="row-pesquisa">
-                
+                <?php 
+                    if(isset($_GET['pesquisar'])) {
+                        lerDoencaNome($_GET['pesquisar']);
+                    } else {
+                ?>
                     <div class="row">
                         <!--lista do tipo -->
                         <ul class="nav nav-pills ml-3 mb-3" id="tipo" role="tablist">
@@ -96,10 +109,12 @@
                     
                         </div>
                     </div>
-
-                </div>
-                
+                <?php 
+                    }
+                ?>
             </div>
+                
+        </div>
     </div>
 
     <!--Rodape-->
