@@ -1,7 +1,22 @@
 DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `inserirDocumento`(IN `_titulo` VARCHAR(50), IN `_descricao` VARCHAR(100), IN `_arquivo` BLOB, IN `_user` VARCHAR(50), IN `_senha` VARCHAR(50))
+    NO SQL
+BEGIN
+DECLARE codProf SMALLINT(10);
+
+	SELECT idProf INTO codProf from profissional WHERE UserName=_user and senha=md5(_senha);
+    
+    INSERT INTO documento VALUES (null,_titulo,_descricao,_arquivo,codProf,now());
+    INSERT INTO profissional_post VALUES (codProf,null);
+ END$$
+DELIMITER ;
+
+
+
+DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `lista_de_documentos`()
     NO SQL
-SELECT p.idPost,titulo,data from post p,profissional_post pf WHERE p.idPost = pf.idPost$$
+SELECT idDoc,titulo,descricao,arquivo from documento$$
 DELIMITER ;
 
 
@@ -39,4 +54,3 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `lista_hospital`()
     NO SQL
 SELECT idInstituicao,i.nome,t.nome as tipo,bairro FROM instituicao i,tipoi t,endereco e where i.idEndereco = e.idEndereco and i.idTipoi = t.idTipoi and t.idTipoi =1$$
 DELIMITER ;
-
