@@ -1,56 +1,53 @@
 <?php
     include('bd.php');
-    define('INSERIR',' call inseriDoente()');
+    define('INSERIR',' call inseriDoente(?,?,?,?,?,?,?,?,?,?,?,?,?,?)');
     
-
-  /* if(isset()){
+    
+    if(isset($_GET['submeter'])){
         inserir();
+        echo "Bem vindo";
     }
     
     function inserir() {
 
         $con=getConexao();
+
+        // prepared statment 
+        $stmt = $con->prepare(INSERIR);
+        if(!$stmt) {
+            echo"Preparo da Insercao Falhou: (".$con->errno.") ".$conexao->error;
+        } 
+
+        if(!($stmt->bind_param('sssssssssiiiss',$nome,$apelido,$data,$genero,$provincia,$distrito,$bairro,$rua,$email,$tellefone,
+                                $doenca,$instituicao,$user,$senha) )) {
+            echo " Parâmetros de ligação falhados: (".$stmt->errno.")".$stmt->error;
+        }
+
         $nome= $_POST['nome'];
         $apelido= $_POST['apelido'];
-        $data= $_POST['data'];
-        $sintomas= $_POST['genero'];
+        $data= date_format($_POST['data'],"Y-m-d");
+        $genero= $_POST['genero'];
         $provincia= $_POST['provincia'];
         $distrito= $_POST['distrito'];
+        $bairro= $_POST['bairro'];
         $rua= $_POST['rua'];
         $email= $_POST['email'];
         $tellefone= $_POST['tellefone'];
         $doenca=$_POST['doenca'];
-
-        // prepared statment 
-        $stmt = $con->prepare("INSERIR")
-        if(!stmt) {
-            echo"Preparo da Insercao Falhou: (".$con->errno.") ".$conexao->error;
-        } 
-
-        if(!($stmt->bind_param() )) {
-            echo " Parâmetros de ligação falhados: (".$stmt->errno.")".$stmt->error;
-        }
-
-        //colocando valores nos parametros;
-        $tipo1 = $tipo;
-        $idDoenca1 = 'NULL';
-        $nome1 = $nome;
-        $prevencao1 = $prevencao;
-        $causa1 = $causas;
-        $tratamentos1 = $tratamentos;
-        $sintoma1 = $sintomas;
-        $idTipo1 = 'NULL';
+        $instituicao=$_POST['hospital'];
+        $user= $_POST['userName'];
+        $senha= $_POST['senha'];
         
         //executando
         if(!($stmt->execute())){
             echo " Execucao falhou: (".$stmt->errno.")".$stmt->error;
         }
-
+        
         $stmt->close();
-        $conexao->close();
+        fechaConexao($con);
 
-        header('Location:../admin/registar-doencas.php');
-    }*/
+        header('Location:../index.php');
+    }
 
     function doencas (){
         $conexao = getConexao();
