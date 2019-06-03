@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/Contacte-nos.css">
     <link rel="stylesheet" href="lib/fontawesome/css/all.css">
     <link rel="stylesheet" href="lib/summernote/summernote-bs4.css"><!--API para criar editor de texto-->
+    
     <?php
         favicon();
     ?>
