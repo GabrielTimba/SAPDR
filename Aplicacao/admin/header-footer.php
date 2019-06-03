@@ -73,6 +73,7 @@
                             <li><a href="lista-de-documentos.php"><i class="fas fa-angle-double-right mr-2"></i>Documentos</a></li>
                             <li><a href="lista-de-artigos.php"><i class="fas fa-angle-double-right mr-2"></i>Artigos</a></li>
                             <li><a href="lista-de-campanhas.php"><i class="fas fa-angle-double-right mr-2"></i>Campanhas</a></li>
+                            <li><a href="lista-de-testemunhos.php"><i class="fas fa-angle-double-right mr-2"></i>Testemunhos</a></li>
                         </ul>
                     </li>
                     <hr class="linha">
