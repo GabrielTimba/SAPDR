@@ -54,3 +54,33 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `lista_hospital`()
     NO SQL
 SELECT idInstituicao,i.nome,t.nome as tipo,bairro FROM instituicao i,tipoi t,endereco e where i.idEndereco = e.idEndereco and i.idTipoi = t.idTipoi and t.idTipoi =1$$
 DELIMITER ;
+
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `inserirInstituicao`(IN `_nome` VARCHAR(50), IN `_tipo` VARCHAR(50), IN `_provincia` VARCHAR(50), IN `_distrito` VARCHAR(50), IN `_bairro` VARCHAR(50), IN `_rua` VARCHAR(50))
+    NO SQL
+BEGIN
+	Declare codEndereco smallint(10);
+    Declare codTipo smallint(10);
+   
+    Select idEndereco into codEndereco from endereco 
+    where bairro = _bairro AND rua=_rua AND provincia=_provincia and distrito=_distrito;
+    
+    If (codEndereco is null) then 
+    	INSERT INTO  endereco VALUES (null,_provincia,_distrito,_bairro,_rua);
+        Select idEndereco into codEndereco from endereco 
+        where bairro = _bairro AND rua=_rua AND provincia=_provincia and distrito=_distrito;
+    end if;
+    
+    Select idTipoI into codTipo from tipoi 
+    where nome = _tipo ;
+    
+    If (codTipo is null) then 
+    	INSERT INTO tipoi VALUES (null,_tipo);
+         Select idTipoI into codTipo from tipoi where nome = _tipo ;
+    end if;
+	    
+    INSERT INTO instituicao VALUES 	(null,_nome,codEndereco,codTipo);
+    
+END$$
+DELIMITER ;
