@@ -63,7 +63,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Instituições e Associações</a>
+                        <a class="nav-link" href="lista-instituicoes.php">Instituições e Associações</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="relatorio.php">Relatórios</a>
@@ -134,7 +134,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Instituições e Associações</a>
+                    <a class="nav-link" href="lista-instituicoes.php">Instituições e Associações</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="relatorio.php">Relatórios</a>
@@ -163,7 +163,7 @@
                         <ul>
                             <li><a href="doencas-raras.php">Doenças Raras </a></li>
                             <li><a href="relatorio.php">Relatórios </a></li>
-                            <li><a href="#">Instituições e Associações </a></li>
+                            <li><a href="lista-instituicoes.php">Instituições e Associações </a></li>
                         </ul>
                     </div>
                     

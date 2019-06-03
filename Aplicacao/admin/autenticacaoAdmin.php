@@ -23,8 +23,8 @@
                 header('Location:login.php');
             }else{
                 session_start();
-                $_SESSION['nome'] = $nome;
-                $_SESSION['senha'] = $pass;
+                $_SESSION['nomeAdmin'] = $nome;
+                $_SESSION['senhaAdmin'] = $pass;
 
                 header('Location:index.php');
             }

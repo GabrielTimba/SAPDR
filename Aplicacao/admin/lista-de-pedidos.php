@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         
-        <title>Documentos | Admin</title>
+        <title>Pedidos de apoio | Admin</title>
         
         <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
         <link rel="stylesheet" href="../css/fonts.css">
@@ -28,7 +28,7 @@
     <body>
         <!--Cabecalho-->
         <?php
-            cabecalhoAdmin();
+           cabecalhoAdmin();
         ?>
         
         <!--corpo da pagina-->
@@ -42,16 +42,12 @@
             <!--Conteudo-->
             <div class="container-fluid" id="conteudo">
                 <div class="row conteudo-dir pt-4">
-                    <h5 class="ml-3">Documentos</h5>
-                    <p class="ml-5 dir"><a href="#">Inicio</a> >> Publicações >><span class="text-sucess"> Documentos</span></p>
+                    <h5 class="ml-3">Pedidos de Apoio</h5>
+                    <p class="ml-5 dir"><a href="#">Inicio</a> >> Mensagens >> <span class="text-sucess"> Pedidos de Apoio</span></p>
                 </div>
                 <div class="row mt-2">
                     <div class="col-sm-11 ">
                         <div class="float-right">
-                            
-                            <a class="btn btn-primary ml-5 " href="pub-documentos.php">
-                                    <i class="fa fa-plus"></i>
-                            </a>
                             <a class="btn btn-danger ml-2" href="">
                                     <i class="fa fa-trash"></i>    
                             </a>   
@@ -65,16 +61,15 @@
                         <table class="table table-bordered table-hover tabela mt-2">
                             <thead >
                                 <tr class="cor-creme">
-                                    <td class="titulo-tabela" colspan="5"><i class="fa fa-list mr-2"></i>Lista de Documentos</td>
+                                    <td class="titulo-tabela" colspan="5"><i class="fa fa-list mr-2"></i>Lista de Profissionais</td>
                                     
                                 </tr>
                                 <tr>
                                     <th class="texto-verde text-center" style="width:2px;">
                                         <input type="checkbox" onclick="selecionar()">
                                     </th>
-                                    <th class="texto-verde">Titulo</th>
-                                    <th class="texto-verde">Descricao</th>
-                                    <th class="texto-verde">Arquivo</th>
+                                    <th class="texto-verde">Benificiario</th>
+                                    <th class="texto-verde">Pedido</th>
                                     <th class="texto-verde" >
                                         <a href="">Acção</a>
                                     </th>
@@ -83,8 +78,8 @@
                             <tbody>
                             <tbody id="tabela-corpo"> 
                                 <?php
-                                    include_once("../model/documentosDAO.php");
-                                    listaDoc();
+                                    include_once("../model/pedidosDAO.php");
+                                    listaPedidos();
                                 ?> 
                             
                             </tbody>
@@ -92,7 +87,8 @@
                     </div>
 
                 </div>
-        
+
+                 
                 <!--Rodape-->
                 <?php
                     rodapeAdmin();

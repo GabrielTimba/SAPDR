@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	if(!isset($_SESSION['nome'])){
+	if(!isset($_SESSION['nomeAdmin'])){
 		header('Location:login.php');
 	}
 ?>
@@ -24,7 +24,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link" href="#" data-toggle="dropdown">
                                 <?php
-                                    echo $_SESSION['nome'];
+                                    echo $_SESSION['nomeAdmin'];
                                 ?> 
                                 <i class="fas fa-angle-down ml-2"></i>
                             </a>
@@ -76,12 +76,12 @@
                         </ul>
                     </li>
                     <hr class="linha">
-                    <li><a href="#"><i class="fas fa-h-square mr-2"></i>Instituições e Associações</a></li>
+                    <li><a href="lista-de-instituicoes.php"><i class="fas fa-h-square mr-2"></i>Instituições e Associações</a></li>
                     <hr class="linha">
                     <li>
                         <a class="dropdown-toggle" data-toggle="collapse" aria-expanded="false" href="#menu-mensagens"><i class="fa fa-envelope mr-2"></i> Mensagens</a>
                         <ul class="collapse list-unstyled menu-dropdown" id="menu-mensagens">
-                            <li><a href="#"><i class="fas fa-angle-double-right mr-2"></i>Pedidos de Apoio</a></li>
+                            <li><a href="lista-de-pedidos.php"><i class="fas fa-angle-double-right mr-2"></i>Pedidos de Apoio</a></li>
                             <li><a href="mensagens.php"><i class="fas fa-angle-double-right mr-2"></i>Mensagens de Suporte</a></li>
                         </ul>
                     </li>
