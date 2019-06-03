@@ -49,7 +49,7 @@
                     <div class="col-sm-11 ">
                         <div class="float-right">
                             
-                            <a class="btn btn-primary ml-5 " href="registar-profissional.php">
+                            <a class="btn btn-primary ml-5 " href="pub-documentos.php">
                                     <i class="fa fa-plus"></i>
                             </a>
                             <a class="btn btn-danger ml-2" href="">
@@ -65,7 +65,7 @@
                         <table class="table table-bordered table-hover tabela mt-2">
                             <thead >
                                 <tr class="cor-creme">
-                                    <td class="titulo-tabela" colspan="4"><i class="fa fa-list mr-2"></i>Lista de Documentos</td>
+                                    <td class="titulo-tabela" colspan="5"><i class="fa fa-list mr-2"></i>Lista de Documentos</td>
                                     
                                 </tr>
                                 <tr>
@@ -73,7 +73,8 @@
                                         <input type="checkbox" onclick="selecionar()">
                                     </th>
                                     <th class="texto-verde">Titulo</th>
-                                    <th class="texto-verde">Data</th>
+                                    <th class="texto-verde">Descricao</th>
+                                    <th class="texto-verde">Arquivo</th>
                                     <th class="texto-verde" >
                                         <a href="">Acção</a>
                                     </th>
