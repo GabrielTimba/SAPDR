@@ -64,7 +64,7 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-11  cor-borda2 bg-white" id="cadastro">
-                        <form  action="#" id="myForm" role="form"  method="post" accept-charset="utf-8">
+                        <form  action="../model/instituicaoDAO.php" id="myForm" role="form"  method="post" accept-charset="utf-8">
 
                             <!-- SmartWizard html -->
                             <div id="smartwizard">
@@ -81,8 +81,9 @@
                                         <label for="tipo" >Tipo:</label>
                                         <select class="form-control valid" name="tipo" id="tipo"  required>
                                             <option disable value="0" >...</option>
-                                            <option value="1" >Associacao</option>
-                                            <option value="2">Hospital</option>
+                                            <option value="Associacao" >Associacao</option>
+                                            <option value="Hospital">Hospital</option>
+                                            <option value="Farmacia">Farmacia</option>
                                         </select>
                                         <div class="help-block with-errors"></div>
                                     </div>
@@ -93,26 +94,52 @@
                                         <label for="provincia" >Provincia:</label>
                                         <select class="form-control valid" name="provincia" id="provincia" required>
                                             <option value="0">...</option>
-                                            <option value="1">Maputo</option>
-                                            <option value="1">Gaza</option>
-                                            <option value="1">Inhambane</option>
-                                            <option value="1">Sofala</option>
-                                            <option value="1">Manica</option>
-                                            <option value="1">Zambezia</option>
-                                            <option value="1">Tete</option>
-                                            <option value="1">Nampula</option>
-                                            <option value="1">Niassa</option>
-                                            <option value="1">Cabo Delgado</option>
+                                            <option value="Maputo">Maputo</option>
+                                            <option value="Gaza">Gaza</option>
+                                            <option value="Inhambane">Inhambane</option>
+                                            <option value="Sofala">Sofala</option>
+                                            <option value="Manica">Manica</option>
+                                            <option value="Zambezia">Zambezia</option>
+                                            <option value="Tete">Tete</option>
+                                            <option value="Nampula">Nampula</option>
+                                            <option value="Niassa">Niassa</option>
+                                            <option value="Cabo Delgado">Cabo Delgado</option>
                                         </select>
                                     </div>
 
                                     <div class="form-group col-sm-5 mt-2 ml-3">
                                         <label for="distrito" >Distrito:</label>
-                                        <select class="form-control" name="distrito" id="distrito" required>
-                                            <option value="0">...</option>
-                                            <option value="1" >...</option>
-                                            <option value="1">...</option>
-                                        </select>
+                                        <input list="distritos" name="distrito" id ="distrito" class="form-control" id="Distrito" required>
+                                        <datalist id="distritos">
+                                            <option value="Matola">Matola</option>
+                                            <option value="Maputo">Maputo</option>
+                                            <option value="Xai-xai">Xai-xai</option>
+                                            <option value="Chibuto">Chibuto</option>
+                                            <option value="Chokwé">Chokwé</option>
+                                            <option value="Inhambane">Inhambane</option>
+                                            <option value="Maxixe">Maxixe</option>
+                                            <option value="Manica">Manica</option>
+                                            <option value="Chimoio">Chimoio</option>
+                                            <option value="Beira">Beira</option>
+                                            <option value="Dondo">Dondo</option>
+                                            <option value="Zambezia">Zambezia</option>
+                                            <option value="Quelimane">Quelimane</option>
+                                            <option value="Mocuba">Mocuba</option>
+                                            <option value="Gurué">Gurué</option>
+                                            <option value="Tete">Tete</option>
+                                            <option value="Nampula">Nampula</option>
+                                            <option value="Nacala">Nacala</option>
+                                            <option value="Ilha de Moçambique">Ilha de Moçambique</option>
+                                            <option value="Pemba">Pemba</option>
+                                            <option value="Montepuez">Montepuez</option>
+                                            <option value="Lichinga">Lichinga</option>
+                                            <option value="Cuamba">Cuamba</option>
+                                        </datalist>
+                                    </div>
+
+                                    <div class="form-group col-sm-5 mt-2 ml-3">
+                                        <label for="bairro" >Bairro:</label>
+                                        <input type="text" name="bairro" id="bairro" class="form-control" placeholder="Bairro" required>
                                     </div>
 
                                     <div class="form-group col-sm-5 mt-2 ml-3">
@@ -125,7 +152,7 @@
                                     <div class="form-group col-sm-5 mt-2 ml-3">
                                         <p class="row justify-content-center">
                                             <button class="btn btn-outline-danger botoes mr-3" type="reset" id="apagar" mame="apagar">Apagar</button>
-                                            <button class="btn btn-outline-primary botoes" type="submit" onclick="validar()" id="submeter" mame="submeter">Submeter</button>
+                                            <button class="btn btn-outline-primary botoes" type="submit" onclick="validar()" id="submeter" name="submeter">Submeter</button>
                                         </p>
                                     </div>
                                 </div>
