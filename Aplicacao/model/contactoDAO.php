@@ -32,7 +32,6 @@
             $user='Visitante';
             $senha='Visitante';
         }
-        
         //executando
         if(!($stmt->execute())){
             echo " Execucao falhou: (".$stmt->errno.")".$stmt->error;
