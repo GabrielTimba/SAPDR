@@ -122,7 +122,7 @@
                     <a class="nav-link" href="doencas-raras.php">Doenças Raras</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Foruns</a>
+                    <a class="nav-link" href="http://localhost/sapdr/Aplicacao/forumsapdr/">Foruns</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Publicações</a>
