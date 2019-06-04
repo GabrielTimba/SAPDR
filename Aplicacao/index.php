@@ -38,28 +38,36 @@
             <li data-target="#carouselSite" data-target-to="0" class="active"></li>
             <li data-target="#carouselSite" data-target-to="1" class="active"></li>
             <li data-target="#carouselSite" data-target-to="2" class="active"></li>
+            <li data-target="#carouselSite" data-target-to="3" class="active"></li>
         </ol>
     
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="imgs/slide-01.jpg" class="img-fluid d-block">
+                <img src="imgs/carosel-1.png" class="img-fluid d-block">
                 <div class="carousel-caption d-none d-md-block text-dark">
-                    <h1>Lorem ipsum dolor</h1>
-                    <p class="leed">Mauris dictum, nulla sed placerat sodales, diam augue sollicitudin dui</p>
+                    <!--<h1>Lorem ipsum dolor</h1>
+                    <p class="leed">Mauris dictum, nulla sed placerat sodales, diam augue sollicitudin dui</p>-->
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="imgs/slide-02.jpg" class="img-fluid d-block">
+                <img src="imgs/carosel-2.png" class="img-fluid d-block">
                 <div class="carousel-caption d-none d-md-block text-dark">
-                    <h1>Aliquam in malesuada neque</h1>
-                    <p class="leed">Mauris dictum, nulla sed placerat sodales, diam augue sollicitudin dui.</p>
+                    <!--<h1>Aliquam in malesuada neque</h1>
+                    <p class="leed">Mauris dictum, nulla sed placerat sodales, diam augue sollicitudin dui.</p>-->
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="imgs/slide-03.jpg" class="img-fluid d-block">
-                <div class="carousel-caption d-none d-md-block text-dark">
-                    <h1>Pellentesque ultricies facilisis ultrices</h1>
-                    <p class="leed">Mauris dictum, nulla sed placerat sodales, diam augue sollicitudin dui.</p>
+                <img src="imgs/carosel-3.png" class="img-fluid d-block">
+                <div class="carousel-caption d-none d-md-block text-wihte">
+                    <!--<h1>Pellentesque ultricies facilisis ultrices</h1>
+                    <p class="leed">Mauris dictum, nulla sed placerat sodales, diam augue sollicitudin dui.</p>-->
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="imgs/carosel-4.png" class="img-fluid d-block">
+                <div class="carousel-caption d-none d-md-block text-sucess">
+                  <!--  <h1>Pellentesque ultricies facilisis ultrices</h1>
+                    <p class="leed">Mauris dictum, nulla sed placerat sodales, diam augue sollicitudin dui.</p>-->
                 </div>
             </div>
         </div>
