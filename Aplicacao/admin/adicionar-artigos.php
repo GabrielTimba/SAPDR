@@ -13,8 +13,10 @@
         <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
         <link rel="stylesheet" href="../css/fonts.css">
         <link rel="stylesheet" href="../lib/fontawesome/css/all.css">
+        <link rel="stylesheet" href="../lib/fontawesome/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../css/painel-admin.css">
+        <link rel="stylesheet" href="../lib/summernote/summernote-bs4.css"><!--API para criar editor de texto-->
         
         <script src="../js/jquery.js"></script>
         <script src="../js/popper.js"></script>
@@ -53,13 +55,13 @@
 
             <div class="row justify-content-center">
                 <div class="col-sm-11 borda-titulo">
-                    <label><i class=""></i>Adicionar Artigos</label>
+                    <label><i class="fa fa-pencil-square-o mr-1"></i>Adicionar Artigos</label>
                 </div>
             </div>
 
             <div class="row justify-content-center">
                 <div class=" border col-sm-11 bg-white " id="cadastro">
-                    <form  action="#" id="" role="form"  method="post" accept-charset="utf-8">
+                    <form  action="../model/artigosDAO.php?acao=inserir" id="" role="form"  method="POST" accept-charset="utf-8">
 
                         <!-- SmartWizard html -->
                         <div id="smartwizard">
@@ -68,7 +70,7 @@
                                 <div class="form-row">
                                     <div class="form-group col-sm-5 mt-2 ml-3">
                                         <label for="Autor" >Autor:</label>
-                                        <input type="text"   class="form-control"  placeholder="Autor" required>
+                                        <input type="text"   class="form-control" name="autor" placeholder="Autor" required>
                                     </div>
 
                                 </div> 
@@ -77,14 +79,14 @@
                                 
                                     <div class="form-group col-sm-5 mt-2 ml-3">
                                         <label for="Tipo" >Titulo:</label>
-                                        <input type="text"   class="form-control"  placeholder="Titulo" required>
+                                        <input type="text"   class="form-control" titulo="titulo" placeholder="Titulo" required>
                                     </div>
                                 </div> 
 
                                 <div class="form-row">
                                     <div class="form-group col-sm-8 mt-2 ml-3">
-                                        <label for="Conteudo" >Conteudo:</label>
-                                        <textarea class="form-control" id="Caracteristicas" cols="70" rows="7" required></textarea>
+                                        <label for="artigo" >Artigo:</label>
+                                        <textarea class="form-control" id="artigo" cols="100" rows="7" required></textarea>
                                     </div>
                                     
                                 </div>
@@ -114,36 +116,21 @@
 
         </div>
 
-        <!-- Ler Mais-->
-
-        <div class="modal fade" id="siteModal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-
-                    <div class="modal-header">
-                        <h1 class="modal-title">Caracteristicas da Doenca</h1>
-                        <button type="button" class="close" data-dismiss="modal">
-                            <samp>&times;</samp>
-                        </button>
-                    </div>
-
-                    <div class="modal-body">
-                        Lorem ipsum dolor sit amet consectetur, 
-                        adipisicing elit. Ex voluptas suscipit iste sapiente 
-                        assumenda cupiditate delectus aliquam dolore culpa officia ratione ipsum tenetur, 
-                        similique nemo quam nostrum adipisci, aliquid maxime.
-
-                    </div>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
         
+        <script src="../lib/summernote/summernote-bs4.js"></script> <!--API para criar editor de texto-->
+        <script src="../lib/summernote/lang/summernote-pt-PT.js"></script>
+        <!--Chamando o Eidtor summernote-->
+        <script>
+            $(document).ready(function(){
+                $('textarea#artigo').summernote({ 
+                    lang:'pt-PT',
+                    height: 300,
+                    width: 900,                 // set editor height
+                    minHeight: null,             // set minimum height of editor
+                    maxHeight: null,             // set maximum height of editor
+                    focus: false             // set focus to editable area after initializing summernote
+                });
+            });
+        </script>
     </body>
 </html>

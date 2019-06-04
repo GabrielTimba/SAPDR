@@ -1,22 +1,8 @@
 <?php
     include('bd.php');
 
-    function inserir(){
-
-        $con=getConexao();
-        $nome = $_POST['nome'];
-        $apelido = $_POST['apelido'];
-        $dataN = $_POST['dataN'];
-        $genero = $_POST['genero'];
-        $provincia = $_POST['provincia'];
-        $distrito = $_POST['distrito'];
-        $bairro = $_POST['bairro'];
-        $rua = $_POST['rua'];
-        $email = $_POST['email'];
-        $tellefone = $_POST['tellefone'];
-        $unidade_h = $_POST['unidade_h'];
-        $nome_u = $_POST['nome_u'];
-        $senha = $_POST['senha'];
+    if(isset($_POST['submeter'])){
+        inserirInst();
     }
 
     function listaInst(){
@@ -45,7 +31,7 @@
                         <td>'.$linha['bairro'].'</td>
                         <td>'.$linha['tipo'].'</td>
                         <td> 
-                            <a class="btn cor-verde"  href="../model/profissionalDAO.php?id='.$linha['idInstituicao'].'">
+                            <a class="btn cor-verde"  href="'.$linha['idInstituicao'].'">
                                 <i class="fa fa-pencil-alt"></i> Editar
                             </a>
                         </td>
@@ -137,6 +123,37 @@
         $stmt->close();
         fechaConexao($conexao);
     }
+
+    function inserirInst(){
+        $con=getConexao();
+        define('INSERIR',' call inserirInstituicao(?,?,?,?,?,?)');
+        // prepared statment 
+        $stmt = $con->prepare(INSERIR);
+        if(!$stmt) {
+            echo"Preparo da Insercao Falhou: (".$con->errno.") ".$conexao->error;
+        } 
+
+        if(!($stmt->bind_param('ssssss',$nome,$tipo,$provincia,$distrito,$bairro,$rua))) {
+            echo " Parâmetros de ligação falhados: (".$stmt->errno.")".$stmt->error;
+        }
+
+        $nome= $_POST['nome'];
+        $tipo= $_POST['tipo'];
+        $provincia= $_POST['provincia'];
+        $distrito= $_POST['distrito'];
+        $bairro= $_POST['bairro'];
+        $rua= $_POST['rua'];
+
+        //executando
+        if(!($stmt->execute())){
+            echo " Execucao falhou: (".$stmt->errno.")".$stmt->error;
+        }
+
+        fechaConexao($con);
+
+       header('Location:../admin/lista-de-instituicoes.php');
+    }
+
 
     
 
