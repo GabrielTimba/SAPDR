@@ -110,7 +110,7 @@
                                     <div class="form-row">
                                         <div class="form-group col-sm-5 mt-2 ml-3">
                                             <label for="Provincia">Provincia:</label>
-                                            <select class="form-control valid" name="provincia" id="provincia" required>
+                                            <select class="form-control " name="provincia" id="provincia" required>
                                                 <option value="0" disabled selected>...</option>
                                                 <option value="1">Maputo</option>
                                                 <option value="1">Gaza</option>
