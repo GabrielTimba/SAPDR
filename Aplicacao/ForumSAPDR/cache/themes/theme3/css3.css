@@ -1,0 +1,107 @@
+/*
+ * MyBB: Andreas09-Green Frontend Theme 
+ *
+ * File: css3.css File
+ * 
+ * Authors: MyBB Themes PL & Vintagedaddyo
+ *
+ * MyBB Version: 1.8
+ *
+ * Theme Version: 1.1
+ * 
+ */
+
+tr td.trow1:first-child,
+tr td.trow2:first-child,
+tr td.trow_shaded:first-child {
+	border-left: 0;
+}
+
+tr td.trow1:last-child,
+tr td.trow2:last-child,
+tr td.trow_shaded:last-child {
+	border-right: 0;
+}
+
+.tborder {
+	width: 100%;
+	margin: auto auto;
+}
+
+.tborder tbody tr:last-child td {
+	border-bottom: 0;
+}
+
+.tborder tbody tr:last-child td:first-child {
+}
+
+.tborder tbody tr:last-child td:last-child {
+}
+
+.thead {
+}
+
+.thead_collapsed {
+}
+
+.thead_left {
+}
+
+.thead_right {
+}
+
+.tcat_menu {
+}
+
+.tborder tbody:nth-last-child(2) .tcat_collapse_collapsed {
+}
+
+
+input.textbox,
+input.invalid_field,
+input.valid_field,
+select,
+textarea {
+}
+
+button,
+input.button,
+.editor_control_bar,
+.postbit_buttons > a,
+a.button {
+    -moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+}
+
+button,
+input.button,
+.editor_control_bar,
+.postbit_buttons > a,
+a.button
+.popup_menu,
+.postbit_buttons > a,
+a.button {
+    -moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+}
+
+.post.classic .post_author {
+}
+
+.popup_menu .popup_item_container:first-child .popup_item {
+}
+
+.popup_menu .popup_item_container:last-child .popup_item {
+}
+
+.pagination a {
+}
+
+.pollbar {
+}
+	
+
+		
+		
