@@ -87,6 +87,8 @@
                         </ul>
                     </li>
                     <hr class="linha">
+                    <li><a href="http://localhost/forumsapdr/admin/index.php"><i class="fas  fa-cogs  mr-2"></i>Administrar Foruns</a></li>
+                    <hr class="linha">
                 </ul>
             </nav>
 <?php
