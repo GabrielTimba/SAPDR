@@ -152,14 +152,14 @@
                                                     <input type="checkbox" onclick="selecionar()">
                                                 </th>
                                                 <th class="texto-verde">Nome</th>
+                                                <th class="texto-verde">Descricao</th>
                                                 <th class="texto-verde">Localizacao</th>
-                                                <th class="texto-verde">Tipo</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
                                                 include_once("model/instituicaoDAO.php");
-                                                //instituicao(2);
+                                                listaAss();
                                             ?>   
                                         </tbody>
                                     </table>

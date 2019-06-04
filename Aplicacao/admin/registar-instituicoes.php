@@ -32,7 +32,7 @@
     <body>
         <!--Cabecalho-->
         <?php
-            cabecalhoAdmin();
+           cabecalhoAdmin();
         ?>
         
         <!--corpo da pagina-->
@@ -41,6 +41,10 @@
            <!--Menu Lateral Esquerdo-->
             <?php
                 menuVertical();
+                if(isset($_GET['idInstituicao'])) {
+                    include('../model/instituicaoDAO.php');
+                    lerInstituicaoID($_GET['idInstituicao']);
+                } else {
             ?>
 
             <!--Conteudo-->
@@ -53,7 +57,7 @@
 
                 <div class="row my-2 justify-content-center">
                     <div class="col-sm-11">
-                        <a class="btn btn-light bg-white cor-borda2 float-right" href="lista-de-profissionais.php"><i class="fa fa-reply"></i></a>
+                        <a class="btn btn-light bg-white cor-borda2 float-right" href="lista-de-instituicoes.php"><i class="fa fa-reply"></i></a>
                     </div>
                 </div>
 
@@ -162,13 +166,17 @@
                         </form>
                     </div>
                 </div>
+                
+                
 
                 <!--Rodape-->
                 <?php
-                    rodapeAdmin();
+                   rodapeAdmin();
                 ?>
             </div>
-
+            <?php
+                }
+            ?>
         </div>
     
 

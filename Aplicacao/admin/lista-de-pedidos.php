@@ -56,37 +56,129 @@
                     </div>
                      
                 </div>
-                <div class="row justify-content-center">
-                    <div class="table-responsive col-sm-10">
-                        <table class="table table-bordered table-hover tabela mt-2">
-                            <thead >
-                                <tr class="cor-creme">
-                                    <td class="titulo-tabela" colspan="5"><i class="fa fa-list mr-2"></i>Lista de Profissionais</td>
-                                    
-                                </tr>
-                                <tr>
-                                    <th class="texto-verde text-center" style="width:2px;">
-                                        <input type="checkbox" onclick="selecionar()">
-                                    </th>
-                                    <th class="texto-verde">Benificiario</th>
-                                    <th class="texto-verde">Pedido</th>
-                                    <th class="texto-verde" >
-                                        <a href="">Acção</a>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            <tbody id="tabela-corpo"> 
-                                <?php
-                                    include_once("../model/pedidosDAO.php");
-                                    listaPedidos();
-                                ?> 
-                            
-                            </tbody>
-                        </table>
-                    </div>
+               
+          
+                <div class="row mb-5" >
+                    <div class="col-11">
+                        
+                            <div class="row">
+                                <!--lista do tipo -->
+                                <ul class="nav nav-pills ml-3 mb-3" id="tipo" role="tablist">
+                                    <li class="nav-item">
+                                        <h6 class="mt-2">Estado |</h6>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active active1 texto-verde" id="" data-toggle="pill" href="#tipo1">Pendentes</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link texto-verde" id="" data-toggle="pill" href="#tipo2">Pubicados</a>
+                                    </li>
+                                
+                                    </li>
+                                </ul>
+                            </div>
 
-                </div>
+                            <!--conteudo da lista tipo -->
+                            <div class = "row">
+
+                                <div class="col-12 tab-content" id="nav-pills-tipo">
+                                    
+                                    <div class="tab-pane fade show active" id="tipo1" role="tabpanel">
+                                        <div class="">
+                                            <table class="table table-bordered table-hover col-12 tabela mt-2" id="i1">
+                                                <thead>
+                                                    <tr class="cor-creme">
+                                                        <td class="titulo-tabela" colspan="4"><i class="fa fa-list mr-2"></i>Pendentes</td>
+                                                    </tr>
+                                                    <tr>
+                                                    <th class="texto-verde text-center" style="width:2px;">
+                                                        <input type="checkbox" onclick="selecionar()">
+                                                    </th>
+                                                    <th class="texto-verde">Benificiario</th>
+                                                    <th class="texto-verde">Pedido</th>
+                                                    <th class="texto-verde" >
+                                                        <a href="">Acção</a>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tbody id="tabela-corpo"> 
+                                                <?php
+                                                    include_once("../model/pedidosDAO.php");
+                                                    listaPedidos("Pendente");
+                                                ?> 
+                                            
+                                            </tbody>
+                                            </table>   
+                                        </div>
+                                        
+                                        
+                                    </div>
+                            
+                                    <div class="tab-pane fade" id="tipo2" role="tabpanel">
+                                        <div class="">
+                                            <table class="table table-bordered table-hover col-12 tabela mt-2" id="i2">
+                                                <thead >
+                                                    <tr class="cor-creme">
+                                                        <td class="titulo-tabela" colspan="4"><i class="fa fa-list mr-2"></i>Publicados</td>
+                                                        
+                                                    </tr>
+                                                    <tr>
+                                                    <tr>
+                                                    <th class="texto-verde text-center" style="width:2px;">
+                                                        <input type="checkbox" onclick="selecionar()">
+                                                    </th>
+                                                    <th class="texto-verde">Benificiario</th>
+                                                    <th class="texto-verde">Pedido</th>
+                                                    <th class="texto-verde" >
+                                                        <a href="">Acção</a>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tbody id="tabela-corpo"> 
+                                                <?php
+                                                    include_once("../model/pedidosDAO.php");
+                                                    listaPedido("Publicado");
+                                                ?> 
+                                            
+                                            </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                
+                                    <div class="tab-pane fade" id="tipo3" role="tabpanel">
+                                        <div class="">
+                                            <table class="table table-bordered table-hover col-12 tabela mt-2" id="i3">
+                                                <thead >
+                                                    <tr class="cor-creme">
+                                                        <td class="titulo-tabela" colspan="4"><i class="fa fa-list mr-2"></i>Associacoes</td>
+                                                        
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="texto-verde text-center" style="width:2px;">
+                                                            <input type="checkbox" onclick="selecionar()">
+                                                        </th>
+                                                        <th class="texto-verde">Nome</th>
+                                                        <th class="texto-verde">Localizacao</th>
+                                                        <th class="texto-verde">Tipo</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <?php
+                                                        //include_once("model/instituicaoDAO.php");
+                                                        //instituicao(2);
+                                                    ?>   
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+               
 
                  
                 <!--Rodape-->
