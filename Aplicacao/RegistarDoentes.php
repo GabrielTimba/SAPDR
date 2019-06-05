@@ -286,6 +286,7 @@
            $('#optionsRadios2').click(function(){
                 $("#unidHosp").fadeToggle()();
            });
+           
 
            // Toolbar extra buttons
            var btnFinish = $('<button></button>').text('Submeter')
@@ -353,8 +354,14 @@
                         var po= $("#provincia");
                         var te= document.getElementById("#tellefone");
                        // te.value = parseInt(te.value) ;   
+                       tellefone=document.getElementById('tellefone').value;
                         if (po.val() == 0 || po.val() == null) {
                             po.focus();
+                            return false;
+                        }
+
+                        if(tellefone<820000000 || tellefone>879999999){
+                            te.focus();
                             return false;
                         }
                        
@@ -392,10 +399,3 @@
 
 
 
-
-
-
-
-
-
-<!--Programer: Ricardo, Folege Lourenco-->
