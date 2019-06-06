@@ -1,6 +1,0 @@
-DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `lista_de_profissionais`()
-    NO SQL
-select d.idProf,d.nome,c.email,i.nome as unidade from profissional d,contacto c,instituicao i
-where c.idContacto = d.idContacto and i.idInstituicao = d.idInstituicao$$
-DELIMITER ;
