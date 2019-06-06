@@ -96,7 +96,7 @@
                                             <label for="Genero">Genero:</label>
                                             <select class="form-control valid" name="genero" id="Genero " required>
                                                 <option value="0" disabled selected>...</option>
-                                                <option value="1" >Maculino</option>
+                                                <option value="1" >Masculino</option>
                                                 <option value="2">Femenino</option>
                                             </select>
                                         </div>
