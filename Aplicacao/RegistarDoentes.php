@@ -61,7 +61,7 @@
         </div>
         <div class="row mb-5 justify-content-center" id="row-altura">
             <div class="col-11  cor-borda2 cor-creme" id="cadastro">
-                <form action="#" id="myForm" name="formDoente" role="form" method="post" accept-charset="utf-8">
+                <form action="model/DoenteDAO.php?submeter=true" id="myForm" name="formDoente" role="form" method="post" accept-charset="utf-8">
         
                     <!-- SmartWizard html -->
                     <div  id="smartwizard">
