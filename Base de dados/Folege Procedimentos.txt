@@ -84,3 +84,141 @@ BEGIN
     
 END$$
 DELIMITER ;
+
+
+_______________________________________________________________________________________________________________________________
+-------------------------------------Procedimentos Actualizados----------------------------------------------------------------
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `actualizarInstituicao`(IN `_nome` VARCHAR(50), IN `_tipo` VARCHAR(50), IN `_provincia` VARCHAR(50), IN `_distrito` VARCHAR(50), IN `_bairro` VARCHAR(50), IN `_rua` VARCHAR(50))
+    NO SQL
+BEGIN
+	DECLARE codEndereco SMALLINT(10);
+    	DECLARE codTipo SMALLINT(10);
+    
+    
+    SELECT idEndereco INTO codEndereco FROM endereco WHERE provincia = _provincia and distrito = _distrito and bairro = _bairro and rua = _rua;
+    
+     If (codEndereco is null )then 
+    	INSERT INTO  endereco VALUES (null,_provincia,_distrito,_bairro,_rua);
+        SELECT idEndereco INTO codEndereco FROM endereco WHERE provincia = _provincia and distrito = _distrito and bairro = _bairro and rua = _rua;
+    end if;
+    
+    SELECT idTipoI INTO codTipo FROM tipoi WHERE nome = _tipo;
+    
+    IF codTipo IS NOT NULL THEN
+        UPDATE instituicao SET nome = _nome, idEndereco = codEndereco, idTipoI = codTipo WHERE idInstituicao = _id;
+    END IF;
+    
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `inseriMensagem`(IN `_assunto` VARCHAR(50), IN `_email` VARCHAR(50), IN `_mensagem` TEXT, IN `_user` VARCHAR(50), IN `_senha` VARCHAR(50))
+    NO SQL
+BEGIN
+	DECLARE codDoente SMALLINT(10);
+
+	SELECT idDoente INTO codDoente from Doente WHERE userName=_user and senha=md5(_senha);
+
+	INSERT INTO mensagem VALUES (null,_assunto,_email,_mensagem,coddoente,'Pendente');
+    
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `inserirDocumento`(IN `_titulo` VARCHAR(50), IN `_descricao` VARCHAR(100), IN `_arquivo` BLOB, IN `_user` VARCHAR(50), IN `_senha` VARCHAR(50))
+    NO SQL
+BEGIN
+DECLARE codProf SMALLINT(10);
+
+	SELECT idProf INTO codProf from profissional WHERE UserName=_user and senha=md5(_senha);
+    
+    INSERT INTO documento VALUES (null,_titulo,_descricao,_arquivo,codProf,now());
+    
+ END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `inserirInstituicao`(IN `_nome` VARCHAR(50), IN `_tipo` VARCHAR(50), IN `_provincia` VARCHAR(50), IN `_distrito` VARCHAR(50), IN `_bairro` VARCHAR(50), IN `_rua` VARCHAR(50))
+    NO SQL
+BEGIN
+	Declare codEndereco smallint(10);
+    Declare codTipo smallint(10);
+   
+    Select idEndereco into codEndereco from endereco 
+    where bairro = _bairro AND rua=_rua AND provincia=_provincia and distrito=_distrito;
+    
+    If (codEndereco is null) then 
+    	INSERT INTO  endereco VALUES (null,_provincia,_distrito,_bairro,_rua);
+        Select idEndereco into codEndereco from endereco 
+        where bairro = _bairro AND rua=_rua AND provincia=_provincia and distrito=_distrito;
+    end if;
+    
+    Select idTipoI into codTipo from tipoi 
+    where nome = _tipo ;
+    
+    If (codTipo is null) then 
+    	INSERT INTO tipoi VALUES (null,_tipo);
+         Select idTipoI into codTipo from tipoi where nome = _tipo ;
+    end if;
+	    
+    INSERT INTO instituicao VALUES 	(null,_nome,codEndereco,codTipo);
+    
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lerInstituicaoID`(IN `_id` INT(10))
+    NO SQL
+SELECT i.nome as nome,t.nome as tipo,provincia,distrito,bairro,rua from instituicao i, tipoi t, endereco e where _id = i.idInstituicao and i.idEndereco = e.idEndereco AND i.idInstituicao = t.idTipoI$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lista_associacoes`()
+    NO SQL
+SELECT idAssociacao,nome,descricao,bairro FROM associacao a,endereco e WHERE e.idEndereco = a.idEndereco$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lista_de_Mensagens`()
+    NO SQL
+SELECT idMensagem ,assunto,email,msg FROM mensagem  WHERE estado='Pendente'$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lista_de_documentos`()
+    NO SQL
+SELECT idDoc,titulo,descricao,arquivo from documento$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lista_de_instituicoes`()
+    NO SQL
+SELECT idInstituicao as idInst,i.nome,t.nome as tipo,bairro FROM instituicao i,tipoi t,endereco e where i.idEndereco = e.idEndereco and i.idTipoi = t.idTipoi$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lista_de_pedidos`(IN `_estado` VARCHAR(50))
+    NO SQL
+SELECT * from apoio where _estado = estado$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lista_de_profissionais`()
+    NO SQL
+select d.idProf,d.nome,c.email,i.nome as unidade from profissional d,contacto c,instituicao i
+where c.idContacto = d.idContacto and i.idInstituicao = d.idInstituicao$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lista_farmacias`()
+    NO SQL
+SELECT idInstituicao,i.nome,t.nome as tipo,bairro FROM instituicao i,tipoi t,endereco e where i.idEndereco = e.idEndereco and i.idTipoi = t.idTipoi and t.nome="Farmacia"$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lista_hospital`()
+    NO SQL
+SELECT idInstituicao,i.nome,t.nome as tipo,bairro FROM instituicao i,tipoi t,endereco e where i.idEndereco = e.idEndereco and i.idTipoi = t.idTipoi and t.nome = "Hospital"$$
+DELIMITER ;
