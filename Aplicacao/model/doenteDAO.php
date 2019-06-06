@@ -7,6 +7,50 @@
         inserir();
         echo "Bem vindo";
     }
+
+    function listaDoente(){
+        $conexao = getConexao();
+        define('SQL',"CALL lista_de_doentes();");
+        
+        if(!($stmt = $conexao->prepare(SQL))) {
+            echo"Preparo da Insercao Falhou: (".$conexao->errno.") ".$conexao->error;
+        } 
+        
+        if(!($stmt->execute())){
+            echo " Execucao falhou: (".$stmt->errno.")".$stmt->error;
+        }
+        $resposta = $stmt->get_result();
+
+        //criar tabela 
+        if($resposta->num_rows>0) {
+            $cb = 1;
+            while($linha = $resposta->fetch_assoc()) {
+                echo'
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox" id="cb-'.$cb.'" value="'.$linha['idInst'].'">
+                        </td>
+                        <td>'.$linha['nome'].'</td>
+                        <td>'.$linha['doenca'].'</td>
+                        <td>'.$linha['email'].'</td>
+                        <td>'.$linha['telefone'].'</td>
+                        <td> 
+                            <a class="btn cor-verde"  href="../model/instituicaoDAO.php?idInst='.$linha['idInst'].'">
+                                <i class="fa fa-pencil-alt"></i> Editar
+                            </a>
+                        </td>
+                        
+                    </tr>
+                ';
+                $cb++;
+            }
+        }
+
+        
+        
+        $stmt->close();
+        fechaConexao($conexao);
+    }
     
     function inserir() {
 
