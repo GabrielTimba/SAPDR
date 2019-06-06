@@ -6,7 +6,7 @@ setInterval(function(){requisitarAjax("GET","../model/doencaDAO.php?acao=lerNome
 var cont = 0;
 
 //apaga doenca na bd
-function apagarDoenca() {
+function apagarDoenca(linkPost, linkGet) {
     var resp = confirm("Tem certeza que deseja apagar!");
     if(resp) {
         var linhas = document.getElementById("tabela-doencas").getElementsByTagName("tr");
@@ -23,9 +23,9 @@ function apagarDoenca() {
                 formData.append("cb-" + cont, id);
             }
         }
-        enviarAjax(formData, "POST", "../model/doencaDAO.php?acao=apagar&&cont="+cont); //metodo defenido no ficheiro ajax.js
-        requisitarAjax("GET", "../model/doencaDAO.php?acao=lerNomeTipo", "tabela-corpo"); //metodo defenido no ficheiro ajax.js
-        requisitarAjax("GET", "../model/doencaDAO.php?acao=lerNomeTipo", "tabela-corpo"); //metodo defenido no ficheiro ajax.js
+        enviarAjax(formData, "POST", linkPost+cont); //metodo defenido no ficheiro ajax.js
+        requisitarAjax("GET", linkGet, "tabela-corpo"); //metodo defenido no ficheiro ajax.js
+        requisitarAjax("GET", linkGet, "tabela-corpo"); //metodo defenido no ficheiro ajax.js
     }
     
 }

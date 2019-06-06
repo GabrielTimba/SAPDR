@@ -1,5 +1,6 @@
 <?php
     include('cabecalho-rodape.php');
+    include_once('model/postDAO.php')
 ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -54,132 +55,8 @@
     <!--Conteudo-->
     <div class="container">
      
-        <div class="row mb-5">
-            <article class="col-sm-12">
-                <header class="mb-5">
-                    <h1 class="mb-3 display-4 campanha-titulo">Campanha 1</h1>
-                    <small >Actualizado em: 03/06/2019 <br> Autor: Jose Manuel Cossa</small>
-                </header>
-                
-                <img class="img-fluid d-block" src="imgs/slide-03.jpg" alt="imagem">
-                <p class="text-justify my-5">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla ultricies sagittis. Fusce
-                    consectetur placerat
-                    neque in molestie. Maecenas ac nisl hendrerit, pellentesque ante nec, aliquam mauris. Nulla consectetur
-                    mattis mi non
-                    aliquam. Vivamus ut lectus ex. Vestibulum lectus sem, suscipit ut diam vel, accumsan euismod sem.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla ultricies sagittis. Fusce
-                    consectetur placerat
-                    neque in molestie. Maecenas ac nisl hendrerit, pellentesque ante nec, aliquam mauris. Nulla consectetur
-                    mattis mi non
-                    aliquam. Vivamus ut lectus ex. Vestibulum lectus sem, suscipit ut diam vel, accumsan euismod sem.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla ultricies sagittis. Fusce
-                    consectetur placerat
-                    neque in molestie. Maecenas ac nisl hendrerit, pellentesque ante nec, aliquam mauris. Nulla consectetur
-                    mattis mi non
-                    aliquam. Vivamus ut lectus ex. Vestibulum lectus sem, suscipit ut diam vel, accumsan euismod sem.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla ultricies sagittis. Fusce
-                    consectetur placerat
-                    neque in molestie. Maecenas ac nisl hendrerit, pellentesque ante nec, aliquam mauris. Nulla consectetur
-                    mattis mi non
-                    aliquam. Vivamus ut lectus ex. Vestibulum lectus sem, suscipit ut diam vel, accumsan euismod sem.
-                </p>
-
-                <ul class="list-unstyled footer-icone" >
-                    <li class="list-inline-item cor-cizenta">Partilhar:</li>
-                    <li class="list-inline-item"><a href=""><i class="fab  fa-facebook-square text-primary"></i></a></li>
-                    <li class="list-inline-item"><a href=""><i class="fab fa-whatsapp text-success"></i></a></li>
-                    <li class="list-inline-item"><a href=""><i class="fab  fa-instagram text-warning"></i></a></li>
-                </ul>
-
-                <hr class="cor-verde mb-5">
-            </article>
-        </div>
+        <?php lerCampanhas(2); ?>
         
-        <div class="row mb-5">
-            <article class="col-sm-12">
-                <header class="mb-5">
-                    <h1 class="mb-3 display-4 campanha-titulo">Campanha 2</h1>
-                    <small>Actualizado em: 03/06/2019 <br> Autor: Jose Manuel Cossa</small>
-                </header>
-        
-                <img class="img-fluid d-block" src="imgs/slide-03.jpg" alt="imagem">
-                <p class="text-justify my-5">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla ultricies sagittis. Fusce
-                    consectetur placerat
-                    neque in molestie. Maecenas ac nisl hendrerit, pellentesque ante nec, aliquam mauris. Nulla consectetur
-                    mattis mi non
-                    aliquam. Vivamus ut lectus ex. Vestibulum lectus sem, suscipit ut diam vel, accumsan euismod sem.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla ultricies sagittis. Fusce
-                    consectetur placerat
-                    neque in molestie. Maecenas ac nisl hendrerit, pellentesque ante nec, aliquam mauris. Nulla consectetur
-                    mattis mi non
-                    aliquam. Vivamus ut lectus ex. Vestibulum lectus sem, suscipit ut diam vel, accumsan euismod sem.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla ultricies sagittis. Fusce
-                    consectetur placerat
-                    neque in molestie. Maecenas ac nisl hendrerit, pellentesque ante nec, aliquam mauris. Nulla consectetur
-                    mattis mi non
-                    aliquam. Vivamus ut lectus ex. Vestibulum lectus sem, suscipit ut diam vel, accumsan euismod sem.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla ultricies sagittis. Fusce
-                    consectetur placerat
-                    neque in molestie. Maecenas ac nisl hendrerit, pellentesque ante nec, aliquam mauris. Nulla consectetur
-                    mattis mi non
-                    aliquam. Vivamus ut lectus ex. Vestibulum lectus sem, suscipit ut diam vel, accumsan euismod sem.
-                </p>
-        
-                <ul class="list-unstyled footer-icone">
-                    <li class="list-inline-item cor-cizenta">Partilhar:</li>
-                    <li class="list-inline-item"><a href=""><i class="fab  fa-facebook-square text-primary"></i></a></li>
-                    <li class="list-inline-item"><a href=""><i class="fab fa-whatsapp text-success"></i></a></li>
-                    <li class="list-inline-item"><a href=""><i class="fab  fa-instagram text-warning"></i></a></li>
-                </ul>
-        
-                <hr class="cor-verde mb-5">
-            </article>
-        </div>
-
-        <div class="row mb-5">
-            <article class="col-sm-12">
-                <header class="mb-5">
-                    <h1 class="mb-3 display-4 campanha-titulo">Campanha 3</h1>
-                    <small>Actualizado em: 03/06/2019 <br> Autor: Jose Manuel Cossa</small>
-                </header>
-        
-                <img class="img-fluid d-block" src="imgs/slide-03.jpg" alt="imagem">
-                <p class="text-justify my-5">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla ultricies sagittis. Fusce
-                    consectetur placerat
-                    neque in molestie. Maecenas ac nisl hendrerit, pellentesque ante nec, aliquam mauris. Nulla consectetur
-                    mattis mi non
-                    aliquam. Vivamus ut lectus ex. Vestibulum lectus sem, suscipit ut diam vel, accumsan euismod sem.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla ultricies sagittis. Fusce
-                    consectetur placerat
-                    neque in molestie. Maecenas ac nisl hendrerit, pellentesque ante nec, aliquam mauris. Nulla consectetur
-                    mattis mi non
-                    aliquam. Vivamus ut lectus ex. Vestibulum lectus sem, suscipit ut diam vel, accumsan euismod sem.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla ultricies sagittis. Fusce
-                    consectetur placerat
-                    neque in molestie. Maecenas ac nisl hendrerit, pellentesque ante nec, aliquam mauris. Nulla consectetur
-                    mattis mi non
-                    aliquam. Vivamus ut lectus ex. Vestibulum lectus sem, suscipit ut diam vel, accumsan euismod sem.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla ultricies sagittis. Fusce
-                    consectetur placerat
-                    neque in molestie. Maecenas ac nisl hendrerit, pellentesque ante nec, aliquam mauris. Nulla consectetur
-                    mattis mi non
-                    aliquam. Vivamus ut lectus ex. Vestibulum lectus sem, suscipit ut diam vel, accumsan euismod sem.
-                </p>
-        
-                <ul class="list-unstyled footer-icone">
-                    <li class="list-inline-item cor-cizenta">Partilhar:</li>
-                    <li class="list-inline-item"><a href=""><i class="fab  fa-facebook-square text-primary"></i></a></li>
-                    <li class="list-inline-item"><a href=""><i class="fab fa-whatsapp text-success"></i></a></li>
-                    <li class="list-inline-item"><a href=""><i class="fab  fa-instagram text-warning"></i></a></li>
-                </ul>
-        
-                <hr class="cor-verde mb-5">
-            </article>
-        </div>
-
         <div class="row mb-5">
             <div class="col-sm-12">
                 <hr class="cor-verde">

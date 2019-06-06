@@ -1,5 +1,6 @@
 <?php
     include('header-footer.php');
+    include_once('../model/postDAO.php')
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,6 +24,8 @@
         <script src="../js/popper.js"></script>
         <script src="../js/bootstrap.js"></script>
         <script src="../js/painel-admin.js"></script>
+        <script src="../js/ajax.js"></script>
+        <script src="../js/tabelas.js"></script>
     </head>
     <body>
     <!--Cabecalho-->
@@ -52,81 +55,39 @@
                             <a class="btn btn-primary ml-5 " href="adicionar-artigos.php">
                                     <i class="fa fa-plus"></i>
                             </a>
-                            <a class="btn btn-danger ml-2" href="">
+                            <a class="btn btn-danger ml-2" onclick="apagarDoenca('../model/postDAO.php?acao=apagar&&cont=','../model/postDAO.php?acao=lerArtigos')">
                                     <i class="fa fa-trash"></i>    
                             </a>   
                         </div>
                         
                     </div>
-                        
                 </div>
 
                 <div class="row justify-content-center">
-
-                    <table class="table col-lg-10 col-md-10 col-sm-10 tabela mt-2">
-                        <thead >
-                            <tr class="cor-creme">
-                                <td class="titulo-tabela" colspan="3"><i class="fa fa-list mr-2"></i>Lista de Artigos</td>
-                                
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th class="texto-verde">Titulo do Artigo</th>
-                                <th class="texto-verde">Autor</th>
-                                <th class="texto-verde" >
-                                    <a href="">Accao</a>
-                                </th>
-                            </tr>
-                            <tr>
-                                <td>Artigo 1</td>
-                                <td>Folege</td>
-                                <td> 
-                                    <button class="btn cor-verde" >
-                                        <a href="" data-toggle="modal" data-target="#siteModal">Ler mais</a>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Artigo 2</td>
-                                <td>Folege</td>
-                                <td> 
-                                    <button class="btn cor-verde" >
-                                        <a href="" data-toggle="modal" data-target="#siteModal">Ler mais</a>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Artigo 3</td>
-                                <td>Folege</td>
-                                <td> 
-                                    <button class="btn cor-verde" >
-                                        <a href="" data-toggle="modal" data-target="#siteModal">Ler mais</a>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Artigo 4</td>
-                                <td>Folege</td>
-                                <td> 
-                                    <button class="btn cor-verde" >
-                                        <a href="" data-toggle="modal" data-target="#siteModal">Ler mais</a>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Artigo 5</td>
-                                <td>Folege</td>
-                                <td> 
-                                    <button class="btn cor-verde" >
-                                        <a href="" data-toggle="modal" data-target="#siteModal">Ler mais</a>
-                                    </button>
-                                </td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-
+                    <div class="table-responsive col-sm-10">
+                        <table class="table table-bordered table-hover  tabela mt-2" id="tabela-doencas">
+                            <thead >
+                                <tr class="cor-creme">
+                                    <td class="titulo-tabela" colspan="4"><i class="fa fa-list mr-2"></i>Lista de Artigos</td>
+                                </tr>
+                                <tr>
+                                    <th class="texto-verde text-center" style="width:2px;">
+                                        <input type="checkbox" onclick="selecionar()">
+                                    </th>
+                                    <th class="texto-verde">Titulo do Artigo</th>
+                                    <th class="texto-verde">Autor</th>
+                                    <th class="texto-verde" >
+                                        <a href="">Acção</a>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabela-corpo"> 
+                                <?php
+                                    lerArtigos(1);
+                                ?> 
+                            </tbody>
+                        </table>
+                    <div>
                 </div>
 
                 <!--Rodape-->
