@@ -110,48 +110,23 @@
                                     <div class="form-row">
                                         <div class="form-group col-sm-5 mt-2 ml-3">
                                             <label for="Provincia">Provincia:</label>
-                                            <select class="form-control " name="provincia" id="provincia" required>
+                                            <select class="form-control " name="provincia" id="provincia" onchange="carregarDistrito ()" required>
                                                 <option value="0" disabled selected>...</option>
                                                 <option value="1">Maputo</option>
-                                                <option value="1">Gaza</option>
-                                                <option value="1">Inhambane</option>
-                                                <option value="1">Sofala</option>
-                                                <option value="1">Manica</option>
-                                                <option value="1">Zambezia</option>
-                                                <option value="1">Tete</option>
-                                                <option value="1">Nampula</option>
-                                                <option value="1">Niassa</option>
-                                                <option value="1">Cabo Delgado</option>
+                                                <option value="2">Gaza</option>
+                                                <option value="3">Inhambane</option>
+                                                <option value="4">Sofala</option>
+                                                <option value="5">Manica</option>
+                                                <option value="6">Zambezia</option>
+                                                <option value="7">Tete</option>
+                                                <option value="8">Nampula</option>
+                                                <option value="9">Niassa</option>
+                                                <option value="10">Cabo Delgado</option>
                                             </select>
                                         </div>
                                         <div class="form-group col-sm-5 mt-2 ml-3">
-                                            <label for="Distrito">Distrito:</label>
-                                            <input list="distritos" name="distrito" class="form-control" id="Distrito" required>
-                                            <datalist id="distritos">
-                                                <option value="Matola">Matola</option>
-                                                <option value="Maputo">Maputo</option>
-                                                <option value="Xai-xai">Xai-xai</option>
-                                                <option value="Chibuto">Chibuto</option>
-                                                <option value="Chokwé">Chokwé</option>
-                                                <option value="Inhambane">Inhambane</option>
-                                                <option value="Maxixe">Maxixe</option>
-                                                <option value="Manica">Manica</option>
-                                                <option value="Chimoio">Chimoio</option>
-                                                <option value="Beira">Beira</option>
-                                                <option value="Dondo">Dondo</option>
-                                                <option value="Zambezia">Zambezia</option>
-                                                <option value="Quelimane">Quelimane</option>
-                                                <option value="Mocuba">Mocuba</option>
-                                                <option value="Gurué">Gurué</option>
-                                                <option value="Tete">Tete</option>
-                                                <option value="Nampula">Nampula</option>
-                                                <option value="Nacala">Nacala</option>
-                                                <option value="Ilha de Moçambique">Ilha de Moçambique</option>
-                                                <option value="Pemba">Pemba</option>
-                                                <option value="Montepuez">Montepuez</option>
-                                                <option value="Lichinga">Lichinga</option>
-                                                <option value="Cuamba">Cuamba</option>
-                                            </datalist>
+                                            <label for="Distrito">Distrito</label>
+                                            <select id="distrito" class="form-control" name="distrito" required></select>
                                         </div>
                                     </div>
         
@@ -379,9 +354,6 @@
                return true;
            });
 
-           
-                
-
            $("#smartwizard").on("showStep", function(e, anchorObject, stepNumber, stepDirection) {
                // Enable finish button only on last step
                if(stepNumber == 3){
@@ -393,6 +365,39 @@
            });
 
        });
+       //Carregar distritos consoate a provincia
+       function carregarDistrito () {
+            var maputo = ['KaMpfumo ', 'Nlhamankulu', 'KaMaxaquene', 'KaMavota','KaMubukwana','KaTembe','KaNyaka'];
+            var gaza= ['Bilene', 'Chibuto', 'Chicualacuala', 'Chigubo','Chókwè','Chonguene','Guijá','Massingir',' Xai-Xai'];
+            var inhab = ['Funhalouro', 'Govuro', 'Inharrime', 'Inhassoro','Mabote','Maxixe','Morrumbene','Panda','Vilanculos','Zavala'];
+            var manica= ['Bárue', 'Chimoio', 'Gondola', 'Guro','Macate','Manica','Mossurize','Sussundenga','Vanduzi'];
+            var prov = document.getElementById('provincia');
+           
+            $("#distrito").empty();
+            if(prov.value==1){
+                auxiliar(maputo);
+            }
+            if(prov.value==2){
+               auxiliar(gaza);
+            }
+            if(prov.value==3){
+               auxiliar(inhab);
+            }
+            if(prov.value==5){
+               auxiliar(manica);
+            }
+            
+        }
+
+        function auxiliar(provincia){
+            var listaSelect = document.getElementById('distrito');
+            for (i = 0; i < provincia.length; i++){
+                var optns = document.createElement('option');
+                optns.value =provincia[i];
+                optns.text = provincia[i];
+                listaSelect.add(optns, listaSelect.options[i]);
+            }
+        }
    </script>  
 </body>
 </html>
