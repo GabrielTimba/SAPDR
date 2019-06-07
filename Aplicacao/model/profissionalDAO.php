@@ -12,8 +12,8 @@
             echo"Preparo da Insercao Falhou: (".$con->errno.") ".$conexao->error;
         } 
 
-        if(!($stmt->bind_param('sssssssssiiiss',$nome,$apelido,$data,$genero,$provincia,$distrito,$bairro,$rua,$email,$tellefone,
-                                $doenca,$instituicao,$user,$senha) )) {
+        if(!($stmt->bind_param('sssssssssiiss',$nome,$apelido,$data,$genero,$provincia,$distrito,$bairro,$rua,$email,$tellefone,
+                                $unidade,$user,$senha) )) {
             echo " Parâmetros de ligação falhados: (".$stmt->errno.")".$stmt->error;
         }
 
