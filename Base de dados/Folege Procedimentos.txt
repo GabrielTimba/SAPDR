@@ -1,89 +1,3 @@
-DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `inserirDocumento`(IN `_titulo` VARCHAR(50), IN `_descricao` VARCHAR(100), IN `_arquivo` BLOB, IN `_user` VARCHAR(50), IN `_senha` VARCHAR(50))
-    NO SQL
-BEGIN
-DECLARE codProf SMALLINT(10);
-
-	SELECT idProf INTO codProf from profissional WHERE UserName=_user and senha=md5(_senha);
-    
-    INSERT INTO documento VALUES (null,_titulo,_descricao,_arquivo,codProf,now());
-    INSERT INTO profissional_post VALUES (codProf,null);
- END$$
-DELIMITER ;
-
-
-
-DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `lista_de_documentos`()
-    NO SQL
-SELECT idDoc,titulo,descricao,arquivo from documento$$
-DELIMITER ;
-
-
-DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `lista_de_instituicoes`()
-    NO SQL
-SELECT idInstituicao,i.nome,t.nome as tipo,bairro FROM instituicao i,tipoi t,endereco e where i.idEndereco = e.idEndereco and i.idTipoi = t.idTipoi$$
-DELIMITER ;
-
-
-DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `lista_de_pedidos`()
-    NO SQL
-SELECT * from apoio$$
-DELIMITER ;
-
-
-DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `lista_de_profissionais`()
-    NO SQL
-select d.idProf,d.nome,c.email,i.nome as unidade from profissional d,contacto c,instituicao i
-where c.idContacto = d.idContacto and i.idInstituicao = d.idInstituicao$$
-DELIMITER ;
-
-
-DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `lista_farmacias`()
-    NO SQL
-SELECT idInstituicao,i.nome,t.nome as tipo,bairro FROM instituicao i,tipoi t,endereco e where i.idEndereco = e.idEndereco and i.idTipoi = t.idTipoi and t.idTipoi =2$$
-DELIMITER ;
-
-
-DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `lista_hospital`()
-    NO SQL
-SELECT idInstituicao,i.nome,t.nome as tipo,bairro FROM instituicao i,tipoi t,endereco e where i.idEndereco = e.idEndereco and i.idTipoi = t.idTipoi and t.idTipoi =1$$
-DELIMITER ;
-
-
-DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `inserirInstituicao`(IN `_nome` VARCHAR(50), IN `_tipo` VARCHAR(50), IN `_provincia` VARCHAR(50), IN `_distrito` VARCHAR(50), IN `_bairro` VARCHAR(50), IN `_rua` VARCHAR(50))
-    NO SQL
-BEGIN
-	Declare codEndereco smallint(10);
-    Declare codTipo smallint(10);
-   
-    Select idEndereco into codEndereco from endereco 
-    where bairro = _bairro AND rua=_rua AND provincia=_provincia and distrito=_distrito;
-    
-    If (codEndereco is null) then 
-    	INSERT INTO  endereco VALUES (null,_provincia,_distrito,_bairro,_rua);
-        Select idEndereco into codEndereco from endereco 
-        where bairro = _bairro AND rua=_rua AND provincia=_provincia and distrito=_distrito;
-    end if;
-    
-    Select idTipoI into codTipo from tipoi 
-    where nome = _tipo ;
-    
-    If (codTipo is null) then 
-    	INSERT INTO tipoi VALUES (null,_tipo);
-         Select idTipoI into codTipo from tipoi where nome = _tipo ;
-    end if;
-	    
-    INSERT INTO instituicao VALUES 	(null,_nome,codEndereco,codTipo);
-    
-END$$
-DELIMITER ;
 
 
 _______________________________________________________________________________________________________________________________
@@ -221,4 +135,10 @@ DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `lista_hospital`()
     NO SQL
 SELECT idInstituicao,i.nome,t.nome as tipo,bairro FROM instituicao i,tipoi t,endereco e where i.idEndereco = e.idEndereco and i.idTipoi = t.idTipoi and t.nome = "Hospital"$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `publicarPed`(IN `_id` INT)
+    NO SQL
+UPDATE apoio SET estado = "Publicado" WHERE idapoio = _id$$
 DELIMITER ;
