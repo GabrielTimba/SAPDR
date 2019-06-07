@@ -1,5 +1,6 @@
 <?php
     include('header-footer.php');
+    require('../model/estatisticaDAO.php')
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,6 +24,7 @@
         <script src="../js/popper.js"></script>
         <script src="../js/bootstrap.js"></script>
         <script src="../js/painel-admin.js"></script>
+
     </head>
     <body>
         <!--Cabecalho-->
@@ -45,7 +47,6 @@
                     <p class="ml-5 dir">Inicio >> <span>Painel Administrativo</span></p>
                 </div>
                 <div class="row justify-content-center">
-
                     <table class="table col-lg-10 col-md-10 col-sm-10 tabela mt-5">
                         <thead >
                             <tr class="cor-creme">
@@ -59,35 +60,67 @@
                             </tr>
                             <tr>
                                 <td>Doentes/Represententes</td>
-                                <td>10</td>
+                                <td class="contar">
+                                    <?php
+                                        busca(1);
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Doenças Raras</td>
-                                <td>11</td>
+                                <td class="contar">
+                                    <?php
+                                        busca(2);
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Profissionais da Saúde</td>
-                                <td>12</td>
+                                <td class="contar">
+                                    <?php
+                                        busca(3);
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Pedidos Pendetes</td>
-                                <td>13</td>
+                                <td class="contar">
+                                    <?php
+                                        busca(4);
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Mensagens Recebidas</td>
-                                <td>13</td>
+                                <td class="contar">
+                                    <?php
+                                        busca(5);
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Documentos Publicados</td>
-                                <td>13</td>
+                                <td class="contar">
+                                    <?php
+                                        busca(6);
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Artigos Publicados</td>
-                                <td>13</td>
+                                <td class="contar">
+                                    <?php
+                                        busca(7);
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Campanhas Publicados</td>
-                                <td>13</td>
+                                <td class="contar">
+                                    <?php
+                                        busca(8);
+                                    ?>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -101,25 +134,21 @@
             </div>
 
         </div>
-        
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script>
+            $('.contar').each(function () {
+                $(this).prop('Counter',0).animate({
+                    Counter: $(this).text()
+                }, {
+                    duration: 1500,
+                    easing: 'swing',
+                    step: function (now) {
+                        $(this).text(Math.ceil(now));
+                    }
+                });
+            });
+        </script>
     </body>
 </html>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--Programer: Mupandza, jossias Carlitos-->

@@ -53,7 +53,7 @@
                             <a class="btn btn-primary ml-5 " href="registar-doencas.php">
                                     <i class="fa fa-plus"></i>
                             </a>
-                            <a class="btn btn-danger ml-2" onclick="apagarDoenca()">
+                            <a class="btn btn-danger ml-2" onclick="apagarDoenca('../model/doencaDAO.php?acao=apagar&&cont=','../model/doencaDAO.php?acao=lerNomeTipo')">
                                     <i class="fa fa-trash"></i>    
                             </a>   
                         </div>

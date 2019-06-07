@@ -180,7 +180,7 @@
 
                 <div class="row justify-content-center">
                     <div class="col-sm-11 borda-titulo">
-                        <label><i class="fa fa-pencil-square-o mr-1"></i>Editar de Doença</label>
+                        <label><i class="fa fa-pencil-alt mr-1"></i>Editar de Doença</label>
                     </div>
                 </div>
 
