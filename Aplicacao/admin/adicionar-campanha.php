@@ -13,6 +13,7 @@
         <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
         <link rel="stylesheet" href="../css/fonts.css">
         <link rel="stylesheet" href="../lib/fontawesome/css/all.css">
+        <link rel="stylesheet" href="../lib/summernote/summernote-bs4.css"><!--API para criar editor de texto-->
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../css/painel-admin.css">
         <?php
@@ -36,14 +37,17 @@
             <!--Menu Lateral Esquerdo-->
             <?php
                 menuVertical();
+                if(isset($_GET['editar']) && ($_GET['editar'] == true)) {
+                    lerPostID($_GET['idPost']);
+               } else {
             ?>
 
             <!--Conteudo-->
             <div class="container-fluid" id="conteudo">
                 
                 <div class="row conteudo-dir pt-4">
-                    <h5 class="ml-3">Campanha</h5>
-                    <p class="ml-5 dir"><a href="painel-admin.html">Inicio</a> >><span class="text-sucess">Campanha</span></p>
+                    <h5 class="ml-3">Campanhas</h5>
+                    <p class="ml-5 dir"><a href="painel-admin.html">Inicio</a> >><span class="text-sucess">Campanhas</span></p>
                 </div>
 
                 <div class="row my-2 justify-content-center">
@@ -60,7 +64,7 @@
 
                 <div class="row justify-content-center">
                     <div class=" border col-sm-11 bg-white " id="cadastro">
-                        <form  action="#" id="" role="form"  method="post" accept-charset="utf-8">
+                        <form  action="../model/postDAO.php?acao=inserir&&tipo=Campanha" id="" role="form"  method="post" accept-charset="utf-8">
 
                             <!-- SmartWizard html -->
                             <div id="smartwizard">
@@ -69,24 +73,17 @@
                                     <div class="form-row">
                                         <div class="form-group col-sm-5 mt-2 ml-3">
                                             <label for="Autor" >Tema:</label>
-                                            <input type="text"   class="form-control"  placeholder="Tema" required>
+                                            <input type="text"  class="form-control" name="titulo" placeholder="Tema" required>
                                         </div>
 
                                     </div> 
 
                                     <div class="form-row">
                                         <div class="form-group col-sm-8 mt-2 ml-3">
-                                            <label for="Descricao" >Descricao:</label>
-                                            <textarea class="form-control" id="Descricao" cols="70" rows="7" required></textarea>
+                                            <label for="descricao" >Descricao:</label>
+                                            <textarea class="form-control" id="descricao" name="artigo" cols="70" rows="7" required></textarea>
                                         </div>
                                         
-                                    </div>
-
-                                    <div class="form-row ml-3">
-                                        <div class="image-upload">
-                                                <input  type="file" class="cor-verde"/>
-                                                <label for="file-input"></label>
-                                        </div>
                                     </div>
 
                                     <div class="form-row justify-content-center">
@@ -111,5 +108,29 @@
                     rodapeAdmin();
                 ?>
             </div>
+<?php
+                    if(isset($_GET['inserido']) && ($_GET['inserido'] == true)) {
+                        echo "<script> alert('Artigo publicado com sucesso!'); </script>";
+                    }
+               }
+            ?>
 
         </div>
+        
+        <script src="../lib/summernote/summernote-bs4.js"></script> <!--API para criar editor de texto-->
+        <script src="../lib/summernote/lang/summernote-pt-PT.js"></script>
+        <!--Chamando o Eidtor summernote-->
+        <script>
+            $(document).ready(function(){
+                $('#descricao').summernote({ 
+                    lang:'pt-PT',
+                    height: 300,
+                    width: 900,                 // set editor height
+                    minHeight: null,             // set minimum height of editor
+                    maxHeight: null,             // set maximum height of editor
+                    focus: false,             // set focus to editable area after initializing summernote
+                });
+            });
+        </script>
+    </body>
+</html>
