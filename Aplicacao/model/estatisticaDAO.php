@@ -1,6 +1,10 @@
 <?php
     include('bd.php');
 
+    if(isset($_GET['accao'])){
+        busca($_GET['n']);
+    }
+
     function busca($n){
         $conexao = getConexao();
         $sql="select estatistica(?)";
