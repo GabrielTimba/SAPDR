@@ -60,14 +60,14 @@
                     <table class="table col-lg-10 col-md-10 col-sm-10 tabela mt-2">
                         <thead >
                             <tr class="cor-creme">
-                                <td class="titulo-tabela" colspan="6"><i class="fa fa-list mr-2"></i>Lista de Doentes/Representantes</td>
+                               <td class="titulo-tabela" colspan="6"><i class="fa fa-list mr-2"></i>Lista de Doentes/Representantes</td>
                                 
                             </tr>
                             <tr>
                                 <th class="texto-verde text-center" style="width:2px;">
                                     <input type="checkbox" onclick="selecionar()">
                                 </th>
-                                <<th class="texto-verde">Nome</th>
+                                <th class="texto-verde">Nome</th>
                                 <th class="texto-verde">Doença</th>
                                 <th class="texto-verde">Email</th>
                                 <th class="texto-verde">Telefone</th>
@@ -77,8 +77,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            
-
+                            <?php
+                                include('../model/doenteDAO.php');
+                                listaDoente();
+                            ?>
                         </tbody>
                     </table>
 
