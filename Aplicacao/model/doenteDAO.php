@@ -28,15 +28,15 @@
                 echo'
                     <tr>
                         <td class="text-center">
-                            <input type="checkbox" id="cb-'.$cb.'" value="'.$linha['idInst'].'">
+                            <input type="checkbox" id="cb-'.$cb.'" value="'.$linha['idDoente'].'">
                         </td>
                         <td>'.$linha['nome'].'</td>
                         <td>'.$linha['doenca'].'</td>
                         <td>'.$linha['email'].'</td>
                         <td>'.$linha['telefone'].'</td>
                         <td> 
-                            <a class="btn cor-verde"  href="../model/instituicaoDAO.php?idInst='.$linha['idInst'].'">
-                                <i class="fa fa-pencil-alt"></i> Editar
+                            <a class="btn cor-verde"  href="#'.$linha['idDoente'].'">
+                                 Ler Mais
                             </a>
                         </td>
                         

@@ -23,7 +23,9 @@
         <script src="../js/jquery.js"></script>
         <script src="../js/popper.js"></script>
         <script src="../js/bootstrap.js"></script>
+        <script src="../js/ajax.js"></script>
         <script src="../js/painel-admin.js"></script>
+      
 
     </head>
     <body>
@@ -60,7 +62,7 @@
                             </tr>
                             <tr>
                                 <td>Doentes/Represententes</td>
-                                <td class="contar">
+                                <td class="contar" id="v1">
                                     <?php
                                         busca(1);
                                     ?>
@@ -68,7 +70,7 @@
                             </tr>
                             <tr>
                                 <td>Doenças Raras</td>
-                                <td class="contar">
+                                <td class="contar" id="v2">
                                     <?php
                                         busca(2);
                                     ?>
@@ -76,7 +78,7 @@
                             </tr>
                             <tr>
                                 <td>Profissionais da Saúde</td>
-                                <td class="contar">
+                                <td class="contar" id="v3">
                                     <?php
                                         busca(3);
                                     ?>
@@ -84,7 +86,7 @@
                             </tr>
                             <tr>
                                 <td>Pedidos Pendetes</td>
-                                <td class="contar">
+                                <td class="contar" id="v4">
                                     <?php
                                         busca(4);
                                     ?>
@@ -92,7 +94,7 @@
                             </tr>
                             <tr>
                                 <td>Mensagens Recebidas</td>
-                                <td class="contar">
+                                <td class="contar" id="v5">
                                     <?php
                                         busca(5);
                                     ?>
@@ -100,7 +102,7 @@
                             </tr>
                             <tr>
                                 <td>Documentos Publicados</td>
-                                <td class="contar">
+                                <td class="contar" id="v6" >
                                     <?php
                                         busca(6);
                                     ?>
@@ -108,7 +110,7 @@
                             </tr>
                             <tr>
                                 <td>Artigos Publicados</td>
-                                <td class="contar">
+                                <td class="contar" id="v7">
                                     <?php
                                         busca(7);
                                     ?>
@@ -116,7 +118,7 @@
                             </tr>
                             <tr>
                                 <td>Campanhas Publicados</td>
-                                <td class="contar">
+                                <td class="contar" id="v8">
                                     <?php
                                         busca(8);
                                     ?>
