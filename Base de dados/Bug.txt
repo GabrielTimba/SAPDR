@@ -1,0 +1,30 @@
+BEGIN
+	Declare codEndereco smallint(10);
+    Declare codcont smallint(10);
+   
+    Select idEndereco into codEndereco from endereco 
+    where bairro = _bairro AND rua=_rua AND provincia=_provincia and distrito=_distrito;
+    
+    If (codEndereco is null) then 
+    	INSERT INTO  endereco VALUES (null,_provincia,_distrito,_bairro,_rua);
+        Select idEndereco into codEndereco from endereco 
+        where bairro = _bairro AND rua=_rua AND provincia=_provincia and distrito=_distrito;
+    end if;
+    
+    Select idContacto into codCont from contacto 
+    where telefone = _tellefone AND email=_email AND;
+    
+    If (codCont is null) then 
+    	INSERT INTO  contacto VALUES (null,_email,_tellefone);
+       Select idContacto into codCont from contacto 
+    where telefone = _tellefone AND email=_email AND;
+    end if;
+    
+	Select idInstituicao into codInst from instituicao 
+    where nome = _unidade;    
+    
+    INSERT INTO profissional VALUES 	(null,genero,_data,_apelido,_nome,codEndereco,codInst,codCont,_user,md5(_senha));
+    select idProf INTO codProf FROM profissional ORDER by idProf DESC LIMIT 1;
+    INSERT INTO profissional_associcao VALUES (codInst,codProf);
+     
+END
