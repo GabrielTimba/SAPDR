@@ -80,7 +80,6 @@
                                         <div class="form-group col-sm-5 mt-2 ml-3">
                                             <label for="Nome">Nome:</label>
                                             <input type="text" class="form-control" name="nome" placeholder="Nome" required>
-                                            <div class="help-block with-errors"></div>
                                         </div>
                                         <div class="form-group col-sm-5 mt-2 ml-3">
                                             <label for="Apelido">Apelido:</label>
