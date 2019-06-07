@@ -4,9 +4,22 @@
     function inserir(){
 
         $con=getConexao();
+        define('INSERIR',' call inserirProf(?,?,?,?,?,?,?,?,?,?,?,?,?,?)');
+
+        // prepared statment 
+        $stmt = $con->prepare(INSERIR);
+        if(!$stmt) {
+            echo"Preparo da Insercao Falhou: (".$con->errno.") ".$conexao->error;
+        } 
+
+        if(!($stmt->bind_param('sssssssssiiss',$nome,$apelido,$data,$genero,$provincia,$distrito,$bairro,$rua,$email,$tellefone,
+                                $unidade,$user,$senha) )) {
+            echo " Parâmetros de ligação falhados: (".$stmt->errno.")".$stmt->error;
+        }
+
         $nome = $_POST['nome'];
         $apelido = $_POST['apelido'];
-        $dataN = $_POST['dataN'];
+        $data = $_POST['dataN'];
         $genero = $_POST['genero'];
         $provincia = $_POST['provincia'];
         $distrito = $_POST['distrito'];
@@ -14,9 +27,19 @@
         $rua = $_POST['rua'];
         $email = $_POST['email'];
         $tellefone = $_POST['tellefone'];
-        $unidade_h = $_POST['unidade_h'];
-        $nome_u = $_POST['nome_u'];
+        $unidade = $_POST['unidade_h'];
+        $nome = $_POST['nome_u'];
         $senha = $_POST['senha'];
+
+        //executando
+        if(!($stmt->execute())){
+            echo " Execucao falhou: (".$stmt->errno.")".$stmt->error;
+        }
+        
+        $stmt->close();
+        fechaConexao($con);
+
+        header('Location:../index.php');
     }
 
     function listaProf(){

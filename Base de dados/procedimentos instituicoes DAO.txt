@@ -1,6 +1,0 @@
-DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `lista_de_instituicoes`()
-    NO SQL
-SELECT idInstituicao,i.nome,t.nome as tipo,bairro FROM instituicao i,tipoi t,endereco e where i.idEndereco = e.idEndereco and i.idTipoi = t.idTipoi$$
-DELIMITER ;
-
