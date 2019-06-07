@@ -28,3 +28,27 @@ BEGIN
     INSERT INTO profissional_associcao VALUES (codInst,codProf);
      
 END
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lista_de_documentos`()
+    NO SQL
+SELECT idDoc,titulo,descricao,arquivo from documento$$
+DELIMITER ;
+
+
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lista_de_doentes`()
+    NO SQL
+SELECT d.idDoente,dr.nome as doenca,d.nome,d.apelido,c.email,c.telefone FROM doente d,contacto c,doenca_doente dd,doenca dr WHERE d.idEndereco = c.idEndereco AND dr.idDoenca = dd.idDoenca and dd.idDoente=d.idDoente$$
+DELIMITER ;
+
+
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `publicarPed`(IN `_id` INT)
+    NO SQL
+UPDATE apoio SET estado = "Publicado" WHERE idapoio = _id$$
+DELIMITER ;
