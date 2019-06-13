@@ -158,7 +158,7 @@
             <div class="col-12 ">
                 <div class="row">
                     
-                    <div class="col-3 d-none d-sm-none d-md-block">
+                    <div class="col-md-3 d-none d-md-none d-lg-block">
                         <h4>Categorias</h4>
                         <ul>
                             <li><a href="doencas-raras.php">Doenças Raras </a></li>
@@ -167,7 +167,7 @@
                         </ul>
                     </div>
                     
-                    <div class="col-3 d-none d-sm-none d-md-block">
+                    <div class="col-md-3 d-none d-md-none d-lg-block">
                         <h4>Publicações</h4>
                         <ul>
                             <li><a href="campanhas.php">Campanhas</a></li>
@@ -178,16 +178,20 @@
           
                     </div>
                     
-                    <div class="col-md-3 ">
+                    <div class="col-lg-3  col-sm-6">
                         <form class="form-inline" action="model/doencaDAO.php?acao=pesquisarRodape" method="POST">
-                            <label class="mb-2 mr-2" for="pesquisar">Pesquise por uma doenca rara</label>
-                            <input class="form-control mr-1" id="pesquisar" name="pesqRodape" type="search" placeholder="Buscar..." required>
-                            <button class="btn btn-dark" type="submit"><i class="fa fa-search"></i></button>
+                            <div class="form-row mb-4">
+                                <div class="col-12">
+                                    <label class="mb-2 mr-5" for="pesquisar">Pesquise por uma doença rara</label>
+                                    <input class="form-control mr-1" id="pesquisar" name="pesqRodape" type="search" placeholder="Pesqisar..." required>
+                                    <button class="btn btn-dark" type="submit"><i class="fa fa-search"></i></button>
+                                </div>
+                            </div>
                         </form>
                     </div>
                    
-                    <div class="col-md-3">
-                        <h5>Siga-nos/Contactacte-nos</h5>
+                    <div class="col-lg-3 col-sm-6">
+                        <h5>Siga-nos / Contactacte-nos</h5>
                         <ul class="list-unstyled footer-icone" >
                             <li class="list-inline-item"><a href="#"><i class="fab  fa-facebook-square"></i></a></li>
                             <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
@@ -200,7 +204,7 @@
         </div>
     
         <div class="row justify-content-center footer-copyright py-1 border-top-1 bg-dark" >
-             SAPDR &copy; 2019 - Todos Direitos Reservados
+            <div class="col-10"> SAPDR &copy; 2019 - Todos Direitos Reservados </div>
         </div>
 
     </footer>

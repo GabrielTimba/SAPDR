@@ -67,13 +67,13 @@
                                 <h6 class="mt-2">Listar |</h6>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active active1 texto-verde" id="" data-toggle="pill" href="#tipo1">Farmacias</a>
+                                <a class="nav-link active active1 texto-verde" id="" data-toggle="pill" href="#tipo1">Farmácias</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link texto-verde" id="" data-toggle="pill" href="#tipo2">Unidades hospitalares</a>
+                                <a class="nav-link texto-verde" id="" data-toggle="pill" href="#tipo2">Unidades Hospitalares</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link texto-verde" id="" data-toggle="pill" href="#tipo3">Associacoes</a>
+                                <a class="nav-link texto-verde" id="" data-toggle="pill" href="#tipo3">Associações</a>
                             </li>
                             </li>
                         </ul>
@@ -89,7 +89,7 @@
                                     <table class="table table-bordered table-hover col-12 tabela mt-2" id="i1">
                                         <thead>
                                             <tr class="cor-creme">
-                                                <td class="titulo-tabela" colspan="4"><i class="fa fa-list mr-2"></i>Farmacias</td>
+                                                <td class="titulo-tabela" colspan="4"><i class="fa fa-list mr-2"></i>Farmácias</td>
                                             </tr>
                                             <tr>
                                                 <th class="texto-verde text-center" style="width:2px;">
@@ -144,7 +144,7 @@
                                     <table class="table table-bordered table-hover col-12 tabela mt-2" id="i3">
                                         <thead >
                                             <tr class="cor-creme">
-                                                <td class="titulo-tabela" colspan="4"><i class="fa fa-list mr-2"></i>Associacoes</td>
+                                                <td class="titulo-tabela" colspan="4"><i class="fa fa-list mr-2"></i>Associações</td>
                                                 
                                             </tr>
                                             <tr>

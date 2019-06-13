@@ -87,7 +87,7 @@
                             <li class="list-inline-item"><a href=""><i class="fab  fa-instagram text-warning"></i></a></li>
                         </ul>
                         <hr>
-                        <small >Actualizado em: 03/06/2019 <br> Autor: Jose Manuel Cossa</small>
+                        <p >Actualizado em: 03/06/2019 <br> Autor: Jose Manuel Cossa</p>
                     </article> 
                     
 
@@ -110,7 +110,7 @@
                             <li class="list-inline-item"><a href=""><i class="fab  fa-instagram text-warning"></i></a></li>
                         </ul>
                         <hr>
-                        <small >Actualizado em: 03/06/2019 <br> Autor: Jose Manuel Cossa</small>
+                        <p >Actualizado em: 03/06/2019 <br> Autor: Jose Manuel Cossa</p>
                     </article>
 
                     <article class="col-sm-12 artigo mt-3" id="test-3">
@@ -149,7 +149,7 @@
                             <li class="list-inline-item"><a href=""><i class="fab  fa-instagram text-warning"></i></a></li>
                         </ul>
                         <hr>
-                        <small >Actualizado em: 03/06/2019 <br> Autor: Jose Manuel Cossa</small>
+                        <p >Actualizado em: 03/06/2019 <br> Autor: Jose Manuel Cossa</p>
                     </article>
                     
                 </div>

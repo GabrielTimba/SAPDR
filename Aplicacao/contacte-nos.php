@@ -53,29 +53,29 @@
     </header>
     <div class="container my-5">
         <div class="row mb-3 justify-content-center">
-            <div class="col-sm-10 mr-4">
+            <div class="col-sm-8 mr-4">
                 <h5>Formulário de Contacto</h5>
             </div>
         </div>
         <div class="row mb-5 justify-content-center" id="row-altura">
-            <div class="col-sm-10  cor-borda2 cor-creme" id="cadastro">
-                <form action="model/contactoDAO.php" method="POST" class="ml-5">
-                    <div class="form-row mt-3">
-                        <div class="form-group col-sm-6 ">
+            <div class="col-sm-8  cor-borda2 cor-creme" id="cadastro">
+                <form action="model/contactoDAO.php" method="POST" class="px-2">
+                    <div class="form-row mt-3 justify-content-center">
+                        <div class="form-group col-sm-10 ">
                             <label for="Assunto" >Assunto:</label>
                             <input type="text" name="assunto" class="form-control"  placeholder="Assunto" required>
                         </div>
                         
                     </div> 
-                    <div class="form-row">
-                        <div class="form-group col-sm-6">
+                    <div class="form-row justify-content-center">
+                        <div class="form-group col-sm-10">
                             <label for="Email" >Email:</label>
                             <input type="email" name="email" class="form-control" placeholder="Email" required>
                         </div>
                     </div>
-                    <div class="form-row">
+                    <div class="form-row justify-content-center">
 
-                        <div class="form-group col-10">
+                        <div class="form-group col-sm-10">
                             <label for="Messagem">Messagem:</label>
                             <textarea class="form-control" name="mensagem" id="Messagem" cols="70" rows="7" required></textarea>
                         </div>

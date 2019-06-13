@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
-    <title>Entrar | SAPDR</title>
+    <title>Recuperar Senha | SAPDR</title>
     
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/fonts.css">
@@ -34,15 +34,15 @@
     
             <div class="row mt-3">
                 <div class="col-12">
-                    <p id="dir"><a href="index.html"><i class="fas fa-home mr-1"></i>Inicio</a> > Minha Conta > <span
-                            class="texto-verde">Entrar</span></p>
+                    <p id="dir"><a href="index.html"><i class="fas fa-home mr-1"></i>Inicio</a> > Minha Conta > <a href="login.php">Entrar</a> ><span
+                            class="texto-verde">Recuperar Senha</span></p>
                     <hr class="cor-verde">
                 </div>
             </div>
     
             <div class="row">
                 <div class="col-12">
-                    <h1>Entrar</h1>
+                    <h1>Recuperar Senha</h1>
                 </div>
             </div>
     
@@ -52,36 +52,25 @@
     <div class="container">
         
         <div class="row justify-content-center">
-            <form class="col-md-6" method="post" action="autenticacao.php">
+            <form class="col-md-10" method="post" action="">
             
                 <div class="col-sm-12 border cor-creme cor-borda justify-content-center mb-5" id="geral">
-            
-                    <div class="form-row justify-content-center">
-                        <div class="col-sm-10 mt-2 row justify-content-center">
-                            <i class="fa fa-user-circle fa-4x" aria-hidden="true"></i>
-                        </div>
-                    </div>
-            
+                       
                     <div class="form-row justify-content-center">
                         <div class="form-group col-sm-10 mt-2">
-                            <label for="User">Nome de Usuario Ou Email</label>
-                            <input type="text" class="form-control" name="nome" id="User" placeholder="Nome de Usuario ou Email" required>
+                            <label class="my-5 text-warning" for="email" style="font-size:25px">Informe seu e-mail e aguarde o link para refazer sua senha.</label>
                         </div>
                     </div>
-            
-            
+
                     <div class="form-row justify-content-center">
-                        <div class="form-group col-sm-10">
-                            <label for="senha">Senha</label>
-                            <input type="Password" class="form-control" name="senha" id="senha" placeholder="Senha" required>
-                            <a class="my-1" href="recuperar-senha.php">Esqueceu a senha? clique aqui para recuperar.</a>
+                        <div class="form-group col-sm-8 mt-2">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="seu email" required>
                         </div>
                     </div>
             
-            
-                    <div class="form-row justify-content-center my-2">
-                        <div class="col-sm-10">
-                            <button class="btn  btn-primary" name="entrar" type="Submit">Entrar</button>
+                    <div class="form-row justify-content-center my-2 mb-4">
+                        <div class="col-sm-8">
+                            <button class="btn  btn-primary col-sm-12" name="entrar" type="Submit">Enviar</button>
                         </div>
                     </div>
             
