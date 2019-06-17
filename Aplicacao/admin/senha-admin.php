@@ -32,32 +32,27 @@
 
     <div class="container mt-5">
         <div class="row justify-content-center">
-            <div class="col-sm-10 col-md-8 col-lg-5">
-                
-                <form class="cor-borda" action="autenticacaoAdmin.php" method="post">
-                    <div class="form-row justify-content-center mt-4" >
-                            <i class="fas fa-user-circle display-2"></i>
-                    </div>
+            <div class="col-sm-10 col-md-8 col-lg-5">        
+                <form class="cor-borda" action="#" method="post">
                     <div class="form-row justify-content-center" >
                         <div class="form-group col-10">
-                            <label for="usuario">Usuario</label>
-                            <input class="form-control" id="usuario" name="nome" type="text" placeholder="seu nome de usario" required>
+                            <label for="usuario">Informe seu e-mail e aguarde o link para refazer sua senha</label>
+                            <input class="form-control" id="usuario" name="nome" type="email" placeholder="seu nome email" required>
                         </div> 
-                    </div>
-                    <div class="form-row justify-content-center">
-                        <div class="form-group col-10">
-                            <label for="senha">Senha</label>
-                            <input class="form-control" id="senha" name="senha" type="password" placeholder="sua senha" required>
-                            <label>Esqueceu a senha? <a class="my-1 text-primary" href="senha-admin.php">clique aqui</a> para recuperar<label>
-                        </div>                        
                     </div>
                     <div class="form-row justify-content-center my-1">
                         <div class="form-group col-10">
-                            <input class="btn cor-verde" name="entrar" type="submit" value="Acessar">
+                            <input class="btn cor-verde" name="entrar" type="submit" value="Enviar">
                         </div>
                     </div>
                 </form>
             </div>
         </div>
+        <div class="row mt-3 justify-content-center">
+            <div class="col-sm-10 col-md-8 col-lg-5">
+                <a class="text-secondary" href="login.php"><i class="fa fa-arrow-left"></i> Autenticação</a>
+            </div>
+        </div>
     </div>
 </body>
+

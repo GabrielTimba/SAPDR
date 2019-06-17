@@ -3,8 +3,7 @@
 	if(!isset($_SESSION['nomeAdmin'])){
 		header('Location:login.php');
 	}
-?>
-<?php
+
     //metodo que cria cabecalho do admin
     function cabecalhoAdmin() {
 ?>
@@ -73,7 +72,7 @@
                             <li><a href="lista-de-documentos.php"><i class="fas fa-angle-double-right mr-2"></i>Documentos</a></li>
                             <li><a href="lista-de-artigos.php"><i class="fas fa-angle-double-right mr-2"></i>Artigos</a></li>
                             <li><a href="lista-de-campanhas.php"><i class="fas fa-angle-double-right mr-2"></i>Campanhas</a></li>
-                            <li><a href="#"><i class="fas fa-angle-double-right mr-2"></i>Testemunhos</a></li>
+                            <li><a href="lista-de-testemunhos.php"><i class="fas fa-angle-double-right mr-2"></i>Testemunhos</a></li>
                         </ul>
                     </li>
                     <hr class="linha">
@@ -111,4 +110,16 @@
 <?php        
     }
 
+    function cabecalhoLogin() {
+?>
+    <header class="navbar navbar-expand-lg borda-baixo">
+        <div class="col-sm-12">
+            <div class="collapse navbar-collapse float-left">
+                <a href="../index.php"><img class="img-fluid" src="../imgs/icon.png" alt="Icone SAPDR"></a>
+            </div>     
+        </div>
+    </header>
+<?php
+
+    }
 ?>

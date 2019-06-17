@@ -52,13 +52,13 @@
     <div class="container">
         
         <div class="row justify-content-center">
-            <form class="col-md-6" method="post" action="autenticacao.php">
+            <form class="col-sm-10 col-md-8 col-lg-6" method="post" action="autenticacao.php">
             
                 <div class="col-sm-12 border cor-creme cor-borda justify-content-center mb-5" id="geral">
             
                     <div class="form-row justify-content-center">
                         <div class="col-sm-10 mt-2 row justify-content-center">
-                            <i class="fa fa-user-circle fa-4x" aria-hidden="true"></i>
+                            <i class="fa fa-user-circle fa-4x " aria-hidden="true"></i>
                         </div>
                     </div>
             
@@ -74,7 +74,7 @@
                         <div class="form-group col-sm-10">
                             <label for="senha">Senha</label>
                             <input type="Password" class="form-control" name="senha" id="senha" placeholder="Senha" required>
-                            <a class="my-1" href="recuperar-senha.php">Esqueceu a senha? clique aqui para recuperar.</a>
+                            <label>Esqueceu a senha? <a class="my-1" href="recuperar-senha.php">clique aqui</a> para recuperar<label>
                         </div>
                     </div>
             

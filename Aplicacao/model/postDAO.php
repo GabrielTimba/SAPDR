@@ -37,6 +37,8 @@
         }
 
         //Atribuindo valores as variaveis;
+        //echo $_POST['artigo'];
+        
         session_start();
         $autor = $_SESSION['nomeAdmin'];
         $titulo = $_POST['titulo'];

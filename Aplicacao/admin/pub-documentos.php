@@ -49,13 +49,13 @@
 	
                 <div class="row my-2 justify-content-center">
                     <div class="col-sm-11">
-                        <a class="btn btn-light bg-white cor-borda2 float-right" href="lista de campanhas.php"><i class="fa fa-reply"></i></a>
+                        <a class="btn btn-light bg-white cor-borda2 float-right" href="lista-de-documentos.php"><i class="fa fa-reply"></i></a>
                     </div>
                 </div>
 
                 <div class="row justify-content-center">
                     <div class="col-sm-11 borda-titulo">
-                        <label><i class=""></i>Adicionar Documento</label>
+                        <label><i class="fas fa-plus mr-1"></i>Adicionar Documento</label>
                     </div>
                 </div>
 

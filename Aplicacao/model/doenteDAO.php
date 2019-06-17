@@ -36,7 +36,7 @@
                         <td>'.$linha['telefone'].'</td>
                         <td> 
                             <a class="btn cor-verde"  href="#'.$linha['idDoente'].'">
-                                 Ler Mais
+                                 <i class="fa fa-eye"></i> Ler Mais
                             </a>
                         </td>
                         

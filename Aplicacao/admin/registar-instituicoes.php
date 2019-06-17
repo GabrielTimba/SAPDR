@@ -63,7 +63,7 @@
 
                 <div class="row justify-content-center">
                     <div class="col-sm-11 borda-titulo">
-                        <label><i class="fas  fa-user-plus mr-2"></i>Adicionar Instituicao e Associacao</label>
+                        <label><i class="fas fa-plus mr-1"></i>Adicionar Instituicao e Associacao</label>
                     </div>
                 </div>
                 <div class="row justify-content-center">

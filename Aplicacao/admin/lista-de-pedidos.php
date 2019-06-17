@@ -41,32 +41,31 @@
 
             <!--Conteudo-->
             <div class="container-fluid" id="conteudo">
+                
                 <div class="row conteudo-dir pt-4">
                     <h5 class="ml-3">Pedidos de Apoio</h5>
                     <p class="ml-5 dir"><a href="#">Inicio</a> >> Mensagens >> <span class="text-sucess"> Pedidos de Apoio</span></p>
                 </div>
-                <div class="row mt-2">
-                    <div class="col-sm-11 ">
+                
+                <div class="row mt-2 justify-content-center">
+                    <div class="col-sm-11 ml-3">
                         <div class="float-right">
-                            <a class="btn btn-danger ml-2" href="">
-                                    <i class="fa fa-trash"></i>    
+                            <a class="btn btn-danger my-2" href="">
+                                <i class="fa fa-trash"></i>
                             </a>   
                         </div>
-                        
-                    </div>
-                     
+                    </div>     
                 </div>
                
           
-                <div class="row mb-5" >
-                    <div class="col-11">
-                        
-                            <div class="row">
+                <div class="row mb-5 justify-content-center"> 
+                    <div class="col-sm-11 border">
+                            <div class="row justify-content-center bg-white">
+                                <div class="col-sm-12 borda-titulo border mb-2">
+                                    <label><i class=""></i>Gerir Pedidos</label>
+                                </div>
                                 <!--lista do tipo -->
-                                <ul class="nav nav-pills ml-3 mb-3" id="tipo" role="tablist">
-                                    <li class="nav-item">
-                                        <h6 class="mt-2">Estado |</h6>
-                                    </li>
+                                <ul class="col-sm-11 nav nav-tabs ml-2 mb-3 bg-white" id="tipo" role="tablist">
                                     <li class="nav-item">
                                         <a class="nav-link active active1 texto-verde" id="" data-toggle="pill" href="#tipo1">Pendentes</a>
                                     </li>
@@ -79,9 +78,9 @@
                             </div>
 
                             <!--conteudo da lista tipo -->
-                            <div class = "row">
+                            <div class = "row justify-content-center bg-white">
 
-                                <div class="col-12 tab-content" id="nav-pills-tipo">
+                                <div class="col-sm-11 tab-content" id="nav-pills-tipo">
                                     
                                     <div class="tab-pane fade show active" id="tipo1" role="tabpanel">
                                         <div class="">
@@ -175,6 +174,7 @@
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 

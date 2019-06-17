@@ -62,10 +62,10 @@
                     </div>
                     <div class="row justify-content-center">
 
-                        <table class="table col-lg-10 col-md-10 col-sm-10 tabela mt-2">
+                        <table class="table table-bordered table-hover tabela col-lg-10 col-md-10 col-sm-10 tabela mt-2">
                             <thead >
                                 <tr class="cor-creme">
-                                    <td class="titulo-tabela table table-bordered table-hover tabela" colspan="4"><i class="fa fa-list mr-2"></i>Lista de Mensagens</td>
+                                    <td class="titulo-tabela " colspan="4"><i class="fa fa-list mr-2"></i>Lista de Mensagens</td>
                                     
                                 </tr>
                             </thead>

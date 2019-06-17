@@ -13,6 +13,7 @@
         <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
         <link rel="stylesheet" href="../css/fonts.css">
         <link rel="stylesheet" href="../lib/fontawesome/css/all.css">
+        <link rel="stylesheet" href="../lib/fontawesome/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="../lib/summernote/summernote-bs4.css"><!--API para criar editor de texto-->
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../css/painel-admin.css">
@@ -52,13 +53,13 @@
 
                 <div class="row my-2 justify-content-center">
                     <div class="col-sm-11">
-                        <a class="btn btn-light bg-white cor-borda2 float-right" href="lista de campanhas.php"><i class="fa fa-reply"></i></a>
+                        <a class="btn btn-light bg-white cor-borda2 float-right" href="lista-de-campanhas.php"><i class="fa fa-reply"></i></a>
                     </div>
                 </div>
 
                 <div class="row justify-content-center">
                     <div class="col-sm-11 borda-titulo">
-                        <label><i class=""></i>Adicionar Campanha</label>
+                        <label><i class="fa fa-pencil-square-o mr-1"></i>Adicionar Campanha</label>
                     </div>
                 </div>
 
@@ -79,9 +80,9 @@
                                     </div> 
 
                                     <div class="form-row">
-                                        <div class="form-group col-sm-8 mt-2 ml-3">
+                                        <div class="form-group col-sm-10 mt-2 ml-3">
                                             <label for="descricao" >Descricao:</label>
-                                            <textarea class="form-control" id="descricao" name="artigo" cols="70" rows="7" required></textarea>
+                                            <textarea class="form-control" id="descricao" name="artigo" required></textarea>
                                         </div>
                                         
                                     </div>
@@ -125,7 +126,7 @@
                 $('#descricao').summernote({ 
                     lang:'pt-PT',
                     height: 300,
-                    width: 900,                 // set editor height
+                 // set editor height
                     minHeight: null,             // set minimum height of editor
                     maxHeight: null,             // set maximum height of editor
                     focus: false,             // set focus to editable area after initializing summernote
