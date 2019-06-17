@@ -29,100 +29,339 @@
     <header class="container-fluid navbar-expand-sm">
         <?php
             cabecalho();
-        ?>  
+        ?>
+
+        <div class="container">
+
+            <div class="row mt-3">
+                <div class="col-12">
+                    <p id="dir"><a href="index.html"><i class="fas fa-home mr-1"></i>Inicio</a> > <span class="texto-verde">Relatórios</span></p>
+                    <hr class="cor-verde">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <h1>Relatórios</h1>
+                </div>
+            </div>
+
+        </div>  
     </header>
-    <div class="container border my-5 py-3">
-        <label class="text-success">Relatorios</label><br/>
-        <div class="row justify-content-center">
-            <div class="col-10 border ml-2 text-center cor-verde">
-                <label class=" py-1 text-white " >Ano 2019</label>
-            </div>
-        </div>
-        
-        <div id="janeiro">
-            <label class="border py-1 px-3 ml-4 my-2 bg-primary text-light" >Janeiro</label>
-            <div class="border ml-5 py-3">
-                <div class="row ml-2">
-                    <div class="col-7 ">
-                        Lorem ipsum dolor sit amet consectetur
-                    </div>
-                    <div class="col-3">
-                        <i class=" far fa-file-pdf fa-3x icon"></i>
-                    </div>
-                </div>
-                <div class="row mt-2 ml-3">
-                    <div class="col-2">
-                        <button class="btn botao" data-toggle="modal" data-target="#siteModal">Descricao</button>
-                    </div>
-                    <div class="col-2">
-                        <button class="btn botao">Baixar</button>
-                    </div>
-                </div>
-            </div>
+    <div class="container border  my-5 py-3">
 
-            <div class="border ml-5 py-3 my-2">
-                <div class="row ml-2">
-                    <div class="col-7 ">
-                        Lorem ipsum dolor sit amet consectetur
-                    </div>
-                    <div class="col-3">
-                        <i class=" far fa-file-pdf fa-3x icon"></i>
-                    </div>
-                </div>
-                <div class="row mt-2 ml-3">
-                    <div class="col-2">
-                        <button class="btn botao" data-toggle="modal" data-target="#siteModal">Descricao</button>
-                    </div>
-                    <div class="col-2">
-                        <button class="btn botao">Baixar</button>
-                    </div>
-                </div>
+        <div class="col-sm-12 mb-5">
+            <div class="row justify-content-center">
+                <!--<div class=" border ml-2 text-center cor-verde">
+                    <h5 class=" py-1 text-white " >Ano - 2019</h5>
+                </div>-->
+                <input class="col-sm-10 navbar-toggler bg-success btn-success" type="button" data-toggle="collapse" data-target="#ano-2019" value="Ano - 2019">
             </div>
-        </div>
-        
-        <div id="fevereiro">
-        <label class="border py-1 px-3 ml-4 my-2 bg-primary text-light " >Fevereiro</label>
-            <div class="border ml-5 py-3">
-                <div class="row ml-2">
-                    <div class="col-7 ">
-                        Lorem ipsum dolor sit amet consectetur
-                    </div>
-                    <div class="col-3">
-                        <i class=" far fa-file-pdf fa-3x icon"></i>
-                    </div>
-                </div>
-                <div class="row mt-2 ml-3">
-                    <div class="col-2">
-                        <button class="btn botao">Descricao</button>
-                    </div>
-                    <div class="col-2">
-                        <button class="btn botao">Baixar</button>
-                    </div>
-                </div>
-            </div>
+            
+            <div class="row justify-content-center collapse" id="ano-2019">
+                <div class="col-sm-9">
+                    
+                    <div class="my-4" >                  
+                        <button class="navbar-toggler btn btn-primary bg-primary my-2 col-sm-7" type="button" data-toggle="collapse" data-target="#a-2019-m-1">
+                        Janeiro
+                        </button>
 
-            <div class="border ml-5 py-3 my-2">
-                <div class="row ml-2">
-                    <div class="col-7 ">
-                        Lorem ipsum dolor sit amet consectetur
+                        <div class="collapse" id="a-2019-m-1">
+                            <div class="border py-3 my-3" >
+                                <div class="row px-4">
+                                    <div class="col-9 ">
+                                        Lorem ipsum dolor sit amet consectetur
+                                    </div>
+                                    <div class="col-3">
+                                        <i class=" far fa-file-pdf fa-3x icon"></i>
+                                    </div>
+                                </div>
+                                <div class="row mt-2 px-4">
+                                    <div class="col-md-4">
+                                        <button class="btn botao my-1 col-sm-10 px-3" data-toggle="modal" data-target="#siteModal">Descrição</button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button class="btn botao my-1 col-sm-10 ">Baixar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="border py-3 my-3" >
+                                <div class="row px-4">
+                                    <div class="col-9 ">
+                                        Lorem ipsum dolor sit amet consectetur
+                                    </div>
+                                    <div class="col-3">
+                                        <i class=" far fa-file-pdf fa-3x icon"></i>
+                                    </div>
+                                </div>
+                                <div class="row mt-2 px-4">
+                                    <div class="col-md-4">
+                                        <button class="btn botao my-1 col-sm-10 px-3" data-toggle="modal" data-target="#siteModal">Descrição</button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button class="btn botao my-1 col-sm-10 ">Baixar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="col-3 my-auto">
-                        <i class=" far fa-file-pdf fa-3x icon "></i>
+
+                    <div class="my-4" >                  
+                        <button class="navbar-toggler btn btn-primary bg-primary my-2 col-sm-7" type="button" data-toggle="collapse" data-target="#a-2019-m-2">
+                        Fevereiro
+                        </button>
+
+                        <div class="collapse" id="a-2019-m-2">
+                            <div class="border py-3 my-3" >
+                                <div class="row px-4">
+                                    <div class="col-9 ">
+                                        Lorem ipsum dolor sit amet consectetur
+                                    </div>
+                                    <div class="col-3">
+                                        <i class=" far fa-file-pdf fa-3x icon"></i>
+                                    </div>
+                                </div>
+                                <div class="row mt-2 px-4">
+                                    <div class="col-md-4">
+                                        <button class="btn botao my-1 col-sm-10 px-3" data-toggle="modal" data-target="#siteModal">Descrição</button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button class="btn botao my-1 col-sm-10 ">Baixar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="border py-3 my-3" >
+                                <div class="row px-4">
+                                    <div class="col-9 ">
+                                        Lorem ipsum dolor sit amet consectetur
+                                    </div>
+                                    <div class="col-3">
+                                        <i class=" far fa-file-pdf fa-3x icon"></i>
+                                    </div>
+                                </div>
+                                <div class="row mt-2 px-4">
+                                    <div class="col-md-4">
+                                        <button class="btn botao my-1 col-sm-10 px-3" data-toggle="modal" data-target="#siteModal">Descrição</button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button class="btn botao my-1 col-sm-10 ">Baixar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
-                </div>
-                <div class="row mt-2 ml-3">
-                    <div class="col-2">
-                        <button class="btn botao">Descricao</button>
+
+                    <div class="my-4" >                  
+                        <button class="navbar-toggler btn btn-primary bg-primary my-2 col-sm-7" type="button" data-toggle="collapse" data-target="#a-2019-m-3">
+                        Marco
+                        </button>
+
+                        <div class="collapse" id="a-2019-m-3">
+                            <div class="border py-3 my-3" >
+                                <div class="row px-4">
+                                    <div class="col-9 ">
+                                        Lorem ipsum dolor sit amet consectetur
+                                    </div>
+                                    <div class="col-3">
+                                        <i class=" far fa-file-pdf fa-3x icon"></i>
+                                    </div>
+                                </div>
+                                <div class="row mt-2 px-4">
+                                    <div class="col-md-4">
+                                        <button class="btn botao my-1 col-sm-10 px-3" data-toggle="modal" data-target="#siteModal">Descrição</button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button class="btn botao my-1 col-sm-10 ">Baixar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="border py-3 my-3" >
+                                <div class="row px-4">
+                                    <div class="col-9 ">
+                                        Lorem ipsum dolor sit amet consectetur
+                                    </div>
+                                    <div class="col-3">
+                                        <i class=" far fa-file-pdf fa-3x icon"></i>
+                                    </div>
+                                </div>
+                                <div class="row mt-2 px-4">
+                                    <div class="col-md-4">
+                                        <button class="btn botao my-1 col-sm-10 px-3" data-toggle="modal" data-target="#siteModal">Descrição</button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button class="btn botao my-1 col-sm-10 ">Baixar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="col-2">
-                        <button class="btn botao">Baixar</button>
-                    </div>
+        
                 </div>
             </div>
         </div>
+
+        <div class="col-sm-12 mb-5">
+            <div class="row justify-content-center">
+                <!--<div class=" border ml-2 text-center cor-verde">
+                    <h5 class=" py-1 text-white " >Ano - 2019</h5>
+                </div>-->
+                <input class="col-sm-10 navbar-toggler bg-success btn-success" type="button" data-toggle="collapse" data-target="#ano-2018" value="Ano - 2018">
+            </div>
+            
+            <div class="row justify-content-center collapse" id="ano-2018">
+                <div class="col-sm-9">
+                    
+                    <div class="my-4" >                  
+                        <button class="navbar-toggler btn btn-primary bg-primary my-2 col-sm-7" type="button" data-toggle="collapse" data-target="#mes-1">
+                        Janeiro
+                        </button>
+
+                        <div class="collapse" id="mes-1">
+                            <div class="border py-3 my-3" >
+                                <div class="row px-4">
+                                    <div class="col-9 ">
+                                        Lorem ipsum dolor sit amet consectetur
+                                    </div>
+                                    <div class="col-3">
+                                        <i class=" far fa-file-pdf fa-3x icon"></i>
+                                    </div>
+                                </div>
+                                <div class="row mt-2 px-4">
+                                    <div class="col-md-4">
+                                        <button class="btn botao my-1 col-sm-10 px-3" data-toggle="modal" data-target="#siteModal">Descrição</button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button class="btn botao my-1 col-sm-10 ">Baixar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="border py-3 my-3" >
+                                <div class="row px-4">
+                                    <div class="col-9 ">
+                                        Lorem ipsum dolor sit amet consectetur
+                                    </div>
+                                    <div class="col-3">
+                                        <i class=" far fa-file-pdf fa-3x icon"></i>
+                                    </div>
+                                </div>
+                                <div class="row mt-2 px-4">
+                                    <div class="col-md-4">
+                                        <button class="btn botao my-1 col-sm-10 px-3" data-toggle="modal" data-target="#siteModal">Descrição</button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button class="btn botao my-1 col-sm-10 ">Baixar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="my-4" >                  
+                        <button class="navbar-toggler btn btn-primary bg-primary my-2 col-sm-7" type="button" data-toggle="collapse" data-target="#mes-2">
+                        Fevereiro
+                        </button>
+
+                        <div class="collapse" id="mes-2">
+                            <div class="border py-3 my-3" >
+                                <div class="row px-4">
+                                    <div class="col-9 ">
+                                        Lorem ipsum dolor sit amet consectetur
+                                    </div>
+                                    <div class="col-3">
+                                        <i class=" far fa-file-pdf fa-3x icon"></i>
+                                    </div>
+                                </div>
+                                <div class="row mt-2 px-4">
+                                    <div class="col-md-4">
+                                        <button class="btn botao my-1 col-sm-10 px-3" data-toggle="modal" data-target="#siteModal">Descrição</button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button class="btn botao my-1 col-sm-10 ">Baixar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="border py-3 my-3" >
+                                <div class="row px-4">
+                                    <div class="col-9 ">
+                                        Lorem ipsum dolor sit amet consectetur
+                                    </div>
+                                    <div class="col-3">
+                                        <i class=" far fa-file-pdf fa-3x icon"></i>
+                                    </div>
+                                </div>
+                                <div class="row mt-2 px-4">
+                                    <div class="col-md-4">
+                                        <button class="btn botao my-1 col-sm-10 px-3" data-toggle="modal" data-target="#siteModal">Descrição</button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button class="btn botao my-1 col-sm-10 ">Baixar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="my-4" >                  
+                        <button class="navbar-toggler btn btn-primary bg-primary my-2 col-sm-7" type="button" data-toggle="collapse" data-target="#mes-3">
+                        Marco
+                        </button>
+
+                        <div class="collapse" id="mes-3">
+                            <div class="border py-3 my-3" >
+                                <div class="row px-4">
+                                    <div class="col-9 ">
+                                        Lorem ipsum dolor sit amet consectetur
+                                    </div>
+                                    <div class="col-3">
+                                        <i class=" far fa-file-pdf fa-3x icon"></i>
+                                    </div>
+                                </div>
+                                <div class="row mt-2 px-4">
+                                    <div class="col-md-4">
+                                        <button class="btn botao my-1 col-sm-10 px-3" data-toggle="modal" data-target="#siteModal">Descrição</button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button class="btn botao my-1 col-sm-10 ">Baixar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="border py-3 my-3" >
+                                <div class="row px-4">
+                                    <div class="col-9 ">
+                                        Lorem ipsum dolor sit amet consectetur
+                                    </div>
+                                    <div class="col-3">
+                                        <i class=" far fa-file-pdf fa-3x icon"></i>
+                                    </div>
+                                </div>
+                                <div class="row mt-2 px-4">
+                                    <div class="col-md-4">
+                                        <button class="btn botao my-1 col-sm-10 px-3" data-toggle="modal" data-target="#siteModal">Descrição</button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button class="btn botao my-1 col-sm-10 ">Baixar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
         
-        <div id="marco">
+                </div>
+            </div>
         </div>
+
     </div>
 
     <!--Rodape-->

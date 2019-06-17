@@ -50,27 +50,40 @@
         <div class="row justify-content-center">
             <div class="col-sm-10">
                 <h5>Formulário Para Pedir Apoio</h5>
-                <form class="cor-borda cor-creme p-5 my-4" role="form">
-                    <div class="form-row">
-                        <div class="form-group col-3">
-                            <label for="pedido" class="my-5">Pedido</label><br>
-                            <label for="ben" class="mt-3 mb-5">Beneficiário</label><br>
-                            <label for="contacto" class="mt-3">Contacto</label><br>
+                <form class="cor-borda cor-creme my-4 px-2" role="form">
+                    
+                    <div class="form-row justify-content-center my-3">
+                        <div class="form-group col-sm-10">
+                            <label for="pedido">Pedido</label>
+                            <input class="form-control" id="pedido" name="pedido" type="text" required>
                         </div>
-                        <div class="form-group col-9">
-                            <input class="form-control my-5" id="pedido" name="pedido" type="text" required>
-                            <input class="form-control mb-5" id="beneficiario" name="beneficiario" type="text" required>
+                    </div>
+
+                    <div class="form-row justify-content-center mb-3">
+                        
+                        <div class="form-group col-sm-5">
+                            <label for="ben">Beneficiário</label>
+                            <input class="form-control" id="ben" name="beneficiario" type="text" required>
+                        </div>
+
+                        <div class="form-group col-sm-5">
+                            <label for="contacto" >Contacto</label>
                             <input class="form-control" id="contacto" name="contacto" type="number" required>
                         </div>
-                        <div class="form-group col-12 mt-4">
+                    </div>
+                    <div class="form-row justify-content-center mb-3">
+                        <div class="form-group col-sm-10 mt-4">
                             <label for="descricao ">Descrição/Mensagem</label>
                             <textarea class="form-control" id="descricao" name="descricao"></textarea required>
                         </div>
+                    </div>
+                    <div class="form-row justify-content-center">
                         <div class="form-group mt-3">
                             <button class="btn btn-outline-danger botoes mx-3" type="reset">Apagar</button>
                             <button class="btn btn-outline-primary botoes" type="submit" id="submeter" name="submeter">Submeter</button>
                         </div>
                     </div>
+
                 </form>
             </div>
         </div>

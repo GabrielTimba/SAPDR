@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="lib/fontawesome/css/all.css">
     <link rel="stylesheet" href="lib/smartwizard/css/smart_wizard.css">
-    <link rel="stylesheet" href="lib/smartwizard/css/smart_wizard_theme_circles.css">
+    <link rel="stylesheet" href="lib/smartwizard/css/smart_wizard_theme_arrows.css">
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/RegistarDoentes.css">
@@ -313,7 +313,7 @@
            // Smart Wizard
            $('#smartwizard').smartWizard({
                    selected: 0,
-                   theme: 'circles',
+                   theme: 'arrows',
                    transitionEffect:'fade',
                    toolbarSettings: {toolbarPosition: 'bottom',
                                      toolbarExtraButtons: [btnFinish, btnCancel]
