@@ -75,7 +75,7 @@ $(document).ready(function(){
 
              if (stepNumber == 1 ) {
                  var po= $("#provincia");
-                 var te= document.getElementById("#tellefone");
+                 var te= $("#tellefone");
                 // te.value = parseInt(te.value) ;   
                 tellefone=document.getElementById('tellefone').value;
                  if (po.val() == 0 || po.val() == null) {
