@@ -50,7 +50,7 @@
         <div class="row justify-content-center">
             <div class="col-sm-10">
                 <h5>Formulário Para Pedir Apoio</h5>
-                <form class="cor-borda cor-creme my-4 px-2" role="form">
+                <form class="cor-borda cor-creme my-4 px-2" action="model/pedidosDAO.php" method="POST" role="form">
                     
                     <div class="form-row justify-content-center my-3">
                         <div class="form-group col-sm-10">
@@ -74,9 +74,10 @@
                     <div class="form-row justify-content-center mb-3">
                         <div class="form-group col-sm-10 mt-4">
                             <label for="descricao ">Descrição/Mensagem</label>
-                            <textarea class="form-control" id="descricao" name="descricao"></textarea required>
+                            <textarea rows="7" class="form-control" id="descricao" name="descricao"></textarea required>
                         </div>
                     </div>
+
                     <div class="form-row justify-content-center">
                         <div class="form-group mt-3">
                             <button class="btn btn-outline-danger botoes mx-3" type="reset">Apagar</button>
@@ -103,17 +104,5 @@
     <script src="lib/summernote/summernote-bs4.js"></script> <!--API para criar editor de texto-->
     <script src="lib/summernote/lang/summernote-pt-PT.js"></script>
 
-    <!--Chamando o Eidtor summernote-->
-    <script>
-        $(document).ready(function(){
-            $('textarea#descricao').summernote({ 
-                lang:'pt-PT',
-                height: 300,                 // set editor height
-                minHeight: null,             // set minimum height of editor
-                maxHeight: null,             // set maximum height of editor
-                focus: false             // set focus to editable area after initializing summernote
-            });
-        });
-    </script>
 </body>
 </html>
