@@ -5,6 +5,42 @@
         publicarPed($_GET['idPed']);
     }
 
+    if (isset($_POST['submeter'])){
+        inserir();
+    }
+
+    function inserir() {
+        $conexao = getConexao();  //faz conexao com bd (metodo defenido no ficheiro bd.php)  
+
+        //defenindo uma constante que contem uma instrucao sql (opcional)
+        define('SQL',"CALL inserirPedido(?,?,?,?,?);");
+
+        //captura qualquer erro que pode ocorrer no prepared statment 
+        if(!($stmt = $conexao->prepare(SQL))) { 
+            echo"Preparo da Insercao Falhou: (".$conexao->errno.") ".$conexao->error;
+        } 
+
+        if(!($stmt->bind_param('ssssi',$pedido,$benf,$contacto,$msg,$id))) {
+            echo " Parâmetros de ligação falhados: (".$stmt->errno.")".$stmt->error;
+        }
+
+        //Atribuindo valores as variaveis;
+        session_start();
+        $id = $_SESSION['id'];
+        $pedido = $_POST['pedido'];
+        $benf = $_POST['beneficiario'];
+        $contacto = $_POST['contacto'];
+        $msg= $_POST['descricao'];
+    
+        //executando
+        if(!($stmt->execute())){
+            echo " Execucao falhou: (".$stmt->errno.")".$stmt->error;
+        }
+
+        echo "<script>alert('pedido efectuado com sucsso! /n Aguarde pela publicacao do administrador.')</script>";
+        header('Location:../index.php');
+    }
+
     function listaPedidos($estado){
         $conexao = getConexao();
         define('SQL',"CALL lista_de_pedidos('$estado');");

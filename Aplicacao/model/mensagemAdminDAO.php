@@ -66,7 +66,7 @@
         $resposta = $stmt->get_result();
         
         if(mysqli_num_rows($resposta) === 1) {
-            $linha = $resposta->fetch_assoc();
+             
         }
 
         if ($t==1){
