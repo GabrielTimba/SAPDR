@@ -127,8 +127,8 @@
                         <td>'.$linha['nome'].'</td>
                         <td>'.$linha['tipo'].'</td>
                         <td> 
-                            <a class="btn cor-verde"  href="../model/doencaDAO.php?id='.$linha['id'].'">
-                                <i class="fa fa-pencil-alt"></i> Editar
+                            <a class="btn cor-verde"  href="../model/doencaDAO.php?id='.$linha['id'].'" data-toggle="tooltip" title="Editar">
+                                <i class="fa fa-pencil-alt"></i>
                             </a>
                         </td>
                     </tr>
