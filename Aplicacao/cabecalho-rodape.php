@@ -204,7 +204,7 @@
         </div>
     
         <div class="row justify-content-center footer-copyright py-1 border-top-1 bg-dark" >
-            <div class="col-10"> SAPDR &copy; 2019 - Todos Direitos Reservados </div>
+            <div class="col-10 text-center"> SAPDR &copy; 2019 - Todos Direitos Reservados </div>
         </div>
 
     </footer>
