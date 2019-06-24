@@ -96,8 +96,8 @@
     //metodo que cria rodape
     function rodapeAdmin() {
  ?>       
-        <footer class="row justify-content-center mt-5">
-            <div class="col-lg-4">
+        <footer class="row  mt-5">
+            <div class="col-12 text-center">
                 <p><span class="texto-verde">SAPDR</span>  &copy; 2019 - Todos Direitos Reservados<br> </p>
             </div>
         </footer>

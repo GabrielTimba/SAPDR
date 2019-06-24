@@ -150,6 +150,10 @@ a[data-toggle="collapse"] {
     color: rgb(33, 94, 207);
 }
 
+.cor-verde{
+    background-color:#52cd4e;
+}
+
 .cor-creme {
     background: #f6f6f6;
 }
@@ -175,7 +179,7 @@ a[data-toggle="collapse"] {
 
 .titulo-tabela {
     color: #afafaf;
-    font-size: 3vh;
+    font-size: 20px;
 }
 
 #scrolbar1 {
@@ -184,8 +188,17 @@ a[data-toggle="collapse"] {
 }
 
 /** canecalho de formulaarios, tabelas, etc ***/
+.cor-borda3 {
+    border: 0.1px solid #c2c2c2;
+}
+
 .cor-borda2 {
     border: 1px solid #c2c2c2;
+}
+
+.cor-borda {
+    border: 1px solid #c2c2c2;
+    background: #fff;
 }
 
 .borda-titulo {
@@ -196,5 +209,5 @@ a[data-toggle="collapse"] {
 	color: #afafaf;
 	background: #f6f6f6;
     padding-top: 1vh;
-    font-size: 3vh;
+    font-size: 20px;
 }
