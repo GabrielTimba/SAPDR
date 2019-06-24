@@ -89,9 +89,9 @@
                                         </div> 
 
                                         <div class="form-row">
-                                            <div class="form-group col-sm-8 mt-2 ml-3">
+                                            <div class="form-group col-sm-11 mt-2 ml-3">
                                                 <label for="artigo" >Artigo:</label>
-                                                <textarea class="form-control" id="artigo" name="artigo" cols="100" rows="7" required></textarea>
+                                                <textarea class="form-control" id="artigo" name="artigo"  required></textarea>
                                             </div>
                                             
                                         </div>
@@ -134,8 +134,7 @@
             $(document).ready(function(){
                 $('#artigo').summernote({ 
                     lang:'pt-PT',
-                    height: 300,
-                    width: 900,                 // set editor height
+                    height: 300,                 // set editor height
                     minHeight: null,             // set minimum height of editor
                     maxHeight: null,             // set maximum height of editor
                     focus: false,             // set focus to editable area after initializing summernote
