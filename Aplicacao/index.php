@@ -1,5 +1,6 @@
 <?php
     include('cabecalho-rodape.php');
+    include('model/postDAO.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -82,42 +83,30 @@
         </a>
     </div>
 
-    <!--Conteudo-->
-    <div class="container" id="conteudo">
-        
-        <div class="row my-5">
-            <div class="col-12" id="descricao-spdr">
-                <h2>Sistema de Apoio a Portadores de Doenças Raras (SAPDR)</h2>
-                <p>
-                    As doenças raras são caracterizadas por uma ampla diversidade de sinais e sintomas e
-                    variam não só de doença para doença, mas também de pessoa para pessoa acometida pela
-                    mesma condição. Manifestações relativamente frequentes podem simular doenças comuns,
-                    dificultando o seu diagnóstico, causando elevado sofrimento clínico e psicossocial aos afetados,
-                    bem como para suas famílias.
-                    As doenças raras são caracterizadas por uma ampla diversidade de sinais e sintomas e
-                    variam não só de doença para doença, mas também de pessoa para pessoa acometida pela
-                    mesma condição. Manifestações relativamente frequentes podem simular doenças comuns,
-                    dificultando o seu diagnóstico, causando elevado sofrimento clínico e psicossocial aos afetados,
-                    bem como para suas famílias.
-                </p>
-            </div>
+    <div class="jumbotron jumbotron-fluid bg-white" style="font-size:20px;">
+        <div class="container">
+           <div class="row my-5">
+                <div class="col-12 " id="descricao-spdr">
+                    <h1 class="display-4">Sistema de Apoio a Portadores de Doenças Raras (SAPDR)</h1>
+                    <p class="text-justify">
+                        O sistema tem como objetivo principal permitir a iteração entre portadores de doenças raras ou seus representantes e entidades que possam prover apoio diverso. Este projecto mostra-se importante para os doentes/responsáveis a medida em que vai permitir que estes tenham mais informações úteis do assunto em causa e possam interagir com gente na mesma situação. É uma forma de promover a inclusão social visto que muitas vezes os padecentes de doenças raras acabam sendo excluídos ou esquecidos.<br>  
+                        Com esta plataforma os pacientes poderão interagir um com os outros por meio de fóruns embutidos na plataforma; poderão também publicar pedidos de apoio, visualizar campanhas informativas, artigos e relatórios relacionados a doenças raras.
+                    </p>
+                    <hr>
+                </div>
+            </div> 
         </div>
-       
+    </div>
+
+    
+    <!--Conteudo-->
+    <div class="container text-justify" id="conteudo">
+          
         <div class="row my-5">
             <div class="col-12" id="campanha">
-                <h2>Campanha xxx</h2>
-                <p>
-                    As doenças raras são caracterizadas por uma ampla diversidade de sinais e sintomas e
-                    variam não só de doença para doença, mas também de pessoa para pessoa acometida pela
-                    mesma condição. Manifestações relativamente frequentes podem simular doenças comuns,
-                    dificultando o seu diagnóstico, causando elevado sofrimento clínico e psicossocial aos afetados,
-                    bem como para suas famílias.
-                    As doenças raras são caracterizadas por uma ampla diversidade de sinais e sintomas e
-                    variam não só de doença para doença, mas também de pessoa para pessoa acometida pela
-                    mesma condição. Manifestações relativamente frequentes podem simular doenças comuns,
-                    dificultando o seu diagnóstico, causando elevado sofrimento clínico e psicossocial aos afetados,
-                    bem como para suas famílias.
-                </p>
+                <?php
+                    lerCampanhas(3);
+                ?>
             </div>
         </div>
        
