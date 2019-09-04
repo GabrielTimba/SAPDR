@@ -8,7 +8,7 @@
         
         if(!($stmt = $conexao->prepare(SQL))) {
             echo"Preparo da Insercao Falhou: (".$conexao->errno.") ".$conexao->error;
-        } 
+        }
         
         if(!($stmt->execute())){
             echo " Execucao falhou: (".$stmt->errno.")".$stmt->error;
@@ -35,9 +35,3 @@
 
         
         
-        $stmt->close();
-        fechaConexao($conexao);
-    }
-
-
-?>
