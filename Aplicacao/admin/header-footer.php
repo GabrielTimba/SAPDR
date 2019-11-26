@@ -64,7 +64,7 @@
                         </ul>
                     </li>
                     <hr class="linha">
-                    <li><a href="lista-de-doencas.php"><i class="fas fa-list-ul mr-2"></i>Doenças Raras</a></li>
+                    <!--<li><a href="lista-de-doencas.php"><i class="fas fa-list-ul mr-2"></i>Doenças Raras</a></li>-->
                     <hr class="linha">
                     <li>
                         <a class="dropdown-toggle" data-toggle="collapse" aria-expanded="false" href="#menu-publicacoes"><i class="fas fa-newspaper mr-2"></i>Publicações</a>
