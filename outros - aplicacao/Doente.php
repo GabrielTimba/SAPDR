@@ -28,7 +28,7 @@ class Doente extends Usuario {
     private $telefone;
     private $doenca;
     private $tratamento;
-    private $hospital
+    private $hospital;
     }
 
 
